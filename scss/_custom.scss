@@ -1,0 +1,335 @@
+/*===================================================================
+bordo per debugging
+===================================================================*/
+
+// .columns, .column {
+//     border: 1px solid green;
+// }
+
+/*===================================================================
+logo - cards
+===================================================================*/
+
+.img-logo {
+    width: 180px;
+    margin-top: 5px;
+    @media #{$small-only} {
+        width:160px;
+        margin-top: 0px;
+        margin-left: -4px;
+    }
+}
+
+.img-cards {
+    width: 100px;
+    margin-top: 0.25rem;
+    @media #{$small-only} {
+        width:60px;
+    }
+}
+/*===================================================================
+margini per allineare le aside e i button
+===================================================================*/
+
+.extra-space-hero {
+    margin-top: 1rem;
+}
+.extra-space-side-home {
+    margin-top: 3rem;
+}
+.extra-space {
+    margin-top: 2rem;
+}
+.extra-space-footer {
+    margin-top: 4rem;
+}
+.extra-space-aside-tab-home {
+    margin-top: 3.8rem;
+}
+.extra-space-aside-tab-immagini {
+    margin-top: 1.25rem;
+}
+.extra-space-aside-tab-chi-siamo {
+    margin-top: -0.15rem;
+}
+.extra-space-aside-tab-menu {
+    margin-top: 3.8rem;
+}
+.extra-space-blog {
+    margin-top: 1rem;
+    @media #{$small-only} {
+        margin-top: .5rem;
+    }
+}
+.extra-space-aside {
+    margin-top: 2.8rem;
+}
+/*the following control extra margin for blog articles and menu products detail*/
+.extra-margin-first-paragraph-blog {
+    margin-top: 0.8rem;
+}
+.extra-space-button {
+    margin-top: 0.5rem;
+}
+.extra-space-from-tabs {
+    margin-top: 0.8rem;
+    @media #{$small-only} {
+        margin-top: 0.6rem; 
+    }
+}
+.no-margin-list-bullet {
+    margin-top:-1.1rem;
+}
+
+/*===================================================================
+home page hero
+===================================================================*/
+
+.text-highlight {
+    background-color: rgba($black, 0.45);
+}
+#homepage-hero {
+    background: url(../img/chicken_wings.jpg) center no-repeat;
+    background-size: cover;
+    height: 500px;
+    position: relative;
+    
+    h1 {
+        font-size: 4rem;
+        color: white;
+        font-weight: 500;
+        line-height: 4.5rem;
+        text-align: center;
+        margin-top: 0;
+        padding: 20px 10px;
+        @media #{$small-only} {
+            font-size: 2.2rem;
+            line-height: 3rem;
+            margin-bottom: 2rem;
+        }
+    }   
+    h2 {
+        font-size: 3rem;
+        font-weight: 400;
+        color: white;
+        @media #{$small-only} {
+            font-size: 1.5rem;
+            color: white;
+        }
+    }   
+    h3 {
+        font-size: 1.35rem;
+        font-weight: 400;
+        color: white;
+        margin-bottom: 0.1rem;
+        margin-top: 1em;
+        @media #{$small-only} {
+            font-size: 1.25rem;
+            line-height: 1em;
+        }
+    }   
+    h4 {
+        font-size: 1.15rem;
+        color: white;
+        @media #{$small-only} {
+            font-size: 1.125em;
+            color: white;
+        }
+    }
+    h5 {
+        font-size: 1rem;
+        color: white;
+        @media #{$small-only} {
+            font-size: 1rem;
+        }
+    }
+}
+
+/*===================================================================
+menu page text
+===================================================================*/
+
+#menupage-text {
+    /*padding:0 2rem;*/
+     h1 {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        &:first-child {
+            margin-top: 2rem;
+        }
+        @media #{$small-only} {
+            font-size: 1.35em;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+    }
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0;
+        margin-top: 0;
+        @media #{$small-only} {
+            font-size: 1rem;
+        }
+    }
+    h3 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        margin-top: 1rem;
+    }
+    h4 {
+        font-size: 1.15rem;
+    }
+    h5 {
+        font-size: 1rem;
+    }
+    h6 {
+        font-size: 0.9375rem;
+        margin-bottom: 0rem;
+    }
+    p {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/*===================================================================
+team detail page
+===================================================================*/
+
+#image-background-team { 
+    position: relative;
+    margin-bottom: 2rem;
+    width: 100%; /* for IE 6 */
+    @media #{$small-only} {
+        margin-bottom: 1.5rem;
+    }
+    .user-image { 
+        border: 10px solid white;
+        position: absolute; 
+        width: 20%; 
+        top: 70%;
+        left: 0%;
+        @media #{$small-only} {
+            width: 30%; 
+            top: 65%;
+        }
+    }
+}
+
+/*===================================================================
+footer header style
+===================================================================*/
+
+.panel-prefooter {
+    margin-bottom: 0;
+    padding-bottom: 2em;
+}
+.panel-footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: $footer-background-color;
+    p {
+        font-size: 0.8125rem;
+    }
+}
+.navbar-footer-font {
+    font-size: 0.8125rem;
+    line-height: 2.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.panel .icon-font-style {
+    display: block;
+    color: $primary-color;
+    font-size: 4em;
+    margin: 0px auto;
+    padding: 0px;
+    line-height: 0;
+    text-align: center;
+    color: $footer-icon-color;
+    @media #{$small-only} {
+        font-size: 2em;
+    }
+}
+
+ul .icon-font-style {
+    font-size: 3rem;
+    @media #{$small-only} {
+        font-size: 2rem;
+    }
+}
+/*===================================================================
+blog style
+===================================================================*/
+
+.by-line {
+    font-style: italic;
+}
+.first-paragraph {
+    margin-top: 1.5rem;
+}
+.share-block {
+    border-top: 1px solid $gainsboro;
+    border-bottom: 1px solid $gainsboro;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.image-hero {
+    margin: 0 0 2rem;
+}
+
+.sub-nav {
+    dt {
+         margin-bottom: 0.5rem;
+    }
+
+    dd {
+        margin-bottom: 0.75rem;
+    }
+}
+/*===================================================================
+eventi
+===================================================================*/
+
+.date {
+    text-transform: uppercase;
+}
+i {
+    font-size: 1.4em;
+    padding-right: .3em;
+}
+/*margini eventi */
+.extra-space-image-event {
+    margin-top: 0.95rem;
+    margin-bottom: 0.5rem;
+    @media #{$small-only} {
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+}
+.extra-space-image-event-blog {
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    @media #{$small-only} {
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+}
+.extra-space-date-aside {
+    margin-top: 0.65rem;
+}
+.extra-space-share-icon {
+    margin-top: -0.8rem;
+    @media #{$small-only} {
+        margin-top: 0rem;
+    }
+}
+.extra-space-commenti {
+    margin-top: 1rem;
+    @media #{$small-only} {
+        margin-top: 0rem;
+    }
+}
+
