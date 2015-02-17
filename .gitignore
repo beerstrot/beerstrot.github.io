@@ -1,0 +1,7 @@
+*.DS_Store
+/bower_components/*
+/node_modules/*
+/node_modules/
+.sass-cache
+/*.log
+/prepros.cfg
