@@ -1,6 +1,6 @@
 
 // CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE
-var disqus_shortname = 'outrageousbeer'; // required: replace example with your forum shortname
+var disqus_shortname = 'Beerstrotbeer'; // required: replace example with your forum shortname
 
 // DON'T EDIT BELOW THIS LINE
 (function () {
