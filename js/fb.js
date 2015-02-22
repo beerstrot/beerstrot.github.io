@@ -9,7 +9,7 @@
   // Replace "Starbucks" with your Facebook Profile/Page ID, or full external website address.
   // Get FB ID here:  http://graph.facebook.com/your_page_name
   function realtime_fb_likes() {
-      $.getJSON('http://graph.facebook.com/cavecchiabirstrot/', function(data) {
+      $.getJSON('http://graph.facebook.com/cavecchiabeerstrot/', function(data) {
           var fb_likes = addCommas(data.likes);
           $('#fb-likes-count').text(fb_likes);
       });
