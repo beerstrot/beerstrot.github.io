@@ -242,13 +242,11 @@ footer header style
 }
 .panel .icon-font-style {
     display: block;
-    color: $primary-color;
     font-size: 4em;
     margin: 0px auto;
     padding: 0px;
     line-height: 0;
     text-align: center;
-    color: $footer-icon-color;
     @media #{$small-only} {
         font-size: 2em;
     }
