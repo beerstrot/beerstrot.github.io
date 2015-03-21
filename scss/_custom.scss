@@ -23,9 +23,6 @@ logo - cards
 .img-cards {
     width: 100px;
     margin-top: 0.25rem;
-    @media #{$small-only} {
-        width:80px;
-    }
 }
 /*===================================================================
 margini per allineare le aside e i button
