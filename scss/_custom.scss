@@ -239,14 +239,14 @@ footer header style
 }
 .panel .icon-font-style {
     display: block;
-    font-size: 4em;
+    font-size: 2em;
     margin: 0px auto;
     padding: 0px;
     line-height: 0;
     text-align: center;
-    @media #{$small-only} {
-        font-size: 2em;
-    }
+    // @media #{$small-only} {
+    //     font-size: 2em;
+    // }
 }
 
 ul .icon-font-style {
