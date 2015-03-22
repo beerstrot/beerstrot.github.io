@@ -49,6 +49,19 @@ module.exports = function(grunt) {
             }
         },
         
+        grunticon: {
+            myIcons: {
+                files: [{
+                    expand: true,
+                    cwd: 'img/_src/svgs',
+                    src: ['*.svg', '*.png'],
+                    dest: "img/svgs"
+                }],
+                options: {
+                }
+            }
+        },
+
         uncss: {
             options: {
                 ignore       : [':hover', 'min-width', '.top-bar.expanded','.top-bar.expanded .toggle-topbar',/test\-[0-9]+/],
@@ -84,9 +97,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-grunticon');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-uncss');
 
     grunt.registerTask('build', ['sass']);
-    grunt.registerTask('default', ['build', 'watch', 'concat', 'uglify', 'uncss']);
+    grunt.registerTask('default', ['build', 'watch', 'concat', 'uglify', 'uncss', 'grunticon:myIcons']);
 }
