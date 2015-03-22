@@ -221,11 +221,12 @@ footer header style
 
 .panel-prefooter {
     margin-bottom: 0;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: $panel-bg;
 }
 .panel-footer {
-    padding-top: 2em;
+    padding-top: 3em;
     padding-bottom: 1em;
     background-color: $footer-background-color;
     p {
