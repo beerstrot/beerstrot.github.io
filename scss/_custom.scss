@@ -252,6 +252,11 @@ ul .icon-font-style {
   fill: scale-color($primary-color, $lightness: -14%); 
 }
 
+.fi-social:visited {
+  fill: $primary-color; 
+}
+
+
 /*===================================================================
 blog style
 ===================================================================*/

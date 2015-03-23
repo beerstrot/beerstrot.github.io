@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 
         concat: {
             js: {
-                src: ['http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'js/foundation.min.js', 'js/*.js'],
+                src: ['//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js', 'js/foundation.min.js', 'js/*.js'],
                 dest: 'js/app.min.js'
             }
         },
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 
         uglify: {
             js: {
-                src: 'js/app.min.js',
+                src: 'js/app.js',
                 dest: 'js/app.min.js'
             }
         },
