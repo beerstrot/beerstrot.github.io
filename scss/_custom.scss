@@ -230,7 +230,10 @@ footer header style
     padding-bottom: 1rem;
     background-color: $footer-background-color;
     p {
-        font-size: 0.8125rem;
+        font-size: 1rem;
+        @media #{$small-only} {
+        font-size: 0.83rem;
+        }
     }
 }
 .navbar-footer-font {
@@ -256,6 +259,12 @@ ul .icon-font-style {
   fill: $primary-color; 
 }
 
+.fi-telephone {
+    font-size: 1rem;
+        @media #{$small-only} {
+        font-size: 1rem;
+    }
+}
 
 /*===================================================================
 blog style
