@@ -230,7 +230,7 @@ footer header style
     margin-bottom: 0;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background-color: $panel-bg;
+    background-color: $panel-2n-bg;
 }
 .panel-footer {
     padding-top: 3rem;
@@ -243,6 +243,20 @@ footer header style
         }
     }
 }
+.panel-home {
+    margin-bottom: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: $home-header-bg;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+    h1 {
+        color: white;
+    }   
+}
 .panel-home-n {
     margin-bottom: 0;
     padding-top: 3rem;
@@ -252,8 +266,9 @@ footer header style
         margin-bottom: 0;
         padding-top: 2rem;
         padding-bottom: 3rem;
-        }
-}.panel-home-2n {
+    }
+}
+.panel-home-2n {
     margin-bottom: 0;
     padding-top: 3rem;
     padding-bottom: 4em;
@@ -293,7 +308,6 @@ ul .icon-font-style {
         font-size: 1rem;
     }
 }
-
 .fi-social-facebook {
     color: #3b5998;
 }

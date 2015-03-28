@@ -10,7 +10,7 @@
     <meta name="copyright" content="Beerstrot Copyright (c) 2015" />
     <meta name="p:domain_verify" content="ca68ebe696c4699798a5a243ca187b2d"/>
     <link rel="canonical" href="http://beerstrot.it"/>
-    <link rel="stylesheet" href="http://beerstrot.github.io/css/app.css" />
+    <link rel="stylesheet" href="css/app.css" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 </head>
@@ -41,18 +41,22 @@
         </section>
     </nav>
 <!-- fine navbar con hamburger -->
-<!-- inizio hero -->
-    <header id="homepage-hero">
-        <div class="row">
-            <div itemscope itemtype="http://schema.org/Restaurant">
-                <h1 itemprop="description">Birra artigianale e alta cucina&#8230; alla portata di tutti</h1>
+<!-- inizio header -->
+    <header class="panel-home">
+        <div class="row" itemscope itemtype="http://schema.org/Restaurant">
+            <div class="medium-6 large-6 columns" >
+                <h1 class="text-center"itemprop="description">Birra artigianale e alta cucina&#8230;<br>alla portata di tutti</h1>
             </div>
+            <div class="small-centerd small-12  medium-6 large-6 columns">
+                <img src="http://beerstrot.github.io/img/large/birreria.jpg" alt="">
+            </div>
+          
         </div>
     </header>
 <!-- fine hero -->
     <div class="panel-home-n">
         <div class="row">
-            <div class="medium-6 large-6 columns" >
+            <div class="medium-6 large-6 columns">
                 <h1>Menu</h1>
                 <p>Birra artigianale e cibo di altissima qualità. Facciamo gli hamburger più buoni al mondo utilizzando solo carni da animali al pascolo e verdure fresche di stagione.</p>
                 <p>Cibi preparati con cura maniacale: dalle materie prime, alla preparazione, alla presentazione.</p>
@@ -98,14 +102,14 @@
     </div>
     <div class="panel-home-2n">
         <div class="row">
-            <div class="medium-6 large-6 columns">
+            <div class="medium-6 large-6 medium-push-6 large-push-6 columns">
                 <h1>Contatti</h1>
                 <p>Come raggiungerci, contattarci o prenotare un tavolo</p>
                 <p>Vuoi la nostra birra nel tuo pub? Sei un blogger o un giornalista? Cerchi lavoro? Compila i form e ricevi tutte le informazioni necessarie.</p>
                 <a role="button" href="http://beerstrot.github.io/contatti">Contattaci &rarr;</a>
             </div>
-            <div class="medium-6 large-6 columns">
-                <img src="http://beerstrot.github.io/img/large/mappa.jpg" alt="" class="extra-space-image-tab-home">
+            <div class="medium-6 large-6 medium-pull-6 large-pull-6 columns">
+                <a role="button" href="http://beerstrot.github.io/contatti"><img src="http://beerstrot.github.io/img/large/mappa.jpg" alt="" class="extra-space-image-tab-home"></a>
             </div>
         </div>
     </div>
@@ -117,7 +121,7 @@
                 <a role="button" href="http://beerstrot.github.io/blog">Vai alle Notizie e alle Novità &rarr;</a>
             </div>
             <div class="medium-6 large-6 columns">
-                <img src="http://beerstrot.github.io/img/large/birre-in-love.jpg" alt="" class="extra-space-image-tab-home">
+                <a role="button" href="http://beerstrot.github.io/blog"><img src="http://beerstrot.github.io/img/large/birre-in-love.jpg" alt="" class="extra-space-image-tab-home"></a>
             </div>
         </div>
     </div>
