@@ -238,6 +238,18 @@ footer header style
         }
     }
 }
+.panel-home-2n {
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: $panel-bg;
+}
+.panel-home-n {
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    background-color: $white;
+}
 .navbar-footer-font {
     font-size: 0.8125rem;
     line-height: 2.2rem;
@@ -288,12 +300,12 @@ blog style
 .first-paragraph {
     margin-top: 1.5rem;
 }
-.share-block {
-    border-top: 1px solid $gainsboro;
-    border-bottom: 1px solid $gainsboro;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
+// .share-block {
+//     border-top: 1px solid $gainsboro;
+//     border-bottom: 1px solid $gainsboro;
+//     margin-top: 1rem;
+//     margin-bottom: 1rem;
+// }
 .image-hero {
     margin: 0 0 2rem;
 }
