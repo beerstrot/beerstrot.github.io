@@ -24,7 +24,6 @@ logo - cards
 }
 
 .img-cards {
-    width: 10px;
     margin-top: 0.15rem;
 }
 /*===================================================================
@@ -300,6 +299,11 @@ blog style
 }
 .image-hero-index {
     margin: 0 0 1rem;
+    @media #{$small-only} {
+        margin-top: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
 }
 
 // .sub-nav {
