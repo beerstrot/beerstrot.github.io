@@ -48,8 +48,20 @@ margini per allineare le aside e i button
     @media #{$small-only} {
         margin-top: 1rem;
     }
-
 }
+.extra-space-image-tab-contatti {
+    margin-top: 3.9rem;
+    @media #{$small-only} {
+        margin-top: 1rem;
+    }
+}
+.extra-space-text-tab-contatti {
+    margin-top: 4.1rem;
+    @media #{$small-only} {
+        margin-top: 1rem;
+    }
+}
+
 .extra-space-aside-tab-immagini {
     margin-top: 1.25rem;
 }
