@@ -24,7 +24,8 @@ logo - cards
 }
 
 .img-cards {
-    margin-top: 0.15rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
 }
 /*===================================================================
 margini per allineare le aside e i button
@@ -42,8 +43,12 @@ margini per allineare le aside e i button
 .extra-space-footer {
     margin-top: 4rem;
 }
-.extra-space-aside-tab-home {
-    margin-top: 3.8rem;
+.extra-space-image-tab-home {
+    margin-top: 5.3rem;
+    @media #{$small-only} {
+        margin-top: 1rem;
+    }
+
 }
 .extra-space-aside-tab-immagini {
     margin-top: 1.25rem;
@@ -238,17 +243,26 @@ footer header style
         }
     }
 }
-.panel-home-2n {
-    margin-bottom: 0;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    background-color: $panel-bg;
-}
 .panel-home-n {
     margin-bottom: 0;
     padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
     background-color: $white;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        }
+}.panel-home-2n {
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 4em;
+    background-color: $panel-2n-bg;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        }
 }
 .navbar-footer-font {
     font-size: 0.8125rem;
