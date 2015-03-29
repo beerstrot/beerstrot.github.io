@@ -238,9 +238,14 @@ footer header style
 
 .panel-prefooter {
     margin-bottom: 0;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
     background-color: $panel-2n-bg;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
 }
 .panel-footer {
     padding-top: 3rem;
