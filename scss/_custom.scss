@@ -34,9 +34,6 @@ margini per allineare le aside e i button
 .extra-space-hero {
     margin-top: 1rem;
 }
-.extra-space-side-home {
-    margin-top: 3rem;
-}
 .extra-space {
     margin-top: 2rem;
 }
@@ -44,9 +41,10 @@ margini per allineare le aside e i button
     margin-top: 4rem;
 }
 .extra-space-image-tab-home {
-    margin-top: 5.3rem;
+    margin-top: 0.5rem;
     @media #{$small-only} {
         margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 }
 .extra-space-image-tab-contatti {
