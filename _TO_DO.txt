@@ -1,12 +1,3 @@
-far funzionare filtri in blog
-scegliere footer (home o altri? o home per small screen altri per medium and large?)
-fare Connettiti
 
-navigazione: quando arrivo a evento da blog (articolo in evidenza) invece di vedere link "Altri eventi" dovrei vedere "Torna al blog"
-
-
-mettere a posto dicitura prenota: deve essere chiaro cosa si prenota. In eventi ripensare posizione bottone (ora flotta right) e azione per tornare a eventi (ora flotta a sx di prenota). nota che su mobile lo spazio è ridotto quindi se "prenota" diventa "prenota un tavolo" si sovrappone a "Altri eventi". ho fatto una revisione. da testare
-
-articoli blog e eventi: ripensare share button (dove posizionarli?) mettere magari anche la dicitura: "condividi" o non serve? (bisogna testare). ho fatto una revisione. da testare
 
 togliere blocking js and css. inline css to render the visible part of the page
