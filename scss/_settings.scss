@@ -306,7 +306,7 @@ $paragraph-font-size: 1.125rem;
 // $blockquote-padding: rem-calc(9 20 0 19);
 $blockquote-padding: rem-calc(0 20 0 19);
 // $blockquote-border: 1px solid $gainsboro;
-$blockquote-border: 8px solid scale-color($primary-color, $lightness: 0%);
+$blockquote-border: 8px solid scale-color($gainsboro, $lightness: 0%);
 // $blockquote-cite-font-size: rem-calc(13);
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
 // $blockquote-cite-link-color: $blockquote-cite-font-color;
