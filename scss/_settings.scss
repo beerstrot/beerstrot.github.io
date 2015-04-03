@@ -127,6 +127,8 @@ $primary-color: #e00c10;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
+$navbar-color: #403f34;
+
 $footer-background-color: #e6e6e6;
 $home-header-bg: scale-color(#4385bf, $lightness: 0%);
 $panel-2n-bg: scale-color($white, $lightness: -5%);
@@ -1429,20 +1431,20 @@ $topbar-margin-bottom: 1.5rem;
 // $topbar-dropdown-bg: $oil;
 $topbar-dropdown-bg: $white;
 // $topbar-dropdown-link-color: $white;
-$topbar-dropdown-link-color: $primary-color;
+$topbar-dropdown-link-color: $navbar-color;
 // $topbar-dropdown-link-bg: $oil;
 $topbar-dropdown-link-bg: $white;
 // $topbar-dropdown-link-bg-hover: $oil;
-$topbar-dropdown-link-bg-hover: $primary-color;
+$topbar-dropdown-link-bg-hover: $navbar-color;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
-$topbar-dropdown-toggle-color: $primary-color;
+$topbar-dropdown-toggle-color: $navbar-color;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: $white;
-$topbar-link-color: $primary-color;
+$topbar-link-color: $navbar-color;
 // $topbar-link-color-hover: $white;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
@@ -1452,7 +1454,7 @@ $topbar-link-color: $primary-color;
 // $topbar-link-bg: $topbar-bg;
 // $topbar-link-bg-color-hover: $charcoal;
 // $topbar-link-bg-hover: $oil;
-$topbar-link-bg-hover: $primary-color;
+$topbar-link-bg-hover: $navbar-color;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
 // $topbar-link-font-family: $body-font-family;
@@ -1469,16 +1471,16 @@ $topbar-link-bg-hover: $primary-color;
 // $topbar-dropdown-label-font-weight: $font-weight-bold;
 // $topbar-dropdown-label-font-size: rem-calc(10);
 // $topbar-dropdown-label-bg: $oil;
-$topbar-dropdown-label-bg: $primary-color;
+$topbar-dropdown-label-bg: $navbar-color;
 
 // Top menu icon styles
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: rem-calc(13);
 // $topbar-menu-link-weight: $font-weight-bold;
 // $topbar-menu-link-color: $white;
-$topbar-menu-link-color: $primary-color;
+$topbar-menu-link-color: $navbar-color;
 // $topbar-menu-icon-color: $white;
-$topbar-menu-icon-color: $primary-color;
+$topbar-menu-icon-color: $navbar-color;
 // $topbar-menu-link-color-toggled: $jumbo;
 $topbar-menu-link-color-toggled: scale-color($primary-color, $lightness: -15%);
 // $topbar-menu-icon-color-toggled: $jumbo;
@@ -1493,7 +1495,7 @@ $topbar-menu-icon-color-toggled: scale-color($primary-color, $lightness: -15%);
 // Divider Styles
 // $topbar-divider-border-bottom: solid 1px  scale-color($topbar-bg-color, $lightness: 13%);
 // $topbar-divider-border-top: solid 1px scale-color($topbar-bg-color, $lightness: -50%);
-$topbar-divider-border-top: solid 0.5px scale-color($primary-color, $lightness: 85%);
+$topbar-divider-border-top: solid 0.5px scale-color($navbar-color, $lightness: 85%);
 
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
