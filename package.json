@@ -13,6 +13,7 @@
     "imagemin-mozjpeg": "~4.0.0",
     "grunt-contrib-cssmin": "~0.12.2",
     "grunt-svg-sprite": "~0.3.2",
-    "grunt-grunticon": "~2.1.6"
+    "grunt-grunticon": "~2.1.6",
+    "grunt-sitemap": "~1.2.1"
   }
 }
