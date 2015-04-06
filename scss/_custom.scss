@@ -299,6 +299,12 @@ footer header style
     line-height: 2.2rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
+    a {
+        color: $topbar-menu-link-color;
+    }
+    a:hover {
+        color: scale-color($topbar-menu-link-color, $lightness: 30%);
+    }
 }
 
 ul .icon-font-style {
