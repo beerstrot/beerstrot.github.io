@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                 extension: {
                     required: false,
                     trailingSlash: true
-                },       
+                }       
             },
             
             dist: {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
 
         uncss: {
             options: {
-                ignore       : [':hover', 'min-width', '.top-bar.expanded','.top-bar.expanded .toggle-topbar',/test\-[0-9]+/],
+                ignore       : [':hover', 'min-width', '.top-bar .expanded',/test\-[0-9]+/],
                 //media        : ['(min-width: 0px) handheld and (orientation: landscape)'],
                 csspath      : '',
                 //raw          : 'h1 { color: green }',
