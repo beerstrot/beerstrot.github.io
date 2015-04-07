@@ -96,9 +96,45 @@ margini per allineare le aside e i button
 }
 
 /*===================================================================
-home page hero
+homepage
 ===================================================================*/
 
+.panel-home {
+    margin-bottom: 0;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: $home-header-bg;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+    h1 {
+        color: white;
+    }   
+}
+.panel-home-n {
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    background-color: $white;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+}
+.panel-home-2n {
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    background-color: $panel-2n-bg;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        }
+}
 // .text-highlight {
 //     background-color: rgba($black, 0.45);
 // }
@@ -160,7 +196,7 @@ home page hero
 // }
 
 /*===================================================================
-menu page text
+menupage text
 ===================================================================*/
 
 #menupage-text {
@@ -208,6 +244,28 @@ menu page text
     }
 }
 
+.panel-menu-n {
+    margin-bottom: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: $white;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}
+.panel-menu-2n {
+    margin-bottom: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: $panel-2n-bg;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        }
+}
 /*===================================================================
 team detail page
 ===================================================================*/
@@ -258,42 +316,7 @@ footer header style
         }
     }
 }
-.panel-home {
-    margin-bottom: 0;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-color: $home-header-bg;
-    @media #{$small-only} {
-        margin-bottom: 0;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-    }
-    h1 {
-        color: white;
-    }   
-}
-.panel-home-n {
-    margin-bottom: 0;
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-    background-color: $white;
-    @media #{$small-only} {
-        margin-bottom: 0;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-    }
-}
-.panel-home-2n {
-    margin-bottom: 0;
-    padding-top: 3rem;
-    padding-bottom: 4em;
-    background-color: $panel-2n-bg;
-    @media #{$small-only} {
-        margin-bottom: 0;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-        }
-}
+
 .navbar-footer-font {
     font-size: 0.8125rem;
     line-height: 2.2rem;
