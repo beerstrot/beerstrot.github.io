@@ -201,21 +201,23 @@ menupage text
 
 #menupage-text {
     /*padding:0 2rem;*/
-     h1 {
+     h2 {
         font-size: 1.6rem;
         text-transform: uppercase;
-        margin-bottom: 0.5rem;
+        margin-bottom: 2rem;
         margin-top: 0.5rem;
+        text-align: center;
         &:first-child {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         @media #{$small-only} {
             font-size: 1.35em;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             margin-top: 1.5rem;
+            text-align: left;
         }
     }
-    h2 {
+    h3 {
         font-size: 1.1rem;
         margin-bottom: 0;
         margin-top: 0;
@@ -223,20 +225,16 @@ menupage text
             font-size: 1rem;
         }
     }
-    h3 {
+    h4 {
         font-size: 1.1rem;
         text-transform: uppercase;
         margin-top: 1rem;
     }
-    h4 {
+    h5 {
         font-size: 1.15rem;
     }
-    h5 {
-        font-size: 1rem;
-    }
     h6 {
-        font-size: 0.9375rem;
-        margin-bottom: 0rem;
+        font-size: 1rem;
     }
     p {
         font-size: 0.9rem;
@@ -246,8 +244,8 @@ menupage text
 
 .panel-menu-n {
     margin-bottom: 0;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     background-color: $white;
     @media #{$small-only} {
         margin-bottom: 0;
@@ -257,8 +255,8 @@ menupage text
 }
 .panel-menu-2n {
     margin-bottom: 0;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     background-color: $panel-2n-bg;
     @media #{$small-only} {
         margin-bottom: 0;
