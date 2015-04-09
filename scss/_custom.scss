@@ -103,7 +103,7 @@ homepage
     margin-bottom: 0;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    background-color: #9C5945;
+    background-color: $home-header-bg;
     @media #{$small-only} {
         margin-bottom: 0;
         padding-top: 2rem;
