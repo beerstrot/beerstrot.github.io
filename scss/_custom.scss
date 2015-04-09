@@ -244,8 +244,8 @@ menupage text
 
 .panel-menu-n {
     margin-bottom: 0;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
     background-color: $white;
     @media #{$small-only} {
         margin-bottom: 0;
@@ -255,8 +255,8 @@ menupage text
 }
 .panel-menu-2n {
     margin-bottom: 0;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
     background-color: $panel-2n-bg;
     @media #{$small-only} {
         margin-bottom: 0;
