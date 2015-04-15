@@ -351,8 +351,7 @@ footer header style
 ul .icon-font-style {
     font-size: 3rem;
     @media #{$small-only} {
-        font-size: 3rem;
-        padding-right: 2rem;
+        font-size: rem-calc(32);
     }
 }
 .block-grid-cards-3 {
