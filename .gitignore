@@ -5,4 +5,4 @@
 .sass-cache
 /*.log
 /prepros.cfg
-/_ARCHIVE/.*
+/_ARCHIVE/*
