@@ -197,6 +197,26 @@ homepage
 //         }
 //     }
 // }
+ @mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+.homepage-hero {
+  background: url('http://beerstrot.it//asset/img/large/background-home.jpg') no-repeat center center;
+    background-size: cover;
+  height: 50vh;
+  overflow: hidden;
+  h1 {
+    color: #fff;
+    text-align: center;
+    @include vertical-align;
+  }
+}
 
 
 /*===================================================================
