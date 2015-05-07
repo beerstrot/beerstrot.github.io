@@ -138,84 +138,27 @@ homepage
         padding-bottom: 3rem;
         }
 }
-// .text-highlight {
-//     background-color: rgba($black, 0.45);
-// }
-// #homepage-hero {
-//     background: url(../img/chicken_wings.jpg) center no-repeat;
-//     background-size: cover;
-//     height: 500px;
-//     position: relative;
-    
-//     h1 {
-//         font-size: 4rem;
-//         color: white;
-//         font-weight: 500;
-//         line-height: 4.5rem;
-//         text-align: center;
-//         margin-top: 0;
-//         padding: 20px 10px;
-//         @media #{$small-only} {
-//             font-size: 2.2rem;
-//             line-height: 3rem;
-//             margin-bottom: 2rem;
-//         }
-//     }   
-//     h2 {
-//         font-size: 3rem;
-//         font-weight: 400;
-//         color: white;
-//         @media #{$small-only} {
-//             font-size: 1.5rem;
-//             color: white;
-//         }
-//     }   
-//     h3 {
-//         font-size: 1.35rem;
-//         font-weight: 400;
-//         color: white;
-//         margin-bottom: 0.1rem;
-//         margin-top: 1em;
-//         @media #{$small-only} {
-//             font-size: 1.25rem;
-//             line-height: 1em;
-//         }
-//     }   
-//     h4 {
-//         font-size: 1.15rem;
-//         color: white;
-//         @media #{$small-only} {
-//             font-size: 1.125em;
-//             color: white;
-//         }
-//     }
-//     h5 {
-//         font-size: 1rem;
-//         color: white;
-//         @media #{$small-only} {
-//             font-size: 1rem;
-//         }
-//     }
-// }
- @mixin vertical-align {
-  position: relative;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.text-highlight {
+    background-color: rgba($black, 0.25);
 }
-
-
 .homepage-hero {
-  background: url('http://beerstrot.it//asset/img/large/background-home.jpg') no-repeat center center;
+    background: url('http://beerstrot.it//asset/img/large/background-home.jpg') no-repeat center center;
     background-size: cover;
-  height: 150vh;
-  overflow: hidden;
-  h1 {
-    color: #fff;
-    text-align: center;
-    @include vertical-align;
-  }
+    height: 90%;
+    overflow: hidden;
+    h1 {
+        font-size: 4rem;
+        color: white;
+        font-weight: 500;
+        line-height: 4.8rem;
+        text-align: center;
+        margin-top: 4rem;
+        @media #{$small-only} {
+            font-size: 2.2rem;
+            line-height: 3rem;
+            margin-top: 2rem;
+        }
+    }
 }
 
 
