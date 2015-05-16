@@ -460,9 +460,39 @@ i {
         margin-top: 0rem;
     }
 }
+/*===================================================================
+footer
+===================================================================*/
 
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
+.footer {
+  text-align: center;
 
-
-
-
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  .links a {
+    list-style: none;
+    color: $topbar-menu-link-color;
+    font-size: 0.875rem;
+    padding: 3rem 0 2rem;
+    margin: 0;
+    &::after {
+      content: "•";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+    &:last-child::after {
+      content: "";
+      padding: 0 0.4rem 0 0.8rem;
+    }
+    a:hover {
+        color: scale-color($topbar-menu-link-color, $lightness: 30%);
+    }
+  }
+}
