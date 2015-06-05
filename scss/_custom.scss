@@ -165,16 +165,9 @@ homepage
     }
 }
 
-.column.small-centered {
-    margin-left: auto;
-    margin-right: auto;
-    float: none !important;
+.tripadvisor-align {
+    margin: 0 auto
 }
-
-.column.small-centered > ul > li > a {
-  text-align:center;
-}
-
 /*===================================================================
 Chi Siamo
 ===================================================================*/
