@@ -140,7 +140,7 @@ homepage
         margin-bottom: 0;
         padding-top: 2rem;
         padding-bottom: 3rem;
-        }
+    }
 }
 .text-highlight {
     background-color: rgba($black, 0.25);
@@ -162,6 +162,9 @@ homepage
             line-height: 3rem;
             margin-top: 2rem;
         }
+    }
+    @media #{$small-only} {
+        height: 100%;
     }
 }
 
