@@ -2,115 +2,163 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>http://beerstrot.it/</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://beerstrot.it/blog/</loc>
-    <lastmod>2015-05-27</lastmod>
+    <loc>http://beerstrot.it/menu/</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>http://beerstrot.it/chi-siamo/</loc>
-    <lastmod>2015-05-27</lastmod>
+    <loc>http://beerstrot.it/blog/</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/birramisu.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/estivo.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/buffalo-chicken-wings.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it/eventi/apertura.html</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/chi-siamo/team/andrea-tagliazucchi.html</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/blog/2015/01/29/dalla-america-alle-marche.html</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/eventi/</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/chi-siamo/team/giovanni-attilio.html</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/menu/</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/menu/cibo/peperoncini-e-pancetta.html</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/menu/birra/breaking-hops-double-ipa.html</loc>
-    <lastmod>2015-05-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://beerstrot.it/menu/birra/ape-regina.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it/menu/cibo/diablo.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/birra/breaking-hops-double-ipa.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/lamb.html</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it/chi-siamo/team/giulia-mazza.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://beerstrot.it/blog/2015/04/26/ora-del-gusto.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <loc>http://beerstrot.it/menu/birra/ape-regina.html</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it/blog/2015/05/05/birre-artigianali-nuovi-arrivi.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/blog/2015/04/26/ora-del-gusto.html</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it//blog/2015/05/26/viaggio-a-san-francisco-usa.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/chi-siamo/team/giovanni-attilio.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/deciso.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/chi-siamo/team/andrea-tagliazucchi.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/blog/2015/01/29/dalla-america-alle-marche.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/new-york.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/chi-siamo/</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/cecilia.html</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it/menu/cibo/costine-in-salsa-bbq.html</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it//menu/birra/breaking-hops-double-ipa.html</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/eventi/</loc>
+    <lastmod>2015-06-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://beerstrot.it/menu/cibo/cheescake.html</loc>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://beerstrot.it/contatti/</loc>
-    <lastmod>2015-05-27</lastmod>
+    <lastmod>2015-06-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
