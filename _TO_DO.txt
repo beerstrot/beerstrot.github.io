@@ -1,3 +1,0 @@
-
-
-togliere blocking js and css. inline css to render the visible part of the page
