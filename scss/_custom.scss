@@ -193,6 +193,7 @@ Chi Siamo
     font-size: 0.8rem;
     line-height: 0.5rem;
     padding-bottom: 1rem;
+    line-height: 1.4rem;
 }
 .extra-space-recensione {
     margin-top: 2.5rem;
@@ -504,3 +505,13 @@ footer
     }
   }
 }
+
+.card {
+  overflow: hidden;
+  border: 1px solid $gainsboro;
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+
