@@ -177,17 +177,17 @@ homepage
 Chi Siamo
 ===================================================================*/
 
-.panel-chi-0 {
-    margin-bottom: 0;
-    padding-top: 0.5rem;
-    padding-bottom: 4rem;
-    background-color: $white;
-    @media #{$small-only} {
-        margin-bottom: 0;
-        padding-top: 0rem;
-        padding-bottom: 3rem;
-    }
-}
+// .panel-chi-0 {
+//     margin-bottom: 0;
+//     padding-top: 0.5rem;
+//     padding-bottom: 4rem;
+//     background-color: $white;
+//     @media #{$small-only} {
+//         margin-bottom: 0;
+//         padding-top: 0rem;
+//         padding-bottom: 3rem;
+//     }
+// }
 .by-line-chi-siamo {
     font-style: italic;
     font-size: 0.8rem;
@@ -197,6 +197,11 @@ Chi Siamo
 }
 .extra-space-recensione {
     margin-top: 2.5rem;
+}
+
+.panel-border {
+    border: 1px solid;
+    border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
 }
 
 /*===================================================================
@@ -514,7 +519,7 @@ footer
   }
 }
 
-.panel-border {
-    border: 1px solid;
-    border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
-}
+
+
+
+
