@@ -514,4 +514,7 @@ footer
   }
 }
 
-
+.panel-border {
+    border: 1px solid;
+    border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
+}

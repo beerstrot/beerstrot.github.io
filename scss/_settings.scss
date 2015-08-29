@@ -990,6 +990,7 @@ $orbit-bullet-nav-color-active: $primary-color;
 
 // We use these to control the background and border styles
 // $panel-bg: scale-color($white, $lightness: -5%);
+$panel-bg: scale-color($white, $lightness: -5%);
 // $panel-border-style: solid;
 $panel-border-style: none;
 // $panel-border-size: 1px;
@@ -997,6 +998,7 @@ $panel-border-size: 0px;
 
 // We use this % to control how much we darken things on hover
 // $panel-function-factor: -11%;
+$panel-function-factor: -11%;
 // $panel-border-color: scale-color($panel-bg, $lightness: $panel-function-factor);
 
 // We use these to set default inner padding and bottom margin
