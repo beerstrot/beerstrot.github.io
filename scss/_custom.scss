@@ -510,12 +510,15 @@ footer
     }
   }
 }
+/*===================================================================
+card - commenti
+===================================================================*/
 
 .card {
   overflow: hidden;
   border: 1px solid $gainsboro;
   .content {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 }
 
