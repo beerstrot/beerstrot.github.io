@@ -211,7 +211,6 @@ menupage text
 #menupage-text {
     /*padding:0 2rem;*/
     h1 {
-        font-size: 1.8rem;
         text-transform: uppercase;
         margin-bottom: 2rem;
         margin-top: 0.5rem;
@@ -220,7 +219,6 @@ menupage text
             margin-top: 1.5rem;
         }
         @media #{$small-only} {
-            font-size: 1.35em;
             margin-bottom: 1.2rem;
             margin-top: 1.5rem;
             text-align: left;
