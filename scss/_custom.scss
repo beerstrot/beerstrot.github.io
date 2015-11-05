@@ -341,13 +341,16 @@ footer header style
 }
 .panel-hr {
     margin-bottom: 0;
+    margin-top: 0;
     padding-top: 0rem;
     padding-bottom: 0rem;
     background-color: $footer-background-color;
-    @media #{$small-only} {
+    hr { 
         margin-bottom: 0;
+        margin-top: 0;
         padding-top: 0rem;
         padding-bottom: 0rem;
+        border-color: $white;
     }
 }
 .navbar-footer-font {
