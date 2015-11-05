@@ -114,20 +114,20 @@ margini per allineare le aside e i button
 homepage
 ===================================================================*/
 
-.panel-home {
-    margin-bottom: 0;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    background-color: $home-header-bg;
-    @media #{$small-only} {
-        margin-bottom: 0;
-        padding-top: 2rem;
-        padding-bottom: 3rem;
-    }
-    h1 {
-        color: white;
-    }   
-}
+// .panel-home {
+//     margin-bottom: 0;
+//     padding-top: 5rem;
+//     padding-bottom: 5rem;
+//     background-color: $home-header-bg;
+//     @media #{$small-only} {
+//         margin-bottom: 0;
+//         padding-top: 2rem;
+//         padding-bottom: 3rem;
+//     }
+//     h1 {
+//         color: white;
+//     }   
+// }
 .panel-home-n {
     margin-bottom: 0;
     padding-top: 3rem;
