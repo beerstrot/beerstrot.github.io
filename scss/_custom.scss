@@ -339,7 +339,17 @@ footer header style
         }
     }
 }
-
+.panel-hr {
+    margin-bottom: 0;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    background-color: $footer-background-color;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+}
 .navbar-footer-font {
     font-size: 0.9375rem;
     line-height: 2.2rem;
