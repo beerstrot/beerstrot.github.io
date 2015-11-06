@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: http://beerstrot.it/contatti/press-kit/*
+Disallow: http://beerstrot.it/contatti/presskit/*
