@@ -109,10 +109,14 @@ margini per allineare le aside e i button
     margin-left:-22px;
 }
 .menu-subheader {
-    margin-top:-0.5rem;
+    margin-top:-0.7rem;
     text-transform: uppercase;
-    font-style: italic;
-    font-size: 1rem;
+    font-size: 1.4rem;
+    @media #{$small-only} {
+        font-size: 1.2rem;
+        margin-top:-0.4rem;
+        line-height: 1rem;
+    }
 }
 
 /*===================================================================
