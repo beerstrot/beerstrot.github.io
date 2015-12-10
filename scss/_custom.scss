@@ -113,9 +113,8 @@ margini per allineare le aside e i button
     text-transform: uppercase;
     font-size: 1.4rem;
     @media #{$small-only} {
-        font-size: 1.2rem;
         margin-top:-0.4rem;
-        line-height: 1rem;
+        line-height: 1.2rem;
     }
 }
 
