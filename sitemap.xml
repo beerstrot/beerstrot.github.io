@@ -14,8 +14,8 @@
         <image:title>Hamburger</image:title>
       </image:image>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/take-away.jpg</image:loc>
-        <image:title>Take Away</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/asporto.jpg</image:loc>
+        <image:title>Asporto</image:title>
       </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/medium/eventi.jpg</image:loc>
@@ -83,7 +83,7 @@
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/take-away/</loc>
+    <loc>http://www.beerstrot.it/asporto/</loc>
     <lastmod>2015-12-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -396,8 +396,8 @@
         <image:title>Menù Brunch</image:title>
       </image:image>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/take-away.jpg</image:loc>
-        <image:title>Menù Take Away</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/asporto.jpg</image:loc>
+        <image:title>Menù Asporto</image:title>
       </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/medium/viaggio-a-san-francisco-usa.jpg</image:loc>
@@ -449,7 +449,7 @@
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/blog/2015/10/22/take-away.html</loc>
+    <loc>http://www.beerstrot.it/blog/2015/10/22/asporto.html</loc>
     <lastmod>2015-12-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -458,8 +458,8 @@
         <image:title>Ca' Vecchia Beerstrot</image:title>
       </image:image>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/take-away.jpg</image:loc>
-        <image:title>Menù Take Away</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/large/asporto.jpg</image:loc>
+        <image:title>Menù Asporto</image:title>
       </image:image>
   </url>
   <url>
