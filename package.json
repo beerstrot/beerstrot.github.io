@@ -14,6 +14,8 @@
     "grunt-contrib-cssmin": "~0.12.2",
     "grunt-svg-sprite": "~0.3.2",
     "grunt-grunticon": "~2.1.6",
-    "grunt-sitemap": "~1.2.1"
+    "grunt-sitemap": "~1.2.1",
+    "grunt-browser-sync": "~2.2.0",
+    "slick-carousel": "~1.5.9"
   }
 }
