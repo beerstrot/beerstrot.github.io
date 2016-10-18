@@ -448,6 +448,16 @@ blog style
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+.paragraph-divider {
+    border-bottom: 1px dotted $gainsboro;
+    margin-bottom: 1rem;
+    padding-top:1rem;
+}
+.title-divider {
+    border-bottom: 2px dotted $navbar-color;
+    margin-bottom: 1rem;
+    padding-top:1rem;
+}
 .image-hero {
     margin: 0 0 2rem;
 }
