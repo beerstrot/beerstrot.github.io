@@ -296,7 +296,18 @@ menupage text
         margin-bottom: 0;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        }
+    }
+}
+.panel-promotion {
+    margin-bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+    background-color: $alert-color;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
 }
 
 /*===================================================================
