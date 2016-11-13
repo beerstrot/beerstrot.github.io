@@ -162,6 +162,17 @@ homepage
 .text-highlight {
     background-color: rgba($black, 0.25);
 }
+.panel-asporto{
+    margin-bottom: 0;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background-color: $white;
+    @media #{$small-only} {
+        margin-bottom: 0;
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
+}
 .homepage-hero {
     background: url('http://www.beerstrot.it/asset/img/large/background-home.jpg') no-repeat center center;
     background-size: cover;
