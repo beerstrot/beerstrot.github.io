@@ -165,12 +165,12 @@ homepage
 .panel-asporto{
     margin-bottom: 0;
     padding-top: 3rem;
-    padding-bottom: 0rem;
+    padding-bottom: 1rem;
     background-color: $white;
     @media #{$small-only} {
         margin-bottom: 0;
         padding-top: 2rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1rem;
     }
 }
 .homepage-hero {
