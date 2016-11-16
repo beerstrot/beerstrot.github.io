@@ -2,20 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>http://www.beerstrot.it/</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/hamburger.jpg</image:loc>
-        <image:title>Hamburger</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/asporto.jpg</image:loc>
-        <image:title>Asporto</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/menu.jpg</image:loc>
+        <image:title>Hamburger Doppio</image:title>
       </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/medium/eventi.jpg</image:loc>
@@ -25,24 +17,18 @@
         <image:loc>http://www.beerstrot.it/asset/img/medium/social.jpg</image:loc>
         <image:title>Scopri il Lato Social</image:title>
       </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/quattro-birre-artigianali-americane.jpg</image:loc>
-        <image:title>Birre in Love</image:title>
-      </image:image>
+  </url>
+  <url>
+    <loc>http://www.beerstrot.it/video/</loc>
+    <lastmod>2016-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/cena-san-martino-2016-th.jpg</image:loc>
-        <image:title>Cena di San Martino Alberi e Foglie</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/thumbs/flora-e-fauna-concerto-live-th.jpg</image:loc>
         <image:title>Flora e Fauna in Concerto</image:title>
@@ -81,24 +67,10 @@
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/video/</loc>
-    <lastmod>2016-11-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>http://www.beerstrot.it/eventi/san-silvestro.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/san-silvestro.jpg</image:loc>
         <image:title>Cena di San Silvestro</image:title>
@@ -106,13 +78,9 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/pasqua.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/pasqua.jpg</image:loc>
         <image:title>Pranzo di Pasqua e Pasquetta</image:title>
@@ -120,87 +88,59 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/instagramer.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/instagramer.jpg</image:loc>
         <image:title>Incontro Instagramer Italia</image:title>
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/eventi/festa-estate-concerto-live.html</loc>
-    <lastmod>2016-11-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/festa-estate-concerto-live.jpg</image:loc>
-        <image:title>Flora e Fauna in Concerto</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>http://www.beerstrot.it/eventi/beerfest.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/beerfest.jpg</image:loc>
         <image:title>Festa della Birra</image:title>
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/contatti/team/andrea-tagliazucchi.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <loc>http://www.beerstrot.it/eventi/festa-estate-concerto-live.html</loc>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/andrea-tagliazucchi-background.jpg</image:loc>
-        <image:title>Andrea Tagliazucchi</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/andrea-tagliazucchi-th.jpg</image:loc>
-        <image:title>Andrea Tagliazucchi</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/large/festa-estate-concerto-live.jpg</image:loc>
+        <image:title>Flora e Fauna in Concerto</image:title>
       </image:image>
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/apertura.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/apertura.jpg</image:loc>
         <image:title>Apertura Ca' Vecchia Beerstrot</image:title>
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/eventi/san-martino.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <loc>http://www.beerstrot.it/contatti/team/andrea-tagliazucchi.html</loc>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/large/andrea-tagliazucchi-background.jpg</image:loc>
+        <image:title>Andrea Tagliazucchi</image:title>
       </image:image>
+  </url>
+  <url>
+    <loc>http://www.beerstrot.it/eventi/san-martino.html</loc>
+    <lastmod>2016-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/san-martino.jpg</image:loc>
         <image:title>Cena di San Martino Alberi e Foglie</image:title>
@@ -208,84 +148,22 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/halloween.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/halloween.jpg</image:loc>
         <image:title>Festa di Halloween</image:title>
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/blog/</loc>
-    <lastmod>2016-11-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/cena-san-martino-2016-th.jpg</image:loc>
-        <image:title>Cena di San Martino Alberi e Foglie</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/progetto-interior-ca-vecchia.jpg</image:loc>
-        <image:title>Progetto Interior Design</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/brunch.jpg</image:loc>
-        <image:title>Menù Brunch</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/asporto.jpg</image:loc>
-        <image:title>Menù Asporto</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/viaggio-a-san-francisco-usa.jpg</image:loc>
-        <image:title>San Francisco Bay Bridge</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/quattro-birre-artigianali-americane.jpg</image:loc>
-        <image:title>Quattro Birre Artigianali Americane</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/birreria-panorama.jpg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot Panorama</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/medium/birre-in-love.jpg</image:loc>
-        <image:title>birre stupende</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>http://www.beerstrot.it/contatti/</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/medium/mappa.jpg</image:loc>
         <image:title>Mappa</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/giulia-mazza-th.jpg</image:loc>
-        <image:title>Giulia Mazza</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/andrea-tagliazucchi-th.jpg</image:loc>
-        <image:title>Andrea Tagliazucchi</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/giovanni-attilio-th.jpg</image:loc>
-        <image:title>Giovanni Attilio</image:title>
       </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/thumbs/insegna-beerstrot-con-cielo-th.jpg</image:loc>
@@ -396,10 +274,6 @@
         <image:title></image:title>
       </image:image>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/quattro-birre-artigianali-americane.jpg</image:loc>
-        <image:title></image:title>
-      </image:image>
-      <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/tavoli.jpg</image:loc>
         <image:title></image:title>
       </image:image>
@@ -433,60 +307,56 @@
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/blog/2015/05/05/birre-artigianali-nuovi-arrivi.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <loc>http://www.beerstrot.it/blog/</loc>
+    <lastmod>2016-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+      <image:image>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/progetto-interior-ca-vecchia.jpg</image:loc>
+        <image:title>Progetto Interior Design</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/brunch.jpg</image:loc>
+        <image:title>Menù Brunch</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/viaggio-a-san-francisco-usa.jpg</image:loc>
+        <image:title>San Francisco Bay Bridge</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/birreria-panorama.jpg</image:loc>
+        <image:title>Ca' Vecchia Beerstrot Panorama</image:title>
+      </image:image>
+      <image:image>
+        <image:loc>http://www.beerstrot.it/asset/img/medium/birre-in-love.jpg</image:loc>
+        <image:title>birre stupende</image:title>
+      </image:image>
+  </url>
+  <url>
+    <loc>http://www.beerstrot.it/contatti/team/giovanni-attilio.html</loc>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/quattro-birre-artigianali-americane.jpg</image:loc>
-        <image:title>Quattro Birre Artigianali Americane</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/large/lamb.jpg</image:loc>
+        <image:title>birre stupende</image:title>
       </image:image>
   </url>
   <url>
     <loc>http://www.beerstrot.it/blog/2015/04/26/ora-del-gusto.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/birreria-panorama.jpg</image:loc>
         <image:title>Ca' Vecchia Beerstrot Panorama</image:title>
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/contatti/team/giovanni-attilio.html</loc>
-    <lastmod>2016-11-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/lamb.jpg</image:loc>
-        <image:title>birre stupende</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/giovanni-attilio-th.jpg</image:loc>
-        <image:title>Giovanni Attilio</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>http://www.beerstrot.it/blog/2015/05/26/viaggio-a-san-francisco-usa.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/viaggio-a-san-francisco-usa.jpg</image:loc>
         <image:title>San Francisco Bay Bridge</image:title>
@@ -494,41 +364,19 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/blog/2015/11/04/brunch.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/brunch.jpg</image:loc>
         <image:title>Menù Brunch</image:title>
       </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/blog/2015/10/22/asporto.html</loc>
-    <lastmod>2016-11-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/large/asporto.jpg</image:loc>
-        <image:title>Menù Asporto</image:title>
-      </image:image>
-  </url>
-  <url>
     <loc>http://www.beerstrot.it/blog/2015/01/29/dalla-america-alle-marche.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/birre-in-love.jpg</image:loc>
         <image:title>birre stupende</image:title>
@@ -536,13 +384,9 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/blog/2016/10/17/progetto-interior-ca-vecchia.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/progetto-interior-ca-vecchia.jpg</image:loc>
         <image:title>Progetto Interior Design</image:title>
@@ -558,23 +402,19 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/menu/</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/large/menu.jpg</image:loc>
+        <image:title>Ca' Vecchia Beerstrot Hamburger doppio</image:title>
       </image:image>
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/flora-e-fauna-concerto-live.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/flora-e-fauna-concerto-live.jpg</image:loc>
         <image:title>Flora e Fauna in Concerto</image:title>
@@ -582,54 +422,50 @@
   </url>
   <url>
     <loc>http://www.beerstrot.it/social/</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
   </url>
   <url>
-    <loc>http://www.beerstrot.it/asporto/</loc>
-    <lastmod>2016-11-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-  </url>
-  <url>
-    <loc>http://www.beerstrot.it/contatti/team/giulia-mazza.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <loc>http://www.beerstrot.it/blog/2016/11/16/asporto.html</loc>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
+        <image:loc>http://www.beerstrot.it/asset/img/large/asporto.jpg</image:loc>
+        <image:title>Asporto immagine con numero telefono</image:title>
       </image:image>
+  </url>
+  <url>
+    <loc>http://www.beerstrot.it/blog/2015/05/05/birre-artigianali-nuovi-arrivi.html</loc>
+    <lastmod>2016-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://www.beerstrot.it/asporto/</loc>
+    <lastmod>2016-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>http://www.beerstrot.it/contatti/team/giulia-mazza.html</loc>
+    <lastmod>2016-11-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
       <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/giulia-mazza-background.jpg</image:loc>
         <image:title>Sfondo</image:title>
       </image:image>
-      <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/thumbs/giulia-mazza-th.jpg</image:loc>
-        <image:title>Giulia Maza</image:title>
-      </image:image>
   </url>
   <url>
     <loc>http://www.beerstrot.it/eventi/cena-san-martino.html</loc>
-    <lastmod>2016-11-10</lastmod>
+    <lastmod>2016-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
       <image:image>
-        <image:loc>http://www.beerstrot.it/asset/img/svgs/logo.svg</image:loc>
-        <image:title>Ca' Vecchia Beerstrot</image:title>
-      </image:image>
-      <image:image>
         <image:loc>http://www.beerstrot.it/asset/img/large/cena-san-martino-2016.jpg</image:loc>
-        <image:title>Cena di San Martino Alberi e Foglie</image:title>
+        <image:title>Cena di San Martino Hamburger con Funghi</image:title>
       </image:image>
   </url>
 </urlset>
