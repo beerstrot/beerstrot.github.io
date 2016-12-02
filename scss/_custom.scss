@@ -700,7 +700,7 @@ calendario - commenti
 }
 
 #calendar .event-desc :hover {
-    background: #d3d3d3;
+    background: scale-color(#d3d3d3, $lightness: -14%);
 }
 
 #calendar .event-desc {
