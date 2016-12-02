@@ -715,7 +715,7 @@ calendario - commenti
    ============================*/
 
 
-@media(max-width: 768px) {
+@media #{$small-only} {
 
     #calendar .weekdays, #calendar .other-month {
         display: none;
@@ -732,5 +732,20 @@ calendario - commenti
     #calendar .date {
         float: none;
     }
+    #calendar .event {
+    clear: both;
+    display: block;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    line-height: 1,6rem;
+    background: #e4f2f2;
+    border: none;
+    color: #009aaf;
+    text-decoration: none;
 }
+}
+
 
