@@ -723,7 +723,7 @@ calendario - commenti
     text-decoration: none;  
 }
 
-#calendar .event-close .event-desc {
+#calendar .event-close>.event-desc {
     color: $white;
     margin: 3px 0 7px 0;
     text-decoration: none;  
