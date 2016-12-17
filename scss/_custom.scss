@@ -765,6 +765,16 @@ calendario - commenti
     color: #009aaf;
     text-decoration: none;
 }
+    #calendar .event-close {
+        clear: both;
+        display: block;
+        font-size: 0.8rem;
+        border-radius: 4px;
+        padding: 5px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+        line-height: 1,6rem;
+    }
 }
 
 
