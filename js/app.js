@@ -96,18 +96,17 @@ function onLoad() {
 
         switch (getMobileOperatingSystem()) {
             case 'Android':
-                urlLink2 = "instagram://user?username=beerstrot";
-                urlLink1 = "fb://page/?id=397632563730269";
+                urlLink1 = "https://www.facebook.com/cavecchiabeerstrot";
+                urlLink2 = "https://www.instagram.com/beerstrot";
                 break;
             case 'iOS':
-                urlLink2 = "instagram://user?username=beerstrot";
                 urlLink1 = "fb://page/?id=397632563730269";
+                urlLink2 = "https://www.instagram.com/beerstrot";
                 break;
             default:
                 break;
         }
     document.getElementById('yourLink1').setAttribute('href', urlLink1);
     document.getElementById('yourLink2').setAttribute('href', urlLink2);
-    document.getElementById('yourLink3').setAttribute('href', urlLink3);
 }
 window.onload = onLoad;
