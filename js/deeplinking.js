@@ -24,12 +24,12 @@ function onLoad() {
 
         switch (getMobileOperatingSystem()) {
             case 'Android':
-                urlLink2 = "instagram://user?username=beerstrot";
                 urlLink1 = "fb://page/1073741829";
+                urlLink2 = "instagram://user?username=beerstrot";
                 break;
             case 'iOS':
-                urlLink2 = "instagram://user?username=beerstrot";
                 urlLink1 = "fb://page/1073741829";
+                urlLink2 = "instagram://user?username=beerstrot";
                 break;
             default:
                 break;
