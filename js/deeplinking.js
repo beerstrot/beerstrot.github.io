@@ -19,23 +19,23 @@ function getMobileOperatingSystem() {
 }
 
 function onLoad() {
-    var urlLink1 = "https://www.facebook.com/cavecchiabeerstrot";
+        var urlLink1 = "https://www.facebook.com/cavecchiabeerstrot";
         var urlLink2 = "https://www.instagram.com/beerstrot";
 
         switch (getMobileOperatingSystem()) {
             case 'Android':
-                urlLink1 = "fb://page/1073741829";
+                urlLink1 = "fb://page/?id=397632563730269";
                 urlLink2 = "instagram://user?username=beerstrot";
                 break;
             case 'iOS':
-                urlLink1 = "fb://page/1073741829";
+                urlLink1 = "fb://page/?id=397632563730269";
                 urlLink2 = "instagram://user?username=beerstrot";
+
                 break;
             default:
                 break;
-    }
+        }
     document.getElementById('yourLink1').setAttribute('href', urlLink1);
     document.getElementById('yourLink2').setAttribute('href', urlLink2);
-    document.getElementById('yourLink3').setAttribute('href', urlLink3);
 }
 window.onload = onLoad;
