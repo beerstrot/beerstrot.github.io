@@ -26,12 +26,12 @@ function onLoad() {
         case 'Android':
             urlLink1 = "instagram://user?username=beerstrot";
             urlLink2 = "twitter://user?username=beerstrot";
-            urlLink3 = "fb://www.facebook.com/cavecchiabeerstrot";
+            urlLink3 = "fb://profile/cavecchiabeerstrot";
             break;
         case 'iOS':
             urlLink1 = "instagram://user?username=beerstrot";
             urlLink2 = "twitter://user?username=beerstrot";
-            urlLink3 = "fb://www.facebook.com/cavecchiabeerstrot";
+            urlLink3 = "fb://profile/cavecchiabeerstrot";
             break;
         default:
             break;
