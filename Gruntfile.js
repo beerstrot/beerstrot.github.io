@@ -133,5 +133,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-browser-sync');
 
     grunt.registerTask('build', ['sass']);
-    grunt.registerTask('default', ['build', 'watch', 'concat', 'browserSync', 'uglify', 'uncss', 'grunticon:myIcons', 'sitemap']);
+    grunt.registerTask('default', ['build', 'watch', 'imagemin', 'concat', 'browserSync', 'uglify', 'uncss', 'grunticon:myIcons', 'sitemap']);
 }
