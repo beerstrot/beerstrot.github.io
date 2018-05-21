@@ -99,7 +99,7 @@ margini per allineare le aside e i button
 .extra-space-from-tabs {
     margin-top: 0.8rem;
     @media #{$small-only} {
-        margin-top: 0.6rem; 
+        margin-top: 0.6rem;
     }
 }
 .no-margin-list-bullet {
@@ -135,7 +135,7 @@ homepage
 //     }
 //     h1 {
 //         color: white;
-//     }   
+//     }
 // }
 .panel-home-n {
     margin-bottom: 0;
@@ -174,7 +174,7 @@ homepage
     }
 }
 .homepage-hero {
-    background: url('http://www.beerstrot.it/asset/img/large/background-home.gif') center center;
+    background: url('http://www.beerstrot.it/asset/img/large/background-home.jpg') center center;
     background-size: cover;
     height: 90%;
     overflow: hidden;
@@ -344,21 +344,21 @@ menupage text
 team detail page
 ===================================================================*/
 
-#image-background-team { 
+#image-background-team {
     position: relative;
     margin-bottom: 2rem;
     width: 100%; /* for IE 6 */
     @media #{$small-only} {
         margin-bottom: 1.5rem;
     }
-    .user-image { 
+    .user-image {
         border: 10px solid white;
-        position: absolute; 
-        width: 20%; 
+        position: absolute;
+        width: 20%;
         top: 70%;
         left: 0%;
         @media #{$small-only} {
-            width: 30%; 
+            width: 30%;
             top: 65%;
         }
     }
@@ -396,7 +396,7 @@ footer header style
     padding-top: 0rem;
     padding-bottom: 0rem;
     background-color: $footer-background-color;
-    hr { 
+    hr {
         margin-bottom: 0;
         margin-top: 0;
         padding-top: 0rem;
@@ -450,11 +450,11 @@ ul .icon-font-style {
 }
 
 .fi-social:hover {
-  fill: scale-color($primary-color, $lightness: -14%); 
+  fill: scale-color($primary-color, $lightness: -14%);
 }
 
 .fi-social:visited {
-  fill: $primary-color; 
+  fill: $primary-color;
 }
 
 .fi-telephone {
@@ -627,7 +627,7 @@ calendario - commenti
 ===================================================================*/
 
 #calendar {
-    width: 100%;    
+    width: 100%;
 }
 
 #calendar a {
@@ -720,13 +720,13 @@ calendario - commenti
 #calendar .event-desc {
     color: #666;
     margin: 3px 0 7px 0;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 #calendar .event-close>.event-desc {
     color: $white;
     margin: 3px 0 7px 0;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
 /* ============================
