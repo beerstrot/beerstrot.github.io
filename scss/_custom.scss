@@ -178,6 +178,10 @@ homepage
     background-size: cover;
     height: 90%;
     overflow: hidden;
+    @media #{$small-only} {
+            height: 70%;
+        }
+
     h1 {
         font-size: 4rem;
         color: white;
@@ -189,7 +193,6 @@ homepage
             font-size: 2rem;
             line-height: 3rem;
             margin-top: 2rem;
-            height: 70%;
         }
     }
 }
