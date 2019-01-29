@@ -176,7 +176,7 @@ homepage
 .homepage-hero {
     background: url('http://www.beerstrot.it/asset/img/large/background-home.gif') center center;
     background-size: cover;
-    height: 100%;
+    height: 90%;
     overflow: hidden;
     @media #{$small-only} {
             height: 60%;
@@ -194,12 +194,17 @@ homepage
             line-height: 3rem;
             margin-top: 2rem;
         }
+        @media #{$medium-only} {
+            font-size: 2rem;
+            line-height: 3rem;
+            margin-top: 2rem;
+        }
     }
 }
 .asporto-hero {
     background: url('http://www.beerstrot.it/asset/img/large/asporto-background.jpg') no-repeat center center;
     background-size: cover;
-    height: 100%;
+    height: 90%;
     overflow: hidden;
     h1 {
         font-size: 4rem;
@@ -209,6 +214,11 @@ homepage
         text-align: center;
         margin-top: 4rem;
         @media #{$small-only} {
+            font-size: 2rem;
+            line-height: 3rem;
+            margin-top: 2rem;
+        }
+        @media #{$medium-only} {
             font-size: 2rem;
             line-height: 3rem;
             margin-top: 2rem;
