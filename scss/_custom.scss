@@ -201,9 +201,6 @@ homepage
     background-size: cover;
     height: 90%;
     overflow: hidden;
-    @media #{$small-only} {
-            height: 60%;
-        }
     h1 {
         font-size: 4rem;
         color: white;
