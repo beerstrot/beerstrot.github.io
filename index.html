@@ -45,6 +45,32 @@
 <!-- End Facebook Pixel Code -->
 </head>
 <body>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      xfbml            : true,
+	      version          : 'v3.2'
+	    });
+	  };
+
+	  (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = 'https://connect.facebook.net/it_IT/sdk/xfbml.customerchat.js';
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- Your customer chat code -->
+	<div class="fb-customerchat"
+	  attribution=setup_tool
+	  page_id="397632563730269"
+	  logged_in_greeting="Ciao"
+	  logged_out_greeting="Ciao">
+	</div>
 <!-- navbar con hamburger -->
 	<nav class="top-bar" data-topbar role="navigation">
 		<ul class="title-area" itemscope itemtype="http://schema.org/Restaurant">
@@ -109,7 +135,7 @@
 			<div class="medium-12 large-12 columns">
 				<span class="hide-for-small"><a role="button" href="tel:+390718853384" class="button left"><i class="fa fa-phone"></i> 071 8853384</a></span>
 				<span class="show-for-small"><a role="button" href="tel:+390718853384" class="button small left extra-space-from-tabs"><i class="fa fa-phone"></i> Chiama</a></span>
-				<span class="show-for-small"><a role="button" href="https://wa.me/390718853384" class="button small right extra-space-from-tabs"><i class="fa fa-whatsapp"></i> Whatsapp</a></span>
+				<span class="show-for-small"><a role="button" href="m.me/cavecchiabeerstrot" class="button small right extra-space-from-tabs"><i class="fab fa-facebook-messenger"></i> Ordina Online</a></span>
 			</div>
 		</div>
 	</div>
