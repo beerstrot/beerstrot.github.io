@@ -398,7 +398,7 @@ footer header style
 }
 .panel-footer {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     background-color: $footer-background-color;
     p {
         font-size: 1rem;
@@ -408,7 +408,7 @@ footer header style
         @media #{$small-only} {
         margin-bottom: 0;
         padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 1rem;
     }
     }
 }
