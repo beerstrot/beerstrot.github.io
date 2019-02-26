@@ -173,14 +173,41 @@ homepage
         padding-bottom: 0rem;
     }
 }
-
 .homepage-hero {
-        background: url('http://www.beerstrot.it/asset/img/large/background-home.gif') center center;
-        background-size: cover;
-        height: 90%;
-        overflow: hidden;
+    background: url('http://www.beerstrot.it/asset/img/large/background-home.gif') center center;
+    background-size: cover;
+    height: 90%;
+    overflow: hidden;
+    @media #{$small-only} {
+            height: 60%;
+        }
+
+    h1 {
+        font-size: 4rem;
+        color: white;
+        font-weight: 500;
+        line-height: 4.8rem;
+        text-align: center;
+        margin-top: 4rem;
         @media #{$small-only} {
-                height: 60%;
+            font-size: 2rem;
+            line-height: 3rem;
+            margin-top: 2rem;
+        }
+        @media #{$medium-only} {
+            font-size: 2rem;
+            line-height: 3rem;
+            margin-top: 2rem;
+        }
+    }
+}
+.asporto-hero {
+    background: url('http://www.beerstrot.it/asset/img/large/asporto-background.jpg') no-repeat center center;
+    background-size: cover;
+    height: 90%;
+    overflow: hidden;
+    @media #{$small-only} {
+            height: 60%;
         }
     h1 {
         font-size: 4rem;
@@ -194,85 +221,13 @@ homepage
             line-height: 3rem;
             margin-top: 2rem;
         }
-    }
-}
-    .asporto-hero {
-        background: url('http://www.beerstrot.it/asset/img/large/asporto-background.jpg') no-repeat center center;
-        background-size: cover;
-        height: 90%;
-        overflow: hidden;
-        h1 {
-            font-size: 4rem;
-        color: white;
-        font-weight: 500;
-        line-height: 4.8rem;
-        text-align: center;
-        margin-top: 4rem;
-        @media #{$small-only} {
+        @media #{$medium-only} {
             font-size: 2rem;
             line-height: 3rem;
             margin-top: 2rem;
         }
     }
 }
-
-
-
-
-// .homepage-hero {
-//     background: url('http://www.beerstrot.it/asset/img/large/background-home.gif') center center;
-//     background-size: cover;
-//     height: 85%;
-//     overflow: hidden;
-//     @media #{$small-only} {
-//             height: 60%;
-//         }
-//     h1 {
-//         font-size: 4rem;
-//         color: white;
-//         font-weight: 500;
-//         line-height: 4.8rem;
-//         text-align: center;
-//         margin-top: 4rem;
-//         @media #{$small-only} {
-//             font-size: 2rem;
-//             line-height: 3rem;
-//             margin-top: 2rem;
-//         }
-//         @media #{$medium-only} {
-//             font-size: 2rem;
-//             line-height: 3rem;
-//             margin-top: 2rem;
-//         }
-//     }
-// }
-// .asporto-hero {
-//     background: url('http://www.beerstrot.it/asset/img/large/asporto-background.jpg') no-repeat center center;
-//     background-size: cover;
-//     height: 85%;
-//     overflow: hidden;
-//     @media #{$small-only} {
-//             height: 60%;
-//         }
-//     h1 {
-//         font-size: 4rem;
-//         color: white;
-//         font-weight: 500;
-//         line-height: 4.8rem;
-//         text-align: center;
-//         margin-top: 4rem;
-//         @media #{$small-only} {
-//             font-size: 2rem;
-//             line-height: 3rem;
-//             margin-top: 2rem;
-//         }
-//         @media #{$medium-only} {
-//             font-size: 2rem;
-//             line-height: 3rem;
-//             margin-top: 2rem;
-//         }
-//     }
-// }
 
 /*===================================================================
 Chi Siamo
