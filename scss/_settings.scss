@@ -1425,10 +1425,10 @@ $topbar-bg-color: $white;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
-$topbar-height: rem-calc(80);
+$topbar-height: rem-calc(60);
 
 // $topbar-margin-bottom: 0;
-$topbar-margin-bottom: 0.5rem;
+$topbar-margin-bottom: 1.5rem;
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: $font-weight-normal;
@@ -1500,6 +1500,7 @@ $topbar-menu-icon-color-toggled: scale-color($navbar-color, $lightness: 30%);
 // $topbar-transition-speed: 300ms;
 // Using rem-calc for the below breakpoint causes issues with top bar
 // $topbar-breakpoint: #{lower-bound($medium-range)}; // Change to 9999px for always mobile layout
+$topbar-breakpoint: #{lower-bound(813px)};
 // $topbar-media-query: $medium-up;
 
 // Divider Styles
