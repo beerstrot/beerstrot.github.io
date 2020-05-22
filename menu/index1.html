@@ -22,261 +22,252 @@
     <meta property="og:image:url" content="https://www.beerstrot.it/asset/img/large/menu.jpg"/>
     <link rel="icon" href="https://www.beerstrot.it/asset/img/thumbs/favicon.png">
     <link rel="canonical" href="https://www.beerstrot.it/menu/"/>
-    <link rel="stylesheet" href="https://www.beerstrot.it/css/app.css"/>
+    <link rel="stylesheet" href="/css/app.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
     <link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-        document,'script','//connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '770709373057085');
-        fbq('track', "PageView");
-        fbq('track', 'ViewContent');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=770709373057085&ev=PageView&noscript=1"/>
-    </noscript>
 <!-- End Facebook Pixel Code -->
 </head>
 <body>
 <!-- navbar con hamburger -->
+   <!--  <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area" itemscope itemtype="http://schema.org/Restaurant">
+            <li class="name">
+                 <h1><a href="https://www.beerstrot.it"><img class="img-logo" src="https://www.beerstrot.it/asset/img/svgs/logo.svg" alt="Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></h1>
+            </li>
+        </ul>
+    </nav> -->
 <!-- fine navbar con hamburger -->
+    <div class="row">
+        <div class="medium-12 large-12 columns">
+            <h1>Menù <small>(Coperto 1,5)</small></h1>
+            <hr>
+        </div>
+    </div>
 <!-- inizio tabbar switch-->
     <div class="row">
         <div class="medium-12 large-12 small-12 columns extra-space-hero">
-            <ul class="tabs" data-tab data-options="deep_linking:true; scroll_to_content:false" role="tablist">
+            <ul class="tabs" data-tab data-options="deep_linking:true; scroll_to_content:true" role="tablist">
                 <li class="tab-title active" role="presentational">
-                    <a href="#cena" role="tab" tabindex="0" aria-selected="true" controls="cibo">Cibo</a>
-                </li>
-                <li class="tab-title active" role="presentational">
-                    <a href="#cena" role="tab" tabindex="1" aria-selected="true" controls="bevande">Bevande</a>
+                    <a href="#cena" role="tab" tabindex="0" aria-selected="true" controls="cena">Cibo</a>
                 </li>
                 <li class="tab-title" role="presentational">
-                    <a href="#birra" role="tab" tabindex="2" aria-selected="false" controls="birra">Birre</a>
+                    <a href="#birra" role="tab" tabindex="1" aria-selected="false" controls="birra">Birre</a>
                 </li>
                 <li class="tab-title" role="presentational">
-                    <a href="#vino" role="tab" tabindex="3" aria-selected="false" controls="vini">Vini</a>
+                    <a href="#vino" role="tab" tabindex="2" aria-selected="false" controls="vino">Vini</a>
+                </li>
                 </li>
                 <li class="tab-title" role="presentational">
-                    <a href="#vino" role="tab" tabindex="4" aria-selected="false" controls="liquori">Liquori</a>
+                    <a href="#bevanda" role="tab" tabindex="2" aria-selected="false" controls="bevanda">Bevande</a>
+                </li>
+                <li class="tab-title" role="presentational">
+                    <a href="#liquore" role="tab" tabindex="2" aria-selected="false" controls="liquore">Liquori</a>
                 </li>
             </ul>
         </div>
     </div>
 <!-- fine tabbar switch-->
-
-
-
-
-
 <!-- tab inizio -->
     <div class="tabs-content" id="menupage-text">
 <!-- cena -->
         <section class="content active" role="tabpanel" aria-hidden="false" id="cena">
             <div class="row">
                 <div class="large-12 medium-12 small-12 columns">
-                    <ul class="accordion" data-accordion>
-                        <li class="accordion-navigation">
-                            <a href="#panel1a">PER STUZZICARE</a>
-                            <div id="panel1a" class="content active">
-                                <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                    <li>
-                                        <h3>Tris di Mini Pulled Pork &emsp; 6,5</h3>
-                                        <p>Hamburger mignon di maiale sfilacciato in tre salse: piccante, senape, bbq</p>
-                                    </li>
-                                    <li>
-                                        <h3>Bocconcini di Pollo &emsp; 5,5</h3>
-                                        <p>Serviti con salsa piccante</p>
-                                    </li>
-                                    <li>
-                                        <h3>Peperoncini Piccanti &emsp; 5</h3>
-                                        <p>Peperoncini ripieni di robiola avvolti nella pancetta</p>
-                                    </li>
-                                    <li>
-                                        <h3>Olive all'Ascolana &emsp; 5</h3>
-                                        <p>Il più tipico street food marchigiano</p>
-                                    </li>
-                                    <li>
-                                        <h3>Mozzarelle Fritte &emsp; 5,5</h3>
-                                        <p>Servite con salsa aioli fatta in casa</p>
-                                    </li>
-                                    <li>
-                                        <h3>Cipolle Rosse &emsp; 4,5</h3>
-                                        <p>Cipolla rossa in tempura</p>
-                                    </li>
-                                    <li>
-                                        <h3>Frittelline di Fagioli e Porri &emsp; 5</h3>
-                                        <p>Servite con salsa alla senape fatta in casa</p>
-                                    </li>
-                                    <li>
-                                        <h3>Patate Fritte &emsp; 4</h3>
-                                        <p>Patate fritte con buccia</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#panel2a" class="subheader">PER I PIU' PICCOLI</a>
-                            <div id="panel2a" class="content">
-                              <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                    <li>
-                                        <h3>Mini Burger e Patatine &emsp; 6,5</h3>
-                                        <p>Manzo (100 grammi), cheddar, servito con patate fritte</p>
-                                    </li>
-                                    <li>
-                                        <h3>Bocconcini e Patatine &emsp; 6,5</h3>
-                                        <p>Bocconcini di pollo fatti in casa, serviti con patate fritte</p>
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="#panel3a" class="subheader">HAMBURGER CLASSICI (180 grammi)<br><small>Burger di nostra produzione: contengono solo carne di vacca marchigiana di prima scelta e l'arte della perfetta macinatura. Serviti con patate fritte e a cottura media</small></a>
-                                <div id="panel3a" class="content">
-                                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                        <li>
-                                            <h3>Beerstrot &emsp; 10,9 / doppio 14,9</h3>
-                                            <p>Manzo, cheddar, bacon croccante, cipolla caramellata, insalata, pomodorini confit</p>
-                                        </li>
-                                        <li>
-                                            <h3>New York &emsp; 8,9 / doppio 14,9</h3>
-                                            <p>Manzo, cheddar, cipolla caramellata, insalata</p>
-                                        </li>
-                                        <li>
-                                            <h3>Diablo &emsp; 10,5 / doppio 14,9</h3>
-                                            <p>Manzo, cheddar, bacon croccante, rucola, salsa piccante</p>
-                                        </li>
-                                        <li>
-                                            <h3>Pollo &emsp; 8,9 / doppio 14,9</h3>
-                                            <p>Pollo, fontina, cipolla caramellata, rucola, salsa allo yogurt</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            <a href="#panel4a" class="subheader">HAMBURGER STAGIONALI (180 grammi)<br><small>Burger di nostra produzione: contengono solo carne di vacca marchigiana di prima scelta e l'arte della perfetta macinatura. Serviti con patate fritte e a cottura media</small></a>
-                                <div id="panel4a" class="content">
-                                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                        <li>
-                                            <h3>Pulled Pork &emsp; 10,5</h3>
-                                            <p>Maiale sfilacciato, coleslow, cetriolini, insalata riccia, salsa piccante</p>
-                                        </li>
-                                        <li>
-                                            <h3>Inverno &emsp; 10,5 / doppio 14,9</h3>
-                                            <p>Manzo, pecorino, bacon croccante, erbe di campo strascinate</p>
-                                        </li>
-                                        <li>
-                                            <h3>Carbonara &emsp; 10,9 / doppio 14,9</h3>
-                                            <p>Manzo, guanciale, crema di uovo, pecorino romano e pepe</p>
-                                        </li>
-                                        <li>
-                                            <h3>Deciso &emsp; 10,5 / doppio 14,9</h3>
-                                            <p>Manzo, gorgonzola, guanciale croccante, pomodorini confit</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            <a href="#panel4a" class="subheader">HAMBURGER VEGETARIANI</a>
-                                <div id="panel4a" class="content">
-                                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                        <li>
-                                            <h3>Vegetariano Fagioli &emsp; 8,9</h3>
-                                            <p>Hamburger di borlotti, julienne di cipolla fritta, crema di cicoria</p>
-                                        </li>
-                                        <li>
-                                            <h3>Vegetariano Quinoa &emsp; 8,9</h3>
-                                            <p>Hamburger di quinoa e bulgur, rucola, cipolla caramellata; composta di rape rosse, senape e miele</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            <a href="#panel5a" class="subheader">CARNI</a>
-                                <div id="panel5a" class="content">
-                                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                        <li>
-                                                    <h3>Costine &emsp; 13,9</h3>
-                                                    <p>Baby ribs di suino allevato allo stato brado in salsa bbq. Servite con patate fritte</p>
-                                                </li>
-                                                <li>
-                                                    <h3>Tagliata di Picanha &emsp; 19</h3>
-                                                    <p>350 grammi di picanha di manzo. Servita su letto di rucola</p>
-                                                </li>
-                                    </ul>
-                                </div>
+                    <h2 class="subheader">Per Stuzzicare</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Bocconcini di Pollo &emsp; 5,9</h3>
+                            <p>Serviti con salsa piccante</p>
                         </li>
-
-                                    <div class="row">
-                                        <div class="large-12 medium-12 small-12 columns">
-                                            <h2 class="subheader">Dolci<br><small>Fatti in casa</small></h2>
-                                            <div class="title-divider">
-                                                <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
-                                                    <li>
-                                                        <h3>Birramisù &emsp; 5</h3>
-                                                        <p>Tiramisù con mascarpone artigianale alla birra stout</p>
-                                                    </li>
-                                                    <li>
-                                                        <h3>Blondie &emsp; 5</h3>
-                                                        <p>Brownie con nocciole, servito con mousse di crema chantilly</p>
-                                                    </li>
-                                                    <li>
-                                                        <h3>Cheesecake &emsp; 5</h3>
-                                                        <p>Cheescake in stile new york. Squisitamente dolce, morbida e leggermente acidula</p>
-                                                    </li>
-                                                    <li>
-                                                        <h3>Whoop &emsp; 5</h3>
-                                                        <p>Morbido biscotto di cioccolato ripieno con crema di  burro di arichidi</p>
-                                                    </li>
-                                                    <li>
-                                                        <h3>Biscotti Secchi e Visciola &emsp; 5,5</h3>
-                                                        <p>Cantucci e anicetti artigianali, serviti con vino di visciole</p>
-                                                    </li>
-                                                </ul>
-                                                <blockquote>
-                                                    <p>Compleanni e ricorrenze: forniamo dolci e torte, se portate le vostre il servizio è di 2 € a persona. <br>Accettiamo solo prodotti di pasticceria.</p>
-                                                </blockquote>
-                                                <br>
-                                            </div>
-                                            <div class="title-divider">
-                                                <p class="text-center">I prodotti subiscono un processo di abbattimento della temperatura per preservarne le caratteristiche organolettiche. <br>I prodotti contengono allergeni: richiedi la lista al personale.</p>
-                                                <br>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                        <li>
+                            <h3>Peperoncini Piccanti &emsp; 5,5</h3>
+                            <p>Peperoncini ripieni di robiola avvolti nella pancetta</p>
+                        </li>
+                        <li>
+                            <h3>Olive all'Ascolana &emsp; 5,5</h3>
+                            <p>Il più tipico street food marchigiano</p>
+                        </li>
+                        <li>
+                            <h3>Mozzarelle Fritte &emsp; 5,9</h3>
+                            <p>Servite con salsa aioli fatta in casa</p>
+                        </li>
+                        <li>
+                            <h3>Cipolle Rosse &emsp; 4,9</h3>
+                            <p>Cipolla rossa in tempura</p>
+                        </li>
+                        <li>
+                            <h3>Frittelline di Fagioli e Porri &emsp; 5,5</h3>
+                            <p>Servite con salsa alla senape fatta in casa</p>
+                        </li>
+                        <li>
+                            <h3>Patate Fritte &emsp; 4</h3>
+                            <p>Patate fritte con buccia</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Per i Più Piccoli</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Mini Burger e Patatine &emsp; 6,9</h3>
+                            <p>Manzo (100 grammi), cheddar, servito con patate fritte</p>
+                        </li>
+                        <li>
+                            <h3>Bocconcini e Patatine &emsp; 6,9</h3>
+                            <p>Bocconcini di pollo fatti in casa, serviti con patate fritte</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Hamburger Classici<br><small>Hamburger da 180 grammi. serviti con patate fritte e a cottura media</small></h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Beerstrot &emsp; 10,9 / doppio 14,9</h3>
+                            <p>Manzo, cheddar, bacon croccante, cipolla caramellata, insalata, pomodorini confit</p>
+                        </li>
+                        <li>
+                            <h3>New York &emsp; 9,5 / doppio 14,9</h3>
+                            <p>Manzo, cheddar, cipolla caramellata, insalata</p>
+                        </li>
+                        <li>
+                            <h3>Diablo &emsp; 10,5 / doppio 14,9</h3>
+                            <p>Manzo, cheddar, bacon croccante, rucola, salsa piccante</p>
+                        </li>
+                        <li>
+                            <h3>Pollo &emsp; 9,5 / doppio 14,9</h3>
+                            <p>Pollo, fontina, cipolla caramellata, rucola, salsa allo yogurt</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Hamburger Stagionali<br><small>Hamburger da 180 grammi. serviti con patate fritte e a cottura media</small></h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Pulled Pork &emsp; 10,5</h3>
+                            <p>Maiale sfilacciato, coleslow, cetriolini, insalata riccia, salsa piccante</p>
+                        </li>
+                        <li>
+                            <h3>Estivo &emsp; 10,5 / doppio 14,9</h3>
+                            <p>Manzo, mozzarella di bufala, pomodoro fresco, pesto di basilico e pinoli</p>
+                        </li>
+                        <li>
+                            <h3>Carbonara &emsp; 10,9 / doppio 14,9</h3>
+                            <p>Manzo, guanciale, crema di uovo, pecorino romano e pepe</p>
+                        </li>
+                        <li>
+                            <h3>Greco &emsp; 9,5 / doppio 14,9</h3>
+                            <p>Manzo, melanzana grigliata, insalata riccia, salsa tzatziki</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Hamburger Vegetariani</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                          <li>
+                            <h3>Vegetariano Fagioli &emsp; 9,5</h3>
+                            <p>Hamburger di borlotti, julienne di cipolla fritta, crema di cicoria</p>
+                        </li>
+                        <li>
+                            <h3>Vegetariano Quinoa &emsp; 9,5</h3>
+                            <p>Hamburger di quinoa e bulgur, rucola, cipolla caramellata; composta di rape rosse, senape e miele</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Carni <br></h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Costine &emsp; 13,9</h3>
+                            <p>Baby ribs di suino allevato allo stato brado in salsa bbq. Servite con patate fritte</p>
+                        </li>
+                        <li>
+                            <h3>Tagliata di Picanha &emsp; 19</h3>
+                            <p>350 grammi di picanha di manzo. Servita su letto di rucola</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Dolci<br><small>Fatti in casa</small></h2>
+                    <div class="title-divider">
+                        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+                            <li>
+                                <h3>Crumble &emsp; 5</h3>
+                                <p>Crema chantilly su croccante crumble di farina di mais, cannella e scaglie di cioccolato fondente</p>
+                            </li>
+                            <li>
+                                <h3>Cioccolatosa &emsp; 5</h3>
+                                <p>Doppio cremoso al cioccolato su pan di spagna al cioccolato</p>
+                            </li>
+                            <li>
+                                <h3>Cheesecake &emsp; 5</h3>
+                                <p>Cheescake in stile new york. Squisitamente dolce, morbida e leggermente acidula</p>
+                            </li>
+                            <li>
+                                <h3>Panna Cotta &emsp; 5</h3>
+                                <p>..........</p>
+                            </li>
+                            <li>
+                                <h3>Biscotti Secchi e Visciola &emsp; 5,5</h3>
+                                <p>Cantucci e anicetti artigianali, serviti con vino di visciole</p>
+                            </li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="title-divider">
+                        <p class="">I prodotti subiscono un processo di abbattimento della temperatura per preservarne le caratteristiche organolettiche. <br><br>I prodotti contengono allergeni: chiedi al personale.</p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
 <!-- cena fine -->
 <!-- birra -->
         <section class="content" role="tabpanel" aria-hidden="false" id="birra">
             <div class="row">
                 <div class="large-12 medium-12 small-12 columns">
-                    <h2 class="subheader">Birre artigianali alla Spina <br><small>Otto spine che cambiano a ritmi da vertigine. Oggi c'è, domani ne trovi un'altra</small></h2>
-                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 title-divider">
+                    <h2 class="subheader">Birre artigianali alla Spina <br><small>Piccola 4 / Media 6 / Caraffa 12</small></h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
                         <li>
-                            <h3>Gambrinus Helles &emsp;  4 / 6</h3>
+                            <h3>Gambrinus Helles</h3>
                             <p>keller non amara 4,9%</p>
                         </li>
                         <li>
-                            <h3>Castelli Italicum &emsp;  4 / 6</h3>
+                            <h3>Castelli Italicum</h3>
                             <p>bionda fruttata 5,0%</p>
                         </li>
                         <li>
-                            <h3>Gambrinus Weisse &emsp;  4 / 6</h3>
+                            <h3>Gambrinus Weisse</h3>
                             <p>weisse 5,2%</p>
                         </li>
                         <li>
-                            <h3>Castelli Palmares &emsp;  4 / 6</h3>
+                            <h3>Castelli Palmares</h3>
                             <p>rossa stile inglese 5,6%</p>
                         </li>
                          <li>
-                            <h3>Castelli Mirabilia &emsp;  4 / 6</h3>
+                            <h3>Castelli Mirabilia</h3>
                             <p>american pale ale 6,5%</p>
                         </li>
                         <li>
-                            <h3>Mukkeller Tulio &emsp;  4 / 6</h3>
-                            <p>rye ipa 6,5%</p>
-                        </li>
-                                                <li>
-                            <h3>MC-77 Rockstone  &emsp;  4 / 6</h3>
+                            <h3>MC-77 Rockstone</h3>
                             <p>ipa affumicata 6,4%</p>
                         </li>
                         <li>
-                            <h3>Mukkeller Mazzu de Fiuri &emsp;  4 / 6</h3>
+                            <h3>Mukkeller Mazzu de Fiuri</h3>
                             <p>ipa 6,5%</p>
                         </li>
                     </ul>
@@ -286,7 +277,7 @@
                 <div class="large-12 medium-12 small-12 columns">
                     <h2 class="subheader">Birre artigianali in bottiglia</h2>
                     <div class="title-divider">
-                        <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3">
+                        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
                             <li>
                                 <h3>Gambrinus Pils 50cl &emsp; 6</h3>
                                 <p>bionda pils 4,9%</p>
@@ -350,13 +341,13 @@
             <div class="row">
                 <div class="large-12 medium-12 small-12 columns">
                     <h2 class="subheader">Vino in Caraffa</h2>
-                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 title-divider">
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
                         <li>
-                            <h3>Rosso Piceno &emsp;Quarto 2,5 / Litro 7,5</h3>
+                            <h3>Rosso Marche IGT &emsp;Quarto 2,5 / Litro 7,5</h3>
                             <p>tavignano</p>
                         </li>
                         <li>
-                            <h3>Verdicchio &emsp;Quarto 2,5 / Litro 7,5</h3>
+                            <h3>Verdicchio DOC &emsp; Quarto 2,5 / Litro 7,5</h3>
                             <p>tavignano</p>
                         </li>
                     </ul>
@@ -364,35 +355,43 @@
             </div>
             <div class="row">
                 <div class="large-12 medium-12 small-12 columns">
-                    <h2 class="subheader">Vino in Bottiglia</h2>
-                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 title-divider">
+                    <h2 class="subheader">Vino Bottiglia / Calice</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
                         <li>
-                            <h3>Rosso Piceno DOC &emsp;11,5</h3>
+                            <h3>Rosso Piceno DOC &emsp; 11,5 / 3</h3>
                             <p>valmusone</p>
                         </li>
                         <li>
-                            <h3>Lacrima DOC &emsp;12,5</h3>
+                            <h3>Lacrima DOC &emsp; 12,5 / 3</h3>
                             <p>valmusone</p>
                         </li>
                         <li>
-                            <h3>Libenter DOC &emsp;19</h3>
+                            <h3>Libenter DOC &emsp; 19</h3>
                             <p>tavignano</p>
                         </li>
                         <li>
-                            <h3>Costa Verde DOC &emsp;12,5</h3>
+                            <h3>Costa Verde DOC &emsp; 12,5 / 3</h3>
                             <p>tavignano</p>
                         </li>
                         <li>
-                            <h3>Misco Superiore DOC &emsp;18</h3>
+                            <h3>Rosato IGP &emsp; 15</h3>
                             <p>tavignano</p>
                         </li>
                         <li>
-                            <h3>Gewurztraminer DOC &emsp;18</h3>
+                            <h3>Misco Superiore DOC &emsp; 18</h3>
+                            <p>tavignano</p>
+                        </li>
+                        <li>
+                            <h3>Gewurztraminer DOC &emsp; 18 / 4</h3>
                             <p>H.Lun</p>
                         </li>
                         <li>
-                            <h3>Prosecco Trèser DOCG &emsp;15</h3>
+                            <h3>Prosecco Trèser DOCG &emsp; 15 / 3,5</h3>
                             <p>cantina serre di pederiva</p>
+                        </li>
+                        <li>
+                            <h3>Trento DOCG &emsp; 25</h3>
+                            <p>......</p>
                         </li>
                     </ul>
                 </div>
@@ -400,9 +399,9 @@
             <div class="row">
                 <div class="large-12 medium-12 small-12 columns">
                     <h2 class="subheader">Per i Dessert</h2>
-                    <ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-3 title-divider">
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
                         <li>
-                            <h3>Nero Visciola &emsp;3,5 / 19</h3>
+                            <h3>Nero Visciola &emsp; 19 / 3,5</h3>
                             <p>antinori</p>
                         </li>
                     </ul>
@@ -410,103 +409,160 @@
             </div>
         </section>
 <!-- vino fine -->
-<!-- call to action inizio -->
-        <div class="row">
-            <div class="medium-12 large-12 columns">
-                <span class="hide-for-small"><a role="button" href="https://m.me/cavecchiabeerstrot" class="button left"><i class="fab fa-facebook-messenger"></i>Ordina Online</a></span>
-                <span class="show-for-small"><a role="button" href="tel:+390718853384" class="button small left extra-space-from-tabs"><i class="fa fa-phone"></i>Chiama</a></span>
-                <span class="show-for-small"><a role="button" href="https://m.me/cavecchiabeerstrot" class="button small right extra-space-from-tabs"><i class="fab fa-facebook-messenger"></i>Ordina Online</a></span>
+<!-- Bevande -->
+        <section class="content" role="tabpanel" aria-hidden="false" id="bevanda">
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Bevande</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Acqua &emsp;  1 / 1,5</h3>
+                            <p>mezzo litro / litro</p>
+                        </li>
+                        <li>
+                            <h3>Coca Cola &emsp; 3 / 6</h3>
+                            <p>33cl / litro</p>
+                        </li>
+                        <li>
+                            <h3>Aranciata &emsp; 3</h3>
+                            <p>passarelli 27cl</p>
+                        </li>
+                        <li>
+                            <h3>Succo di Mela &emsp; 3</h3>
+                            <p>yoga biologico</p>
+                        </li>
+                        <li>
+                            <h3>Acqua Tonica &emsp; 3</h3>
+                            <p>j.gasco 20cl</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-<!-- call to action fine -->
-    </div>
-<!-- tab fine -->
-<!-- inizio footer -->
-    <footer class="panel-footer">
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Caffè</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Caffè &emsp; 1</h3>
+                            <p>espresso, deca</p>
+                        </li>
+                        <li>
+                            <h3>Caffè &emsp; 1,5</h3>
+                            <p>corretto, orzo, macchiato</p>
+                        </li>
+                        <li>
+                            <h3>Cappuccino &emsp; 3</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+<!-- Bevande fine -->
+<!-- Liquori -->
+        <section class="content" role="tabpanel" aria-hidden="false" id="liquore">
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Amari</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Varnelli, Sibilla, Tonico &emsp; 3</h3>
+                        </li>
+                        <li>
+                            <h3>Infuso di Cammomilla, Infuso di Cirmolo, Infuso di Fieno &emsp; 3,5</h3>
+                        </li>
+                        <li>
+                            <h3>Amaro Marzadro &emsp; 3,5</h3>
+                        </li>
+                        <li>
+                            <h3>Amaro del Capo, Fernet, Montenegro, Sambuca &emsp; 3</h3>
+                        </li>
+                        <li>
+                            <h3>Grappa Prime Uve &emsp; 3,5</h3>
+                        </li>
+                        <li>
+                            <h3>Grappa Barricata &emsp; 3,5</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Rhum</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Centenario 12 anni &emsp; 6</h3>
+                            <p>Costa Rica 40%. <br>Profumo di vaniglia, cuoio, cioccolato, sciroppo d'acero e menta. Al palato sentori di cioccolato, pelle, miele e menta piperita</p>
+                        </li>
+                        <li>
+                            <h3>Don Papa oltre 7 anni &emsp; 6</h3>
+                            <p>Filippine 40%. <br>Profumo di caramello e mou. Al palato ripropone una notevole dolcezza ben bilanciata da un mix di arancia candita e persistente nota citrica</p>
+                        </li>
+                        <li>
+                            <h3>Du Perou 10 anni &emsp; 8</h3>
+                            <p>Perù 45%. <br>Profumo di frutta fresca: albicocche, pesche e pere, seguito da legno, spezie e tabacco. Al palato  è fedele a ciò che il naso ha annunciato, ma in ordine inverso. Finale piacevole e delicato</p>
+                        </li>
+                        <li>
+                            <h3>Naga &emsp; 6</h3>
+                            <p>Filippine 38%. <br>Profumo di frutta esotica poi spezie e foglie secche. Al palato vaniglia, un tocco di cannella e spezie esotiche</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 medium-12 small-12 columns">
+                    <h2 class="subheader">Whiskey</h2>
+                    <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
+                        <li>
+                            <h3>Scallywag &emsp; 8</h3>
+                            <p>Scozzese blend 46%. <br>L'iniziale dolcezza lascia spazio a note piccanti e speziate</p>
+                        </li>
+                        <li>
+                            <h3>Teeling &emsp; 8</h3>
+                            <p>Irlandese single malt 46%. <br>Note di vaniglia e spezie con dolci sentori di rum</p>
+                        </li>
+                        <li>
+                            <h3>Du Perou 10 anni &emsp; 8</h3>
+                            <p>Perù 45%. <br>Profumo di frutta fresca: albicocche, pesche e pere, seguito da legno, spezie e tabacco. Al palato  è fedele a ciò che il naso ha annunciato, ma in ordine inverso. Finale piacevole e delicato</p>
+                        </li>
+                        <li>
+                            <h3>Big Peat &emsp; 8</h3>
+                            <p>Scozzese blend 46%. <br>Fresco e pulito con aromi di torba piccante con note di cioccolato, caffè e mandorle</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+<!-- Liquori fine -->
+<!-- inizio tabbar switch-->
         <div class="row">
-			<div class="large-12 columns">
-				<ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
-		  			<li>
-						<h4 class="subheader">Prenota</h4>
-						<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><span itemprop="telephone"> 071 8853384</span></a></p>
-						<p><a href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Prenota Online</a></p>
-					</li>
-		  			<li>
-                        <h4 class="subheader">Asporti e Consegna a Domicilio</h4>
-                        <meta itemprop="openingHours" content="Th, Fr, Sa, Su 19:00-23:00">
-                        <div class="row">
-                            <div class="large-12 medium-12 small-12 columns">
-                                <p>Dal Venerdì alla Domenica <br>Dalle 19:00 alle 21:00</p>
-                            </div>
-                        </div>
+            <div class="medium-12 large-12 small-12 columns extra-space-hero">
+                <ul class="tabs" data-tab data-options="deep_linking:true; scroll_to_content:true" role="tablist">
+                    <li class="tab-title active" role="presentational">
+                        <a href="#cena" role="tab" tabindex="0" aria-selected="true" controls="cena">Cibo</a>
                     </li>
-		  			<li>
-		  				<h4 class="subheader">Dove siamo</h4>
-		                <p>
-		                    <a href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-		                        <span itemprop="streetAddress">Via Centofinestre, 20</span>
-		                        <br>
-		                        <span itemprop="postalCode">60024</span>
-		                        <span itemprop="addressLocality">Filottrano</span>
-		                        <span itemprop="addressRegion">AN</span>
-		                        <br class="hide-for-small">
-		                        <span class="hide-for-small" itemprop="addressCountry">Italia</span>
-		                    </a>
-		                </p>
-		            </li>
-					<li>
-						<h4 class="subheader">Accettiamo</h4>
-	                	<ul class="block-grid-cards-3">
-		                    <li>
-		                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 106.2" style="max-width: 80px"  enable-background="new 0 0 170 106.2"><g><path class="img-cards" fill="#3A58A8" d="M169.9 100.5c0 3.1-2.6 5.7-5.7 5.7H5.7c-3.1 0-5.7-2.6-5.7-5.7V5.7C0 2.6 2.6 0 5.7 0h158.6c3.1 0 5.7 2.6 5.7 5.7v94.8h-.1z"/><g fill="#fff"><path d="M78.2 69.1h-8.3l5.2-32h8.3zM62.9 37.1l-7.9 22-.9-4.7L51.2 40s-.3-2.8-3.9-2.8H34.2l-.2.5s4.1.8 8.7 3.7L50 69.1h8.7l13.1-32h-8.9zM128.2 69.1h7.6l-6.6-31.8h-6.6c-3.1 0-3.8 2.4-3.8 2.4l-12.3 29.4h8.7l1.8-4.7h10.6l.6 4.7zm-9.1-11.4l4.3-11.9 2.4 11.9h-6.7zM106.9 44.8l1.2-6.9s-3.7-1.3-7.5-1.3c-4.1 0-14 1.8-14 10.6 0 8.3 11.5 8.4 11.5 12.6 0 4.3-10.3 3.5-13.7.8l-1.2 7.2s3.7 1.8 9.3 1.8c5.7 0 14.2-3 14.2-11 0-8.3-11.6-9.1-11.6-12.6.3-3.6 8.3-3.1 11.8-1.2z"/></g><path fill="#FAA634" d="M54 54.3L51.2 40s-.3-2.8-3.9-2.8H34.1l-.1.5s6.2 1.3 12.3 6.2c5.9 4.6 7.7 10.4 7.7 10.4z"/></g></svg>
-		                    </li>
-		                    <li>
-		                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 106.2" style="max-width: 80px" enable-background="new 0 0 170 106.2"><g><path class="img-cards" fill="#14477C" d="M169.9 100.5c0 3.1-2.6 5.7-5.7 5.7H5.7c-3.1 0-5.7-2.6-5.7-5.7V5.7C0 2.6 2.6 0 5.7 0h158.6c3.1 0 5.7 2.6 5.7 5.7v94.8h-.1z"/><path fill="#FBB230" d="M105.4 83.6h1.5l1.6-.2 1.5-.2 1.5-.3 1.5-.3 1.5-.4 1.3-.5 1.4-.5 1.3-.6 1.4-.7 1.3-.8 1.3-.7 1.2-.9 1.1-.8 1.1-1.1 1-1 1.1-1 1-1.1.8-1.2.9-1.1.7-1.4.8-1.2.7-1.4.5-1.3.6-1.4.5-1.3.4-1.5.4-1.5.3-1.5.1-1.5.2-1.6v-3.1l-.2-1.5-.1-1.6-.3-1.5-.4-1.4-.4-1.5-.5-1.5-.6-1.3-.5-1.4-.7-1.2-.8-1.4-.7-1.2-.9-1.2-.8-1.1-1-1.1-1.1-1-1-1.1-1.1-1-1.1-.8-1.2-.9-1.3-.7-1.3-.8-1.4-.7-1.3-.5-1.4-.6-1.3-.5-1.5-.4-1.5-.3-1.5-.3-1.5-.2-1.6-.2h-3.1l-1.5.2-1.6.2-1.5.3-1.5.3-1.4.4-1.5.5-1.3.6-1.4.5-1.2.7-1.3.8-1.3.7-1.2.9-1.1.8-1.1 1-1 1.1-1.1 1-1 1.1-.8 1.1-.9 1.2-.7 1.2-.8 1.4-.7 1.2-.5 1.4-.6 1.3-.5 1.5-.4 1.5-.3 1.4-.3 1.5-.2 1.6-.2 1.5v3.1l.2 1.6.2 1.5.3 1.5.3 1.5.4 1.5.5 1.3.6 1.4.5 1.3.7 1.4.8 1.2.7 1.4.9 1.1.8 1.2 1 1.1 1.1 1 1 1 1.1 1.1 1.1.8 1.2.9 1.3.7 1.3.8 1.2.7 1.4.6 1.3.5 1.5.5 1.4.4 1.5.3 1.5.3 1.6.2 1.5.2z"/><path fill="#EB2230" d="M64.6 83.6h1.5l1.6-.2 1.5-.2 1.5-.3 1.5-.3 1.4-.4 1.5-.5 1.3-.5 1.4-.6 1.3-.7 1.2-.8 1.2-.7 1.3-.9 1.2-.8 1.1-1.1.9-1 1.1-1 1-1.1.9-1.2.8-1.1.8-1.4.7-1.2.7-1.4.7-1.3.5-1.4.4-1.3.4-1.5.4-1.5.3-1.5.1-1.5.2-1.6v-3.1l-.2-1.5-.1-1.6-.3-1.5-.4-1.4-.4-1.5-.4-1.5-.5-1.3-.7-1.4-.7-1.2-.7-1.4-.8-1.2-.8-1.2-.9-1.1-1-1.1-1.1-1-.9-1.1-1.1-1-1.2-.8-1.3-.9-1.2-.7-1.2-.8-1.3-.7-1.4-.5-1.3-.6-1.5-.5-1.4-.4-1.5-.3-1.5-.3-1.5-.2-1.6-.2H63l-1.5.2-1.6.2-1.5.3-1.5.3-1.4.4-1.5.5-1.3.6-1.3.5-1.4.7-1.2.8-1.2.7-1.3.9-1.2.8-1.1 1-1 1.1-1 1-.9 1.1-1 1.1-.8 1.2-.8 1.2-.8 1.4-.7 1.2-.5 1.4-.6 1.3-.5 1.5-.4 1.5-.3 1.4-.3 1.5-.3 1.6-.1 1.5v3.1l.1 1.6.3 1.5.3 1.5.3 1.5.4 1.5.5 1.3.6 1.4.5 1.3.7 1.4.8 1.2.8 1.4.8 1.1 1 1.2.9 1.1 1 1 1 1 1.1 1.1 1.2.8 1.3.9 1.2.7 1.2.8 1.4.7 1.3.6 1.3.5 1.5.5 1.4.4 1.5.3 1.5.3 1.6.2 1.5.2z"/><path fill="#FBB230" d="M81.4 34.3h16.1v-1.7H82.8zM79 37.9h18.5v-1.6H79.9zM77.2 41.7h20.3V40H77.9zM75.9 45.4h21.6v-1.8H76.4zM76.7 63.1h21v-1.6H76.1zM78.2 66.8h19.5v-1.6H77.4zM80.3 70.4h17.4v-1.6H79.4zM83.3 74.1h14.4v-1.6H82zM75.2 49h22.3v-1.6h-22zM88.9 59.5h8.5v-1.7h-8.3zM89.6 55.8h7.8v-1.6h-7.6zM74.6 54.2h2.2v1.6h-2z"/><path fill="#fff" d="M70.5 52.2h-.2l-.1-.2h-.8l-.2-.1H68l-.3.1H67.1l-.2.2h-.1l-.1.1-.2.1v.2h-.1v.6l.1.2.2.1.1.2.3.2.2.1h.3l.4.2.3.1.4.1.3.2.2.1.4.3.2.3.2.2.2.4.1.4V58.1l-.1.4-.3.4-.1.3-.3.3-.3.2-.2.3-.3.1-.4.3-.3.2h-.4l-.3.1h-.4l-.4.1H64.1l-.3-.1H62.9l-.2-.1h-.4l-.1-.2h-.1l-.3-.1.5-2.2H62.6l.3.1h.4l.1.2h.8l.3.1h1.7l.3-.1.2-.2.1-.1.1-.1.2-.2v-.4l.1-.2-.1-.3-.2-.1-.2-.2-.5-.3-.2-.1-.4-.1-.4-.2-.4-.1-.5-.3-.4-.2-.2-.3-.3-.4-.1-.6-.2-.5v-1.1l.2-.2.1-.4v-.3l.3-.4.1-.3.3-.3.2-.1.3-.3.3-.1.4-.1.4-.2h.4l.6-.1H70l.2.1h.7v.2h.1z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M70.5 52.2h-.2l-.1-.2h-.8l-.2-.1H68l-.3.1H67.1l-.2.2h-.1l-.1.1-.2.1v.2h-.1v.6l.1.2.2.1.1.2.3.2.2.1h.3l.4.2.3.1.4.1.3.2.2.1.4.3.2.3.2.2.2.4.1.4V58.1l-.1.4-.3.4-.1.3-.3.3-.3.2-.2.3-.3.1-.4.3-.3.2h-.4l-.3.1h-.4l-.4.1H64.1l-.3-.1H62.9l-.2-.1h-.4l-.1-.2h-.1l-.3-.1.5-2.2H62.6l.3.1h.4l.1.2h.8l.3.1h1.7l.3-.1.2-.2.1-.1.1-.1.2-.2v-.4l.1-.2-.1-.3-.2-.1-.2-.2-.5-.3-.2-.1-.4-.1-.4-.2-.4-.1-.5-.3-.4-.2-.2-.3-.3-.4-.1-.6-.2-.5v-1.1l.2-.2.1-.4v-.3l.3-.4.1-.3.3-.3.2-.1.3-.3.3-.1.4-.1.4-.2h.4l.6-.1H70l.2.1h.7v.2h.1l-.5 2.3"/><path fill="#fff" d="M72.9 47.3h2.8l-.4 2.4h1.8l-.4 2.3h-1.8l-1.1 5.7v.3l.2.1v.1l.1.2h.3l.1.1H75.9l.1-.1h.1l-.4 1.9-.1.1h-.1v.2h-.4l-.2.1H72.2l-.3-.1-.2-.2h-.3l-.1-.1-.2-.2-.1-.1v-.4l-.1-.1v-.7l.1-.3z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M72.9 47.3h2.8l-.4 2.4h1.8l-.4 2.3h-1.8l-1.1 5.7v.3l.2.1v.1l.1.2h.3l.1.1H75.9l.1-.1h.1l-.4 1.9-.1.1h-.1v.2h-.4l-.2.1H72.2l-.3-.1-.2-.2h-.3l-.1-.1-.2-.2-.1-.1v-.4l-.1-.1v-.7l.1-.3 1.9-11.2M79.4 55.9l-.1.2v.4l.1.3v.1l.1.1.2.3.1.1.1.2.2.1.1.3.1.1h.3l.2.1.2.2h.7l.3.1h1.3l.3-.1h.3l.2-.2h.3l.4-.1.3-.1.2-.2.3-.1-.4 2.4-.1.2h-.2l-.2.1h-.2l-.1.2H84.1l-.2.1h-3.6l-.5-.1-.5-.3-.4-.2-.6-.2-.4-.3-.4-.4-.3-.4-.2-.4-.3-.6-.3-.6v-.7l-.1-.7.1-.9v-.3l.1-.4v-.4l.2-.4.1-.4.2-.6.2-.4.3-.4.4-.4.4-.4.4-.4.6-.3.5-.2.7-.2.8-.1h1.6l.4.1h.4l.4.2.4.2.4.3.3.3.4.2.3.4.1.6.2.5.1.6v.8l-.1.6-.2 1v.5h-7.6l.6-2h4.4V53l-.1-.2v-.1l-.1-.1-.2-.2-.1-.1-.1-.1-.2-.2h-.1l-.1-.1H82l-.2-.1-.3.1h-.2l-.1.1h-.3l-.1.2-.2.1-.1.1-.2.2-.1.1-.1.1v.2l-.2.2-.1.2v.4l-.4 2.1"/><path fill="#fff" d="M103.9 50.4l-.1-.1h-.2l-.1-.2h-.3l-.1-.1h-.1l-.2-.1h-.4l-.3-.2h-.5l-.3-.1h-.8l-.3.1h-.5l-.3.2-.2.1-.3.1-.4.2-.3.2-.2.3-.2.3-.3.4-.2.4-.3.5-.1.6-.2.7-.1.3V55.4l.1.4v.3l.2.2.1.3.3.3.1.3.3.2.3.2.4.1.2.1.4.2H99.6l.1.1h1l.2-.1h.3l.3-.2h.2l.3-.1.3-.1.1-.2.3-.2-.6 2.8-.1.1-.1.2h-.2l-.1.1h-.1l-.2.2h-.2l-.3.1h-3.1l-.4-.1-.6-.2-.4-.3-.5-.2-.4-.3-.4-.3-.4-.4-.3-.5-.3-.6-.3-.5-.2-.7-.2-.7v-1.5l.2-.7.1-.5v-.4l.1-.4.2-.4.1-.4.2-.3.1-.4.1-.2.2-.4.1-.3.1-.3.3-.3.1-.2.3-.3.1-.1.3-.3.2-.3.2-.1.3-.1.3-.2.2-.3.3-.1h.3l.3-.1.4-.2.2-.1h.4l.3-.1h.7l.4-.2h.7l.4.2h.9l.3.1h.3l.1.1h.3l.2.2h.2l.1.1H104.2l.1.1z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M103.9 50.4l-.1-.1h-.2l-.1-.2h-.3l-.1-.1h-.1l-.2-.1h-.4l-.3-.2h-.5l-.3-.1h-.8l-.3.1h-.5l-.3.2-.2.1-.3.1-.4.2-.3.2-.2.3-.2.3-.3.4-.2.4-.3.5-.1.6-.2.7-.1.3V55.4l.1.4v.3l.2.2.1.3.3.3.1.3.3.2.3.2.4.1.2.1.4.2H99.6l.1.1h1l.2-.1h.3l.3-.2h.2l.3-.1.3-.1.1-.2.3-.2-.6 2.8-.1.1-.1.2h-.2l-.1.1h-.1l-.2.2h-.2l-.3.1h-3.1l-.4-.1-.6-.2-.4-.3-.5-.2-.4-.3-.4-.3-.4-.4-.3-.5-.3-.6-.3-.5-.2-.7-.2-.7v-1.5l.2-.7.1-.5v-.4l.1-.4.2-.4.1-.4.2-.3.1-.4.1-.2.2-.4.1-.3.1-.3.3-.3.1-.2.3-.3.1-.1.3-.3.2-.3.2-.1.3-.1.3-.2.2-.3.3-.1h.3l.3-.1.4-.2.2-.1h.4l.3-.1h.7l.4-.2h.7l.4.2h.9l.3.1h.3l.1.1h.3l.2.2h.2l.1.1H104.2l.1.1-.4 2.9"/><path fill="#fff" d="M129.1 60.7h-2.8l.2-1.1v-.1l-.1.2-.3.2-.1.1-.1.1-.3.2-.1.1-.2.2-.3.1h-.1l-.3.1h-.5l-.3.2h-.4l-.5-.2-.4-.1-.6-.1-.4-.3-.3-.3-.4-.3-.2-.4-.3-.4-.1-.5-.2-.4-.1-.6-.1-.5v-1.6l.1-.4.1-.7.3-.5.1-.6.3-.5.3-.4.2-.4.5-.5.2-.2.4-.4.4-.2.4-.2.3-.2.4-.2h.4l.6-.2h.7l.2.2h.6l.1.1.3.1.2.2h.2l.1.1.1.1.2.2.1.1.1.1.2.2v.1l.1.1.7-4h2.8z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M129.1 60.7h-2.8l.2-1.1v-.1l-.1.2-.3.2-.1.1-.1.1-.3.2-.1.1-.2.2-.3.1h-.1l-.3.1h-.5l-.3.2h-.4l-.5-.2-.4-.1-.6-.1-.4-.3-.3-.3-.4-.3-.2-.4-.3-.4-.1-.5-.2-.4-.1-.6-.1-.5v-1.6l.1-.4.1-.7.3-.5.1-.6.3-.5.3-.4.2-.4.5-.5.2-.2.4-.4.4-.2.4-.2.3-.2.4-.2h.4l.6-.2h.7l.2.2h.6l.1.1.3.1.2.2h.2l.1.1.1.1.2.2.1.1.1.1.2.2v.1l.1.1.7-4h2.8l-2.4 13.4"/><path fill="#FBB230" d="M124.5 58.2h.5l.3-.1.3-.1.1-.2.3-.1.1-.1.3-.3.1-.1.2-.3.1-.1.1-.3v-.3l.2-.3.1-.2v-.6l.1-.4v-.3l-.1-.2v-.5l-.1-.2v-.3l-.2-.2-.1-.2-.1-.1-.2-.1-.1-.2-.3-.1h-.1l-.3-.1-.2.1h-.3l-.2.1h-.2l-.3.2-.1.2-.2.2-.2.1-.2.3-.1.3-.1.1-.2.2-.1.3v.4l-.2.3v.3l-.1.4.1.5v.6l.2.4.3.4.2.4.3.2z"/><path fill="#fff" d="M61.4 58.5l-.4 2.2h-2.6v-.4l.1-.3v-.5l-.1.2-.1.2-.2.1-.3.1-.2.2-.3.1-.3.2-.2.1h-.3l-.3.1h-.3l-.4.2h-.8l-.2-.2H54l-.2-.1-.3-.1-.2-.2-.3-.3-.3-.1-.1-.1-.2-.3-.1-.1v-.3l-.1-.3-.2-.1V57l.2-.4.1-.3.1-.4.3-.2.1-.3.3-.3.3-.2.3-.2.2-.3.4-.1.3-.1.4-.2.3-.1h.9l.2-.1h1.2l.1-.1H58l.3.1h.9v-.1l.1-.2v-.7l-.1-.1-.1-.3-.2-.1-.2-.1h-.2l-.2-.2H55.8l-.4.2h-.5l-.3.1h-.3l-.3.1h-.1l-.1.2h-.1l.6-2.5.3-.1h.3l.2-.1h.2l.2-.2H56.4l.2-.1H58.9l.4.1h.6l.4.2.3.1.2.1.3.2.4.2.3.2.1.2.3.3.1.4.2.3V53.1z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M61.4 58.5l-.4 2.2h-2.6v-.4l.1-.3v-.5l-.1.2-.1.2-.2.1-.3.1-.2.2-.3.1-.3.2-.2.1h-.3l-.3.1h-.3l-.4.2h-.8l-.2-.2H54l-.2-.1-.3-.1-.2-.2-.3-.3-.3-.1-.1-.1-.2-.3-.1-.1v-.3l-.1-.3-.2-.1V57l.2-.4.1-.3.1-.4.3-.2.1-.3.3-.3.3-.2.3-.2.2-.3.4-.1.3-.1.4-.2.3-.1h.9l.2-.1h1.2l.1-.1H58l.3.1h.9v-.1l.1-.2v-.7l-.1-.1-.1-.3-.2-.1-.2-.1h-.2l-.2-.2H55.8l-.4.2h-.5l-.3.1h-.3l-.3.1h-.1l-.1.2h-.1l.6-2.5.3-.1h.3l.2-.1h.2l.2-.2H56.4l.2-.1H58.9l.4.1h.6l.4.2.3.1.2.1.3.2.4.2.3.2.1.2.3.3.1.4.2.3V53.1l-1.1 5.4"/><path fill="#EB2230" d="M58.9 55.8v-.1h-.4l-.1-.2H58.1l-.1.2h-.8l-.2.1h-.2l-.2.1h-.2l-.2.2h-.1l-.2.1-.1.1-.1.2h-.2l-.1.1v.2l-.1.1v.3l-.2.1v.3l.2.2.1.3.1.1.2.2h.1l.1.1H56.5l.3-.1h.4l.2-.2.2-.1h.2l.2-.1.1-.2.2-.1v-.1l.1-.2h.1v-.2l.2-.2v-.2l.1-.5v-.2z"/><path fill="#fff" d="M39.7 60.7H37l2.3-13.4h4.9l.4 8 3.4-8h5l-2.3 13.4h-2.9l1.8-10h-.1l-4.1 10h-3.3v-1.5l-.1-1.6-.1-1.8-.2-1.9v-1.6l-.1-1.1v-.5h-.1z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M39.7 60.7H37l2.3-13.4h4.9l.4 8 3.4-8h5l-2.3 13.4h-2.9l1.8-10h-.1l-4.1 10h-3.3v-1.5l-.1-1.6-.1-1.8-.2-1.9v-1.6l-.1-1.1v-.5h-.1l-1.8 10"/><path fill="#fff" d="M112.4 58.5l-.4 2.2h-2.5v-1.1l-.2.1-.1.2-.3.1-.1.1-.3.2-.2.1-.2.2-.3.1h-.2l-.4.1h-.3l-.3.2h-.8l-.3-.2h-.4l-.2-.1-.3-.1-.3-.2-.3-.3-.2-.1-.2-.1-.1-.3-.1-.1v-.3l-.2-.3v-.1l-.1-.3v-1.1l.1-.4v-.4l.2-.3.1-.4.3-.2.1-.3.3-.3.3-.2.2-.2.3-.3.4-.1.3-.1.4-.2.3-.1h.8l.2-.1H108.5l.1-.1h.4l.3.1h1V53.5l.1-.3v-.1l-.1-.3v-.1l-.2-.3-.1-.1-.3-.1h-.1l-.3-.2h-2.4l-.4.2h-.6l-.2.1h-.3l-.3.1h-.1l-.1.2h-.2l.7-2.5.3-.1h.2l.3-.1h.2l.2-.2h.8l.3-.1H110l.3.1H110.9l.3.2.4.1.3.1.3.2.2.2.3.2.3.2.3.3.1.4v.3l.1.4v.8zM112 60.8l.4-2.3h-.1l-.4 2.2h.1v.1zM109.3 60.7l.2.1h2.5v-.1h-2.7v.1h.2zM109.5 59.6v-.1l-.2.2v1h.2V59.5zM105.5 61h1.4l.4-.2h.3l.2-.1.3-.1.3-.2h.1l.3-.3.2-.1.2-.1.1-.2.2-.1v-.1l-.2.2-.3.2-.1.1-.1.1-.3.2-.2.1h-.3l-.2.2-.2.1h-.4l-.3.1H105.5zM103 57.8v.2l.1.2v.6l.1.1v.3l.2.3.1.1.1.3.2.1.2.3.2.1.3.2.2.1.4.1.4.2v-.2l-.4-.1-.2-.1-.3-.2-.3-.1-.3-.2-.1-.1-.1-.3-.2-.1-.1-.3-.1-.1-.2-.3v-.7l-.1-.2v-.2zM106.8 53.9h-.4l-.5.1-.2.2-.4.1-.3.1-.3.2-.2.3-.3.2-.3.3-.3.3-.1.2-.1.4-.2.3-.1.4v.4l-.1.4h.1l.1-.4V57l.2-.4.1-.3.1-.4.2-.2.2-.3.2-.3.3-.1.2-.3.4-.1.3-.3.3-.1h.4l.3-.2.4-.1zM108.8 53.7h-1l-.1.1H106.8v.1h.9l.1-.1h1zM110.1 53.8l.2-.1h-1.5v.1h1.5zM110.3 53.1V53.7l-.2.1h.2l.1-.1v-.6zM109 52l.3.2h.3l.1.1.2.1.1.2.1.1.2.1v.3h.1v-.3l-.1-.1-.2-.3-.1-.1-.1-.1-.3-.2h-.3l-.3-.1v.1zM104.7 52.6v.1l.2-.1h.1l.1-.2h.3l.3-.1h.5l.3-.1h.7l.4-.2h1.4l-.2-.1h-1l-.2.1h-1.1l-.3.2h-.5l-.3.1h-.3l-.1.1h-.1l-.2.2h.2zM105.4 50v.1l-.7 2.5h.2l.6-2.5-.1-.1v.1zM110 49.6H107.2l-.3.1h-.5l-.3.2h-.2l-.2.1h-.3l.1.1h.2l.2-.1.3-.1h.4l.3-.2H110zM113.5 53.1V51.9l-.1-.4-.1-.3-.3-.3-.2-.2-.2-.3-.4-.1-.3-.2-.3-.1-.4-.1-.3-.2-.2-.1h-.7v.1h.5l.4.2.3.1h.3l.4.3.3.1.2.1.3.3.3.3.1.2.2.3.1.3.1.4v.4l-.1.3zM112.4 58.5l1.1-5.4-.1-.1-1.1 5.5z"/><path fill="#FBB230" d="M109.9 55.8v-.1h-.2l-.1-.2H109l-.1.2h-.6l-.2.1h-.4l-.1.1h-.2l-.1.2h-.1l-.2.1h-.1l-.1.1-.2.2-.1.1v.2l-.1.1v.4l-.2.3.2.2v.3l.1.1.3.2h.1l.1.1H107.6l.2-.1h.3l.3-.2h.1l.3-.1.1-.1.1-.2h.2l.1-.1.2-.1.1-.2v-.1l.1-.1V56.6l.2-.3v-.2z"/><path fill="#fff" d="M131.1 59.3v-.5l.2-.3.2-.1.2-.2.3-.1.2-.1h.6l.2.1.3.1.3.2.1.1.2.3.1.3v.2h-.3v-.1l-.1-.3-.2-.1-.1-.3-.1-.1-.2-.2H132.1l-.3.2-.1.1-.2.3-.1.1v.4zM132 59.3v-.5h1v.5h-.4.2l.1-.1v-.1l-.1-.2H132.2v.4zM131.1 59.3v.7l.2.3.2.1.2.2.3.1.2.1h.6l.2-.1.3-.1.3-.2.1-.1.2-.3.1-.3v-.4h-.3V59.6l-.1.3-.2.1-.1.3-.1.1-.2.2H132.1l-.3-.2-.1-.1-.2-.3-.1-.1V59.3zM132 59.3v.7h.2v-.5h.3l.4.5h.1l-.2-.5h.1l.1-.2h-.8z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M131.1 59.5v-.3l.1-.3.1-.3.1-.3.3-.1.3-.1.3-.1h.6l.3.1.3.1.3.1.1.3.1.3.1.3v.6l-.1.3-.1.3-.1.3-.3.1-.3.1h-1l-.3-.1-.3-.1-.3-.1-.1-.3-.1-.3-.1-.3.1-.2m1.1.5h-.2v-1.2H132.9v.4h-.2l.3.5h-.3l-.3-.5h-.3l.1.8m.3-.7h.1v-.1h-.3v.4h.1m.1 1h.3l.3-.1.1-.1.1-.1.1-.1.1-.1v-1.2l-.1-.3-.1-.1-.1-.1H132l-.1.1-.1.1-.1.1-.3.3V60l.1.1.1.1.1.1.1.1.3.1.4.1"/><path fill="#fff" d="M113.1 60.7h3l1-5.8.1-.2v-.3l.1-.2V54l.1-.2.2-.3.1-.1.2-.3.1-.1.3-.2.2-.1.3-.1.3-.2.2-.1h1.1l.4-2.7-.2.1h-.6l-.2.2h-.2l-.3.1-.1.1-.3.2-.1.1-.1.1-.3.2-.1.1-.2.3-.1.1-.1.1-.2.3.3-1.9h-2.8l-2.1 11z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M113.1 60.7h3l1-5.8.1-.2v-.3l.1-.2V54l.1-.2.2-.3.1-.1.2-.3.1-.1.3-.2.2-.1.3-.1.3-.2.2-.1h1.1l.4-2.7-.2.1h-.6l-.2.2h-.2l-.3.1-.1.1-.3.2-.1.1-.1.1-.3.2-.1.1-.2.3-.1.1-.1.1-.2.3.3-1.9h-2.8l-2.1 11"/><path fill="#fff" d="M85.9 60.7h3l.9-5.8.1-.2v-.5l.2-.2.1-.2v-.1l.2-.2.1-.3.3-.1.1-.1.3-.2.1-.1h.4l.3-.1h.3l.4-.2h.1v.2H93.1v-.4l.1-.2v-.2l.1-.5v-.2l.2-.3.1-.1.1-.3v-.1l.2-.2.1-.2.2-.2H93.9l-.2-.1h-.1l-.3.1h-.5l-.3.2h-.2l-.2.1-.3.1-.1.2-.1.1-.3.1-.1.2-.2.1-.1.1-.1.3-.2.1-.1.3.3-1.9h-2.9l-2 11z"/><path fill="none" stroke="#fff" stroke-width=".216" stroke-miterlimit="2.613" d="M85.9 60.7h3l.9-5.8.1-.2v-.5l.2-.2.1-.2v-.1l.2-.2.1-.3.3-.1.1-.1.3-.2.1-.1h.4l.3-.1h.3l.4-.2h.1v.2H93.1v-.4l.1-.2v-.2l.1-.5v-.2l.2-.3.1-.1.1-.3v-.1l.2-.2.1-.2.2-.2H93.9l-.2-.1h-.1l-.3.1h-.5l-.3.2h-.2l-.2.1-.3.1-.1.2-.1.1-.3.1-.1.2-.2.1-.1.1-.1.3-.2.1-.1.3.3-1.9h-2.9l-2 11"/><path fill="#FBB230" d="M131.1 71.5v-.2l.2-.3.2-.1.2-.2.3-.1.2-.2h.6l.2.2.3.1.3.2.1.1.2.3.1.2h-.3l-.1-.1-.2-.3-.1-.1-.1-.1-.2-.2h-.2l-.3-.1-.1.1h-.3l-.3.2-.1.1-.2.1-.1.3v.1zM132 71.5v-.2h1v.2h-.1v-.1H132.2v.1zM131.1 71.8v-.3h.3v.3zM132 71.8v-.3h.2v.3h.4l.2-.1h.1v-.2h.1V71.8zM133.7 71.8v-.3h.3v.3zM131.1 71.8v.5l.2.3.2.3.2.1.3.1.2.2h.6l.2-.2.3-.1.3-.1.1-.3.2-.3.1-.2v-.3h-.3v.3l-.1.2-.2.2-.1.1-.1.3h-.2l-.2.1h-.4l-.3-.1h-.3l-.1-.3-.2-.1-.1-.2v-.5zM132 71.8v.5h.2v-.4h.3l.4.4h.1l-.2-.4.1-.1h.1z"/><path fill="#fff" d="M86.3 53l-.1-.7-.2-.6-.3-.4-.3-.4-.3-.4-.3-.3-.4-.1-.3-.1-.4-.1-.4-.1-.3-.2H81.3l-.7.1-.7.1-.7.3-.5.3-.4.4-.4.4-.3.4-.4.4-.2.4-.1.4-.1.4-.1.4v2.8l.1.7.1.5.3.5.3.4.4.4.4.4.4.3.4.3.5.1.5.1.5.1.5.1H85l.1-.1.1-.1.4-2.6-.4.1-.2.3-.2.1-.4.1H80.7l-.2-.1-.1-.1h-.2l-.1-.1-.1-.1-.1-.1-.1-.1-.1-.1-.1-.3-.1-.1v-.4h6.6v-.7l.1-.8.1-.8V53zm-2.9.9h-3.8v-.7l.1-.3.1-.1.1-.1.1-.1.1-.1.1-.1.1-.1.1-.1.1-.1.1-.1H82l.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1.1V53.7l.6.2z"/></g></svg>
-		                    </li>
-		                    <li>
-		                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="14.3 17 896.4 560" style="max-width: 80px" enable-background="new 14.3 17 896.4 560"><path fill="#FFF200" d="M910.1 356.9V38.1c0-11.6-9-20.6-20.6-20.6h-854c-11.7 0-20.6 9-20.6 20.6v318.8h895.2z"/><path class="img-cards" fill="#034EA2" d="M624 189.9L757.3 61.4 890 194.1 758.4 325.7z"/><path fill="none" stroke="#A7A9AC" stroke-width="2.143" stroke-miterlimit="2.613" d="M624 189.9L757.3 61.4 890 194.1 758.4 325.7z"/><path fill="#A7A9AC" d="M722.9 112.2l-8.5 21.1h40.7s25.4-2.7 25.4 22.7-24.8 22.7-24.8 22.7h-32.2L713.4 202h41.3s23.8-2.7 23.8 20.6-23.8 22.2-23.8 22.2h-29.1l-11.1 23.8 58.7-.6s38 .6 38-32.8c0-25.4-16.4-33.3-16.4-33.3H827l-9.5-22.2h-18s12.6-12.6 12.6-30.7-14.3-37-36.5-36.5l-52.7-.3zM117.5 148.1c12.6 0 21.7-7.4 21.7-28.5 0-22.7-17.5-25.9-28.5-25.9H95.2v54.5l22.3-.1zM41.3 280.9V36.5h78.8c47.1 0 69.8 32.2 69.8 82.5 0 52.4-21.1 85.7-68.2 85.7h-27v76.2H41.3zM274.5 202c-15.3 11.1-35.9 5.8-35.9 29.1 0 9 5.8 14.8 14.8 14.8 16.9.1 22.1-19.1 21.1-43.9zm4.7 78.9l-2.1-19c-13.2 18.5-27 24.3-45 24.3-22.7 0-42.8-16.4-42.8-53.4 0-80.9 85.1-43.9 85.1-77.2 0-12.6-10.6-14.8-15.3-14.8-6.4 0-15.3 2.1-16.4 17.5h-45.5c0-37.6 18-59.7 65-59.7 56.6 0 59.7 31.2 59.7 73.5v83c0 10.1 0 15.3 6.4 22.7v3.1h-49.1zM381.8 188.8c0 17.5 5.8 34.3 18.5 34.3 14.8 1 20.1-17.5 20.1-36.5 0-19.6-4.8-38.6-20.1-38.6-14.2.1-18.5 18.1-18.5 40.8zm6.4 101c0 2.1 1 5.3 3.1 7.9 2.1 2.7 5.3 4.2 10.1 4.2 13.8 0 19-9 19-34.3v-14.3c-6.8 10.1-16.9 19.6-34.3 19.6-32.8 0-51.8-38.6-51.8-84 0-43.9 14.3-90.4 53.4-90.4 14.3 0 28.1 11.1 35.9 28.5v-23.2h41.7V247c0 53.4-4.2 95.2-62.9 95.2-42.3 0-59.7-24.8-62.4-51.2h48.1l.1-1.2zM519.9 200.4c0 33.8 8.5 48.1 20.6 48.1 12.6 0 20.6-14.8 20.6-48.1 0-25.9-7.9-46-20.1-45-16.4.1-21.1 24.9-21.1 45zm20.5-92.5c42.3 0 68.2 37 68.2 92.5 0 65-29.6 95.7-67.7 95.7-38 0-67.7-31.2-67.7-92-.4-61.9 26.5-96.2 67.2-96.2z"/><path fill="#034EA2" d="M886.3 391.8h-75.1c-3.1 0-6.8 2.7-7.4 5.8l-2.1 11.6c-.6 3.1 1.6 5.8 5.3 5.8h21.7l-11.1 95.2c-.6 3.1 2.1 6.4 5.3 6.4H843c3.1 0 6.4-2.7 6.8-6.4l11.1-95.2h21.2c3.1 0 6.8-2.7 7.4-5.8l2.1-11.6c0-3.1-2.1-5.8-5.3-5.8zM634.6 440l-12.2-38c-2.7-6.8-6.4-10.1-10.1-10.1h-28.1c-3.1 0-6.8 2.7-7.4 5.8L562 510.8c-.6 3.1 2.1 6.4 5.3 6.4h20.1c3.1 0 6.4-2.7 6.8-6.4l7.9-69.3 10.1 40.7c1 2.7 3.1 5.8 6.8 5.8h13.8c3.1 0 9-1 12.2-6.4l14.8-25.9-5.8 55c-.6 3.1 2.1 6.4 5.3 6.4h20.2c3.1 0 6.4-2.7 6.8-6.4l14.3-113.1c.6-3.1-1.6-5.8-5.3-5.8H671s-7.9-1-14.3 10.1c-5.2 9-22.1 38.1-22.1 38.1zM347.5 391.8h18c3.1 0 5.8 2.7 5.3 5.8L357 510.8c-.6 3.1-3.7 6.4-6.8 6.4h-16.9c-3.7 0-6.8-2.7-9.5-6.4-9.5-14.3-25.9-51.2-25.9-51.2l-4.8 51.2c-.6 3.1-3.1 6.4-6.8 6.4h-20.1c-3.1 0-5.8-2.7-5.3-6.4l13.8-113.1c.6-3.1 3.7-5.8 7.4-5.8H298c3.1 0 7.9 5.3 11.6 10.1l24.8 37 4.8-41.7c-.7.4.3-5.5 8.3-5.5zM192.5 462.7l10.6-29.6 4.2 29.6h-14.8zm40.2-61.9c-1.6-5.8-5.8-9.5-9.5-9.5h-29.1c-3.1 0-6.8 2.7-7.4 5.8l-46 111.1c-1.6 4.8 2.1 7.9 5.3 7.9h21.7c4.8 0 6.8-5.3 8.5-9.5l7.9-22.2H210l3.7 23.3s.6 9 11.1 9h20.1c3.1 0 7.4-4.8 6.4-9.5l-18.6-106.4zM745.6 462.7l10.6-29.6 4.2 29.6h-14.8zm40.2-61.9c-1.6-5.8-5.8-9.5-9.5-9.5h-29.1c-3.1 0-6.8 2.7-7.4 5.8l-46 111.1c-1.6 4.8 2.1 7.9 5.3 7.9h21.7c4.8 0 6.8-5.3 8.5-9.5l7.9-22.2H763l3.7 23.3s.6 9 11.1 9h20.1c3.1 0 7.4-4.8 6.4-9.5l-18.5-106.4zM459 392.4h-39.7c-36.5 0-39.7 33.8-39.7 33.8s-3.7 20.6-8.5 55.5 21.1 35.5 32.2 35.5h40.2c3.1 0 6.4-2.7 6.8-6.4l1.6-12.2c.6-3.1-2.7-5.3-5.8-5.3h-23.8c-21.7 0-18.5-14.8-18.5-14.8s5.3-34.3 6.8-47.1c1.6-12.6 12.2-15.9 22.3-15.9h23.3c3.1 0 6.4-1.6 6.8-5.3l1.6-12.2c.2-2.5-2.4-5.6-5.6-5.6zM529.4 429.9s-3.1 34.3-5.3 45c-3.1 15.3-10.6 17.5-16.9 17.5-15.9 0-12.6-13.2-12.6-13.2s5.3-34.3 6.8-47.1c1.5-12.7 9-14.3 18.5-14.3 11-.6 9.5 12.1 9.5 12.1zm6.8-37.5c-17.5-2.1-31.8.6-31.8.6-30.1 2.7-34.3 33.8-34.3 33.8s-3.7 20.6-8.5 55.5 21.7 36.5 38.6 36.5c0 0 48.1 4.8 53.9-35.5 5.8-41.3 6.8-53.9 7.4-60.9 2.2-16.2-8.3-27.9-25.3-30zM97.3 438.9H83l2.1-16.4h16.4s7.9-.6 6.8 6.8c-.3 7.5-4 9.6-11 9.6zm7 42.9c-1 9.5-6.4 12.6-14.3 13.2-7.4.6-13.8 0-13.8 0l3.1-26.4h16.9c.1-.1 10.2-1.1 8.1 13.2zm15.8-28.6c19.6-9.5 20.1-24.3 21.1-33.8 2.7-22.7-20.1-26.4-26.4-26.4H60.9c-3.7 0-6.8 3.1-7.4 6.4l-13.2 111c-.6 3.7 2.1 6.4 5.8 6.4h58.2c17.5 0 32.8-15.3 34.9-32.2 3.1-26.1-19.1-31.4-19.1-31.4z"/><path fill="none" stroke="#034EA2" stroke-miterlimit="2.613" d="M14.8 558.5c0 9.9 8.1 18 18 18h859.4c9.9 0 18-8.1 18-18v-523c0-9.9-8.1-18-18-18H32.8c-9.9 0-18 8.1-18 18v523z"/></svg>
-		                    </li>
-	                	</ul>
-					</li>
-				</ul>
-			<div>
-		<div>
-    </footer>
-     <footer class="panel-hr">
-        <hr>
-    </footer>
-    <footer class="panel-prefooter">
-        <div class="row">
-            <div class="large-6 medium-6 columns">
-                <h4 class="subheader">Fai parte della community</h4>
-                <ul class="inline-list no-margin-inline-list">
-                    <li>
-                        <a id="yourLink1" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" style="width: 32px; height: 32px;" enable-background="new 0 0 32 32"><g><path class="fi-social" fill="#3b5998" d="M68 0H4C1.8 0 0 1.8 0 4v64c0 2.2 1.8 4 4 4h34.5V44.1h-9.4V33.3h9.4v-8c0-9.3 5.7-14.4 14-14.4 4 0 7.4.3 8.4.4V21h-5.8c-4.5 0-5.4 2.1-5.4 5.3v6.9h10.8L59 44.1h-9.4V72H68c2.2 0 4-1.8 4-4V4c0-2.2-1.8-4-4-4z"/></g></svg></a>
+                    <li class="tab-title" role="presentational">
+                        <a href="#birra" role="tab" tabindex="1" aria-selected="false" controls="birra">Birre</a>
                     </li>
-                    <li>
-                        <a id="yourLink2" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="32" height="32" viewBox="0 0 72 72"><radialGradient id="SVGID_1_" cx="20.9" cy="71.8" r="72.6" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFD776"/><stop offset="0.2463" stop-color="#F3A554"/><stop offset="0.3793" stop-color="#F15C3C"/><stop offset="0.5394" stop-color="#D94867"/><stop offset="0.6995" stop-color="#C32F87"/><stop offset="0.9122" stop-color="#7D63A7"/><stop offset="0.9852" stop-color="#5C6CB3"/></radialGradient><path class="fi-social" d="M72 56.5C72 65.2 64.9 72 56.2 72H15.6C6.9 72 0 65.2 0 56.5V16.1C0 7.4 6.9 0 15.6 0h40.7C64.9 0 72 7.4 72 16.1V56.5z" fill="url(#SVGID_1_)"/><path d="M60 48.6C60 56 54 62 46.6 62H25.4C18 62 12 56 12 48.6V25.4C12 18 18 12 25.4 12h21.2C54 12 60 18 60 25.4V48.6z" style="fill:none;stroke-width:6;stroke:#FFF"/><path d="M47.8 36.3c-0.1 6.6-5.3 11.9-11.9 11.9S24 42.9 24 36.3s5.3-12.1 11.9-11.9C43.9 24.7 47.9 29.8 47.8 36.3z" style="fill:none;stroke-width:7;stroke:#FFF"/><circle cx="50.5" cy="21.7" r="3.3" fill="#FFF"/></svg></a>
+                    <li class="tab-title" role="presentational">
+                        <a href="#vino" role="tab" tabindex="2" aria-selected="false" controls="vino">Vini</a>
                     </li>
-                    <li>
-                        <a href="https://www.tripadvisor.it/Restaurant_Review-g1587889-d2373449-Reviews-Ca_Vecchia_Beerstrot-Filottrano_Province_of_Ancona_Marche.html" target="_blank" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" style="width: 32px; height: 32px;" enable-background="new 0 0 72 72"><path class="fi-social" fill="#589442" d="M18.1 24.8c-8 0-14.4 6.5-14.4 14.4 0 8 6.5 14.4 14.4 14.4 8 0 14.4-6.5 14.4-14.4 0-8-6.5-14.4-14.4-14.4zm-.2 23.1c-4.8 0-8.7-3.9-8.7-8.7 0-4.8 3.9-8.7 8.7-8.7 4.8 0 8.7 3.9 8.7 8.7 0 4.8-3.9 8.7-8.7 8.7zm35.5-26.6c-5.1-2.2-10.9-3.5-17.4-3.5-6.4 0-12.8 1.2-17.9 3.4 9.9 0 17.9 8 17.9 17.9 0-9.6 7.7-17.5 17.4-17.8zM17.9 33.1c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm-.5 9c-1.6 0-2.9-1.3-2.9-2.9 0-1.6 1.3-2.9 2.9-2.9s2.9 1.3 2.9 2.9c0 1.6-1.3 2.9-2.9 2.9zm54.4-2.9c0 9.9-8 17.9-17.9 17.9-5.6 0-10.6-2.6-13.9-6.6-1.4 1.8-4 5.6-4 5.6-.4-.9-2.7-4.1-4-5.6-3.3 4-8.3 6.6-13.9 6.6-9.9 0-17.9-8-17.9-17.9 0-3.9 1.3-7.6 3.4-10.5-.3-2-1.7-5-3.6-7.1V68c0 2.2 1.8 4 4 4h64c2.2 0 4-1.8 4-4V21.5c-1.9 2.2-3.2 5.1-3.6 7.2 2.2 2.9 3.4 6.6 3.4 10.5zm-23.9-.1c0 3.3 2.7 6 6 6s6-2.7 6-6-2.7-6-6-6-6 2.7-6 6zm8.5 0c0 1.6-1.3 2.9-2.9 2.9-1.6 0-2.9-1.3-2.9-2.9s1.3-2.9 2.9-2.9c1.6 0 2.9 1.3 2.9 2.9zm-16.9.1c0 8 6.5 14.4 14.4 14.4 8 0 14.4-6.5 14.4-14.4 0-8-6.5-14.4-14.4-14.4s-14.4 6.4-14.4 14.4zm23.1-.1c0 4.8-3.9 8.7-8.7 8.7-4.8 0-8.7-3.9-8.7-8.7 0-4.8 3.9-8.7 8.7-8.7 4.8 0 8.7 3.9 8.7 8.7zM68 0H4C1.8 0 0 1.8 0 4v17.5h11.4c6.1-4.1 15-6.7 24.6-6.7 9.6 0 17.9 2.6 24 6.7h12V4c0-2.2-1.8-4-4-4z"/></svg></a>
+                    </li>
+                    <li class="tab-title" role="presentational">
+                        <a href="#bevanda" role="tab" tabindex="2" aria-selected="false" controls="bevanda">Bevande</a>
+                    </li>
+                    <li class="tab-title" role="presentational">
+                        <a href="#liquore" role="tab" tabindex="2" aria-selected="false" controls="liquore">Liquori</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </footer>
+        <div class="extra-space-hero"><br><br><br> </div>
+<!-- fine tabbar switch-->
+    </div>
+<!-- tab fine -->
+<!-- inizio footer -->
 <!-- fine footer -->
 <!-- inizio navbar footer -->
-    <div class="row footer">
-        <div class="small-12 medium-12 large-12 columns">
-            <p class="links">
-                <a href="https://www.beerstrot.it">Home</a>
-                <a href="https://www.beerstrot.it/menu/">Menù</a>
-                <a href="https://www.beerstrot.it/asporto/">Asporto e Consegne</a>
-                <a href="https://www.beerstrot.it/social/">Social</a>
-                <a href="https://www.beerstrot.it/contatti/">Contatti</a>
-                <a href="https://www.beerstrot.it/blog/">Blog</a>
-            </p>
-        </div>
-    </div>
 <!-- fine navbar footer-->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>

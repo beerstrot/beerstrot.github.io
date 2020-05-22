@@ -115,6 +115,7 @@ $gainsboro   : #DDDDDD;
 // $tuatara     : #444444;
 // $oil         : #333333;
 // $jet         : #222222;
+$jet         : #222222;
 // $black       : #000000;
 $black: #000000;
 
@@ -349,6 +350,7 @@ $blockquote-border: 8px solid scale-color($gainsboro, $lightness: 0%);
 
 // $accordion-navigation-padding: rem-calc(16);
 // $accordion-navigation-bg-color: $silver;
+$accordion-navigation-bg-color: $white;
 // $accordion-navigation-hover-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -5%);
 // $accordion-navigation-active-bg-color: scale-color($accordion-navigation-bg-color, $lightness: -3%);
 // $accordion-navigation-font-color: $jet;
@@ -1356,16 +1358,18 @@ $sub-nav-active-padding: rem-calc(3 6);
 // $tabs-navigation-padding: rem-calc(16);
 $tabs-navigation-padding: rem-calc(6);
 // $tabs-navigation-bg-color: $silver;
+$tabs-navigation-bg-color: $primary-color;
 // $tabs-navigation-active-bg-color: $white;
 // $tabs-navigation-hover-bg-color: scale-color($tabs-navigation-bg-color, $lightness: -6%);
 // $tabs-navigation-font-color: $jet;
+$tabs-navigation-font-color: $white;
 // $tabs-navigation-active-font-color: $tabs-navigation-font-color;
+$tabs-navigation-active-font-color: $jet;
 // $tabs-navigation-font-size: rem-calc(16);
 // $tabs-navigation-font-family: $body-font-family;
 
 // $tabs-content-margin-bottom: rem-calc(24);
 // $tabs-content-padding: ($column-gutter/2);
-
 // $tabs-vertical-navigation-margin-bottom: 1.25rem;
 
 // 32. Thumbnails

@@ -319,7 +319,7 @@ menupage text
         font-size: 1rem;
     }
     p {
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
     }
 }
@@ -796,4 +796,13 @@ calendario - commenti
     }
 }
 
+/*===================================================================
+tabs
+===================================================================*/
+
+.tab-title {
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: $white;
+}
 
