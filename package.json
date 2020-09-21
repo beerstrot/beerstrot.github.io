@@ -10,7 +10,7 @@
     "grunt-contrib-uglify": "~5.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-grunticon": "~2.3.2",
-    "grunt-sass": "~3.1.0",
+    "grunt-sass": "2.1.0",
     "grunt-sitemap": "~2.0.1",
     "grunt-svg-sprite": "^1.5.0",
     "grunt-uncss": "~0.9.1",
