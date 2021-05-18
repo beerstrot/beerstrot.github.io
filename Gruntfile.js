@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
 
     var mozjpeg = require('imagemin-mozjpeg');
-    
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -13,12 +13,12 @@ module.exports = function(grunt) {
         },
 
         imagemin: {
-            dynamic: { 
+            dynamic: {
                 options: {
                     optimizationLevel: 7,
                     svgoPlugins: [{ removeViewBox: false }],
                     use: [mozjpeg()]
-                },                       
+                },
                 files: [{
                     expand: true,
                     cwd: 'asset/img/_src/',
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
                 },
                 files: {
                     'css/app.css': 'scss/app.scss'
-                }        
+                }
             }
         },
 
@@ -48,7 +48,7 @@ module.exports = function(grunt) {
                 dest: 'js/app.min.js'
             }
         },
-        
+
         grunticon: {
             myIcons: {
                 files: [{
@@ -67,11 +67,11 @@ module.exports = function(grunt) {
                 extension: {
                     required: false,
                     trailingSlash: true
-                }       
+                }
             },
-            
+
             dist: {
-                pattern: ['**/*.html', '!**/google*.html'], // this will exclude 'google*.html' 
+                pattern: ['**/*.html', '!**/google*.html'], // this will exclude 'google*.html'
                 siteRoot: 'public/'
             }
         },
@@ -131,7 +131,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-browser-sync');
-
     grunt.registerTask('build', ['sass']);
     grunt.registerTask('default', ['build', 'watch', 'imagemin', 'concat', 'browserSync', 'uglify', 'uncss', 'grunticon:myIcons', 'sitemap']);
 }
