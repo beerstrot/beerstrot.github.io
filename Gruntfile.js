@@ -46,6 +46,10 @@ module.exports = function(grunt) {
             js: {
                 src: 'js/app.js',
                 dest: 'js/app.min.js'
+            },
+            prenota: {
+                src: 'js/prenota.js',
+                dest: 'js/prenota.min.js'
             }
         },
 
@@ -103,7 +107,12 @@ module.exports = function(grunt) {
             sass: {
                 files: 'scss/**/*.scss',
                 tasks: ['sass']
-            }
+            },
+
+            app: {
+                files: ['js/app.js', 'js/prenota.js'],
+                tasks: ['uglify']
+            },
         },
 
         browserSync: {
