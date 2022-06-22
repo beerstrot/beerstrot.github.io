@@ -4,7 +4,7 @@ $(document).ready(() => {
   if (pid) {
     return showReservation(pid);
   }
-  getShifts();
+  makeInterface();
 })
 
 let tryCount = 0
@@ -14,7 +14,6 @@ function getShifts() {
     type: 'GET',
     crossDomain: true,
     error: res => {
-      // if (tryCount++ < 3) return getShifts();
       $('#loading').hide();
       showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
         Se il problema persiste, consigliamo di 
@@ -24,10 +23,7 @@ function getShifts() {
       $('#loading').show();
     },
     success: res => {
-      console.log(res);
-      window.rrr = res;
-
-      makeInterface(JSON.parse(res));
+      console.log('the shifts:', res);
       $('#loading').hide();
     }
   });
@@ -133,9 +129,11 @@ function validateData (data) {
     message = 'inserire un indirizzo e-mail.';
   } else if (data.date === '') {
     message = 'scegliere una data e un orario.';
+  } else if (data.shiftId === undefined) {
+    message = 'selezionare un periodo per la prenotatione.';
   } else if (data.name === '') {
     message = 'inserire un nome.';
-  } else if (data.surname=== '') {
+  } else if (data.surname === '') {
     message = 'inserire un cognome.';
   } else {
     $('#notification').hide();
@@ -148,7 +146,7 @@ function showMessage (message) {
   $('#notification').html(message).show();
 }
 
-function makeInterface (shifts) {
+function makeInterface () {
   $('#infoDiv').hide();
   $('<button/>', {
     css: {
@@ -157,25 +155,26 @@ function makeInterface (shifts) {
     text: 'Prenotare',
     tabindex: 7,
     click: () => {
+      if (!$('#from').val()) return showMessage('selezionare una data');
+      const d = $('#from').datetimepicker('getValue');
+      d.setHours(12);
       const data = {
-        date: $('#from').datetimepicker('getValue').toISOString(),
+        date: d.toISOString(),
+        shiftId: $($('.bShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex'),
         href: window.location.href
       };
       [
         'name',
-        'cognome',
+        'surname',
         'telephone',
         'email',
         'quantity',
         'obs',
       ].forEach(id => { data[id] = $(`#${id}`).val() });
-      const sBut = sButtons.filter(b => b.selected);
-      if (sBut.length === 0) return showMessage('selezionare un periodo per la prenotation');
-      data.shift = shifts[sBut[0].index];
 
       if (!validateData(data)) return
 
-      // check if dateTime is in tolerance
+      console.log('data sent:', data);
       $.ajax({
         url: 'http://localhost:5001/prenota',
         type: 'POST',
@@ -209,43 +208,22 @@ function makeInterface (shifts) {
   const disableDates = []; // get from database, given by ADM
   jQuery('#from').datetimepicker({
     disableDates,
-    step: 15,
-    format:'d/M/Y, H.i',
-    // minDate: 0,
-    defaultTime: '20',
-    minTime: '19',
-    maxTime: '23',
-    onChangeDateTime: (dp, input) => {
+    format:'d/M/Y',
+    minTime: '12:00',
+    maxTime: '12:00',
+    defaultTime: '12:00',
+    allowTimes:['12:00'],
+    // minDate: 0, // disabled for tests
+    timepicker: false,
+    // onChangeDateTime: (dp, input) => {
+    onSelectDate: (dp, input) => {
+      $('#loading').show();
+      window.ddd = { dp, input };
+      console.log('dp select');
       $('#from').chosen = true;
       input.chosenn = true;
-      window.ddd = { dp, input };
+      updateShifts(dp);
     },
-  });
-  const sButtons = [];
-  shifts.forEach((s, index) => {
-    const hour = Math.floor(s.start_time / (60 * 60));
-    const mins = Math.floor((s.start_time % (60 * 60)) / 60);
-    const hour_ = Math.floor(s.end_time / (60 * 60));
-    const mins_ = Math.floor((s.end_time % (60 * 60)) / 60);
-    const b = $('<button/>', { class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
-      .text(`${hour}.${mins} - ${hour_}.${mins_}`)
-      .appendTo(
-        $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
-          .appendTo('#shiftGrid')
-      );
-    b.bcolor = b.css('background-color');
-    b.index = index;
-    sButtons.push(b);
-  });
-  sButtons.forEach(b => {
-    b.click(() => {
-      sButtons.forEach(b => {
-        b.css('background', b.bcolor);
-        b.selected = false;
-      });
-      b.css('background', 'darkgreen');
-      b.selected = true;
-    });
   });
 }
 
@@ -275,4 +253,68 @@ function getAvailability (date) {
       updateInterface(res);
     }
   });
+}
+
+const weekdays = {
+  Su: 0,
+  Mo: 1,
+  Tu: 2,
+  We: 3,
+  Th: 4,
+  Fr: 5,
+  Sa: 6,
+};
+function updateShifts (dp) {
+  $('.bShift').remove();
+  const data = {
+    day: dp.getDate(),
+    month: dp.getMonth(),
+    year: dp.getYear() + 1900
+  };
+  $.ajax({
+    url: 'http://localhost:5001/shiftsAvailable',
+    type: 'GET',
+    crossDomain: true,
+    data,
+    dataType: 'json',
+    contentType: 'application/json; charset=utf-8',
+    error: res => console.log(res, 'the res'),
+    success: res => {
+      window.shifts_available = res;
+      mkShiftButtons(res.shifts);
+    }
+  });
+}
+
+function mkShiftButtons (shifts) {
+  const sButtons = [];
+  shifts.forEach((s, i) => {
+    const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
+      .text(s.name)
+      .appendTo(
+        $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
+          .appendTo('#shiftGrid')
+      );
+    b.bcolor = b.css('background-color');
+    b.bindex = s.id;
+    b.attr('bindex', s.id);
+    b.attr('bindex2', i);
+    sButtons.push(b);
+  });
+  sButtons.forEach(b => {
+    b.click(() => {
+      sButtons.forEach(b => {
+        b.css('background', b.bcolor);
+        b.selected = false;
+        b.attr('bselected', false);
+      });
+      b.css('background', 'darkgreen');
+      b.attr('bselected', true);
+    });
+  });
+  // $('#bShift0').click();
+  $('#loading').hide();
+}
+
+function shiftAvailable (start, duration, seats, rooms) {
 }
