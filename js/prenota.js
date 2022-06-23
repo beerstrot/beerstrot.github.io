@@ -2,10 +2,100 @@ $(document).ready(() => {
   const url = new URL(window.location.href);
   const pid = url.searchParams.get('id');
   if (pid) {
+    if (pid == 'notes') {
+      return showNotes();
+    }
     return showReservation(pid);
   }
   makeInterface();
-})
+});
+
+function showNotes (datetime) {
+  $('.form').hide();
+  $('#infoDiv').hide();
+  $('.clearme').remove();
+  const nd = $('#notesDiv').show();
+  $('#innerNotesDiv').show();
+  $.ajax({
+    url: 'http://localhost:5001/bookings',
+    type: 'GET',
+    data: { date: datetime || '2022-06-13T09:40:41.729Z' }, // (new Date()).toISOString() },
+    crossDomain: true,
+    error: res => {
+      $('#loading').hide();
+      showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
+        Se il problema persiste, consigliamo di 
+        <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>.`);
+    },
+    beforeSend: function() {
+      $('#loading').show();
+    },
+    success: res => {
+      const r = JSON.parse(res);
+      console.log('the bookings:', r.bookings);
+      console.log('the date:', r.date);
+      const date = (new Date(r.date)).toLocaleString('it-IT', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+
+      jQuery('#from2').datetimepicker({
+        startDate: new Date(r.date),
+        format:'d/M/Y',
+        minTime: '12:00',
+        maxTime: '12:00',
+        defaultTime: '12:00',
+        allowTimes:['12:00'],
+        // minDate: 0, // disabled for tests
+        timepicker: false,
+        // onChangeDateTime: (dp, input) => {
+        onSelectDate: (dp, input) => {
+          $('#loading').show();
+          updateShifts(dp);
+          window.ddp = dp;
+          showNotes(dp.toISOString());
+        },
+        inline:true,
+      }).datetimepicker('show');
+
+      const b = r.bookings;
+      $('#loading').hide();
+      window.bbb = r;
+      const nbookings = b.length;
+      if (!nbookings) return showNotesMessage(`nessuna prenotazione per <b>${date}</b>.`);
+
+      let nseggiolini = 0;
+      let ncani = 0;
+      const notes = [];
+      b.forEach((i, ii) => {
+        try {
+          const n = JSON.parse(i.notes);
+          notes.push(n);
+          const s = Boolean(n.seggiolini);
+          const c = Boolean(n.cani);
+          nseggiolini += s;
+          ncani += c;
+          if (s || c) {
+            const tr = $('<tr/>', { class: 'clearme', css: { background: ii % 2 === 0 ? '#fff' : '#ddd' } }).appendTo('#notesTableBody');
+            const bc = i.booking_customer;
+            $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendTo(tr);
+            $('<td/>').html(n.telephone || '').appendTo(tr);
+            $('<td/>').html(n.email || '').appendTo(tr);
+            $('<td/>').html(new Date(i.booked_for).toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })).appendTo(tr);
+            $('<td/>', { css: { background: c ? 'rgba(200, 255, 200, 0.5)' : '' } }).html(c ? 'X' : '').appendTo(tr);
+            $('<td/>', { css: { background: s ? 'rgba(200, 200, 255, 0.5)' : '' } }).html(s ? 'X' : '').appendTo(tr);
+            $('<td/>').html(n.note).appendTo(tr);
+          }
+        } catch (e) {
+          console.log(e, 'not json notes!');
+        }
+      });
+      window.ccc = { nbookings, notes, nseggiolini, ncani };
+      // const summary = `Ci sono ${nbookings} per il giorno,  `;
+      const summary = `Ci sono <b>${nbookings}</b> le prenotazioni per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggiolini.`
+      if (nseggiolini + ncani === 0) return showNotesMessage(summary);
+      $('<p/>', { class: 'clearme', css: { padding: '2%' } }).html(summary).prependTo('#innerNotesDiv');
+    }
+  });
+}
+
 
 let tryCount = 0
 function getShifts() {
@@ -31,6 +121,7 @@ function getShifts() {
 
 function showReservation (pid) {
   $('.form').hide();
+  console.log(pid);
   $.ajax({
     url: 'http://localhost:5001/check',
     type: 'GET',
@@ -39,6 +130,7 @@ function showReservation (pid) {
     dataType: 'json',
     contentType: 'application/json; charset=utf-8',
     error: res => {
+      console.log(res, 'ERROR');
       $('#loading').hide();
       showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
         Se il problema persiste, consigliamo di 
@@ -51,29 +143,48 @@ function showReservation (pid) {
     },
     success: res => {
       $('#loading').hide();
-      console.log(res.reservation);
-      presentReservation(res.reservation);
+      console.log(res, 'SUCCESS');
+      window.bbb = res.booking;
+      presentReservation(res.booking);
     }
   });
 }
 
 function presentReservation (r) {
+  if ((!r) || 'error' in r) return bookingNotFound();
+  const bc = r.booking_customer;
+  const extra = JSON.parse(r.notes);
+
+  const date = new Date(r.booked_for);
+  const date2 = new Date(date.getTime() + r.duration * 60000);
+
   const div = $('#innerInfoDiv');
   const fs = $('<fieldset/>').appendTo(div);
   $('<legend/>').text('Informazione della Prenotazione').appendTo(fs);
   const addInfo = (s, id) => $('<div/>', { id: 'i_' + id }).html(`<b>${s}</b>: ${r[id]}`).appendTo(fs);
-  addInfo('Nome', 'name');
-  addInfo('Telefono', 'telephone');
-  addInfo('Email', 'email');
-  addInfo('Quando', 'date');
-  addInfo('Quantità di ospiti', 'quantity');
-  addInfo('Osservazioni', 'obs');
+  const addInfo2 = (s, ss) => $('<div/>').html(`<b>${s}</b>: ${ss}`).appendTo(fs);
+  addInfo2('Nome', bc.first_name + ' ' + bc.last_name);
+  addInfo2('Telefono', extra.telephone || '--');
+  addInfo2('Email', extra.email || '--');
+  $('<br/>').appendTo(fs);
+  addInfo2(
+    'Quando',
+    date.toLocaleString('it-IT', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'
+    }) + '-' + date2.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })
+  );
+  addInfo('Quantità di ospiti', 'people');
+  addInfo2('Osservazioni', extra.note);
+  addInfo2('Cani', extra.cani ? 'sì' : 'no');
+  addInfo2('Seggiolini', extra.seggiolini ? 'sì' : 'no');
+  $('<br/>').appendTo(fs);
   addInfo('Status', 'status');
-  addInfo('ID della prenotazione', 'reservationID');
+  addInfo('ID della prenotazione', 'id');
   $('#modBtn').click(() => {
+    // carica la pagina con la info?
     console.log('mod');
-  });
-  const pid = r.reservationID;
+  }).hide();
+  const pid = r.id;
   $('#cancBtn').click(() => {
     console.log('can');
     $.ajax({
@@ -102,18 +213,6 @@ function presentReservation (r) {
     // chiamata per cancellare la prenotazione
     // atualiza la pagina notificando il cancelamento
   });
-  // $('<button/>', {
-  //   text: 'Modificare',
-  //   click: () => {
-  //     console.log('mod');
-  //   }
-  // }).appendTo('#buttonInfoDiv');
-  // $('<button/>', {
-  //   text: 'Cancellare',
-  //   click: () => {
-  //     console.log('can');
-  //   }
-  // }).appendTo('#buttonInfoDiv');
 }
 
 function validateEmail (email) {
@@ -135,6 +234,12 @@ function validateData (data) {
     message = 'inserire un nome.';
   } else if (data.surname === '') {
     message = 'inserire un cognome.';
+  } else if (data.quantity == 0) {
+    message = 'per quante persone è la prenotazione?';
+  } else if (data.quantity > 10) {
+    message = `per prenotazioni di oltre 10 persone, vi preghiamo di contattarci:
+    ${telString}
+    ${messengerString}`;
   } else {
     $('#notification').hide();
     return true;
@@ -161,7 +266,9 @@ function makeInterface () {
       const data = {
         date: d.toISOString(),
         shiftId: $($('.bShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex'),
-        href: window.location.href
+        href: window.location.href,
+        cani: $('#cani').is(':checked'),
+        seggiolini: $('#seggiolini').is(':checked')
       };
       [
         'name',
@@ -193,7 +300,7 @@ function makeInterface () {
           $('#loading').show();
         },
         success: res => {
-          const url = window.location.href + '?id=' + res.reservationID;
+          const url = window.location.href + '?id=' + res.reservationID2;
           window.location.href = url;
           // window.location.assign(url);
           // window.location.reload();
@@ -314,7 +421,24 @@ function mkShiftButtons (shifts) {
   });
   // $('#bShift0').click();
   $('#loading').hide();
+  $('#dateRow').show();
 }
 
-function shiftAvailable (start, duration, seats, rooms) {
+const telString = '<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><span itemprop="telephone"> 071 8853384</span></a></p>';
+
+const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Chat messenger</a></p>';
+
+function bookingNotFound () {
+  const div = $('#innerInfoDiv');
+  const fs = $('<fieldset/>').appendTo(div);
+  $('<legend/>').text('Prenotazione non trovata').appendTo(fs);
+  $('<div/>').html(`<p>Vi chiediamo gentilmente di mettervi in contatto con noi.</p>`).appendTo(fs);
+  $('<div/>').html(telString).appendTo(fs);
+  $('<div/>').html(messengerString).appendTo(fs);
+  $('#buttonInfoDiv').hide();
+}
+
+function showNotesMessage (msg) {
+  $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
+  $('#innerNotesDiv').hide();
 }

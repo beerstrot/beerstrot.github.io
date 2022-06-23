@@ -88,6 +88,29 @@ input[type="radio"] {
 <svg id="definition" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="required" viewbox="0 0 128 128"><g><path d="M110.1,16.4L75.8,56.8l0.3,1l50.6-10.2v32.2l-50.9-8.9l-0.3,1l34.7,39.1l-28.3,16.5L63.7,78.2L63,78.5   l-18.5,49L17.2,111l34.1-39.8v-0.6l-50,9.2V47.6l49.3,9.9l0.3-0.6L17.2,16.7L45.5,0.5l17.8,48.7H64L82.1,0.5L110.1,16.4z"></path></g></symbol></defs></svg>
     <div class="panel-home-2n" id="mainDiv" style="padding-top:0">
       <div id="loading" hidden><br/><br/><div style="padding-top:25%">A trovare i tavoli e registrare la prenotazione.</div></div>
+      <div class="row" id="notesDiv" hidden>
+        <div class="columns small-12" id="innerNotesDiv_">
+          <div>
+            <input tabindex="5" id="from2" type="text" >
+          </div>
+        </div>
+        <div class="columns small-12" id="innerNotesDiv">
+        <table>
+          <thead>
+            <tr>
+              <th width="22%">Nome</th>
+              <th width="12%">Telefono</th>
+              <th width="12%">Email</th>
+              <th width="12%">Orario</th>
+              <th width="5%">Cani</th>
+              <th width="5%">Seggiolini</th>
+              <th width="12%">Notes</th>
+            </tr>
+          </thead>
+          <tbody id="notesTableBody" style="text-align:center;"></tbody>
+        </table>
+        </div>
+      </div>
       <div class="row" id="infoDiv">
         <div class="columns small-6" id="innerInfoDiv"></div>
         <div class="columns small-6" id="buttonInfoDiv">
@@ -144,7 +167,7 @@ input[type="radio"] {
                 </label>
               </div>
             </div>
-            <div class="row">
+            <div class="row" id="dateRow" hidden>
               <div class="columns">
                 <label>Periodo<svg class="icon" focusable="false"><use xlink:href="#required"></use></svg>
                   <ul class="small-block-grid-2" id="shiftGrid">
@@ -178,6 +201,10 @@ input[type="radio"] {
           <fieldset>
             <legend>Osservazioni / commenti</legend>
             <textarea tabindex="6" id="obs"></textarea>
+            <input type="checkbox" id="cani" name="cani" value="Cani">
+            <label for="cani"> Porterò dei cani</label><br>
+            <input type="checkbox" id="seggiolini" name="seggiolini" value="Seggiolini">
+            <label for="seggiolini"> Avrò bisogno dei seggiolini</label><br>
           </fieldset>
         </div>
       </div>
