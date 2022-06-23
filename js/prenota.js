@@ -237,9 +237,7 @@ function validateData (data) {
   } else if (data.quantity == 0) {
     message = 'per quante persone è la prenotazione?';
   } else if (data.quantity > 10) {
-    message = `per prenotazioni di oltre 10 persone, vi preghiamo di contattarci:
-    ${telString}
-    ${messengerString}`;
+    message = message10;
   } else {
     $('#notification').hide();
     return true;
@@ -378,6 +376,7 @@ function updateShifts (dp) {
     month: dp.getMonth(),
     year: dp.getYear() + 1900
   };
+  let shifts = [];
   $.ajax({
     url: 'http://localhost:5001/shiftsAvailable',
     type: 'GET',
@@ -388,14 +387,34 @@ function updateShifts (dp) {
     error: res => console.log(res, 'the res'),
     success: res => {
       window.shifts_available = res;
-      mkShiftButtons(res.shifts);
+      shifts = mkShiftButtons(res.shifts);
     }
+  });
+  $('#quantity').on("input", function() {
+    const v = Number($(this).val());
+    console.log(v, shifts);
+    shifts.forEach((s, i) => {
+      $('#bShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0);
+    });
+    if (v > 10) {
+      return showMessage(message10);
+    }
+    $('#notification').hide();
   });
 }
 
 function mkShiftButtons (shifts) {
   const sButtons = [];
   shifts.forEach((s, i) => {
+    const max_available = s.online_seats_limit - s.online_booked_seats;
+    if (max_available <= 0) return
+    for (table in s.tables) {
+      console.log(table);
+      if (s.tables[table] > max_available) {
+        delete s.tables[table];
+      }
+    }
+    s.table_sizes = Object.values(s.tables);
     const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
       .text(s.name)
       .appendTo(
@@ -422,11 +441,16 @@ function mkShiftButtons (shifts) {
   // $('#bShift0').click();
   $('#loading').hide();
   $('#dateRow').show();
+  return shifts;
 }
 
 const telString = '<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><span itemprop="telephone"> 071 8853384</span></a></p>';
 
 const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Chat messenger</a></p>';
+
+const message10 = `per prenotazioni di <b>oltre 10 persone</b>, vi preghiamo di contattarci:
+${telString}
+${messengerString}`;
 
 function bookingNotFound () {
   const div = $('#innerInfoDiv');
