@@ -2,8 +2,10 @@ $(document).ready(() => {
   const url = new URL(window.location.href);
   const pid = url.searchParams.get('id');
   if (pid) {
-    if (pid == 'notes') {
+    if (pid === 'notes') {
       return showNotes();
+    } else if (pid === 'test') {
+      return testeLambda();
     }
     return showReservation(pid);
   }
@@ -465,4 +467,62 @@ function bookingNotFound () {
 function showNotesMessage (msg) {
   $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
   $('#innerNotesDiv').hide();
+}
+
+function testeLambda () {
+  // noauth:
+  testeLambdaPOST();
+  testeLambdaGET();
+}
+
+function testeLambdaPOST () {
+  $.ajax({
+    url: 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/',
+    type: 'POST',
+    crossDomain: true,
+    data: JSON.stringify({ hey: 'man', nums: [5, 6, 7], jac: { 33: 44, l: ['asd', 'ewq', 66] } }),
+    error: res => {
+      $('#loading').hide();
+      showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
+        Se il problema persiste, consigliamo di 
+        <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>.`);
+    },
+    beforeSend: function() {
+      $('#loading').show();
+    },
+    success: res => {
+      window.rrr = res;
+      console.log('the result:', res);
+      console.log('the data sent using POST:', res.bb);
+      $('#loading').hide();
+    }
+  });
+}
+
+function testeLambdaGET () {
+  $.ajax({
+    url: 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/',
+    type: 'GET',
+    crossDomain: true,
+    data: { hey: 'man', nums: [5, 6, 7], jac: { 33: 44, l: ['asd', 'ewq', 66] } },
+    error: res => {
+      $('#loading').hide();
+      showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
+        Se il problema persiste, consigliamo di 
+        <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>.`);
+    },
+    beforeSend: function() {
+      $('#loading').show();
+    },
+    success: res => {
+      console.log('the result:', res);
+      window.rrr = res;
+      console.log('the data sent using GET:', res.bb);
+      $('#loading').hide();
+    }
+  });
+}
+
+function testeLambdaA () {
+  // https://github.com/aws/aws-sdk-js/tree/master/dist
 }
