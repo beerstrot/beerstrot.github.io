@@ -12,7 +12,9 @@ $(document).ready(() => {
   makeInterface();
 });
 
-const url = 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/';
+// const url = 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/';
+// const url = 'https://6a2mzdivcfheagf7p3eeshuno40gvegx.lambda-url.eu-central-1.on.aws/';
+const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
 // const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
@@ -156,7 +158,6 @@ function makeInterface () {
 
       if (!validateData(data)) return
 
-      console.log('data sent:', data);
       mkCall(
         'POST',
         { action: 'mkReservation', data },
@@ -223,7 +224,6 @@ function mkShiftButtons (shifts) {
     const max_available = s.online_seats_limit - s.online_booked_seats;
     if (max_available <= 0) return
     for (table in s.tables) {
-      console.log(table);
       if (s.tables[table] > max_available) {
         delete s.tables[table];
       }
@@ -308,7 +308,7 @@ function presentReservation (r) {
   addInfo('Status', 'status');
   addInfo('ID della prenotazione', 'id');
   $('#modBtn').click(() => {
-    // carica la pagina con la info?
+    // carica la pagina con la info? TTM
     console.log('mod');
   }).hide();
   const pid = r.id;
