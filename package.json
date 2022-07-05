@@ -16,7 +16,7 @@
     "grunt-uncss": "~0.9.1",
     "imagemin": "^7.0.1",
     "imagemin-mozjpeg": "~9.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "slick-carousel": "~1.8.1"
   },
   "dependencies": {
