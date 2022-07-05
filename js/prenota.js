@@ -12,8 +12,7 @@ $(document).ready(() => {
   makeInterface();
 });
 
-// const url = 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/';
-// const url = 'https://6a2mzdivcfheagf7p3eeshuno40gvegx.lambda-url.eu-central-1.on.aws/';
+// beerstrot-prod:
 const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
 // const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
@@ -134,7 +133,7 @@ function makeInterface () {
     css: {
       'margin-left': '3%'
     },
-    text: 'Prenotare',
+    text: 'Prenota',
     tabindex: 7,
     click: () => {
       if (!$('#from').val()) return showMessage('selezionare una data');
@@ -339,17 +338,18 @@ function validateEmail (email) {
 
 function validateData (data) {
   let message;
-  if (!validateEmail(data.email)) {
-    // message near the button
-    message = 'inserire un indirizzo e-mail.';
-  } else if (data.date === '') {
-    message = 'scegliere una data e un orario.';
-  } else if (data.shiftId === undefined) {
-    message = 'selezionare un periodo per la prenotatione.';
-  } else if (data.name === '') {
+  if (data.name === '') {
     message = 'inserire un nome.';
   } else if (data.surname === '') {
     message = 'inserire un cognome.';
+  } else if (data.telephone === '') {
+    message = 'inserire un telefono.';
+  } else if (!validateEmail(data.email)) {
+    message = 'inserire un indirizzo e-mail.';
+  } else if (data.date === '') {
+    message = 'scegli una data.';
+  } else if (data.shiftId === undefined) {
+    message = 'selezionare un periodo per la prenotatione.';
   } else if (data.quantity == 0) {
     message = 'per quante persone è la prenotazione?';
   } else if (data.quantity > 10) {
