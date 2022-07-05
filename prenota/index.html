@@ -87,7 +87,7 @@ input[type="radio"] {
 <!-- tab post inizio-->
 <svg id="definition" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="required" viewbox="0 0 128 128"><g><path d="M110.1,16.4L75.8,56.8l0.3,1l50.6-10.2v32.2l-50.9-8.9l-0.3,1l34.7,39.1l-28.3,16.5L63.7,78.2L63,78.5   l-18.5,49L17.2,111l34.1-39.8v-0.6l-50,9.2V47.6l49.3,9.9l0.3-0.6L17.2,16.7L45.5,0.5l17.8,48.7H64L82.1,0.5L110.1,16.4z"></path></g></symbol></defs></svg>
     <div class="panel-home-2n" id="mainDiv" style="padding-top:0">
-      <div id="loading" hidden><br/><br/><div style="padding-top:25%">A trovare i tavoli e registrare la prenotazione.</div></div>
+      <div id="loading" hidden><br/><br/><div style="padding-top:25%">Ricerco disponibilità.</div></div>
       <div class="row" id="notesDiv" hidden>
         <div class="columns small-12" id="innerNotesDiv_">
           <div>
@@ -115,26 +115,26 @@ input[type="radio"] {
         <div class="columns small-6" id="innerInfoDiv"></div>
         <div class="columns small-6" id="buttonInfoDiv">
           <div class="row" style="padding:10%">
-            <button class="success radius" id="modBtn">Modificare</button>
+            <button class="success radius" id="modBtn">Modifica</button>
           </div>
           <div class="row" style="padding-left:10%">
-            <button class="radius" id="cancBtn">Cancellare</button>
+            <button class="radius" id="cancBtn">Cancella</button>
           </div>
         </div>
       </div>
       <div class="row" id="formDiv">
         <div class="form columns small-6" id="contentDiv">
           <fieldset>
-            <legend>Dati di contatto</legend>
+            <legend>Nome</legend>
             <div class="row">
               <div class="small-6 columns required">
                 <label>Nome<svg class="icon" focusable="false"><use xlink:href="#required"></use></svg>
-                  <input tabindex="1" type="text" class="form-control" placeholder="Il tuo nome" id="name">
+                  <input tabindex="1" type="text" class="form-control" placeholder="Nome" id="name">
                 </label>
               </div>
               <div class="small-6 columns">
                 <label>Cognome<svg class="icon" focusable="false"><use xlink:href="#required"></use></svg>
-                  <input tabindex="1" type="text" class="form-control" placeholder="Il tuo cognome" id="surname">
+                  <input tabindex="1" type="text" class="form-control" placeholder="Cognome" id="surname">
                 </label>
               </div>
             </div>
@@ -146,7 +146,7 @@ input[type="radio"] {
               </div>
               <div class="small-6 columns">
                 <label>Email<svg class="icon" focusable="false"><use xlink:href="#required"></use></svg>
-                  <input tabindex="3" type="text" class="form-control" placeholder="nome @ dominio . suffisso" id="email">
+                  <input tabindex="3" type="text" class="form-control" placeholder="email@email.it" id="email">
                 </label>
               </div>
             </div>
@@ -154,7 +154,7 @@ input[type="radio"] {
         </div>
         <div class="form columns small-6" id="contentDiv2">
           <fieldset>
-            <legend>La prenotazione</legend>
+            <legend>Prenotazione</legend>
             <div class="row">
               <div class="small-6 columns">
                 <label>Per quante persone?<svg class="icon" focusable="false"><use xlink:href="#required"></use></svg>
@@ -199,12 +199,12 @@ input[type="radio"] {
         </div>
         <div class="form columns small-6" id="contentDiv4">
           <fieldset>
-            <legend>Osservazioni / commenti</legend>
+            <legend>Note</legend>
             <textarea tabindex="6" id="obs"></textarea>
             <input type="checkbox" id="cani" name="cani" value="Cani">
-            <label for="cani"> Porterò dei cani</label><br>
+            <label for="cani">Ho un cane</label><br>
             <input type="checkbox" id="seggiolini" name="seggiolini" value="Seggiolini">
-            <label for="seggiolini"> Avrò bisogno dei seggiolini</label><br>
+            <label for="seggiolini">Ho bisogno di seggioloni</label><br>
           </fieldset>
         </div>
       </div>
@@ -225,7 +225,7 @@ input[type="radio"] {
                        	<meta itemprop="openingHours" content="Th, Fr, Sa, Su 19:00-23:00">
                        	<div class="row">
                        		<div class="large-12 medium-12 small-12 columns">
-                                <p><strong>Aperto dal Giovedì alla Domenica.</strong><br>Dalle 19:00 alle 23:00</p>
+                                <p><strong>Aperto tutti i giorni.</strong><br>Dalle 19:00 alle 23:00</p>
                             </div>
                        	</div>
                  	</li>
