@@ -12,8 +12,8 @@ $(document).ready(() => {
   makeInterface();
 });
 
-// const url = 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/';
-const url = 'http://localhost:5001/entry';
+const url = 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/';
+// const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
