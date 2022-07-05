@@ -328,31 +328,6 @@ function presentReservation (r) {
           La ID della prenotazione è: ${pid}.`);
       }
     );
-    // $.ajax({
-    //   url: 'http://localhost:5001/cancel',
-    //   type: 'GET',
-    //   crossDomain: true,
-    //   data: { pid },
-    //   dataType: 'json',
-    //   contentType: 'application/json; charset=utf-8',
-    //   error: res => {
-    //     $('#loading').hide();
-    //     showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
-    //       Se il problema persiste, consigliamo di 
-    //       <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
-    //       per consultare sulla prenotazione.<br>
-    //       La ID della prenotazione è: ${pid}.`);
-    //   },
-    //   beforeSend: function() {
-    //     $('#loading').show();
-    //   },
-    //   success: res => {
-    //     $('#loading').hide();
-    //     $('#i_status').html(`<b>Status</b>: cancelled`).css('background', 'pink');
-    //   }
-    // });
-    // chiamata per cancellare la prenotazione
-    // atualiza la pagina notificando il cancelamento
   });
 }
 
