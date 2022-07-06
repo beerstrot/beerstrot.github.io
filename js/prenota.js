@@ -209,10 +209,9 @@ function updateShifts (dp) {
   );
   $('#quantity').on("input", function() {
     const v = Number($(this).val());
-    shifts.forEach((s, i) => {
-      $('#bShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0);
-    });
-    if (v > 10) return showMessage(message10);
+    shifts.forEach((s, i) => $('#bShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
+    const totalDisabled = shifts.reduce((c, i, ii) => c + $('#bShift' + ii).prop('disabled'), 0); 
+    if (totalDisabled === shifts.length) return showMessage(message10);
     $('#notification').hide();
   });
 }
@@ -369,7 +368,7 @@ const telString = '<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><sp
 
 const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Chat messenger</a></p>';
 
-const message10 = `per prenotazioni di <b>oltre 10 persone</b>, vi preghiamo di contattarci:
+const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
 ${messengerString}`;
 
