@@ -12,8 +12,7 @@ $(document).ready(() => {
   makeInterface();
 });
 
-// const url = 'https://kma72n6luzaaipippzbir2zfzi0bnjwg.lambda-url.eu-central-1.on.aws/';
-// const url = 'https://6a2mzdivcfheagf7p3eeshuno40gvegx.lambda-url.eu-central-1.on.aws/';
+// beerstrot-prod:
 const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
 // const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
@@ -134,7 +133,7 @@ function makeInterface () {
     css: {
       'margin-left': '3%'
     },
-    text: 'Prenotare',
+    text: 'Prenota',
     tabindex: 7,
     click: () => {
       if (!$('#from').val()) return showMessage('selezionare una data');
@@ -210,10 +209,9 @@ function updateShifts (dp) {
   );
   $('#quantity').on("input", function() {
     const v = Number($(this).val());
-    shifts.forEach((s, i) => {
-      $('#bShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0);
-    });
-    if (v > 10) return showMessage(message10);
+    shifts.forEach((s, i) => $('#bShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
+    const totalDisabled = shifts.reduce((c, i, ii) => c + $('#bShift' + ii).prop('disabled'), 0); 
+    if (totalDisabled === shifts.length) return showMessage(message10);
     $('#notification').hide();
   });
 }
@@ -339,17 +337,18 @@ function validateEmail (email) {
 
 function validateData (data) {
   let message;
-  if (!validateEmail(data.email)) {
-    // message near the button
-    message = 'inserire un indirizzo e-mail.';
-  } else if (data.date === '') {
-    message = 'scegliere una data e un orario.';
-  } else if (data.shiftId === undefined) {
-    message = 'selezionare un periodo per la prenotatione.';
-  } else if (data.name === '') {
+  if (data.name === '') {
     message = 'inserire un nome.';
   } else if (data.surname === '') {
     message = 'inserire un cognome.';
+  } else if (data.telephone === '') {
+    message = 'inserire un telefono.';
+  } else if (!validateEmail(data.email)) {
+    message = 'inserire un indirizzo e-mail.';
+  } else if (data.date === '') {
+    message = 'scegli una data.';
+  } else if (data.shiftId === undefined) {
+    message = 'selezionare un periodo per la prenotatione.';
   } else if (data.quantity == 0) {
     message = 'per quante persone è la prenotazione?';
   } else if (data.quantity > 10) {
@@ -369,7 +368,7 @@ const telString = '<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><sp
 
 const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Chat messenger</a></p>';
 
-const message10 = `per prenotazioni di <b>oltre 10 persone</b>, vi preghiamo di contattarci:
+const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
 ${messengerString}`;
 
