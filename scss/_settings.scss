@@ -411,7 +411,7 @@ $accordion-navigation-bg-color: $white;
 // We use this to control the maximum number of block grid elements per row
 // $block-grid-elements: 12;
 // $block-grid-default-spacing: rem-calc(20);
-$block-grid-default-spacing: rem-calc(40);
+$block-grid-default-spacing: rem-calc(4b0);
 // $align-block-grid-to-grid: false;
 $align-block-grid-to-grid: true;
 // Enables media queries for block-grid classes. Set to false if writing semantic HTML.
@@ -462,7 +462,7 @@ $align-block-grid-to-grid: true;
 // We use this to control the display property.
 // $button-display: inline-block;
 // $button-margin-bottom: rem-calc(20);
-$button-margin-bottom: rem-calc(0);
+$button-margin-bottom: rem-calc(-10);
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
