@@ -158,7 +158,9 @@ function makeInterface () {
       'POST',
       { action: 'mkReservation', data },
       res => {
-        const url = window.location.href + '?id=' + res.reservationID2;
+        let  u = window.location.href;
+        u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
+        const url = u + 'consulta.html?id=' + res.reservationID2;
         window.location.href = url;
       },
       res => {
@@ -296,7 +298,6 @@ function presentReservation (r) {
   // const div = $('#innerInfoDiv');
   // const fs = $('<fieldset/>').appendTo(div);
   // $('<legend/>').text('Informazione della Prenotazione').appendTo(fs);
-  // const addInfo = (s, id) => $('<div/>', { id: 'i_' + id }).html(`<b>${s}</b>: ${r[id]}`).appendTo(fs);
   // const addInfo2 = (s, ss) => $('<div/>').html(`<b>${s}</b>: ${ss}`).appendTo(fs);
   // addInfo2('Nome', bc.first_name + ' ' + bc.last_name);
   // addInfo2('Telefono', extra.telephone || '--');
@@ -317,24 +318,41 @@ function presentReservation (r) {
   $('#modify').click(() => {
     // carica la pagina con la info? TTM
     console.log('mod');
+    showConsultaMessage(
+      'Modifica la prenotazione?',
+      'La sua prenotazione rimane la stessa fino a quando confermi i nuovi dati.',
+      () => {
+        console.log('come on');
+        // carica la pagina con tutti i datti iniziale
+      },
+      () => $('#close-modal').click()
+    );
   });
   const pid = r.id;
   $('#cancel').click(() => {
-    console.log('can');
-    mkCall(
-      'POST',
-      { action: 'cancelReservation', data: pid },
-      res => {
-        addInfo('Status', 'status');
-        $('#i_status').html(`<b>Status</b>: cancelled`).css('background', 'pink');
+    showConsultaMessage(
+      'Cancella la prenotazione?',
+      '',
+      () => {
+        mkCall(
+          'POST',
+          { action: 'cancelReservation', data: pid },
+          res => {
+            $('<li/>').appendTo('#infoList').html(`<b>Status</b>: cancelled`).css('background', 'pink');
+            $('#no').click();
+            $('#modify').hide();
+            $('#cancel').hide();
+          },
+          res => {
+            showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
+              Se il problema persiste, consigliamo di 
+              <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
+              per consultare sulla prenotazione.<br>
+              La ID della prenotazione è: ${pid}.`);
+          }
+        );
       },
-      res => {
-        showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
-          Se il problema persiste, consigliamo di 
-          <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
-          per consultare sulla prenotazione.<br>
-          La ID della prenotazione è: ${pid}.`);
-      }
+      () => $('#close-modal').click()
     );
   });
 }
@@ -396,6 +414,14 @@ function bookingNotFound () {
 function showNotesMessage (msg) {
   $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
   $('#innerNotesDiv').hide();
+}
+
+function showConsultaMessage (message, message2, callYes, callNo) {
+    $('#yes').on('click', callYes);
+    $('#no').on('click', callNo);
+    $('#modalLead').text(message);
+    $('#modalText').text(message2);
+    $('#myModal').foundation('reveal', 'open');
 }
 
 function mkQuantityOptions (shifts) {
