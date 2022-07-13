@@ -13,8 +13,8 @@ $(document).ready(() => {
 });
 
 // beerstrot-prod:
-const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
-// const url = 'http://localhost:5001/entry';
+// const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
+const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
@@ -67,7 +67,7 @@ function showNotes (datetime) {
   $('#innerNotesDiv').show();
   mkCall(
     'GET',
-    { action: 'notes', data: datetime || '2022-06-13T09:40:41.729Z' },
+    { action: 'notes', data: datetime || '2022-07-04T09:40:41.729Z' },
     res => {
       window.rara = res;
       const r = JSON.parse(res);
@@ -91,11 +91,12 @@ function showNotes (datetime) {
       let nseggiolini = 0;
       let ncani = 0;
       const notes = [];
+      window.bbb = b;
       b.forEach((i, ii) => {
         try {
           const n = JSON.parse(i.notes);
           notes.push(n);
-          const s = Boolean(n.seggiolini);
+          const s = n.seggiolini;
           const c = Boolean(n.cani);
           nseggiolini += s;
           ncani += c;
@@ -107,7 +108,7 @@ function showNotes (datetime) {
             $('<td/>').html(n.email || '').appendTo(tr);
             $('<td/>').html(new Date(i.booked_for).toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })).appendTo(tr);
             $('<td/>', { css: { background: c ? 'rgba(200, 255, 200, 0.5)' : '' } }).html(c ? 'X' : '').appendTo(tr);
-            $('<td/>', { css: { background: s ? 'rgba(200, 200, 255, 0.5)' : '' } }).html(s ? 'X' : '').appendTo(tr);
+            $('<td/>', { css: { background: s == 0 ? '' : 'rgba(200, 200, 255, 0.5)' } }).html(s == 0 ? '' : s).appendTo(tr);
             $('<td/>').html(n.note).appendTo(tr);
           }
         } catch (e) {
@@ -129,50 +130,44 @@ function showNotes (datetime) {
 
 function makeInterface () {
   $('#infoDiv').hide();
-  $('<button/>', {
-    css: {
-      'margin-left': '3%'
-    },
-    text: 'Prenota',
-    tabindex: 7,
-    click: () => {
-      if (!$('#from').val()) return showMessage('selezionare una data');
-      const d = $('#from').datetimepicker('getValue');
-      d.setHours(12);
-      const data = {
-        date: d.toISOString(),
-        shiftId: $($('.bShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex'),
-        href: window.location.href,
-        cani: $('#cani').is(':checked'),
-        seggiolini: $('#seggiolini').is(':checked')
-      };
-      [
-        'name',
-        'surname',
-        'telephone',
-        'email',
-        'quantity',
-        'obs',
-      ].forEach(id => { data[id] = $(`#${id}`).val() });
+  $('#prenota').on('click', () => {
+    console.log('yeah man');
+    if (!$('#from').val()) return showMessage('selezionare una data');
+    const d = $('#from').datetimepicker('getValue');
+    d.setHours(12);
+    const data = {
+      date: d.toISOString(),
+      shiftId: $($('.aShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex'),
+      href: window.location.href,
+      cani: $('#cani').is(':checked'),
+      seggiolini: $('#seggiolini').val()
+    };
+    [
+      'name',
+      'surname',
+      'telephone',
+      'email',
+      'quantity',
+      'obs',
+    ].forEach(id => { data[id] = $(`#${id}`).val() });
 
-      if (!validateData(data)) return
+    if (!validateData(data)) return
 
-      mkCall(
-        'POST',
-        { action: 'mkReservation', data },
-        res => {
-          const url = window.location.href + '?id=' + res.reservationID2;
-          window.location.href = url;
-        },
-        res => {
-          showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
+    mkCall(
+      'POST',
+      { action: 'mkReservation', data },
+      res => {
+        const url = window.location.href + '?id=' + res.reservationID2;
+        window.location.href = url;
+      },
+      res => {
+        showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
             Se il problema persiste, consigliamo di 
             <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
             per effettuare la prenotazione.`);
-        }
-      );
-    }
-  }).appendTo('#contentDiv3');
+      }
+    );
+  });
 
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
@@ -203,17 +198,11 @@ function updateShifts (dp) {
     'POST',
     { action: 'getShifts', data },
     res => {
-      shifts = mkShiftButtons(res.shifts);
+      const shifts = mkShiftButtons(res.shifts);
+      mkQuantityOptions(shifts);
     },
     res => console.log(res, 'the res') // make better error handling TTM
   );
-  $('#quantity').on("input", function() {
-    const v = Number($(this).val());
-    shifts.forEach((s, i) => $('#bShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
-    const totalDisabled = shifts.reduce((c, i, ii) => c + $('#bShift' + ii).prop('disabled'), 0); 
-    if (totalDisabled === shifts.length) return showMessage(message10);
-    $('#notification').hide();
-  });
 }
 
 function mkShiftButtons (shifts) {
@@ -227,10 +216,12 @@ function mkShiftButtons (shifts) {
       }
     }
     s.table_sizes = Object.values(s.tables);
-    const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
+    // const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
+    const b = $('<a/>', { id: 'aShift' + i, class: 'small button aShift' })
       .text(s.name)
       .appendTo(
-        $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
+        // $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
+        $('<li/>', { class: 'bShift' })
           .appendTo('#shiftGrid')
       );
     b.bcolor = b.css('background-color');
@@ -246,7 +237,7 @@ function mkShiftButtons (shifts) {
         b.selected = false;
         b.attr('bselected', false);
       });
-      b.css('background', 'darkgreen');
+      b.css('background', 'darkred');
       b.attr('bselected', true);
     });
   });
@@ -257,6 +248,7 @@ function mkShiftButtons (shifts) {
 
 function showReservation (pid) {
   $('.form').hide();
+  $('#prenotaDiv').show();
   mkCall(
     'POST',
     { action: 'getReservation', data: pid },
@@ -277,6 +269,7 @@ function showReservation (pid) {
 
 function presentReservation (r) {
   if ((!r) || 'error' in r) return bookingNotFound();
+  $('#ttitle').text('La tua Prenotazione :-)');
   const bc = r.booking_customer;
   const extra = JSON.parse(r.notes);
 
@@ -301,14 +294,14 @@ function presentReservation (r) {
   addInfo('Quantità di ospiti', 'people');
   addInfo2('Osservazioni', extra.note);
   addInfo2('Cani', extra.cani ? 'sì' : 'no');
-  addInfo2('Seggiolini', extra.seggiolini ? 'sì' : 'no');
+  const s = extra.seggiolini
+  addInfo2('Seggiolini', s == 0 ? 'no' : s);
   $('<br/>').appendTo(fs);
-  addInfo('Status', 'status');
-  addInfo('ID della prenotazione', 'id');
+  // addInfo('ID della prenotazione', 'id');
   $('#modBtn').click(() => {
     // carica la pagina con la info? TTM
     console.log('mod');
-  }).hide();
+  });
   const pid = r.id;
   $('#cancBtn').click(() => {
     console.log('can');
@@ -316,6 +309,7 @@ function presentReservation (r) {
       'POST',
       { action: 'cancelReservation', data: pid },
       res => {
+        addInfo('Status', 'status');
         $('#i_status').html(`<b>Status</b>: cancelled`).css('background', 'pink');
       },
       res => {
@@ -361,7 +355,8 @@ function validateData (data) {
 }
 
 function showMessage (message) {
-  $('#notification').html(message).show();
+  $('#modalLead').html(message);
+  $('#myModal').foundation('reveal', 'open');
 }
 
 const telString = '<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><span itemprop="telephone"> 071 8853384</span></a></p>';
@@ -385,4 +380,26 @@ function bookingNotFound () {
 function showNotesMessage (msg) {
   $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
   $('#innerNotesDiv').hide();
+}
+
+function mkQuantityOptions (shifts) {
+  window.sss = shifts;
+  // find biggest table
+  const biggestTable = shifts.reduce((m, s) => Math.max(m, ...s.table_sizes), 0);
+  // make options reaching it
+  $('.aquantity').remove();
+  [...Array(biggestTable).keys()]
+    .forEach(i => {
+      $('<option/>', { value: i + 1, class: 'aquantity' })
+        .text(i + 1).appendTo('#quantity')
+    });
+  $('#quantity').prop('disabled', false)
+  // enable select
+  $('#quantity').on("input", function() {
+    const v = Number($(this).val());
+    shifts.forEach((s, i) => $('#aShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
+    const totalDisabled = shifts.reduce((c, i, ii) => c + $('#aShift' + ii).prop('disabled'), 0); 
+    if (totalDisabled === shifts.length) return showMessage(message10);
+    $('#notification').hide();
+  });
 }

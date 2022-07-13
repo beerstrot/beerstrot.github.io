@@ -19,7 +19,10 @@ npm install && bower install
 
 While you're working on your project, run:
 
-`grunt`
+```bash
+nvm use 11
+grunt
+```
 
 And you're set!
 
