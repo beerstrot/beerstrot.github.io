@@ -7,6 +7,7 @@ $(document).ready(() => {
     } else if (pid === 'test') {
       return testeLambda();
     }
+    // test if pid has ending MODIFY, loads prenotation page with it
     return showReservation(pid);
   }
   makeInterface();
@@ -276,34 +277,49 @@ function presentReservation (r) {
   const date = new Date(r.booked_for);
   const date2 = new Date(date.getTime() + r.duration * 60000);
 
-  const div = $('#innerInfoDiv');
-  const fs = $('<fieldset/>').appendTo(div);
-  $('<legend/>').text('Informazione della Prenotazione').appendTo(fs);
-  const addInfo = (s, id) => $('<div/>', { id: 'i_' + id }).html(`<b>${s}</b>: ${r[id]}`).appendTo(fs);
-  const addInfo2 = (s, ss) => $('<div/>').html(`<b>${s}</b>: ${ss}`).appendTo(fs);
-  addInfo2('Nome', bc.first_name + ' ' + bc.last_name);
-  addInfo2('Telefono', extra.telephone || '--');
-  addInfo2('Email', extra.email || '--');
-  $('<br/>').appendTo(fs);
-  addInfo2(
-    'Quando',
-    date.toLocaleString('it-IT', {
-      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'
-    }) + '-' + date2.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })
-  );
-  addInfo('Quantità di ospiti', 'people');
-  addInfo2('Osservazioni', extra.note);
-  addInfo2('Cani', extra.cani ? 'sì' : 'no');
+  const h = (id, info) => $('#' + id).text(info);
+  h('name', bc.first_name + ' ' + bc.last_name);
+  h('telephone', extra.telephone);
+  h('email', extra.email);
+  h('day', date.toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+  h('time1', date.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' }));
+  h('time2', date2.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' }));
+  h('people', r.people);
+  h('note', extra.note);
   const s = extra.seggiolini
-  addInfo2('Seggiolini', s == 0 ? 'no' : s);
-  $('<br/>').appendTo(fs);
+  h('segg', s == 0 ? 'No' : s);
+  h('dog', extra.cani ? 'Sì' : 'No');
+  window.bbb = bc;
+  window.eee = extra;
+  window.rrr = r;
+
+  // const div = $('#innerInfoDiv');
+  // const fs = $('<fieldset/>').appendTo(div);
+  // $('<legend/>').text('Informazione della Prenotazione').appendTo(fs);
+  // const addInfo = (s, id) => $('<div/>', { id: 'i_' + id }).html(`<b>${s}</b>: ${r[id]}`).appendTo(fs);
+  // const addInfo2 = (s, ss) => $('<div/>').html(`<b>${s}</b>: ${ss}`).appendTo(fs);
+  // addInfo2('Nome', bc.first_name + ' ' + bc.last_name);
+  // addInfo2('Telefono', extra.telephone || '--');
+  // addInfo2('Email', extra.email || '--');
+  // $('<br/>').appendTo(fs);
+  // addInfo2(
+  //   'Quando',
+  //   date.toLocaleString('it-IT', {
+  //     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'
+  //   }) + '-' + date2.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })
+  // );
+  // addInfo('Quantità di ospiti', 'people');
+  // addInfo2('Osservazioni', extra.note);
+  // addInfo2('Cani', extra.cani ? 'sì' : 'no');
+  // addInfo2('Seggiolini', s == 0 ? 'no' : s);
+  // $('<br/>').appendTo(fs);
   // addInfo('ID della prenotazione', 'id');
-  $('#modBtn').click(() => {
+  $('#modify').click(() => {
     // carica la pagina con la info? TTM
     console.log('mod');
   });
   const pid = r.id;
-  $('#cancBtn').click(() => {
+  $('#cancel').click(() => {
     console.log('can');
     mkCall(
       'POST',
