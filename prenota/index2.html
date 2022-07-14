@@ -111,6 +111,7 @@
             </div>
         </div>
         <div class="row">
+
             <div class="small-6 medium-3 columns">
                 <label>Quale giorno*
                     <input tabindex="5" id="from" type="text" name="LNAME" class="required" placeholder="Seleziona Giorno" />
@@ -118,10 +119,11 @@
             </div>
             <div class="small-6 medium-3 columns end">
                 <label>Quante persone*
-                    <select name="MMERGE4" class="" id="quantity" disabled>
+                    <select name="MMERGE4" class="error" id="quantity" disabled>
                         <option value="">Seleziona Numero</option>
                     </select>
                 </label>
+                <small class="error">Campo obbligatorio</small>
             </div>
         </div>
         <div class="row">
@@ -179,7 +181,8 @@
             </div>
             <div class="small-12  medium-5 columns">
                 <label>Email*
-                    <input type="email" name="EMAIL" class="required email" id="email" placeholder="esempio@esempio.it" />
+                    <input type="email" name="EMAIL" class="required email error" id="email" placeholder="esempio@esempio.it" />
+                    <small class="error">Campo obbligatorio</small>
                   </label>
             </div>
             <div class="small-6  medium-3 columns end">
