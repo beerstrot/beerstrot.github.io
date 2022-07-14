@@ -6,12 +6,47 @@ $(document).ready(() => {
       return showNotes();
     } else if (pid === 'test') {
       return testeLambda();
+    } else if (pid.endsWith('_modifica')) {
+      const pid_ = pid.split('_modifica')[0];
+      makeInterface(pid_);
+      return modifyReservation(pid_);
     }
-    // test if pid has ending MODIFY, loads prenotation page with it
     return showReservation(pid);
   }
   makeInterface();
 });
+
+function modifyReservation (pid) {
+  mkCall(
+    'POST',
+    { action: 'getReservation', data: pid },
+    res => {
+      const b = res.booking;
+      const bc = b.booking_customer;
+      const extra = JSON.parse(b.notes);
+      window.mres = { b, bc, extra };
+      // load mres in the form:
+      const date = new Date(b.booked_for);
+      const value = moment(date).format('DD/MMM/Y');
+      $('#from').datetimepicker('setOptions', { value })
+      window.bbb = b;
+      $('#quantity').prop('disabled', false).val(b.people);
+      updateShifts(date, b.shift_id, b.people);
+      $('#obs').val(extra.note === '--' ? '' : extra.note);
+      $('#seggiolini').val(extra.seggiolini);
+      $('#cani').prop('checked', extra.cani);
+      $('#name').val(bc.first_name);
+      $('#surname').val(bc.last_name);
+      $('#email').val(extra.email);
+      $('#telephone').val(extra.telephone);
+      // $($('.aShift').filter((i, ii) => $(ii).attr('bindex') == b.shift_id)[0]).click();
+    },
+    res => {
+      showMessage(`${messageError}
+        La ID della prenotazione è: ${pid}.`);
+    }
+  );
+}
 
 // beerstrot-prod:
 // const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
@@ -72,7 +107,7 @@ function showNotes (datetime) {
     res => {
       window.rara = res;
       const r = JSON.parse(res);
-      const date = (new Date(r.date)).toLocaleString('it-IT', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+      const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
       jQuery('#from2').datetimepicker({
         startDate: new Date(r.date),
@@ -80,7 +115,6 @@ function showNotes (datetime) {
         timepicker: false,
         inline:true,
         onSelectDate: (dp, input) => {
-          $('#loading').show();
           showNotes(dp.toISOString());
         },
       }).datetimepicker('show');
@@ -121,15 +155,12 @@ function showNotes (datetime) {
       $('<p/>', { class: 'clearme', css: { padding: '2%' } }).html(summary).prependTo('#innerNotesDiv');
     },
     res => {
-      $('#loading').hide();
-      showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
-        Se il problema persiste, consigliamo di 
-        <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>.`);
+      showMessage(messageError);
     }
   );
 }
 
-function makeInterface () {
+function makeInterface (pid) {
   $('#infoDiv').hide();
   $('#prenota').on('click', () => {
     console.log('yeah man');
@@ -158,25 +189,41 @@ function makeInterface () {
       'POST',
       { action: 'mkReservation', data },
       res => {
+        if (res.reservationID2 === 'noPlacesLeft') {
+          return showMessage(`Non abbiamo più posti questo giorno.`);
+        }
         let  u = window.location.href;
         u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
         const url = u + 'consulta.html?id=' + res.reservationID2;
-        window.location.href = url;
+        if (pid) { // user is modifying, cancel previous reservation:
+          mkCall(
+            'POST',
+            { action: 'cancelReservation', data: pid },
+            res => {
+              window.location.href = url;
+            },
+            res => {
+              showMessage(`${messageError}
+                La ID della prenotazione è: ${pid}.`);
+            }
+          );
+        } else {
+          window.location.href = url;
+        }
       },
       res => {
-        showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
-            Se il problema persiste, consigliamo di 
-            <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
-            per effettuare la prenotazione.`);
+        showMessage(messageError);
       }
     );
   });
 
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
+  // $.datetimepicker.setLocale('it')
   const disableDates = []; // get from database, given by ADM, TTM
   jQuery('#from').datetimepicker({
     disableDates,
+    // lang: 'it',
     format:'d/M/Y',
     // minDate: 0, // disabled for tests
     timepicker: false,
@@ -189,7 +236,7 @@ function makeInterface () {
   });
 }
 
-function updateShifts (dp) {
+function updateShifts (dp, selected, people) {
   $('.bShift').remove();
   const data = {
     day: dp.getDate(),
@@ -201,14 +248,15 @@ function updateShifts (dp) {
     'POST',
     { action: 'getShifts', data },
     res => {
-      const shifts = mkShiftButtons(res.shifts);
-      mkQuantityOptions(shifts);
+      window.rrrr = res;
+      const shifts = mkShiftButtons(res.shifts, selected);
+      mkQuantityOptions(shifts, people);
     },
-    res => console.log(res, 'the res') // make better error handling TTM
+    res => showMessage(messageError)
   );
 }
 
-function mkShiftButtons (shifts) {
+function mkShiftButtons (shifts, selected) {
   const sButtons = [];
   shifts.forEach((s, i) => {
     const max_available = s.online_seats_limit - s.online_booked_seats;
@@ -220,7 +268,7 @@ function mkShiftButtons (shifts) {
     }
     s.table_sizes = Object.values(s.tables);
     // const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
-    const b = $('<a/>', { id: 'aShift' + i, class: 'small button aShift' })
+    const b = $('<button/>', { id: 'aShift' + i, class: 'small button aShift' })
       .text(s.name)
       .appendTo(
         // $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
@@ -244,8 +292,9 @@ function mkShiftButtons (shifts) {
       b.attr('bselected', true);
     });
   });
-  $('#loading').hide();
-  $('#dateRow').show();
+  if (selected) {
+    $($('.aShift').filter((i, ii) => $(ii).attr('bindex') == selected)[0]).click();
+  }
   return shifts;
 }
 
@@ -259,10 +308,7 @@ function showReservation (pid) {
       presentReservation(res.booking);
     },
     res => {
-      showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
-        Se il problema persiste, consigliamo di 
-        <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
-        per consultare sulla prenotazione.<br>
+      showMessage(`${messageError}
         La ID della prenotazione è: ${pid}.`);
     }
   );
@@ -272,7 +318,7 @@ function showReservation (pid) {
 
 function presentReservation (r) {
   if ((!r) || 'error' in r) return bookingNotFound();
-  $('#ttitle').text('La tua Prenotazione :-)');
+  // $('#ttitle').text('La tua Prenotazione :-)');
   const bc = r.booking_customer;
   const extra = JSON.parse(r.notes);
 
@@ -294,35 +340,14 @@ function presentReservation (r) {
   window.bbb = bc;
   window.eee = extra;
   window.rrr = r;
-
-  // const div = $('#innerInfoDiv');
-  // const fs = $('<fieldset/>').appendTo(div);
-  // $('<legend/>').text('Informazione della Prenotazione').appendTo(fs);
-  // const addInfo2 = (s, ss) => $('<div/>').html(`<b>${s}</b>: ${ss}`).appendTo(fs);
-  // addInfo2('Nome', bc.first_name + ' ' + bc.last_name);
-  // addInfo2('Telefono', extra.telephone || '--');
-  // addInfo2('Email', extra.email || '--');
-  // $('<br/>').appendTo(fs);
-  // addInfo2(
-  //   'Quando',
-  //   date.toLocaleString('it-IT', {
-  //     weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute:'2-digit'
-  //   }) + '-' + date2.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })
-  // );
-  // addInfo('Quantità di ospiti', 'people');
-  // addInfo2('Osservazioni', extra.note);
-  // addInfo2('Cani', extra.cani ? 'sì' : 'no');
-  // addInfo2('Seggiolini', s == 0 ? 'no' : s);
-  // $('<br/>').appendTo(fs);
-  // addInfo('ID della prenotazione', 'id');
   $('#modify').click(() => {
-    // carica la pagina con la info? TTM
-    console.log('mod');
     showConsultaMessage(
       'Modifica la prenotazione?',
       'La sua prenotazione rimane la stessa fino a quando confermi i nuovi dati.',
       () => {
         console.log('come on');
+        const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
+        window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
         // carica la pagina con tutti i datti iniziale
       },
       () => $('#close-modal').click()
@@ -344,10 +369,7 @@ function presentReservation (r) {
             $('#cancel').hide();
           },
           res => {
-            showMessage(`Si prega di riprovare perché abbiamo riscontrato un errore.
-              Se il problema persiste, consigliamo di 
-              <a href="https://www.messenger.com/t/397632563730269/" target="_blank">entrare in chat</a>
-              per consultare sulla prenotazione.<br>
+            showMessage(`${messageError}
               La ID della prenotazione è: ${pid}.`);
           }
         );
@@ -401,6 +423,10 @@ const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
 ${messengerString}`;
 
+const messageError = `Si prega di riprovare perché abbiamo riscontrato un errore.
+Se il problema persiste, ti consigliamo di 
+entrare nel ${messengerString} o di chiamare ${telString}.<br>`;
+
 function bookingNotFound () {
   const div = $('#innerInfoDiv');
   const fs = $('<fieldset/>').appendTo(div);
@@ -424,7 +450,7 @@ function showConsultaMessage (message, message2, callYes, callNo) {
     $('#myModal').foundation('reveal', 'open');
 }
 
-function mkQuantityOptions (shifts) {
+function mkQuantityOptions (shifts, people) {
   window.sss = shifts;
   // find biggest table
   const biggestTable = shifts.reduce((m, s) => Math.max(m, ...s.table_sizes), 0);
@@ -433,15 +459,19 @@ function mkQuantityOptions (shifts) {
   [...Array(biggestTable).keys()]
     .forEach(i => {
       $('<option/>', { value: i + 1, class: 'aquantity' })
-        .text(i + 1).appendTo('#quantity')
+        .text(i + 1).appendTo('#quantity');
     });
   $('#quantity').prop('disabled', false)
   // enable select
   $('#quantity').on("input", function() {
+    console.log('yey', $(this).val());
     const v = Number($(this).val());
     shifts.forEach((s, i) => $('#aShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
     const totalDisabled = shifts.reduce((c, i, ii) => c + $('#aShift' + ii).prop('disabled'), 0); 
     if (totalDisabled === shifts.length) return showMessage(message10);
     $('#notification').hide();
   });
+  if (people) {
+    $('#quantity').val(people);
+  }
 }

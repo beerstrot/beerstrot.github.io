@@ -169,28 +169,28 @@
         <div class="row">
             <div class="small-6 medium-5 columns">
                 <label>Nome*
-                    <input type="text" name="FNAME" class="required" id="name" placeholder="Nome"/>
+                    <input type="text" class="required" id="name" placeholder="Nome"/>
                 </label>
             </div>
             <div class="small-6 medium-5 columns end">
                 <label>Cognome*
-                    <input type="text" name="LNAME" class="required" id="surname" placeholder="Cognome" />
+                    <input type="text" class="required" id="surname" placeholder="Cognome" />
                 </label>
             </div>
             <div class="small-12  medium-5 columns">
                 <label>Email*
-                    <input type="email" name="EMAIL" class="required email" id="email" placeholder="esempio@esempio.it" />
+                    <input type="email" class="required email" id="email" placeholder="esempio@esempio.it" />
                   </label>
             </div>
             <div class="small-6  medium-3 columns end">
                 <label>Telefono*
-                    <input type="tel" name="MMERGE3" class="required" id="telephone" placeholder="3332221111" />
+                    <input type="tel" class="required" id="telephone" placeholder="3332221111" />
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="small-12 medium-6 columns end">
-                <input id="privacy" type="checkbox" checked><label for="checkbox2"> Accetto la<a id="privacy"> privacy</a></label>
+                <input id="privacy" type="checkbox"><label for="checkbox2"> Accetto la<a id="privacy"> privacy</a></label>
             </div>
         </div>
         <div class="row">
@@ -287,6 +287,7 @@
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/ >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="../js/prenota.js"></script>
 <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <p class="lead" id="modalLead">Your couch.  It is mine.</p>
@@ -296,7 +297,7 @@
 <style>
 #loading {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
