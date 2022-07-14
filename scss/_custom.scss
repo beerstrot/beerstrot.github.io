@@ -890,7 +890,28 @@ prenota
         td:nth-of-type(7):before { content: "Seggioloni"; }
         td:nth-of-type(8):before { content: "Cani"; }
         td:nth-of-type(9):before { content: "Note"; }
-}
+    }
 }
 
+//stop zoom viewport on form selection small screen only
+@media #{$small-only} {
+        input, select, textarea {
+        font-size: 16px !important;
+};
+    }
 
+#loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(192, 192, 192, 0.9);
+  background-image: url('https://www.beerstrot.it/asset/img/loading1.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  font-size: 24px;
+}

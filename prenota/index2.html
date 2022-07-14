@@ -118,10 +118,11 @@
             </div>
             <div class="small-6 medium-3 columns end">
                 <label>Quante persone*
-                    <select name="MMERGE4" class="" id="quantity" disabled>
+                    <select name="MMERGE4" class="error" id="quantity" disabled>
                         <option value="">Seleziona Numero</option>
                     </select>
                 </label>
+                <small class="error">Campo obbligatorio</small>
             </div>
         </div>
         <div class="row">
@@ -149,7 +150,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-9 medium-3 columns end">
+            <div class="small-9 medium-4 columns end">
                 <label>Devo aggiungere seggioloni
                     <select name="MMERGE4" class="" id="seggiolini">
                         <option value="0">No</option>
@@ -161,36 +162,37 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-9 medium-3 columns end">
-                <input id="cani" type="checkbox"><label for="checkbox1">Ho uno o più cani</label>
+            <div class="small-9 medium-5 columns end">
+                <input id="cani" type="checkbox"><label for="cani">Ho uno o più cani</label>
             </div>
             <span class=""><hr></span>
         </div>
         <div class="row">
-            <div class="small-6 medium-5 columns">
+            <div class="small-6 medium-4 columns">
                 <label>Nome*
-                    <input type="text" class="required" id="name" placeholder="Nome"/>
+                    <input type="text" name="FNAME" class="required" id="name" placeholder="Nome"/>
                 </label>
             </div>
-            <div class="small-6 medium-5 columns end">
+            <div class="small-6 medium-4 columns end">
                 <label>Cognome*
-                    <input type="text" class="required" id="surname" placeholder="Cognome" />
+                    <input type="text" name="LNAME" class="required" id="surname" placeholder="Cognome" />
                 </label>
             </div>
             <div class="small-12  medium-5 columns">
                 <label>Email*
-                    <input type="email" class="required email" id="email" placeholder="esempio@esempio.it" />
+                    <input type="email" name="EMAIL" class="required email error" id="email" placeholder="esempio@esempio.it" />
+                    <small class="error">Campo obbligatorio</small>
                   </label>
             </div>
             <div class="small-6  medium-3 columns end">
                 <label>Telefono*
-                    <input type="tel" class="required" id="telephone" placeholder="3332221111" />
+                    <input type="tel" name="MMERGE3" class="required" id="telephone" placeholder="3332221111" />
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="small-12 medium-6 columns end">
-                <input id="privacy" type="checkbox"><label for="checkbox2"> Accetto la<a id="privacy"> privacy</a></label>
+                <input id="privacy" type="checkbox" checked><label for="privacy"> Accetto la<a id="privacy"> privacy</a></label>
             </div>
         </div>
         <div class="row">
@@ -202,7 +204,6 @@
             </div>
         </div>
     </div>
-
 <!-- inizio footer -->
     <footer class="panel-footer">
         <div class="row">
@@ -286,28 +287,10 @@
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/ >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="../js/prenota.js"></script>
+    <script src="https://www.beerstrot.it/js/prenota.js"></script>
 <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <p class="lead" id="modalLead">Your couch.  It is mine.</p>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 </body>
-<style>
-#loading {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(192, 192, 192, 0.9);
-  background-image: url(../asset/img/loading.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-  font-size: 24px;
-}
-</style>
 </html>
