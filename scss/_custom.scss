@@ -893,7 +893,7 @@ prenota
     }
 }
 
-//stop zoom viewport on form selection
+//stop zoom viewport on form selection small screen only
 @media #{$small-only} {
         input, select, textarea {
         font-size: 16px;
