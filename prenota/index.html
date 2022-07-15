@@ -35,6 +35,26 @@
         src="https://www.facebook.com/tr?id=770709373057085&ev=PageView&noscript=1"/>
     </noscript>
 <!-- End Facebook Pixel Code -->
+<style type="text/css">
+.error1 {
+  display: none!important;
+}
+#loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(192, 192, 192, 0.9);
+  background-image: url(../asset/img/loading.gif);
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  font-size: 24px;
+}
+</style>
 </head>
 <body>
    <nav class="top-bar" data-topbar role="navigation">
@@ -75,7 +95,7 @@
         </div>
       </div>
       <div class="columns small-12" id="innerNotesDiv">
-      <table style="margin-bottom:5%">
+      <table id="notesTable" style="margin-bottom:5%">
         <thead>
           <tr>
             <th width="22%">Nome</th>
@@ -113,23 +133,26 @@
         <div class="row">
             <div class="small-6 medium-3 columns">
                 <label>Quale giorno*
-                    <input tabindex="5" id="from" type="text" name="LNAME" class="required" placeholder="Seleziona Giorno" />
+                    <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" />
                 </label>
+                <small class="error error1" id="from1">Campo obbligatorio</small>
             </div>
             <div class="small-6 medium-3 columns end">
                 <label>Quante persone*
-                    <select name="MMERGE4" class="" id="quantity" disabled>
+                    <select name="MMERGE4" class="error" id="quantity" disabled>
                         <option value="">Seleziona Numero</option>
                     </select>
                 </label>
+                <small class="error error1" id="quantity1">Campo obbligatorio</small>
             </div>
         </div>
         <div class="row">
             <div class="small-12 medium-6 columns end">
                 <label>Quale turno*
                 </label>
+                <small class="error error1" id="shiftGrid1">Campo obbligatorio</small>
                 <!-- Questi bottoni devono essere grandi uguali e distanziati meglio -->
-                <ul class="small-block-grid-2  extra-space-turno" id="shiftGrid">
+                <ul class="small-block-grid-2  extra-space-turno error" id="shiftGrid">
                     <li class="bShift"><a href="#" class="small button disabled">19.00-21.00</a></li>
                     <li class="bShift"><a href="#" class="small button disabled">19.30-21.30</a></li>
                     <li class="bShift"><a href="#" class="small button disabled">20.00-22.00</a></li>
@@ -169,23 +192,27 @@
         <div class="row">
             <div class="small-6 medium-5 columns">
                 <label>Nome*
-                    <input type="text" class="required" id="name" placeholder="Nome"/>
+                    <input type="text" class="required error" id="name" placeholder="Nome"/>
                 </label>
+                <small class="error error1" id="name1">Campo obbligatorio</small>
             </div>
             <div class="small-6 medium-5 columns end">
                 <label>Cognome*
-                    <input type="text" class="required" id="surname" placeholder="Cognome" />
+                    <input type="text" class="required error" id="surname" placeholder="Cognome" />
                 </label>
+                <small class="error error1" id="surname1">Campo obbligatorio</small>
             </div>
             <div class="small-12  medium-5 columns">
                 <label>Email*
-                    <input type="email" class="required email" id="email" placeholder="esempio@esempio.it" />
+                    <input type="email" class="required email error" id="email" placeholder="esempio@esempio.it" />
                   </label>
+                  <small class="error error1" id="email1">Campo obbligatorio</small>
             </div>
             <div class="small-6  medium-3 columns end">
                 <label>Telefono*
-                    <input type="tel" class="required" id="telephone" placeholder="3332221111" />
+                    <input type="tel" class="required error" id="telephone" placeholder="3332221111" />
                 </label>
+                  <small class="error error1" id="telephone1">Campo obbligatorio</small>
             </div>
         </div>
         <div class="row">
@@ -294,20 +321,5 @@
 </div>
 </body>
 <style>
-#loading {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(192, 192, 192, 0.9);
-  background-image: url(../asset/img/loading.gif);
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-  font-size: 24px;
-}
 </style>
 </html>

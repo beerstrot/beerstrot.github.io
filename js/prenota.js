@@ -10,13 +10,26 @@ $(document).ready(() => {
       return testeLambda();
     } else if (pid.endsWith('_modifica')) {
       const pid_ = pid.split('_modifica')[0];
-      makeInterface(pid_);
+      makeInterface_(pid_);
       return modifyReservation(pid_);
     }
     return showReservation(pid);
   }
-  makeInterface();
+  makeInterface_();
 });
+
+function makeInterface_ (pid) {
+  mkCall(
+    'POST',
+    { action: 'days', data: '--' },
+    res => {
+      makeInterface(pid, res.dates);
+    },
+    res => {
+      showMessage(messageError);
+    }
+  );
+}
 
 function modifyReservation (pid) {
   mkCall(
@@ -108,19 +121,17 @@ function showDays (datetime) {
     { action: 'days', data: datetime || '--' },
     res => {
       const r = window.rara = res;
-      const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
       $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
 
       jQuery('#from2').datetimepicker({
         // startDate: new Date(r.date),
-        minDate: 0, // disabled for tests
+        // minDate: 0, // disabled for tests
         // formatDate:'Y-m-d',
         timepicker: false,
         // disabledDates: r.dates,
         inline: true,
         onSelectDate: (dp, input) => {
           showDays(dp.toISOString());
-          // toggle enable/disable the date
         },
       }).datetimepicker('show');
     },
@@ -134,9 +145,11 @@ function showNotes (datetime) {
   $('.form').hide();
   $('#notesDiv').show();
   $('#innerNotesDiv').show();
+  $('.clearme').remove();
+  datetime = datetime || '2022-07-04T09:40:41.729Z';
   mkCall(
     'GET',
-    { action: 'notes', data: datetime || '2022-07-04T09:40:41.729Z' },
+    { action: 'notes', data: datetime },
     res => {
       window.rara = res;
       const r = JSON.parse(res);
@@ -163,7 +176,10 @@ function showNotes (datetime) {
       b.forEach((i, ii) => {
         try {
           const n = JSON.parse(i.notes);
+          if (!('seggiolini' in n))
+            return
           notes.push(n);
+          console.log(notes);
           const s = n.seggiolini;
           const c = Boolean(n.cani);
           nseggiolini += s;
@@ -183,9 +199,27 @@ function showNotes (datetime) {
           console.log(e, 'not json notes!');
         }
       });
-      const summary = `Ci sono <b>${nbookings}</b> le prenotazioni per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggiolini.`
+      const summary = `Ci sono <b>${nbookings}</b> prenotazioni (${notes.length} online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggiolini.`
       if (nseggiolini + ncani === 0) return showNotesMessage(summary);
       $('<p/>', { class: 'clearme', css: { padding: '2%' } }).html(summary).prependTo('#innerNotesDiv');
+      if (notes.length > 0) {
+        $('<button/>', { class: 'clearme', css: { margin: '2%', padding: '2%' } })
+          .prependTo('#innerNotesDiv')
+          .text('Invia promemoria')
+          .on('click', () => {
+            mkCall(
+              'POST',
+              { action: 'promemoria', data: datetime },
+              res => {
+                showMessage('Emails sent!');
+              },
+              res => {
+                showMessage(messageError);
+              }
+            );
+          });
+
+      }
     },
     res => {
       showMessage(messageError);
@@ -193,10 +227,9 @@ function showNotes (datetime) {
   );
 }
 
-function makeInterface (pid) {
+function makeInterface (pid, dates) {
   $('#infoDiv').hide();
   $('#prenota').on('click', () => {
-    console.log('yeah man');
     if (!$('#from').val()) return showMessage('selezionare una data');
     const d = $('#from').datetimepicker('getValue');
     d.setHours(12);
@@ -217,6 +250,7 @@ function makeInterface (pid) {
     ].forEach(id => { data[id] = $(`#${id}`).val() });
 
     if (!validateData(data)) return
+    data.surname += ' 0110';
 
     mkCall(
       'POST',
@@ -258,6 +292,8 @@ function makeInterface (pid) {
     disableDates,
     // lang: 'it',
     format:'d/M/Y',
+    formatDate:'Y-m-d',
+    disabledDates: dates || [],
     // minDate: 0, // disabled for tests
     timepicker: false,
     onSelectDate: (dp, input) => {
@@ -269,20 +305,25 @@ function makeInterface (pid) {
   });
 }
 
+const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 function updateShifts (dp, selected, people) {
   $('.bShift').remove();
+  window.pppp = dp;
   const data = {
     day: dp.getDate(),
     month: dp.getMonth(),
     year: dp.getYear() + 1900
   };
-  let shifts = [];
   mkCall(
     'POST',
     { action: 'getShifts', data },
     res => {
       window.rrrr = res;
-      const shifts = mkShiftButtons(res.shifts, selected);
+      const pad0 = i => String(i).padStart(2, '0');
+      const d = `${data.year}-${pad0(data.month)}-${pad0(data.day)}`;
+      const wd = weekdays[dp.getDay()];
+      const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
+      const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
     },
     res => showMessage(messageError)
@@ -338,6 +379,11 @@ function showReservation (pid) {
     'POST',
     { action: 'getReservation', data: pid },
     res => {
+      console.log('RRRR', res);
+      if (res.booking === null)
+        $('#yes').hide();
+        $('#no').hide();
+        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Ti consigliamo di entrare nel ${messengerString} o di chiamare ${telString}.`);
       presentReservation(res.booking);
     },
     res => {
@@ -419,28 +465,47 @@ function validateEmail (email) {
 };
 
 function validateData (data) {
-  let message;
+  $('.error').attr('style', 'border: solid 1px #ccc');
+  $('.error1').hide()
+  $('#notification').hide();
+  const messages = [];
+  const ids = [];
   if (data.name === '') {
-    message = 'inserire un nome.';
-  } else if (data.surname === '') {
-    message = 'inserire un cognome.';
-  } else if (data.telephone === '') {
-    message = 'inserire un telefono.';
-  } else if (!validateEmail(data.email)) {
-    message = 'inserire un indirizzo e-mail.';
-  } else if (data.date === '') {
-    message = 'scegli una data.';
-  } else if (data.shiftId === undefined) {
-    message = 'selezionare un periodo per la prenotatione.';
-  } else if (data.quantity == 0) {
-    message = 'per quante persone è la prenotazione?';
-  } else if (data.quantity > 10) {
-    message = message10;
-  } else {
-    $('#notification').hide();
-    return true;
+    messages.push('inserire un nome.');
+    ids.push('#name1');
   }
-  showMessage(message);
+  if (data.surname === '') {
+    messages.push('inserire un cognome.');
+    ids.push('#surname1');
+  }
+  if (data.telephone === '') {
+    messages.push('inserire un telefono.');
+    ids.push('#telephone1');
+  }
+  if (!validateEmail(data.email)) {
+    messages.push('inserire un indirizzo e-mail.');
+    ids.push('#email1');
+  }
+  if (data.date === '') {
+    messages.push('scegli una data.');
+    ids.push('#from1');
+  }
+  if (data.shiftId === undefined) {
+    messages.push('selezionare un periodo per la prenotatione.');
+    ids.push('#shiftGrid1');
+  }
+  if (data.quantity == 0) {
+    messages.push('per quante persone è la prenotazione?');
+    ids.push('#quantity1');
+  }
+  console.log('ids, msgs', ids, messages);
+  if (ids.length > 0) {
+    console.log('yeah man');
+    ids.forEach(i => showError(i));
+    showMessage(messages.join('<br>'));
+    return false;
+  }
+  return true;
 }
 
 function showMessage (message) {
@@ -478,8 +543,8 @@ function showNotesMessage (msg) {
 function showConsultaMessage (message, message2, callYes, callNo) {
     $('#yes').on('click', callYes);
     $('#no').on('click', callNo);
-    $('#modalLead').text(message);
-    $('#modalText').text(message2);
+    $('#modalLead').html(message);
+    $('#modalText').html(message2);
     $('#myModal').foundation('reveal', 'open');
 }
 
@@ -507,4 +572,9 @@ function mkQuantityOptions (shifts, people) {
   if (people) {
     $('#quantity').val(people);
   }
+}
+
+function showError (id) {
+  // $(id).attr("style", "display: block !important")
+  $(id.replace('1', '')).attr('style', 'border: 3px solid red');
 }
