@@ -411,7 +411,7 @@ function presentReservation (r) {
   $('#modify').click(() => {
     showConsultaMessage(
       'Modifica la prenotazione?',
-      'La sua prenotazione rimane la stessa fino a quando confermi i nuovi dati.',
+      '(NOTA: La sua prenotazione rimane la stessa fino a quando confermi i nuovi dati.)',
       () => {
         const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
         window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
