@@ -243,7 +243,6 @@ function makeInterface (pid, dates) {
     ].forEach(id => { data[id] = $(`#${id}`).val() });
 
     if (!validateData(data)) return
-    data.surname += ' 0110';
 
     mkCall(
       'POST',
