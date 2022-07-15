@@ -224,7 +224,7 @@ function showNotes (datetime) {
 function makeInterface (pid, dates) {
   $('#infoDiv').hide();
   $('#prenota').on('click', () => {
-    if (!$('#from').val()) return showMessage('selezionare una data');
+    // if (!$('#from').val()) return showMessage('selezionare una data');
     const d = $('#from').datetimepicker('getValue');
     d.setHours(12);
     const data = {
@@ -243,6 +243,7 @@ function makeInterface (pid, dates) {
       'obs',
     ].forEach(id => { data[id] = $(`#${id}`).val() });
 
+    console.log(data);
     if (!validateData(data)) return
     data.surname += ' 0110';
 
@@ -294,6 +295,9 @@ function makeInterface (pid, dates) {
       input.chosenn = true;
       updateShifts(dp);
     },
+  });
+  $('#privacy2').on('click', () => {
+    showMessage('Rispettiamo la sua privacy: i suoi dati vengono utilizzati solo per essere inseriti nel nostro programma di gestione delle casse, come facciamo quando qualcuno ci chiama per telefono.');
   });
 }
 
@@ -457,6 +461,10 @@ function validateData (data) {
   $('#notification').hide();
   const messages = [];
   const ids = [];
+  if (!$('#from').val()) {
+    messages.push('selezionare una data.');
+    ids.push('#from');
+  }
   if (data.name === '') {
     messages.push('inserire un nome.');
     ids.push('#name1');
@@ -484,6 +492,10 @@ function validateData (data) {
   if (data.quantity == 0) {
     messages.push('per quante persone è la prenotazione?');
     ids.push('#quantity1');
+  }
+  if (!$('#privacy').prop('checked')) {
+    messages.push('è necessario accettare i termini di privacy.');
+    ids.push('#privacy2');
   }
   console.log('ids, msgs', ids, messages);
   if (ids.length > 0) {
