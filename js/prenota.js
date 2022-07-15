@@ -173,7 +173,6 @@ function showNotes (datetime) {
           if (!('seggiolini' in n))
             return
           notes.push(n);
-          console.log(notes);
           const s = n.seggiolini;
           const c = Boolean(n.cani);
           nseggiolini += s;
@@ -190,7 +189,7 @@ function showNotes (datetime) {
             $('<td/>').html(n.note).appendTo(tr);
           }
         } catch (e) {
-          console.log(e, 'not json notes!');
+          console.log('ok');
         }
       });
       const summary = `Ci sono <b>${nbookings}</b> prenotazioni (${notes.length} online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggiolini.`
@@ -243,7 +242,6 @@ function makeInterface (pid, dates) {
       'obs',
     ].forEach(id => { data[id] = $(`#${id}`).val() });
 
-    console.log(data);
     if (!validateData(data)) return
     data.surname += ' 0110';
 
@@ -373,11 +371,11 @@ function showReservation (pid) {
     'POST',
     { action: 'getReservation', data: pid },
     res => {
-      console.log('RRRR', res);
-      if (res.booking === null)
+      if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
         return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Ti consigliamo di entrare nel ${messengerString} o di chiamare ${telString}.`);
+      }
       presentReservation(res.booking);
     },
     res => {
@@ -415,7 +413,6 @@ function presentReservation (r) {
       'Modifica la prenotazione?',
       'La sua prenotazione rimane la stessa fino a quando confermi i nuovi dati.',
       () => {
-        console.log('come on');
         const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
         window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
         // carica la pagina con tutti i datti iniziale
@@ -497,9 +494,7 @@ function validateData (data) {
     messages.push('è necessario accettare i termini di privacy.');
     ids.push('#privacy2');
   }
-  console.log('ids, msgs', ids, messages);
   if (ids.length > 0) {
-    console.log('yeah man');
     ids.forEach(i => showError(i));
     showMessage(messages.join('<br>'));
     return false;
@@ -560,7 +555,6 @@ function mkQuantityOptions (shifts, people) {
   $('#quantity').prop('disabled', false)
   // enable select
   $('#quantity').on("input", function() {
-    console.log('yey', $(this).val());
     const v = Number($(this).val());
     shifts.forEach((s, i) => $('#aShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
     const totalDisabled = shifts.reduce((c, i, ii) => c + $('#aShift' + ii).prop('disabled'), 0); 
