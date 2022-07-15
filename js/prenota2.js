@@ -417,14 +417,19 @@ function showMessage (message) {
 
 const telString = '<a href="tel:+390718853384"><span itemprop="telephone"> 071 8853384</span></a>';
 
-const messengerString = '<a target="_blank" href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Messenger</a>';
+const messengerString = '<a target="_blank" href="https://m.me/cavecchiabeerstrot">Facebook Messenger</a>';
 
 const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
 ${messengerString}`;
 
-const messageError = `<p>Riprova a cliccare il bottone "riserva il tavolo."</p> <p>Se il problema persiste: <ul class="">
-                        <li>Scrivici su ${messengerString} </li> <li>Chiamaci al numero ${telString}</li></ul>`;
+const messageError = `<p>Riprova a cliccare il bottone "Riserva il Tavolo"</p>
+                      <li class="no-bullet">Se il problema persiste:
+                        <ul class="disc">
+                          <li>Scrivici su ${messengerString}</li>
+                          <li>Chiamaci al numero ${telString}</li>
+                        </ul>
+                      </li>`;
 
 function bookingNotFound () {
   const div = $('#innerInfoDiv');
