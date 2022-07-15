@@ -4,6 +4,8 @@ $(document).ready(() => {
   if (pid) {
     if (pid === 'notes') {
       return showNotes();
+    } else if (pid === 'days') {
+      return showDays();
     } else if (pid === 'test') {
       return testeLambda();
     } else if (pid.endsWith('_modifica')) {
@@ -95,11 +97,42 @@ function testeLambda () {
   testeLambdaPOST();
 }
 
+function showDays (datetime) {
+  $('.form').hide();
+  $('#notesTable').hide();
+  $('#notesDiv').show().css('margin-bottom', '50%');
+  $('#innerNotesDiv').css('margin-top', '30%');
+  $('#ttitle').text('Giorni di Chiusura');
+  mkCall(
+    'POST',
+    { action: 'days', data: datetime || '--' },
+    res => {
+      const r = window.rara = res;
+      const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
+
+      jQuery('#from2').datetimepicker({
+        // startDate: new Date(r.date),
+        minDate: 0, // disabled for tests
+        // formatDate:'Y-m-d',
+        timepicker: false,
+        // disabledDates: r.dates,
+        inline: true,
+        onSelectDate: (dp, input) => {
+          showDays(dp.toISOString());
+          // toggle enable/disable the date
+        },
+      }).datetimepicker('show');
+    },
+    res => {
+      showMessage(messageError);
+    }
+  );
+}
+
 function showNotes (datetime) {
   $('.form').hide();
-  $('#infoDiv').hide();
-  $('.clearme').remove();
-  const nd = $('#notesDiv').show();
+  $('#notesDiv').show();
   $('#innerNotesDiv').show();
   mkCall(
     'GET',
@@ -423,7 +456,7 @@ const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
 ${messengerString}`;
 
-const messageError = `Si prega di riprovare perché abbiamo riscontrato un errore.
+const messageError = `Si prega di riprovare perché abbiamo riscontrato un errore.<br>
 Se il problema persiste, ti consigliamo di 
 entrare nel ${messengerString} o di chiamare ${telString}.<br>`;
 
