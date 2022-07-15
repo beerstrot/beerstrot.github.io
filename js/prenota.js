@@ -39,12 +39,9 @@ function modifyReservation (pid) {
       const b = res.booking;
       const bc = b.booking_customer;
       const extra = JSON.parse(b.notes);
-      window.mres = { b, bc, extra };
-      // load mres in the form:
       const date = new Date(b.booked_for);
       const value = moment(date).format('DD/MMM/Y');
       $('#from').datetimepicker('setOptions', { value })
-      window.bbb = b;
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -64,8 +61,8 @@ function modifyReservation (pid) {
 }
 
 // beerstrot-prod:
-// const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
-const url = 'http://localhost:5001/entry';
+const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
+// const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
@@ -120,14 +117,13 @@ function showDays (datetime) {
     'POST',
     { action: 'days', data: datetime || '--' },
     res => {
-      const r = window.rara = res;
+      const r = res;
       $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
 
       jQuery('#from2').datetimepicker({
-        // startDate: new Date(r.date),
-        // minDate: 0, // disabled for tests
-        // formatDate:'Y-m-d',
+        minDate: 0,
         timepicker: false,
+        // formatDate:'Y-m-d',
         // disabledDates: r.dates,
         inline: true,
         onSelectDate: (dp, input) => {
@@ -151,7 +147,6 @@ function showNotes (datetime) {
     'GET',
     { action: 'notes', data: datetime },
     res => {
-      window.rara = res;
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
@@ -172,7 +167,6 @@ function showNotes (datetime) {
       let nseggiolini = 0;
       let ncani = 0;
       const notes = [];
-      window.bbb = b;
       b.forEach((i, ii) => {
         try {
           const n = JSON.parse(i.notes);
@@ -287,14 +281,12 @@ function makeInterface (pid, dates) {
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
   // $.datetimepicker.setLocale('it')
-  const disableDates = []; // get from database, given by ADM, TTM
   jQuery('#from').datetimepicker({
-    disableDates,
     // lang: 'it',
     format:'d/M/Y',
     formatDate:'Y-m-d',
     disabledDates: dates || [],
-    // minDate: 0, // disabled for tests
+    minDate: 0, // disabled for tests
     timepicker: false,
     onSelectDate: (dp, input) => {
       $('#loading').show();
@@ -308,7 +300,6 @@ function makeInterface (pid, dates) {
 const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 function updateShifts (dp, selected, people) {
   $('.bShift').remove();
-  window.pppp = dp;
   const data = {
     day: dp.getDate(),
     month: dp.getMonth(),
@@ -318,9 +309,8 @@ function updateShifts (dp, selected, people) {
     'POST',
     { action: 'getShifts', data },
     res => {
-      window.rrrr = res;
       const pad0 = i => String(i).padStart(2, '0');
-      const d = `${data.year}-${pad0(data.month)}-${pad0(data.day)}`;
+      const d = `${data.year}-${pad0(data.month + 1)}-${pad0(data.day)}`;
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
       const shifts = mkShiftButtons(shifts_, selected);
@@ -416,9 +406,6 @@ function presentReservation (r) {
   const s = extra.seggiolini
   h('segg', s == 0 ? 'No' : s);
   h('dog', extra.cani ? 'Sì' : 'No');
-  window.bbb = bc;
-  window.eee = extra;
-  window.rrr = r;
   $('#modify').click(() => {
     showConsultaMessage(
       'Modifica la prenotazione?',
@@ -549,7 +536,6 @@ function showConsultaMessage (message, message2, callYes, callNo) {
 }
 
 function mkQuantityOptions (shifts, people) {
-  window.sss = shifts;
   // find biggest table
   const biggestTable = shifts.reduce((m, s) => Math.max(m, ...s.table_sizes), 0);
   // make options reaching it
