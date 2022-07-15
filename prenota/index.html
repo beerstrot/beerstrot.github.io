@@ -133,7 +133,7 @@
         <div class="row">
             <div class="small-6 medium-3 columns">
                 <label>Quale giorno*
-                    <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" />
+                    <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" readonly/>
                 </label>
                 <small class="error error1" id="from1">Campo obbligatorio</small>
             </div>
@@ -151,7 +151,6 @@
                 <label>Quale turno*
                 </label>
                 <small class="error error1" id="shiftGrid1">Campo obbligatorio</small>
-                <!-- Questi bottoni devono essere grandi uguali e distanziati meglio -->
                 <ul class="small-block-grid-2  extra-space-turno error" id="shiftGrid">
                     <li class="bShift"><a href="#" class="small button disabled">19.00-21.00</a></li>
                     <li class="bShift"><a href="#" class="small button disabled">19.30-21.30</a></li>
@@ -215,9 +214,9 @@
                   <small class="error error1" id="telephone1">Campo obbligatorio</small>
             </div>
         </div>
-        <div class="row">
+        <div class="row extra-space">
             <div class="small-12 medium-6 columns end">
-                <input id="privacy" type="checkbox"><label for="checkbox2"> Accetto la<a id="privacy2" class="error"> privacy</a></label>
+                <input id="privacy" type="checkbox" checked><label for="checkbox2"> Accetto la<a id="privacy2" class="error"> privacy</a></label>
             </div>
         </div>
         <div class="row">
@@ -314,7 +313,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/ >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="../js/prenota.min.js"></script>
+    <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
 <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <p class="lead" id="modalLead">Your couch.  It is mine.</p>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>

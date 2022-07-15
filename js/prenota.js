@@ -294,7 +294,7 @@ function makeInterface (pid, dates) {
     },
   });
   $('#privacy2').on('click', () => {
-    showMessage('Rispettiamo la sua privacy: i suoi dati vengono utilizzati solo per essere inseriti nel nostro programma di gestione delle casse, come facciamo quando qualcuno ci chiama per telefono.');
+    showMessage('Rispettiamo la sua privacy: i  dati vengono utilizzati solo per essere inseriti nel nostro programma di prenotazione e contattarla in caso di pioggia o maltempo.');
   });
 }
 
@@ -410,7 +410,7 @@ function presentReservation (r) {
   $('#modify').click(() => {
     showConsultaMessage(
       'Modifica la prenotazione?',
-      '(NOTA: La sua prenotazione rimane la stessa fino a quando confermi i nuovi dati.)',
+      '(NOTA: La prenotazione rimane la stessa fino a quando vengono confermati i nuovi dati.)',
       () => {
         const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
         window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
@@ -490,7 +490,7 @@ function validateData (data) {
     ids.push('#quantity1');
   }
   if (!$('#privacy').prop('checked')) {
-    messages.push('è necessario accettare i termini di privacy.');
+    messages.push('è necessario accettare la privacy.');
     ids.push('#privacy2');
   }
   if (ids.length > 0) {
@@ -506,9 +506,9 @@ function showMessage (message) {
   $('#myModal').foundation('reveal', 'open');
 }
 
-const telString = '<p><a href="tel:+390718853384"><i class="fa fa-phone"></i><span itemprop="telephone"> 071 8853384</span></a></p>';
+const telString = '<p><a href="tel:+390718853384"><span itemprop="telephone"> 071 8853384</span></a></p>';
 
-const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"><i class="fab fa-facebook-messenger"></i>Chat messenger</a></p>';
+const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"></i>Facebook messenger</a></p>';
 
 const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
