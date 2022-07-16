@@ -462,36 +462,36 @@ function validateData (data) {
   const messages = [];
   const ids = [];
   if (!$('#from').val()) {
-    messages.push('selezionare una data.');
+    messages.push('Scegli il giorno.');
     ids.push('#from');
   }
+  if (data.date === '') {
+    messages.push('Scegli il giorno.');
+    ids.push('#from1');
+  }
+  if (data.quantity == 0) {
+    messages.push('Inserisci il numero di persone.');
+    ids.push('#quantity1');
+  }
+  if (data.shiftId === undefined) {
+    messages.push('Seleziona il turno.');
+    ids.push('#shiftGrid1');
+  }
   if (data.name === '') {
-    messages.push('inserire un nome.');
+    messages.push('Inserisci un nome.');
     ids.push('#name1');
   }
   if (data.surname === '') {
-    messages.push('inserire un cognome.');
+    messages.push('Inserisci un cognome.');
     ids.push('#surname1');
   }
-  if (data.telephone === '') {
-    messages.push('inserire un telefono.');
-    ids.push('#telephone1');
-  }
   if (!validateEmail(data.email)) {
-    messages.push('inserire un indirizzo e-mail.');
+    messages.push('Inserisciun un indirizzo e-mail.');
     ids.push('#email1');
   }
-  if (data.date === '') {
-    messages.push('scegli il giorno.');
-    ids.push('#from1');
-  }
-  if (data.shiftId === undefined) {
-    messages.push('selezionare il turno.');
-    ids.push('#shiftGrid1');
-  }
-  if (data.quantity == 0) {
-    messages.push('per quante persone è la prenotazione?');
-    ids.push('#quantity1');
+  if (data.telephone === '') {
+    messages.push('Inserisci un numero di telefono.');
+    ids.push('#telephone1');
   }
   if (!$('#privacy').prop('checked')) {
     messages.push('è necessario accettare la privacy.');
@@ -510,9 +510,9 @@ function showMessage (message) {
   $('#myModal').foundation('reveal', 'open');
 }
 
-const telString = '<p><a href="tel:+390718853384"><span itemprop="telephone"> 071 8853384</span></a></p>';
+const telString = '<a href="tel:+390718853384"><span itemprop="telephone"> 071 8853384</span></a>';
 
-const messengerString = '<p><a target="_blank" href="https://m.me/cavecchiabeerstrot"></i>Facebook messenger</a></p>';
+const messengerString = '<a target="_blank" href="https://m.me/cavecchiabeerstrot"> Facebook messenger</a>';
 
 const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
@@ -522,7 +522,8 @@ ${messengerString}`;
 Se il problema persiste, ti consigliamo di 
 entrare nel ${messengerString} o di chiamare ${telString}.<br>`;*/
 
-const messageError = `<p>Riprova a cliccare il bottone "Riserva il Tavolo"</p>
+const messageError = `<h2>il Server non è raggiungibile</h2>
+                      <p>Riprova fra qualche istante e assicurati di avere campo nel cellulare o internet funzionante da computer. Grazie.</p>
                       <li class="no-bullet">Se il problema persiste:
                         <ul class="disc">
                           <li>Scrivici su ${messengerString}</li>
