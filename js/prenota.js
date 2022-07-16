@@ -281,7 +281,7 @@ function makeInterface (pid, dates) {
 
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
-  // $.datetimepicker.setLocale('it')
+  $.datetimepicker.setLocale('it')
   jQuery('#from').datetimepicker({
     lang: 'it',
     format:'d/M/Y',
