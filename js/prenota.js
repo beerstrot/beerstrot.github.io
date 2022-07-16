@@ -121,6 +121,7 @@ function showDays (datetime) {
       $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
 
       jQuery('#from2').datetimepicker({
+        lang: 'it',
         minDate: 0,
         timepicker: false,
         // formatDate:'Y-m-d',
@@ -151,6 +152,7 @@ function showNotes (datetime) {
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
       jQuery('#from2').datetimepicker({
+        lang: 'it',
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
@@ -412,7 +414,7 @@ function presentReservation (r) {
   $('#modify').click(() => {
     showConsultaMessage(
       'Vuoi modificare la prenotazione?',
-      '(NOTA: La prenotazione rimane la stessa fino a quando non viene premuto il tasta Modifica.)',
+      '(NOTA: La prenotazione rimane la stessa fino a quando non viene premuto il tasta "Prenota il tavolo".)',
       () => {
         const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
         window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
@@ -431,13 +433,13 @@ function presentReservation (r) {
           'POST',
           { action: 'cancelReservation', data: pid },
           res => {
-            $('<li/>').appendTo('#infoList').html(`<b>Status</b>: cancelled`).css('background', 'pink');
+            $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();
             $('#cancel').hide();
           },
 
-          //se ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
+          //pid e ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
           res => {
             showMessage(`${messageError}
               La ID della prenotazione è: ${pid}.`);
