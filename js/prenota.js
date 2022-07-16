@@ -295,7 +295,7 @@ function makeInterface (pid, dates) {
     },
   });
   $('#privacy2').on('click', () => {
-    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti in caso di problemi o chiusura inaspettata del locale (es. causa maltempo.');
+    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
 }
 
