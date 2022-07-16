@@ -897,8 +897,12 @@ prenota
 @media #{$small-only} {
         input, select, textarea {
         font-size: 16px !important;
-};
-    }
+    };
+}
+
+.error1 {
+  display: none!important;
+}
 
 #loading {
   display: none;
@@ -909,7 +913,7 @@ prenota
   width: 100vw;
   height: 100vh;
   background-color: rgba(192, 192, 192, 0.9);
-  background-image: url('https://www.beerstrot.it/asset/img/loading1.gif');
+  background-image: url('https://www.beerstrot.it/asset/img/loading.gif');
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
