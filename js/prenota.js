@@ -283,7 +283,6 @@ function makeInterface (pid, dates) {
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
   $.datetimepicker.setLocale('it')
   jQuery('#from').datetimepicker({
-    lang: 'it',
     format:'d/M/Y',
     formatDate:'Y-m-d',
     disabledDates: dates || [],
