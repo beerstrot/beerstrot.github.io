@@ -162,7 +162,7 @@ function showNotes (datetime) {
 
       const b = r.bookings;
       const nbookings = b.length;
-      if (!nbookings) return showNotesMessage(`nessuna prenotazione per <b>${date}</b>.`);
+      if (!nbookings) return showNotesMessage(`nessuna prenotazione trovata il <b>${date}</b>.`);
 
       let nseggiolini = 0;
       let ncani = 0;
@@ -261,6 +261,7 @@ function makeInterface (pid, dates) {
             res => {
               window.location.href = url;
             },
+            //se ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
             res => {
               showMessage(`${messageError}
                 La ID della prenotazione è: ${pid}.`);
@@ -280,7 +281,7 @@ function makeInterface (pid, dates) {
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
   // $.datetimepicker.setLocale('it')
   jQuery('#from').datetimepicker({
-    // lang: 'it',
+    lang: 'it',
     format:'d/M/Y',
     formatDate:'Y-m-d',
     disabledDates: dates || [],
@@ -294,7 +295,7 @@ function makeInterface (pid, dates) {
     },
   });
   $('#privacy2').on('click', () => {
-    showMessage('Rispettiamo la sua privacy: i  dati vengono utilizzati solo per essere inseriti nel nostro programma di prenotazione e contattarla in caso di pioggia o maltempo.');
+    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti in caso di problemi o chiusura inaspettata del locale (es. causa maltempo.');
   });
 }
 
@@ -373,10 +374,11 @@ function showReservation (pid) {
       if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
-        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Ti consigliamo di entrare nel ${messengerString} o di chiamare ${telString}.`);
+        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci su ${messengerString} o chiamarci allo ${telString}.`);
       }
       presentReservation(res.booking);
     },
+   //se ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
     res => {
       showMessage(`${messageError}
         La ID della prenotazione è: ${pid}.`);
@@ -409,8 +411,8 @@ function presentReservation (r) {
   h('dog', extra.cani ? 'Sì' : 'No');
   $('#modify').click(() => {
     showConsultaMessage(
-      'Modifica la prenotazione?',
-      '(NOTA: La prenotazione rimane la stessa fino a quando vengono confermati i nuovi dati.)',
+      'Vuoi modificare la prenotazione?',
+      '(NOTA: La prenotazione rimane la stessa fino a quando non viene premuto il tasta Modifica.)',
       () => {
         const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
         window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
@@ -434,6 +436,8 @@ function presentReservation (r) {
             $('#modify').hide();
             $('#cancel').hide();
           },
+
+          //se ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
           res => {
             showMessage(`${messageError}
               La ID della prenotazione è: ${pid}.`);
@@ -478,11 +482,11 @@ function validateData (data) {
     ids.push('#email1');
   }
   if (data.date === '') {
-    messages.push('scegli una data.');
+    messages.push('scegli il giorno.');
     ids.push('#from1');
   }
   if (data.shiftId === undefined) {
-    messages.push('selezionare un periodo per la prenotatione.');
+    messages.push('selezionare il turno.');
     ids.push('#shiftGrid1');
   }
   if (data.quantity == 0) {
@@ -514,15 +518,23 @@ const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
 ${telString}
 ${messengerString}`;
 
-const messageError = `Si prega di riprovare perché abbiamo riscontrato un errore.<br>
+/*const messageError = `Si prega di riprovare perché abbiamo riscontrato un errore.<br>
 Se il problema persiste, ti consigliamo di 
-entrare nel ${messengerString} o di chiamare ${telString}.<br>`;
+entrare nel ${messengerString} o di chiamare ${telString}.<br>`;*/
+
+const messageError = `<p>Riprova a cliccare il bottone "Riserva il Tavolo"</p>
+                      <li class="no-bullet">Se il problema persiste:
+                        <ul class="disc">
+                          <li>Scrivici su ${messengerString}</li>
+                          <li>Chiamaci al numero ${telString}</li>
+                        </ul>
+                      </li>`;
 
 function bookingNotFound () {
   const div = $('#innerInfoDiv');
   const fs = $('<fieldset/>').appendTo(div);
   $('<legend/>').text('Prenotazione non trovata').appendTo(fs);
-  $('<div/>').html(`<p>Vi chiediamo gentilmente di mettervi in contatto con noi.</p>`).appendTo(fs);
+  $('<div/>').html(`<p>Vi chiediamo gentilmente di contattarci.</p>`).appendTo(fs);
   $('<div/>').html(telString).appendTo(fs);
   $('<div/>').html(messengerString).appendTo(fs);
   $('#buttonInfoDiv').hide();
@@ -567,5 +579,5 @@ function mkQuantityOptions (shifts, people) {
 
 function showError (id) {
   // $(id).attr("style", "display: block !important")
-  $(id.replace('1', '')).attr('style', 'border: 3px solid red');
+  $(id.replace('1', '')).attr('style', 'border: 2px solid red');
 }

@@ -435,7 +435,7 @@ function bookingNotFound () {
   const div = $('#innerInfoDiv');
   const fs = $('<fieldset/>').appendTo(div);
   $('<legend/>').text('Prenotazione non trovata').appendTo(fs);
-  $('<div/>').html(`<p>Vi chiediamo gentilmente di mettervi in contatto con noi.</p>`).appendTo(fs);
+  $('<div/>').html(`<p>Vi chiediamo gentilmente di contatarci.</p>`).appendTo(fs);
   $('<div/>').html(telString).appendTo(fs);
   $('<div/>').html(messengerString).appendTo(fs);
   $('#buttonInfoDiv').hide();
