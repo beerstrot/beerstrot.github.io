@@ -156,7 +156,7 @@ function showNotes (datetime) {
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
-        inline:true,
+        inline:false,
         onSelectDate: (dp, input) => {
           showNotes(dp.toISOString());
         },
