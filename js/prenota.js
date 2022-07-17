@@ -180,7 +180,7 @@ function showNotes (datetime) {
           nseggiolini += s;
           ncani += c;
           if (s || c) {
-            const tr = $('<tr/>', { class: 'clearme', css: { background: ii % 2 === 0 ? '#fff' : '#ddd' } }).appendTo('#notesTableBody');
+            const tr = $('<tr/>', { class: '', css: {  } }).appendTo('#notesTableBody');
             const bc = i.booking_customer;
             $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendTo(tr);
             $('<td/>').html(n.telephone || '').appendTo(tr);
