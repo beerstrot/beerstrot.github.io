@@ -186,8 +186,8 @@ function showNotes (datetime) {
             $('<td/>').html(n.telephone || '').appendTo(tr);
             $('<td/>').html(n.email || '').appendTo(tr);
             $('<td/>').html(new Date(i.booked_for).toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })).appendTo(tr);
-            $('<td/>', { css: { background: c ? 'rgba(200, 255, 200, 0.5)' : '' } }).html(c ? 'X' : '').appendTo(tr);
-            $('<td/>', { css: { background: s == 0 ? '' : 'rgba(200, 200, 255, 0.5)' } }).html(s == 0 ? '' : s).appendTo(tr);
+            $('<td/>').html(c ? 'SI' : '').appendTo(tr);
+            $('<td/>').html(s == 0 ? '' : s).appendTo(tr);
             $('<td/>').html(n.note).appendTo(tr);
           }
         } catch (e) {
