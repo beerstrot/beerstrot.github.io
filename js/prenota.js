@@ -119,7 +119,7 @@ function showDays (datetime) {
     res => {
       const r = res;
       $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
-
+      $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
         lang: 'it',
         minDate: 0,
@@ -150,7 +150,7 @@ function showNotes (datetime) {
     res => {
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
+      $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
         lang: 'it',
         startDate: new Date(r.date),
@@ -281,7 +281,7 @@ function makeInterface (pid, dates) {
 
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
-  $.datetimepicker.setLocale('it')
+  $.datetimepicker.setLocale('it');
   jQuery('#from').datetimepicker({
     format:'d/M/Y',
     formatDate:'Y-m-d',
