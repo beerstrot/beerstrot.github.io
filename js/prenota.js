@@ -143,7 +143,7 @@ function showNotes (datetime) {
   $('#notesDiv').show();
   $('#innerNotesDiv').show();
   $('.clearme').remove();
-  datetime = datetime || '2022-07-04T09:40:41.729Z';
+  datetime = datetime || '2022-07-17T09:40:41.729Z';
   mkCall(
     'GET',
     { action: 'notes', data: datetime },
@@ -153,7 +153,7 @@ function showNotes (datetime) {
       $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
         lang: 'it',
-        //startDate: new Date(r.date),
+        startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
         inline:false,
