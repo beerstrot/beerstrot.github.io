@@ -153,7 +153,7 @@ function showNotes (datetime) {
       $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
         lang: 'it',
-        startDate: new Date(r.date),
+        //startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
         inline:false,
