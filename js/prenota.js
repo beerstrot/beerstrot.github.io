@@ -112,23 +112,21 @@ function showDays (datetime) {
   $('#notesTable').hide();
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
-  $('#ttitle').text('Giorni di Chiusura');
+  $('#ttitle').text('BB Giorni di Chiusura AA');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
     res => {
       const r = res;
-      $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
+      $('#innerNotesDiv').html('<b>Giorni chiusi ACC:</b><br>' + r.dates.join('<br>'));
       $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
-        lang: 'it',
         minDate: 0,
         timepicker: false,
-        // formatDate:'Y-m-d',
-        // disabledDates: r.dates,
-        inline: true,
+        // inline: true,
         onSelectDate: (dp, input) => {
-          showDays(dp.toISOString());
+          const date = dp.toISOString();
+          showDays(date);
         },
       }).datetimepicker('show');
     },
@@ -143,7 +141,19 @@ function showNotes (datetime) {
   $('#notesDiv').show();
   $('#innerNotesDiv').show();
   $('.clearme').remove();
-  datetime = datetime || '2022-07-17T09:40:41.729Z';
+  // TTM
+  // autocomplete safari
+  // rimuome il modale di modifica
+  // icone messagio diverso quando è note/days
+  // seleziona giorno per note.
+  // modifica/cancella nella mail
+  // modifica cancellata
+  // id=notes -> un URL
+  // notes: numero di persone e tavolo
+  //  vedere i totali per turni
+  //  calendario fisso
+  //  promemoria metto a parte
+  datetime = datetime || new Date().toISOString();
   mkCall(
     'GET',
     { action: 'notes', data: datetime },
@@ -156,7 +166,7 @@ function showNotes (datetime) {
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
-        inline:false,
+        inline:true,
         onSelectDate: (dp, input) => {
           showNotes(dp.toISOString());
         },
@@ -281,7 +291,7 @@ function makeInterface (pid, dates) {
 
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
-  $.datetimepicker.setLocale('it');
+  // $.datetimepicker.setLocale('it');
   jQuery('#from').datetimepicker({
     format:'d/M/Y',
     formatDate:'Y-m-d',
@@ -316,6 +326,8 @@ function updateShifts (dp, selected, people) {
       const d = `${data.year}-${pad0(data.month + 1)}-${pad0(data.day)}`;
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
+      if (shifts.length === 0)
+        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di scegliere un'altra data o contattarci: ${telString} ${messengerString}`);
       const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
     },
@@ -325,15 +337,21 @@ function updateShifts (dp, selected, people) {
 
 function mkShiftButtons (shifts, selected) {
   const sButtons = [];
+  const removeShifts = [];
   shifts.forEach((s, i) => {
     const max_available = s.online_seats_limit - s.online_booked_seats;
-    if (max_available <= 0) return
+    if (max_available <= 0) {
+      return removeShifts.push(i);
+    }
     for (table in s.tables) {
       if (s.tables[table] > max_available) {
         delete s.tables[table];
       }
     }
     s.table_sizes = Object.values(s.tables);
+    if (s.table_sizes.length === 0) {
+      return removeShifts.push(i);
+    }
     // const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
     const b = $('<button/>', { id: 'aShift' + i, class: 'small button aShift' })
       .text(s.name)
@@ -348,6 +366,9 @@ function mkShiftButtons (shifts, selected) {
     b.attr('bindex2', i);
     sButtons.push(b);
   });
+  removeShifts.reverse().forEach(i => shifts.splice(i, 1));
+  if (shifts.length === 0)
+      showMessage('Siamo al completo in questo giorno. Grazie.');
   sButtons.forEach(b => {
     b.click(() => {
       sButtons.forEach(b => {
@@ -557,6 +578,7 @@ function showConsultaMessage (message, message2, callYes, callNo) {
 
 function mkQuantityOptions (shifts, people) {
   // find biggest table
+  window.qqq = { shifts, people };
   const biggestTable = shifts.reduce((m, s) => Math.max(m, ...s.table_sizes), 0);
   // make options reaching it
   $('.aquantity').remove();
