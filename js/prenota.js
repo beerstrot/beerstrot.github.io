@@ -61,8 +61,8 @@ function modifyReservation (pid) {
 }
 
 // beerstrot-prod:
-const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
-// const url = 'http://localhost:5001/entry';
+// const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
+const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
@@ -166,7 +166,6 @@ function showNotes (datetime) {
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
-        inline:true,
         onSelectDate: (dp, input) => {
           showNotes(dp.toISOString());
         },
@@ -326,7 +325,7 @@ function updateShifts (dp, selected, people) {
       const d = `${data.year}-${pad0(data.month + 1)}-${pad0(data.day)}`;
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
-      if (shifts.length === 0)
+      if (shifts_.length === 0)
         return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di scegliere un'altra data o contattarci: ${telString} ${messengerString}`);
       const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
