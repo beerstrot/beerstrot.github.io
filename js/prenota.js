@@ -36,12 +36,20 @@ function modifyReservation (pid) {
     'POST',
     { action: 'getReservation', data: pid },
     res => {
+      $('#ttitle').text('Modica la Prenotazione');
+      $('<p/>').text('La prenotazione viene modificata solo quando clicchi il pulsante "Modifica Prenotazione"')
+        .insertAfter('#ttitle');
+      $('#prenota').text('Modifica Prenotazione');
       const b = res.booking;
       const bc = b.booking_customer;
       const extra = JSON.parse(b.notes);
       const date = new Date(b.booked_for);
-      const value = moment(date).format('DD/MMM/Y');
-      $('#from').datetimepicker('setOptions', { value })
+      window.bbb = b;
+      // const value = moment(date).format('Y-MM-DD');
+      const value = moment(date).format('DD/MM/Y');
+      console.log(date, value);
+      setInterval(() => $('#from').datetimepicker('setOptions', { value }), 1000);
+      // $('#from').datetimepicker('setOptions', { value });
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -112,25 +120,24 @@ function showDays (datetime) {
   $('#notesTable').hide();
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
-  $('#ttitle').text('Giorni di Chiusura');
+  $('#ttitle').text('BB Giorni di Chiusura AA');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
     res => {
       const r = res;
-      $('#innerNotesDiv').html('<b>Giorni chiusi:</b><br>' + r.dates.join('<br>'));
-      $.datetimepicker.setLocale('it');
+      $('#innerNotesDiv').html('<b>Giorni chiusi ACC:</b><br>' + r.dates.join('<br>'));
+      // $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
-        lang: 'it',
         minDate: 0,
         timepicker: false,
-        // formatDate:'Y-m-d',
-        // disabledDates: r.dates,
-        inline: true,
+        // inline: true,
         onSelectDate: (dp, input) => {
-          showDays(dp.toISOString());
+          const date = dp.toISOString();
+          showDays(date);
         },
       }).datetimepicker('show');
+      $('.xdsoft_today_button').hide();
     },
     res => {
       showMessage(messageError);
@@ -143,24 +150,36 @@ function showNotes (datetime) {
   $('#notesDiv').show();
   $('#innerNotesDiv').show();
   $('.clearme').remove();
-  datetime = datetime || '2022-07-17T09:40:41.729Z';
+  // TTM
+  // autocomplete safari
+  // rimuome il modale di modifica
+  // icone messagio diverso quando è note/days
+  // seleziona giorno per note.
+  // modifica/cancella nella mail
+  // modifica cancellata
+  // id=notes -> un URL
+  // notes: numero di persone e tavolo
+  //  vedere i totali per turni
+  //  calendario fisso
+  //  promemoria metto a parte
+  datetime = datetime || new Date().toISOString();
   mkCall(
     'GET',
     { action: 'notes', data: datetime },
     res => {
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      $.datetimepicker.setLocale('it');
+      // $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
-        lang: 'it',
+        // lang: 'it',
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
-        inline:false,
         onSelectDate: (dp, input) => {
           showNotes(dp.toISOString());
         },
       }).datetimepicker('show');
+      $('.xdsoft_today_button').hide();
 
       const b = r.bookings;
       const nbookings = b.length;
@@ -245,6 +264,9 @@ function makeInterface (pid, dates) {
     ].forEach(id => { data[id] = $(`#${id}`).val() });
 
     if (!validateData(data)) return
+    if (pid) { // user is modifying, cancel previous reservation:
+      data.oldID = pid.split('_')[0];
+    }
 
     mkCall(
       'POST',
@@ -256,22 +278,7 @@ function makeInterface (pid, dates) {
         let  u = window.location.href;
         u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
         const url = u + 'consulta.html?id=' + res.reservationID2;
-        if (pid) { // user is modifying, cancel previous reservation:
-          mkCall(
-            'POST',
-            { action: 'cancelReservation', data: pid },
-            res => {
-              window.location.href = url;
-            },
-            //se ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
-            res => {
-              showMessage(`${messageError}
-                La ID della prenotazione è: ${pid}.`);
-            }
-          );
-        } else {
-          window.location.href = url;
-        }
+        window.location.href = url + (pid ? '_modificata' : '');
       },
       res => {
         showMessage(messageError);
@@ -281,13 +288,14 @@ function makeInterface (pid, dates) {
 
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
-  $.datetimepicker.setLocale('it');
+  // $.datetimepicker.setLocale('it');
   jQuery('#from').datetimepicker({
     format:'d/M/Y',
     formatDate:'Y-m-d',
     disabledDates: dates || [],
     minDate: 0, // disabled for tests
     timepicker: false,
+    todayDate: false,
     onSelectDate: (dp, input) => {
       $('#loading').show();
       $('#from').chosen = true;
@@ -295,6 +303,7 @@ function makeInterface (pid, dates) {
       updateShifts(dp);
     },
   });
+  $('.xdsoft_today_button').hide();
   $('#privacy2').on('click', () => {
     showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
@@ -316,6 +325,8 @@ function updateShifts (dp, selected, people) {
       const d = `${data.year}-${pad0(data.month + 1)}-${pad0(data.day)}`;
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
+      if (shifts_.length === 0)
+        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di scegliere un'altra data o contattarci: ${telString} ${messengerString}`);
       const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
     },
@@ -325,15 +336,21 @@ function updateShifts (dp, selected, people) {
 
 function mkShiftButtons (shifts, selected) {
   const sButtons = [];
+  const removeShifts = [];
   shifts.forEach((s, i) => {
     const max_available = s.online_seats_limit - s.online_booked_seats;
-    if (max_available <= 0) return
+    if (max_available <= 0) {
+      return removeShifts.push(i);
+    }
     for (table in s.tables) {
       if (s.tables[table] > max_available) {
         delete s.tables[table];
       }
     }
     s.table_sizes = Object.values(s.tables);
+    if (s.table_sizes.length === 0) {
+      return removeShifts.push(i);
+    }
     // const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
     const b = $('<button/>', { id: 'aShift' + i, class: 'small button aShift' })
       .text(s.name)
@@ -348,6 +365,9 @@ function mkShiftButtons (shifts, selected) {
     b.attr('bindex2', i);
     sButtons.push(b);
   });
+  removeShifts.reverse().forEach(i => shifts.splice(i, 1));
+  if (shifts.length === 0)
+      showMessage('Siamo al completo in questo giorno. Grazie.');
   sButtons.forEach(b => {
     b.click(() => {
       sButtons.forEach(b => {
@@ -366,8 +386,15 @@ function mkShiftButtons (shifts, selected) {
 }
 
 function showReservation (pid) {
+  $('#new').hide();
   $('.form').hide();
   $('#prenotaDiv').show();
+  let modified = false;
+  if (pid.endsWith('_modificata')) {
+    $('#ttitle').text('Prenotazione modificata. Grazie');
+    $('#tlegend').text('Dettagli della nuova prenotazione');
+    pid = pid.split('_modifica')[0];
+  }
   mkCall(
     'POST',
     { action: 'getReservation', data: pid },
@@ -411,31 +438,26 @@ function presentReservation (r) {
   h('segg', s == 0 ? 'No' : s);
   h('dog', extra.cani ? 'Sì' : 'No');
   $('#modify').click(() => {
-    showConsultaMessage(
-      'Vuoi modificare la prenotazione?',
-      '(NOTA: La prenotazione rimane la stessa fino a quando non viene premuto il tasta "Prenota il tavolo".)',
-      () => {
-        const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
-        window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
-        // carica la pagina con tutti i datti iniziale
-      },
-      () => $('#close-modal').click()
-    );
+    const pid = new URL(window.location.href).searchParams.get('id').split('_modificata')[0] + '_modifica';
+    window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
   });
   const pid = r.id;
   $('#cancel').click(() => {
     showConsultaMessage(
-      'Cancella la prenotazione?',
+      'Vuoi davvero cancellare la prenotazione?',
       '',
       () => {
         mkCall(
           'POST',
           { action: 'cancelReservation', data: pid },
           res => {
-            $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
+            $('#ttitle').text('Prenotazione cancellata. Grazie');
+            $('tlegend').text('Dettagli della prenotazione cancellata');
+            // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();
             $('#cancel').hide();
+            $('#new').show();
           },
 
           //pid e ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
@@ -445,7 +467,9 @@ function presentReservation (r) {
           }
         );
       },
-      () => $('#close-modal').click()
+      () => {
+        $('#close-modal').click()
+      }
     );
   });
 }
@@ -557,6 +581,7 @@ function showConsultaMessage (message, message2, callYes, callNo) {
 
 function mkQuantityOptions (shifts, people) {
   // find biggest table
+  window.qqq = { shifts, people };
   const biggestTable = shifts.reduce((m, s) => Math.max(m, ...s.table_sizes), 0);
   // make options reaching it
   $('.aquantity').remove();
