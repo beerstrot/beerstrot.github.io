@@ -69,8 +69,8 @@ function modifyReservation (pid) {
 }
 
 // beerstrot-prod:
-const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
-// const url = 'http://localhost:5001/entry';
+// const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
+const url = 'http://localhost:5001/entry';
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
@@ -127,7 +127,7 @@ function showDays (datetime) {
     res => {
       const r = res;
       $('#innerNotesDiv').html('<b>Giorni chiusi ACC:</b><br>' + r.dates.join('<br>'));
-      $.datetimepicker.setLocale('it');
+      // $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
         minDate: 0,
         timepicker: false,
@@ -137,6 +137,7 @@ function showDays (datetime) {
           showDays(date);
         },
       }).datetimepicker('show');
+      $('.xdsoft_today_button').hide();
     },
     res => {
       showMessage(messageError);
@@ -168,9 +169,9 @@ function showNotes (datetime) {
     res => {
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      $.datetimepicker.setLocale('it');
+      // $.datetimepicker.setLocale('it');
       jQuery('#from2').datetimepicker({
-        lang: 'it',
+        // lang: 'it',
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
@@ -178,6 +179,7 @@ function showNotes (datetime) {
           showNotes(dp.toISOString());
         },
       }).datetimepicker('show');
+      $('.xdsoft_today_button').hide();
 
       const b = r.bookings;
       const nbookings = b.length;
@@ -293,6 +295,7 @@ function makeInterface (pid, dates) {
     disabledDates: dates || [],
     minDate: 0, // disabled for tests
     timepicker: false,
+    todayDate: false,
     onSelectDate: (dp, input) => {
       $('#loading').show();
       $('#from').chosen = true;
@@ -300,6 +303,7 @@ function makeInterface (pid, dates) {
       updateShifts(dp);
     },
   });
+  $('.xdsoft_today_button').hide();
   $('#privacy2').on('click', () => {
     showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
@@ -382,6 +386,7 @@ function mkShiftButtons (shifts, selected) {
 }
 
 function showReservation (pid) {
+  $('#new').hide();
   $('.form').hide();
   $('#prenotaDiv').show();
   let modified = false;
@@ -439,17 +444,20 @@ function presentReservation (r) {
   const pid = r.id;
   $('#cancel').click(() => {
     showConsultaMessage(
-      'Cancella la prenotazione?',
+      'Vuoi davvero cancellare la prenotazione?',
       '',
       () => {
         mkCall(
           'POST',
           { action: 'cancelReservation', data: pid },
           res => {
-            $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
+            $('#ttitle').text('Prenotazione cancellata. Grazie');
+            $('tlegend').text('Dettagli della prenotazione cancellata');
+            // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();
             $('#cancel').hide();
+            $('#new').show();
           },
 
           //pid e ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
@@ -459,7 +467,9 @@ function presentReservation (r) {
           }
         );
       },
-      () => $('#close-modal').click()
+      () => {
+        $('#close-modal').click()
+      }
     );
   });
 }
