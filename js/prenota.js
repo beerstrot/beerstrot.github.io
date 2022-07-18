@@ -36,12 +36,20 @@ function modifyReservation (pid) {
     'POST',
     { action: 'getReservation', data: pid },
     res => {
+      $('#ttitle').text('Modica la Prenotazione');
+      $('<p/>').text('La prenotazione viene modificata solo quando clicchi il pulsante "Modifica Prenotazione"')
+        .insertAfter('#ttitle');
+      $('#prenota').text('Modifica Prenotazione');
       const b = res.booking;
       const bc = b.booking_customer;
       const extra = JSON.parse(b.notes);
       const date = new Date(b.booked_for);
-      const value = moment(date).format('DD/MMM/Y');
-      $('#from').datetimepicker('setOptions', { value })
+      window.bbb = b;
+      // const value = moment(date).format('Y-MM-DD');
+      const value = moment(date).format('DD/MM/Y');
+      console.log(date, value);
+      setInterval(() => $('#from').datetimepicker('setOptions', { value }), 1000);
+      // $('#from').datetimepicker('setOptions', { value });
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -254,6 +262,9 @@ function makeInterface (pid, dates) {
     ].forEach(id => { data[id] = $(`#${id}`).val() });
 
     if (!validateData(data)) return
+    if (pid) { // user is modifying, cancel previous reservation:
+      data.oldID = pid.split('_')[0];
+    }
 
     mkCall(
       'POST',
@@ -265,22 +276,7 @@ function makeInterface (pid, dates) {
         let  u = window.location.href;
         u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
         const url = u + 'consulta.html?id=' + res.reservationID2;
-        if (pid) { // user is modifying, cancel previous reservation:
-          mkCall(
-            'POST',
-            { action: 'cancelReservation', data: pid },
-            res => {
-              window.location.href = url;
-            },
-            //se ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
-            res => {
-              showMessage(`${messageError}
-                La ID della prenotazione è: ${pid}.`);
-            }
-          );
-        } else {
-          window.location.href = url;
-        }
+        window.location.href = url + (pid ? '_modificata' : '');
       },
       res => {
         showMessage(messageError);
@@ -388,6 +384,12 @@ function mkShiftButtons (shifts, selected) {
 function showReservation (pid) {
   $('.form').hide();
   $('#prenotaDiv').show();
+  let modified = false;
+  if (pid.endsWith('_modificata')) {
+    $('#ttitle').text('Prenotazione modificata. Grazie');
+    $('#tlegend').text('Dettagli della nuova prenotazione');
+    pid = pid.split('_modifica')[0];
+  }
   mkCall(
     'POST',
     { action: 'getReservation', data: pid },
@@ -431,16 +433,8 @@ function presentReservation (r) {
   h('segg', s == 0 ? 'No' : s);
   h('dog', extra.cani ? 'Sì' : 'No');
   $('#modify').click(() => {
-    showConsultaMessage(
-      'Vuoi modificare la prenotazione?',
-      '(NOTA: La prenotazione rimane la stessa fino a quando non viene premuto il tasta "Prenota il tavolo".)',
-      () => {
-        const pid = new URL(window.location.href).searchParams.get('id') + '_modifica';
-        window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
-        // carica la pagina con tutti i datti iniziale
-      },
-      () => $('#close-modal').click()
-    );
+    const pid = new URL(window.location.href).searchParams.get('id').split('_modificata')[0] + '_modifica';
+    window.location.href = window.location.href.split('/').reverse().slice(1).reverse().join('/') + '/index.html?id=' + pid;
   });
   const pid = r.id;
   $('#cancel').click(() => {
