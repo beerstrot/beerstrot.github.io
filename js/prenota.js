@@ -47,7 +47,6 @@ function modifyReservation (pid) {
       window.bbb = b;
       // const value = moment(date).format('Y-MM-DD');
       const value = moment(date).format('DD/MM/Y');
-      console.log(date, value);
       setInterval(() => $('#from').datetimepicker('setOptions', { value }), 1000);
       // $('#from').datetimepicker('setOptions', { value });
       $('#quantity').prop('disabled', false).val(b.people);
@@ -170,66 +169,160 @@ function showNotes (datetime) {
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
       // $.datetimepicker.setLocale('it');
+      window.nnn = r;
+      const tables = {};
+      r.rooms.forEach(r => {
+        r.tables.forEach(t => {
+          tables[t.id] = t.name;
+        });
+      });
+      window.ttt = tables;
+      const shifts = r.shifts.reduce((a, i) => {
+        a[i.id] = i;
+        a[i.id].bookings = [];
+        a[i.id].obookings = [];
+        return a;
+      }, {});
+      shifts.anon = { name: 'anon', bookings: [] };
+      window.sss = shifts;
       jQuery('#from2').datetimepicker({
         // lang: 'it',
+        value: new Date(r.date),
         startDate: new Date(r.date),
         format:'d/M/Y',
         timepicker: false,
         onSelectDate: (dp, input) => {
           showNotes(dp.toISOString());
         },
-      }).datetimepicker('show');
-      $('.xdsoft_today_button').hide();
+      });
 
       const b = r.bookings;
       const nbookings = b.length;
+      window.bbb = b;
       if (!nbookings) return showNotesMessage(`nessuna prenotazione trovata il <b>${date}</b>.`);
 
       let nseggiolini = 0;
       let ncani = 0;
       const notes = [];
+      const data = [];
       b.forEach((i, ii) => {
         try {
           const n = JSON.parse(i.notes);
           if (!('seggiolini' in n))
             return
           notes.push(n);
-          const s = n.seggiolini;
+          i.notes_ = n;
+          shifts[i.shift_id].obookings.push(i)
+          const s = Number(n.seggiolini);
           const c = Boolean(n.cani);
           nseggiolini += s;
           ncani += c;
           if (s || c) {
-            const tr = $('<tr/>', { class: 'clearme' }).appendTo('#notesTableBody');
             const bc = i.booking_customer;
-            $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendTo(tr);
-            $('<td/>').html(n.telephone || '').appendTo(tr);
-            $('<td/>').html(n.email || '').appendTo(tr);
-            $('<td/>').html(new Date(i.booked_for).toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })).appendTo(tr);
-            $('<td/>').html(c ? 'SI' : '').appendTo(tr);
-            $('<td/>').html(s == 0 ? '' : s).appendTo(tr);
-            $('<td/>').html(n.note).appendTo(tr);
+            // $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendto(tr);
+            // $('<td/>').html(n.telephone || '').appendto(tr);
+            // $('<td/>').html(n.email || '').appendto(tr);
+            // $('<td/>').html(new date(i.booked_for).tolocalestring('it-it', { hour: '2-digit', minute:'2-digit' })).appendto(tr);
+            // $('<td/>').html(c ? 'si' : '').appendto(tr);
+            // $('<td/>').html(s == 0 ? '' : s).appendto(tr);
+            // $('<td/>').html(n.note).appendto(tr);
+            //
+            // $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendTo(tr);
+            // $('<td/>').html(n.telephone || '').appendTo(tr);
+            // $('<td/>').html(n.email || '').appendTo(tr);
+            // $('<td/>').html(new Date(i.booked_for).toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })).appendTo(tr);
+            // $('<td/>').html(c ? 'SI' : '').appendTo(tr);
+            // $('<td/>').html(s == 0 ? '' : s).appendTo(tr);
+            // $('<td/>').html(n.note).appendTo(tr);
+            data.push({
+              name: (bc.first_name + ' ' + bc.last_name),
+              people: i.people,
+              table: i.tables.reduce((a, i) => {
+                a.push(tables[i.table_id]);
+                return a;
+              }, []).join(', '),
+              telephone: (n.telephone || ''),
+              email: (n.email || ''),
+              time: (new Date(i.booked_for).toLocaleString('it-it', { hour: '2-digit', minute:'2-digit' })),
+              cani: (c ? 'SI' : ''),
+              seg: (s == 0 ? '' : s),
+              note: (n.note)
+            });
           }
         } catch (e) {
-          console.log('ok');
+          if (i.shift_id === null)
+            return shifts.anon.bookings.push(i);
+          shifts[i.shift_id].bookings.push(i);
         }
       });
-      const summary = `Ci sono <b>${nbookings}</b> prenotazioni (${notes.length} online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggiolini.`
-      if (nseggiolini + ncani === 0) return showNotesMessage(summary);
+      window.ddd = data;
+      data.sort((a, b) => a.time < b.time ? -1 : 1).forEach(n => {
+        const tr = $('<tr/>', { class: 'clearme' }).appendTo('#notesTableBody');
+        $('<td/>').html(n.name).appendTo(tr);
+        $('<td/>').html(n.people).appendTo(tr);
+        $('<td/>').html(n.table).appendTo(tr);
+        $('<td/>').html(n.telephone || '').appendTo(tr);
+        $('<td/>').html(n.email || '').appendTo(tr);
+        $('<td/>').html(n.time).appendTo(tr);
+        $('<td/>').html(n.cani).appendTo(tr).css('background', n.cani ? 'lightgreen' : '');
+        $('<td/>').html(n.seg).appendTo(tr).css('background', n.seg ? 'lightblue' : '');
+        $('<td/>').html(n.note).appendTo(tr);
+      });
+      const sentences = [];
+      let total_ = 0;
+      for (k in shifts) {
+        const s = shifts[k];
+        if (k === 'anon') continue;
+        s.people_online = s.obookings.reduce((a, ss) => a + ss.people, 0);
+        s.people_hand = s.bookings.reduce((a, ss) => a + ss.people, 0);
+        const total = s.people_online + s.people_hand;
+        total_ += total;
+        if (total === 0) continue
+        const tr = $('<tr/>', { class: 'clearme' }).appendTo('#shiftsTableBody');
+        $('<td/>', { css: { 'text-align': 'center' } }).html(s.name).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'center' } }).html(total).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'center' } }).html(s.people_online).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'center' } }).html(s.people_hand).appendTo(tr);
+      }
+      shifts.anon.bookings.forEach(b => {
+        const { t, t2 } = getBookingTimes(b, true);
+        const tr = $('<tr/>', { class: 'clearme' }).appendTo('#anonTableBody');
+        $('<td/>', { css: { 'text-align': 'center' } }).html(t).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'center' } }).html(t2).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'center' } }).html(b.people).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'center' } }).html(
+          b.tables.reduce((a, i) => {
+            a.push(tables[i.table_id]);
+            return a;
+          }, []).join(', ')
+        ).appendTo(tr)
+        total_ += b.people;
+      });
+      const summary = `Ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggioloni. Totale di <b>${total_}</b> persone.`;
+      window.see = nseggiolini;
+      // if (nseggiolini + ncani === 0) return showNotesMessage(summary);
+      // showNotesMessage(summary);
       $('<p/>', { class: 'clearme', css: { padding: '2%' } }).html(summary).prependTo('#innerNotesDiv');
       if (notes.length > 0) {
         $('<button/>', { class: 'clearme', css: { margin: '2%', padding: '2%' } })
           .prependTo('#innerNotesDiv')
           .text('Invia promemoria')
           .on('click', () => {
-            mkCall(
-              'POST',
-              { action: 'promemoria', data: datetime },
-              res => {
-                showMessage('Emails sent!');
-              },
-              res => {
-                showMessage(messageError);
-              }
+            showConsultaMessage(
+              'Invia la promemoria per questo giorno?',
+              'giorno: ' + date,
+              () => mkCall(
+                'POST',
+                { action: 'promemoria', data: datetime },
+                res => {
+                  showMessage('Emails sent!');
+                },
+                res => {
+                  showMessage(messageError);
+                }
+              ),
+              () => $('#close-modal').click(),
+              true
             );
           });
 
@@ -422,19 +515,20 @@ function presentReservation (r) {
   const bc = r.booking_customer;
   const extra = JSON.parse(r.notes);
 
-  const date = new Date(r.booked_for);
-  const date2 = new Date(date.getTime() + r.duration * 60000);
+  // const date = new Date(r.booked_for);
+  // const date2 = new Date(date.getTime() + r.duration * 60000);
+  const { date, date2 } = getBookingTimes(r);
 
   const h = (id, info) => $('#' + id).text(info);
   h('name', bc.first_name + ' ' + bc.last_name);
   h('telephone', extra.telephone);
   h('email', extra.email);
   h('day', date.toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
-  h('time1', date.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' }));
-  h('time2', date2.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' }));
+  h('time1', time(date));
+  h('time2', time(date2));
   h('people', r.people);
   h('note', extra.note);
-  const s = extra.seggiolini
+  const s = extra.seggiolini;
   h('segg', s == 0 ? 'No' : s);
   h('dog', extra.cani ? 'Sì' : 'No');
   $('#modify').click(() => {
@@ -567,16 +661,17 @@ function bookingNotFound () {
 }
 
 function showNotesMessage (msg) {
+  console.log('notes msg', msg);
   $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
   $('#innerNotesDiv').hide();
 }
 
-function showConsultaMessage (message, message2, callYes, callNo) {
+function showConsultaMessage (message, message2, callYes, callNo, index) {
     $('#yes').on('click', callYes);
     $('#no').on('click', callNo);
     $('#modalLead').html(message);
     $('#modalText').html(message2);
-    $('#myModal').foundation('reveal', 'open');
+    $('#myModal' + (index ? '2' : '')).foundation('reveal', 'open');
 }
 
 function mkQuantityOptions (shifts, people) {
@@ -607,4 +702,15 @@ function mkQuantityOptions (shifts, people) {
 function showError (id) {
   // $(id).attr("style", "display: block !important")
   $(id.replace('1', '')).attr('style', 'border: 2px solid red');
+}
+
+const time = d => d.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' });
+function getBookingTimes (b, timed) {
+  console.log('timemememe', b, timed);
+  const date = new Date(b.booked_for);
+  const date2 = new Date(date.getTime() + b.duration * 60000);
+  if (timed) {
+    return { t: time(date), t2: time(date2) };
+  }
+  return { date, date2 };
 }
