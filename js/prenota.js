@@ -33,9 +33,15 @@ function makeInterface_ (pid) {
 
 const loadExtra = booking => {
   try {
-    console.log('case 1', booking);
-    const [email, seggiolini, cani, telephone] = JSON.parse(booking.booking_customer.company_name);
-    return { email, seggiolini, cani, telephone, note: booking.notes };
+    try {
+      const [email, seggiolini, cani, telephone] = JSON.parse(booking.booking_customer.company_name);
+      console.log('case 1', booking);
+      return { email, seggiolini, cani, telephone, note: booking.notes };
+    } catch (e) {
+      const [email, seggiolini, cani, telephone] = JSON.parse(booking.extra);
+      console.log('case 2', booking);
+      return { email, seggiolini, cani, telephone, note: booking.notes };
+    }
   } catch (e) {
     console.log('case 2');
     return JSON.parse(booking.notes);
