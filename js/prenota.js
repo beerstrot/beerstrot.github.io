@@ -338,28 +338,28 @@ function makeInterface (pid, dates) {
       'quantity',
       'obs',
     ].forEach(id => { data[id] = $(`#${id}`).val() });
-
-    if (!validateData(data)) return
-    if (pid) { // user is modifying, cancel previous reservation:
-      data.oldID = pid.split('_')[0];
-    }
-
-    mkCall(
-      'POST',
-      { action: 'mkReservation', data },
-      res => {
-        if (res.reservationID2 === 'noPlacesLeft') {
-          return showMessage(`Non abbiamo più posti questo giorno.`);
-        }
-        let  u = window.location.href;
-        u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
-        const url = u + 'consulta.html?id=' + res.reservationID2;
-        window.location.href = url + (pid ? '_modificata' : '');
-      },
-      res => {
-        showMessage(messageError);
+    validateData(data, validation).then(r => {
+      if (!r) return;
+      if (pid) { // user is modifying, cancel previous reservation:
+        data.oldID = pid.split('_')[0];
       }
-    );
+      mkCall(
+        'POST',
+        { action: 'mkReservation', data },
+        res => {
+          if (res.reservationID2 === 'noPlacesLeft') {
+            return showMessage(`Non abbiamo più posti questo giorno.`);
+          }
+          let  u = window.location.href;
+          u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
+          const url = u + 'consulta.html?id=' + res.reservationID2;
+          window.location.href = url + (pid ? '_modificata' : '');
+        },
+        res => {
+          showMessage(messageError);
+        }
+      );
+    });
   });
 
   // https://flatpickr.js.org/ (good alternative)
@@ -383,6 +383,82 @@ function makeInterface (pid, dates) {
   $('#privacy2').on('click', () => {
     showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
+  // const validation = new JustValidate('#form');
+  const validation = new JustValidate('#form', {
+    // errorFieldCssClass: 'is-invalid',
+    // errorFieldStyle: {
+    //   border: '10px solid red !important',
+    // },
+    // errorLabelCssClass: 'is-label-invalid',
+    // errorLabelStyle: {
+    //   color: 'red',
+    //   textDecoration: 'underlined',
+    // },
+    // focusInvalidField: true,
+    // lockForm: true,
+    // tooltip: {
+    //   position: 'top',
+    // },
+    // errorContainer: '.errors-container',
+  });
+  validation
+    .addField('#name', [
+      {
+        rule: 'required',
+        errorMessage: 'inserire un nome'
+      }
+    ])
+    .addField('#surname', [
+      {
+        rule: 'required',
+        errorMessage: 'inserire un cognome'
+      }
+    ])
+    .addField('#telephone', [
+      {
+        rule: 'required',
+        errorMessage: 'inserire un telefone'
+      }
+    ])
+    .addField('#from', [
+      {
+        rule: 'required',
+        errorMessage: 'scegli una data'
+      }
+    ])
+    .addField('#quantity', [
+      {
+        rule: 'required',
+        errorMessage: 'indicare il numero di persone'
+      }
+    ])
+    .addField('#privacy', [
+      {
+        rule: 'required',
+        errorMessage: 'è necessario accettare i termini e le condizioni'
+      }
+    ])
+    .addField('#shiftGridL', [
+      {
+        rule: 'required',
+        errorMessage: 'Seleziona il turno.',
+        validator: () => {
+          const shiftId = $($('.aShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex');
+          const res = shiftId !== undefined;
+          return res;
+        }
+      }
+    ])
+    .addField('#email', [
+      {
+        rule: 'required',
+        errorMessage: 'L\'e-mail è necessaria',
+      },
+      {
+        rule: 'email',
+        errorMessage: 'L\'e-mail non è valida!',
+      },
+    ]);
 }
 
 const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
@@ -429,7 +505,7 @@ function mkShiftButtons (shifts, selected) {
       return removeShifts.push(i);
     }
     // const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
-    const b = $('<button/>', { id: 'aShift' + i, class: 'small button aShift' })
+    const b = $('<a/>', { id: 'aShift' + i, class: 'small button aShift' })
       .text(s.name)
       .appendTo(
         // $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
@@ -447,10 +523,10 @@ function mkShiftButtons (shifts, selected) {
       showMessage('Siamo al completo in questo giorno. Grazie.');
   sButtons.forEach(b => {
     b.click(() => {
-      sButtons.forEach(b => {
-        b.css('background', b.bcolor);
-        b.selected = false;
-        b.attr('bselected', false);
+      sButtons.forEach(bb => {
+        bb.css('background', bb.bcolor);
+        bb.selected = false;
+        bb.attr('bselected', false);
       });
       b.css('background', 'darkred');
       b.attr('bselected', true);
@@ -558,54 +634,49 @@ function validateEmail (email) {
   );
 };
 
-function validateData (data) {
-  $('.error').attr('style', 'border: solid 1px #ccc');
-  $('.error1').hide()
-  $('#notification').hide();
-  const messages = [];
-  const ids = [];
-  if (!$('#from').val()) {
-    messages.push('Scegli il giorno.');
-    ids.push('#from');
-  }
-  if (data.date === '') {
-    messages.push('Scegli il giorno.');
-    ids.push('#from1');
-  }
-  if (data.quantity == 0) {
-    messages.push('Inserisci il numero di persone.');
-    ids.push('#quantity1');
-  }
-  if (data.shiftId === undefined) {
-    messages.push('Seleziona il turno.');
-    ids.push('#shiftGrid1');
-  }
-  if (data.name === '') {
-    messages.push('Inserisci un nome.');
-    ids.push('#name1');
-  }
-  if (data.surname === '') {
-    messages.push('Inserisci un cognome.');
-    ids.push('#surname1');
-  }
-  if (!validateEmail(data.email)) {
-    messages.push('Inserisciun un indirizzo e-mail.');
-    ids.push('#email1');
-  }
-  if (data.telephone === '') {
-    messages.push('Inserisci un numero di telefono.');
-    ids.push('#telephone1');
-  }
-  if (!$('#privacy').prop('checked')) {
-    messages.push('è necessario accettare la privacy.');
-    ids.push('#privacy2');
-  }
-  if (ids.length > 0) {
-    ids.forEach(i => showError(i));
-    showMessage(messages.join('<br>'));
-    return false;
-  }
-  return true;
+function validateData (data, validation) {
+  return validation.revalidate().then(() => {
+    // $('.error').attr('style', 'border: solid 1px #ccc');
+    // $('.error1').hide()
+    // $('#notification').hide();
+    const messages = [];
+    const ids = [];
+    if (!$('#from').val()) {
+      ids.push('#from');
+    }
+    if (data.date === '') {
+      ids.push('#from1');
+    }
+    if (data.quantity == 0) {
+      ids.push('#quantity1');
+    }
+    if (data.shiftId === undefined) {
+      ids.push('#shiftGrid1');
+    }
+    if (data.name === '') {
+      ids.push('#name1');
+    }
+    if (data.surname === '') {
+      ids.push('#surname1');
+    }
+    if (!validateEmail(data.email)) {
+      ids.push('#email1');
+    }
+    if (data.telephone === '') {
+      ids.push('#telephone1');
+    }
+    if (!$('#privacy').prop('checked')) {
+      ids.push('#privacy3');
+    }
+    if (ids.length > 0) {
+      ids.forEach(i => showError(i));
+      window.iiii = ids;
+      // asdoiajds = aosidjasid
+      // showMessage(messages.join('<br>'));
+      return false;
+    }
+    return true;
+  });
 }
 
 function showMessage (message) {
@@ -645,7 +716,6 @@ function bookingNotFound () {
 }
 
 function showNotesMessage (msg) {
-  console.log('notes msg', msg);
   $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
   $('#innerNotesDiv').hide();
 }
@@ -685,12 +755,12 @@ function mkQuantityOptions (shifts, people) {
 
 function showError (id) {
   // $(id).attr("style", "display: block !important")
-  $(id.replace('1', '')).attr('style', 'border: 2px solid red');
+  $(id.replace('1', '')).attr('style', 'border: 2px solid red !important');
+  // $(id.replace('1', '')).css('border', '2px solid red !important');
 }
 
 const time = d => d.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' });
 function getBookingTimes (b, timed) {
-  console.log('timemememe', b, timed);
   const date = new Date(b.booked_for);
   const date2 = new Date(date.getTime() + b.duration * 60000);
   if (timed) {

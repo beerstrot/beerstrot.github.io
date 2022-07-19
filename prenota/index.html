@@ -155,17 +155,12 @@
       </div>
     </div>
     <div class="panel-home-2n form">
-        <div class="row">
-            <div class="medium-12 large-12 columns">
-                <h2> </h2>
-            </div>
-        </div>
+    <form id="form">
         <div class="row">
             <div class="small-6 medium-3 columns ">
                 <label>Quale giorno*
                     <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" readonly/>
                 </label>
-                <small class="error error1" id="from1">Campo obbligatorio</small>
             </div>
             <div class="small-6 medium-3 columns end">
                 <label>Quante persone*
@@ -173,21 +168,20 @@
                         <option value="">Seleziona Numero</option>
                     </select>
                 </label>
-                <small class="error error1" id="quantity1">Campo obbligatorio</small>
             </div>
         </div>
         <div class="row extra-space-hero">
             <div class="small-12 medium-6 columns end">
                 <label>Quale turno*
+            <div id="shiftGridL"></div>
                 </label>
-                <small class="error error1" id="shiftGrid1">Campo obbligatorio</small>
                 <ul class="small-block-grid-2  extra-space-turno error" id="shiftGrid">
-                    <li class="bShift"><a href="#" class="small button disabled">19.00-21.00</a></li>
-                    <li class="bShift"><a href="#" class="small button disabled">19.30-21.30</a></li>
-                    <li class="bShift"><a href="#" class="small button disabled">20.00-22.00</a></li>
-                    <li class="bShift"><a href="#" class="small button disabled">20.30-22.30</a></li>
-                    <li class="bShift"><a href="#" class="small button disabled">21.00-23.00</a></li>
-                    <li class="bShift"><a href="#" class="small button disabled">21.30-23.00</a></li>
+                    <li class="bShift"><a class="small button disabled">19.00-21.00</a></li>
+                    <li class="bShift"><a class="small button disabled">19.30-21.30</a></li>
+                    <li class="bShift"><a class="small button disabled">20.00-22.00</a></li>
+                    <li class="bShift"><a class="small button disabled">20.30-22.30</a></li>
+                    <li class="bShift"><a class="small button disabled">21.00-23.00</a></li>
+                    <li class="bShift"><a class="small button disabled">21.30-23.00</a></li>
                 </ul>
                 <p>Turno: orario d'arrivo-orario in cui bisogna lasciare il tavolo</p>
             </div>
@@ -223,29 +217,27 @@
                 <label>Nome*
                     <input type="text" class="required error" id="name" placeholder="Nome" maxlength="20"/>
                 </label>
-                <small class="error error1" id="name1">Campo obbligatorio</small>
             </div>
             <div class="small-6 medium-4 large-4 columns end">
                 <label>Cognome*
                     <input type="text" class="required error" id="surname" placeholder="Cognome" maxlength="20"/>
                 </label>
-                <small class="error error1" id="surname1">Campo obbligatorio</small>
             </div>
+        </div>
+        <div class="row">
             <div class="small-12  medium-5 columns extra-space-hero">
                 <label>Email*
                     <input type="email" class="required email error" id="email" placeholder="esempio@esempio.it" />
                   </label>
-                  <small class="error error1" id="email1">Campo obbligatorio</small>
             </div>
             <div class="small-6  medium-3 columns end extra-space-hero">
                 <label>Telefono*
                     <input type="tel" class="required error" id="telephone" placeholder="3332221111" maxlength="25" />
                 </label>
-                  <small class="error error1" id="telephone1">Campo obbligatorio</small>
             </div>
         </div>
         <div class="row extra-space">
-            <div class="small-12 medium-12 columns">
+            <div class="small-12 medium-12 columns" id="privacy3">
                 <input id="privacy" type="checkbox" checked><label for="checkbox2"> Accetto la<a id="privacy2" class="error"> privacy</a></label>
             </div>
         </div>
@@ -257,6 +249,7 @@
                 <p><small>* Campi obbligatori</small></p>
             </div>
         </div>
+    </form>
     </div>
 
 <!-- inizio footer -->
@@ -343,6 +336,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css"/ >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="../js/prenota.js"></script>
 <!-- <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <p class="lead" id="modalLead">Your couch.  It is mine.</p>
