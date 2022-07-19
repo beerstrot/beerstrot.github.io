@@ -375,6 +375,7 @@ function makeInterface (pid, dates) {
       $('#loading').show();
       $('#from').chosen = true;
       input.chosenn = true;
+      fp.close();
       updateShifts(dp[0]);
     },
   });
