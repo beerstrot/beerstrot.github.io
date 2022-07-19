@@ -31,6 +31,17 @@ function makeInterface_ (pid) {
   );
 }
 
+const loadExtra = booking => {
+  try {
+    console.log('case 1', booking);
+    const [email, seggiolini, cani, telephone] = JSON.parse(booking.booking_customer.company_name);
+    return { email, seggiolini, cani, telephone, note: booking.notes };
+  } catch (e) {
+    console.log('case 2');
+    return JSON.parse(booking.notes);
+  }
+}
+
 function modifyReservation (pid) {
   mkCall(
     'POST',
@@ -42,12 +53,12 @@ function modifyReservation (pid) {
       $('#prenota').text('Modifica Prenotazione');
       const b = res.booking;
       const bc = b.booking_customer;
-      const extra = JSON.parse(b.notes);
+      const extra = loadExtra(b);
       const date = new Date(b.booked_for);
       window.bbb = b;
       // const value = moment(date).format('Y-MM-DD');
       const value = moment(date).format('DD/MM/Y');
-      setInterval(() => $('#from').datetimepicker('setOptions', { value }), 1000);
+      jQuery('#from').flatpickr().setDate(date);
       // $('#from').datetimepicker('setOptions', { value });
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
@@ -58,7 +69,6 @@ function modifyReservation (pid) {
       $('#surname').val(bc.last_name);
       $('#email').val(extra.email);
       $('#telephone').val(extra.telephone);
-      // $($('.aShift').filter((i, ii) => $(ii).attr('bindex') == b.shift_id)[0]).click();
     },
     res => {
       showMessage(`${messageError}
@@ -70,6 +80,7 @@ function modifyReservation (pid) {
 // beerstrot-prod:
 const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
 // const url = 'http://localhost:5001/entry';
+let pCount = 0;
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
@@ -79,8 +90,14 @@ function mkCall(type, data, success, error, beforeSend, complete) {
     data,
     success,
     error,
-    beforeSend: () => $('#loading').show(),
-    complete: () => $('#loading').hide(),
+    beforeSend: () => {
+      pCount++;
+      $('#loading').show();
+    },
+    complete: () => {
+      if (--pCount === 0)
+        $('#loading').hide();
+    }
   };
   if (type === 'POST') {
     set.data = JSON.stringify(set.data);
@@ -207,7 +224,7 @@ function showNotes (datetime) {
       const data = [];
       b.forEach((i, ii) => {
         try {
-          const n = JSON.parse(i.notes);
+          const n = loadExtra(i);
           if (!('seggiolini' in n))
             return
           notes.push(n);
@@ -552,10 +569,11 @@ function showReservation (pid) {
 
 
 function presentReservation (r) {
+  window.reserv = r;
   if ((!r) || 'error' in r) return bookingNotFound();
   // $('#ttitle').text('La tua Prenotazione :-)');
   const bc = r.booking_customer;
-  const extra = JSON.parse(r.notes);
+  const extra = loadExtra(r);
 
   // const date = new Date(r.booked_for);
   // const date2 = new Date(date.getTime() + r.duration * 60000);
