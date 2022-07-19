@@ -98,10 +98,25 @@
             </div>
         </div>
         <div class="small-12 medium-12 large-12 columns extra-space" id="innerNotesDiv" style="overflow-x:auto;">
+            <table id="shiftsTable">
+                <caption>Persone nei turni</caption>
+                <thead>
+                    <tr>
+                        <th>Shift</th>
+                        <th>P. Totale</th>
+                        <th>Online</th>
+                        <th>Manuale</th>
+                    </tr>
+                </thead>
+                <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
+            </table>
             <table id="notesTable">
+                <caption>Prenotazione online</caption>
                 <thead>
                     <tr>
                         <th>Nome</th>
+                        <th>Persone</th>
+                        <th>Tavolo</th>
                         <th>Telefono</th>
                         <th>Email</th>
                         <th>Orario</th>
@@ -111,6 +126,18 @@
                     </tr>
                 </thead>
                 <tbody id="notesTableBody" style="text-align:center;"></tbody>
+            </table>
+            <table id="anonTable">
+                <caption>Prenotazione senza turni</caption>
+                <thead>
+                    <tr>
+                        <th>Inizio</th>
+                        <th>Fine</th>
+                        <th>Persone</th>
+                        <th>Tavolo</th>
+                    </tr>
+                </thead>
+                <tbody id="anonTableBody" style="text-align:center;"></tbody>
             </table>
         </div>
     </div>
@@ -169,7 +196,7 @@
         <div class="row">
             <div class="small-12 medium-6 columns end">
                 <label>Note
-                    <textarea id="obs" placeholder="Intolleranze, accesso con sedia a rotelle, ..."></textarea>
+                    <textarea maxlength="100" id="obs" placeholder="Intolleranze, accesso con sedia a rotelle, ..."></textarea>
                 </label>
             </div>
         </div>
@@ -194,13 +221,13 @@
         <div class="row">
             <div class="small-6 medium-4 large-4 columns">
                 <label>Nome*
-                    <input type="text" class="required error" id="name" placeholder="Nome"/>
+                    <input type="text" class="required error" id="name" placeholder="Nome" maxlength="20"/>
                 </label>
                 <small class="error error1" id="name1">Campo obbligatorio</small>
             </div>
             <div class="small-6 medium-4 large-4 columns end">
                 <label>Cognome*
-                    <input type="text" class="required error" id="surname" placeholder="Cognome" />
+                    <input type="text" class="required error" id="surname" placeholder="Cognome" maxlength="20"/>
                 </label>
                 <small class="error error1" id="surname1">Campo obbligatorio</small>
             </div>
@@ -212,7 +239,7 @@
             </div>
             <div class="small-6  medium-3 columns end extra-space-hero">
                 <label>Telefono*
-                    <input type="tel" class="required error" id="telephone" placeholder="3332221111" />
+                    <input type="tel" class="required error" id="telephone" placeholder="3332221111" maxlength="25" />
                 </label>
                   <small class="error error1" id="telephone1">Campo obbligatorio</small>
             </div>
@@ -326,6 +353,18 @@
     <h2 id="modalTitle" class="extra-space-modal"></h2>
     <p class="lead" id="modalLead"></p>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<div id="myModal2" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <p class="lead" id="modalLead">Cancella la prenotazione?</p>
+    <p id="modalText"></p>
+
+        <div class="row extra-space" style="margin-bottom:5%">
+            <div class="small-12 medium-12 large-12 columns">
+                <a role="button" id="no" class="button right">No, non cancellare</a>
+                <a role="button" id="yes" class="button left">Sì, cancella</a>
+            </div>
+        </div>
+  <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
 </div>
 </body>
 </html>
