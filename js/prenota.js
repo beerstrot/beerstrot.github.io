@@ -413,8 +413,9 @@ function updateShifts (dp, selected, people) {
 function mkShiftButtons (shifts, selected) {
   const sButtons = [];
   const removeShifts = [];
+  window.sss = shifts;
   shifts.forEach((s, i) => {
-    const max_available = s.online_seats_limit - s.online_booked_seats;
+    const max_available = s.online_seats_limit - s.booked_seats_in_shift;
     if (max_available <= 0) {
       return removeShifts.push(i);
     }
