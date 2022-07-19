@@ -217,38 +217,21 @@ function showNotes (datetime) {
           const c = Boolean(n.cani);
           nseggiolini += s;
           ncani += c;
-          if (s || c) {
-            const bc = i.booking_customer;
-            // $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendto(tr);
-            // $('<td/>').html(n.telephone || '').appendto(tr);
-            // $('<td/>').html(n.email || '').appendto(tr);
-            // $('<td/>').html(new date(i.booked_for).tolocalestring('it-it', { hour: '2-digit', minute:'2-digit' })).appendto(tr);
-            // $('<td/>').html(c ? 'si' : '').appendto(tr);
-            // $('<td/>').html(s == 0 ? '' : s).appendto(tr);
-            // $('<td/>').html(n.note).appendto(tr);
-            //
-            // $('<td/>').html(bc.first_name + ' ' + bc.last_name).appendTo(tr);
-            // $('<td/>').html(n.telephone || '').appendTo(tr);
-            // $('<td/>').html(n.email || '').appendTo(tr);
-            // $('<td/>').html(new Date(i.booked_for).toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' })).appendTo(tr);
-            // $('<td/>').html(c ? 'SI' : '').appendTo(tr);
-            // $('<td/>').html(s == 0 ? '' : s).appendTo(tr);
-            // $('<td/>').html(n.note).appendTo(tr);
-            data.push({
-              name: (bc.first_name + ' ' + bc.last_name),
-              people: i.people,
-              table: i.tables.reduce((a, i) => {
-                a.push(tables[i.table_id]);
-                return a;
-              }, []).join(', '),
-              telephone: (n.telephone || ''),
-              email: (n.email || ''),
-              time: (new Date(i.booked_for).toLocaleString('it-it', { hour: '2-digit', minute:'2-digit' })),
-              cani: (c ? 'SI' : ''),
-              seg: (s == 0 ? '' : s),
-              note: (n.note)
-            });
-          }
+          const bc = i.booking_customer;
+          data.push({
+            name: bc.first_name + ' ' + bc.last_name,
+            people: i.people,
+            table: i.tables.reduce((a, i) => {
+              a.push(tables[i.table_id]);
+              return a;
+            }, []).join(', '),
+            telephone: n.telephone || '',
+            email: n.email || '',
+            time: new Date(i.booked_for).toLocaleString('it-it', { hour: '2-digit', minute:'2-digit' }),
+            cani: c ? 'SI' : '',
+            seg: s == 0 ? '' : s,
+            note: n.note
+          });
         } catch (e) {
           if (i.shift_id === null)
             return shifts.anon.bookings.push(i);
@@ -261,8 +244,8 @@ function showNotes (datetime) {
         $('<td/>').html(n.name).appendTo(tr);
         $('<td/>').html(n.people).appendTo(tr);
         $('<td/>').html(n.table).appendTo(tr);
-        $('<td/>').html(n.telephone || '').appendTo(tr);
-        $('<td/>').html(n.email || '').appendTo(tr);
+        $('<td/>').html(n.telephone).appendTo(tr);
+        $('<td/>').html(n.email).appendTo(tr);
         $('<td/>').html(n.time).appendTo(tr);
         $('<td/>').html(n.cani).appendTo(tr).css('background', n.cani ? 'lightgreen' : '');
         $('<td/>').html(n.seg).appendTo(tr).css('background', n.seg ? 'lightblue' : '');
