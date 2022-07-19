@@ -321,7 +321,8 @@ function makeInterface (pid, dates) {
   $('#infoDiv').hide();
   $('#prenota').on('click', () => {
     // if (!$('#from').val()) return showMessage('selezionare una data');
-    const d = $('#from').datetimepicker('getValue');
+    // const d = $('#from').flatpickr('getValue');
+    const d = fp.selectedDates[0]
     d.setHours(12);
     const data = {
       date: d.toISOString(),
@@ -365,43 +366,23 @@ function makeInterface (pid, dates) {
   // https://flatpickr.js.org/ (good alternative)
   // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
   // $.datetimepicker.setLocale('it');
-  jQuery('#from').datetimepicker({
-    format:'d/M/Y',
-    formatDate:'Y-m-d',
-    disabledDates: dates || [],
-    minDate: 0, // disabled for tests
-    timepicker: false,
-    todayDate: false,
-    onSelectDate: (dp, input) => {
+  const fp = jQuery('#from').flatpickr({
+    locale: 'it',
+    minDate: 'today',
+    dateFormat:'Y-m-d',
+    disable: dates || [],
+    onChange: (dp, input) => {
       $('#loading').show();
       $('#from').chosen = true;
       input.chosenn = true;
-      updateShifts(dp);
+      updateShifts(dp[0]);
     },
   });
-  $('.xdsoft_today_button').hide();
+  fp.set('dateFormat', 'd/M/Y');
   $('#privacy2').on('click', () => {
     showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
-  // const validation = new JustValidate('#form');
-  const validation = new JustValidate('#form', {
-    // errorFieldCssClass: 'is-invalid',
-    // errorFieldStyle: {
-    //   border: '10px solid red !important',
-    // },
-    // errorLabelCssClass: 'is-label-invalid',
-    // errorLabelStyle: {
-    //   color: 'red',
-    //   textDecoration: 'underlined',
-    // },
-    // focusInvalidField: true,
-    // lockForm: true,
-    // tooltip: {
-    //   position: 'top',
-    // },
-    // errorContainer: '.errors-container',
-  });
-  validation
+  const validation = new JustValidate('#form')
     .addField('#name', [
       {
         rule: 'required',
