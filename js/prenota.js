@@ -292,13 +292,12 @@ function showNotes (datetime) {
         total_ += b.people;
       });
       const summary = `Ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggioloni. Totale di <b>${total_}</b> persone.`;
-      // if (nseggiolini + ncani === 0) return showNotesMessage(summary);
-      // showNotesMessage(summary);
       $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
       if (notes.length > 0) {
         $('<button/>', { class: 'clearme', css: { marginBottom: '1.5rem', padding: '' } })
           .prependTo('#innerNotesDiv')
           .text('Invia promemoria per cancellazione??')
+          .off('click')
           .on('click', () => {
             showConsultaMessage(
               'Invia il promemoria per questo giorno?',
@@ -328,7 +327,7 @@ function showNotes (datetime) {
 
 function makeInterface (pid, dates) {
   $('#infoDiv').hide();
-  $('#prenota').on('click', () => {
+  $('#prenota').off('click').on('click', () => {
     // if (!$('#from').val()) return showMessage('selezionare una data');
     // const d = $('#from').flatpickr('getValue');
     const d = fp.selectedDates[0]
@@ -730,7 +729,7 @@ function mkQuantityOptions (shifts, people) {
     });
   $('#quantity').prop('disabled', false)
   // enable select
-  $('#quantity').on("input", function() {
+  $('#quantity').off('input').on('input', function() {
     const v = Number($(this).val());
     shifts.forEach((s, i) => $('#aShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
     const totalDisabled = shifts.reduce((c, i, ii) => c + $('#aShift' + ii).prop('disabled'), 0); 
