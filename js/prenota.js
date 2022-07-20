@@ -32,20 +32,8 @@ function makeInterface_ (pid) {
 }
 
 const loadExtra = booking => {
-  try {
-    try {
-      const [email, seggiolini, cani, telephone] = JSON.parse(booking.booking_customer.company_name);
-      console.log('case 1', booking);
-      return { email, seggiolini, cani, telephone, note: booking.notes };
-    } catch (e) {
-      const [email, seggiolini, cani, telephone] = JSON.parse(booking.extra);
-      console.log('case 2', booking);
-      return { email, seggiolini, cani, telephone, note: booking.notes };
-    }
-  } catch (e) {
-    console.log('case 2');
-    return JSON.parse(booking.notes);
-  }
+  const e = JSON.parse(booking.extra);
+  return e;
 }
 
 function modifyReservation (pid) {
@@ -84,8 +72,8 @@ function modifyReservation (pid) {
 }
 
 // beerstrot-prod:
-const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
-// const url = 'http://localhost:5001/entry';
+// const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
+const url = 'http://localhost:5001/entry';
 let pCount = 0;
 function mkCall(type, data, success, error, beforeSend, complete) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
@@ -172,18 +160,6 @@ function showNotes (datetime) {
   $('#notesDiv').show();
   $('#innerNotesDiv').show();
   $('.clearme').remove();
-  // TTM
-  // autocomplete safari
-  // rimuome il modale di modifica
-  // icone messagio diverso quando è note/days
-  // seleziona giorno per note.
-  // modifica/cancella nella mail
-  // modifica cancellata
-  // id=notes -> un URL
-  // notes: numero di persone e tavolo
-  //  vedere i totali per turni
-  //  calendario fisso
-  //  promemoria metto a parte
   datetime = datetime || new Date().toISOString();
   mkCall(
     'GET',
