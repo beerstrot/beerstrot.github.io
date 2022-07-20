@@ -394,6 +394,7 @@ function makeInterface (pid, dates) {
     minDate: 'today',
     dateFormat:'Y-m-d',
     disable: dates || [],
+    disableMobile: true,
     onChange: (dp, input) => {
       $('#loading').show();
       $('#from').chosen = true;
