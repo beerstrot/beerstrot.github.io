@@ -308,14 +308,14 @@ function showNotes (datetime) {
       window.see = nseggiolini;
       // if (nseggiolini + ncani === 0) return showNotesMessage(summary);
       // showNotesMessage(summary);
-      $('<p/>', { class: 'clearme', css: { padding: '2%' } }).html(summary).prependTo('#innerNotesDiv');
+      $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
       if (notes.length > 0) {
-        $('<button/>', { class: 'clearme', css: { margin: '2%', padding: '2%' } })
+        $('<button/>', { class: 'clearme', css: { marginBottom: '1.5rem', padding: '' } })
           .prependTo('#innerNotesDiv')
-          .text('Invia promemoria')
+          .text('Invia promemoria per cancellazione??')
           .on('click', () => {
             showConsultaMessage(
-              'Invia la promemoria per questo giorno?',
+              'Invia il promemoria per questo giorno?',
               'giorno: ' + date,
               () => mkCall(
                 'POST',
@@ -404,7 +404,7 @@ function makeInterface (pid, dates) {
   });
   fp.set('dateFormat', 'd/M/Y');
   $('#privacy2').on('click', () => {
-    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
+    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email o telefono (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
   const validation = new JustValidate('#form')
     .addField('#name', [
