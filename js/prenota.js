@@ -49,7 +49,6 @@ function modifyReservation (pid) {
       const bc = b.booking_customer;
       const extra = loadExtra(b);
       const date = new Date(b.booked_for);
-      window.bbb = b;
       // const value = moment(date).format('Y-MM-DD');
       const value = moment(date).format('DD/MM/Y');
       jQuery('#from').flatpickr().setDate(date);
@@ -131,6 +130,8 @@ function showDays (datetime) {
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
   $('#ttitle').text('BB Giorni di Chiusura AA');
+  $('#yes').text('Sì, aggiunge questo giorno di chiusura.');
+  $('#no').text('No, non aggiunge questo giorno di chiusura.');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
@@ -143,8 +144,7 @@ function showDays (datetime) {
         timepicker: false,
         // inline: true,
         onSelectDate: (dp, input) => {
-          const date = dp.toISOString();
-          showDays(date);
+          toggleDate(dp);
         },
       }).datetimepicker('show');
       $('.xdsoft_today_button').hide();
@@ -152,6 +152,22 @@ function showDays (datetime) {
     res => {
       showMessage(messageError);
     }
+  );
+}
+
+function toggleDate (dp) {
+  const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  showConsultaMessage(
+    `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
+    `Se aggiunge il giorno Tutte le prenotazione per questo giorno saranno CANCELLATE e riceveranno l'email di chiusura.<br>
+    Se vuoi, fai un controllo nel <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
+    () => {
+      const date = dp.toISOString();
+      showDays(date);
+      $('#close-modal').click();
+    },
+    () => $('#close-modal').click(),
+    true,
   );
 }
 
@@ -168,14 +184,12 @@ function showNotes (datetime) {
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
       // $.datetimepicker.setLocale('it');
-      window.nnn = r;
       const tables = {};
       r.rooms.forEach(r => {
         r.tables.forEach(t => {
           tables[t.id] = t.name;
         });
       });
-      window.ttt = tables;
       const shifts = r.shifts.reduce((a, i) => {
         a[i.id] = i;
         a[i.id].bookings = [];
@@ -183,7 +197,6 @@ function showNotes (datetime) {
         return a;
       }, {});
       shifts.anon = { name: 'anon', bookings: [] };
-      window.sss = shifts;
       jQuery('#from2').datetimepicker({
         // lang: 'it',
         value: new Date(r.date),
@@ -197,7 +210,6 @@ function showNotes (datetime) {
 
       const b = r.bookings;
       const nbookings = b.length;
-      window.bbb = b;
       if (!nbookings) return showNotesMessage(`nessuna prenotazione trovata il <b>${date}</b>.`);
 
       let nseggiolini = 0;
@@ -237,7 +249,6 @@ function showNotes (datetime) {
           shifts[i.shift_id].bookings.push(i);
         }
       });
-      window.ddd = data;
       data.sort((a, b) => a.time < b.time ? -1 : 1).forEach(n => {
         const tr = $('<tr/>', { class: 'clearme' }).appendTo('#notesTableBody');
         $('<td/>').html(n.name).appendTo(tr);
@@ -281,7 +292,6 @@ function showNotes (datetime) {
         total_ += b.people;
       });
       const summary = `Ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggioloni. Totale di <b>${total_}</b> persone.`;
-      window.see = nseggiolini;
       // if (nseggiolini + ncani === 0) return showNotesMessage(summary);
       // showNotesMessage(summary);
       $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
@@ -471,7 +481,6 @@ function updateShifts (dp, selected, people) {
 function mkShiftButtons (shifts, selected) {
   const sButtons = [];
   const removeShifts = [];
-  window.sss = shifts;
   shifts.forEach((s, i) => {
     const max_available = s.online_seats_limit - s.booked_seats_in_shift;
     if (max_available <= 0) {
@@ -552,7 +561,6 @@ function showReservation (pid) {
 
 
 function presentReservation (r) {
-  window.reserv = r;
   if ((!r) || 'error' in r) return bookingNotFound();
   // $('#ttitle').text('La tua Prenotazione :-)');
   const bc = r.booking_customer;
@@ -653,7 +661,6 @@ function validateData (data, validation) {
     }
     if (ids.length > 0) {
       ids.forEach(i => showError(i));
-      window.iiii = ids;
       // asdoiajds = aosidjasid
       // showMessage(messages.join('<br>'));
       return false;
@@ -704,16 +711,15 @@ function showNotesMessage (msg) {
 }
 
 function showConsultaMessage (message, message2, callYes, callNo, index) {
-    $('#yes').on('click', callYes);
-    $('#no').on('click', callNo);
-    $('#modalLead').html(message);
-    $('#modalText').html(message2);
-    $('#myModal' + (index ? '2' : '')).foundation('reveal', 'open');
+  $('#yes').off('click').on('click', callYes);
+  $('#no').off('click').on('click', callNo);
+  $('#modalLead2').html(message);
+  $('#modalText').html(message2);
+  $('#myModal' + (index ? '2' : '')).foundation('reveal', 'open');
 }
 
 function mkQuantityOptions (shifts, people) {
   // find biggest table
-  window.qqq = { shifts, people };
   const biggestTable = shifts.reduce((m, s) => Math.max(m, ...s.table_sizes), 0);
   // make options reaching it
   $('.aquantity').remove();
