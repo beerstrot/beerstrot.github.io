@@ -270,8 +270,8 @@ function showNotes (datetime) {
         $('<td/>').html(n.telephone).appendTo(tr);
         $('<td/>').html(n.email).appendTo(tr);
         $('<td/>').html(n.time).appendTo(tr);
-        $('<td/>').html(n.cani).appendTo(tr).css('background', n.cani ? 'lightgreen' : '');
-        $('<td/>').html(n.seg).appendTo(tr).css('background', n.seg ? 'lightblue' : '');
+        $('<td/>').html(n.cani).appendTo(tr);
+        $('<td/>').html(n.seg).appendTo(tr);
         $('<td/>').html(n.note).appendTo(tr);
       });
       const sentences = [];
@@ -285,18 +285,18 @@ function showNotes (datetime) {
         total_ += total;
         if (total === 0) continue
         const tr = $('<tr/>', { class: 'clearme' }).appendTo('#shiftsTableBody');
-        $('<td/>', { css: { 'text-align': 'center' } }).html(s.name).appendTo(tr);
-        $('<td/>', { css: { 'text-align': 'center' } }).html(total).appendTo(tr);
-        $('<td/>', { css: { 'text-align': 'center' } }).html(s.people_online).appendTo(tr);
-        $('<td/>', { css: { 'text-align': 'center' } }).html(s.people_hand).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'left' } }).html(s.name).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(total).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(s.people_online).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(s.people_hand).appendTo(tr);
       }
       shifts.anon.bookings.forEach(b => {
         const { t, t2 } = getBookingTimes(b, true);
         const tr = $('<tr/>', { class: 'clearme' }).appendTo('#anonTableBody');
-        $('<td/>', { css: { 'text-align': 'center' } }).html(t).appendTo(tr);
-        $('<td/>', { css: { 'text-align': 'center' } }).html(t2).appendTo(tr);
-        $('<td/>', { css: { 'text-align': 'center' } }).html(b.people).appendTo(tr);
-        $('<td/>', { css: { 'text-align': 'center' } }).html(
+        $('<td/>', { css: { 'text-align': 'left' } }).html(t).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'left' } }).html(t2).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(b.people).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'left' } }).html(
           b.tables.reduce((a, i) => {
             a.push(tables[i.table_id]);
             return a;
@@ -612,7 +612,7 @@ function presentReservation (r) {
           { action: 'cancelReservation', data: pid },
           res => {
             $('#ttitle').text('Prenotazione cancellata. Grazie');
-            $('tlegend').text('Dettagli della prenotazione cancellata');
+            $('tlegend').text('Dettagli prenotazione cancellata');
             // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();

@@ -78,23 +78,23 @@
         </div>
         <div class="small-12 medium-12 large-12 columns extra-space" id="innerNotesDiv" style="overflow-x:auto;">
             <table id="shiftsTable">
-                <caption>Persone nei turni</caption>
+                <caption class="text-left">Numero persone per turno</caption>
                 <thead>
                     <tr>
-                        <th>Shift</th>
-                        <th>P. Totale</th>
-                        <th>Online</th>
-                        <th>Manuale</th>
+                        <th>Turno</th>
+                        <th>Nr. Persone Totali</th>
+                        <th>Nr. Persone Prenotate online</th>
+                        <th>Nr. Persone Prenotate da Scloby</th>
                     </tr>
                 </thead>
                 <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
             </table>
-            <table id="notesTable">
-                <caption>Prenotazione online</caption>
+            <table id="notesTable" class="extra-space-footer">
+                <caption class="text-left">Prenotazioni online</caption>
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Persone</th>
+                        <th>Nr. Persone</th>
                         <th>Tavolo</th>
                         <th>Telefono</th>
                         <th>Email</th>
@@ -106,18 +106,19 @@
                 </thead>
                 <tbody id="notesTableBody" style="text-align:center;"></tbody>
             </table>
-            <table id="anonTable">
-                <caption>Prenotazione senza turni</caption>
+            <table id="anonTable" class="extra-space-footer">
+                <caption class="text-left">Prenotazioni da Scloby senza turno</caption>
                 <thead>
                     <tr>
                         <th>Inizio</th>
                         <th>Fine</th>
-                        <th>Persone</th>
+                        <th>Nr. Persone</th>
                         <th>Tavolo</th>
                     </tr>
                 </thead>
-                <tbody id="anonTableBody" style="text-align:center;"></tbody>
+                <tbody id="anonTableBody" style="text-align:left;"></tbody>
             </table>
+            <br><br>
         </div>
     </div>
     <div class="panel-home-2n" id="prenotaDiv" hidden>
@@ -142,7 +143,7 @@
                 </label>
             </div>
             <div class="small-6 medium-3 columns end">
-                <label>Quante persone*
+                <label><span data-tooltip aria-haspopup="true" class="has-tip" title="includi in 'Quante persone' anche eventuali seggioloni. Esempio 8 persone e 1 seggiolone seleziona 9">Quante persone*</span>
                     <select name="MMERGE4" class="error" id="quantity" disabled>
                         <option value="">Seleziona Numero</option>
                     </select>
@@ -174,8 +175,8 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-9 medium-4 columns end">
-                <label>Devo aggiungere seggioloni
+            <div class="small-9 medium-4 columns end extra-space-hero">
+                <label>Ho bisogno di seggioloni
                     <select name="MMERGE4" class="" id="seggiolini">
                         <option value="0">No</option>
                         <option value="1">1</option>
@@ -186,10 +187,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="small-9 medium-6 columns end">
+            <div class="small-9 medium-6 columns end extra-space-hero">
                 <input id="cani" type="checkbox"><label for="checkbox1">Ho uno o più cani</label>
             </div>
-            <span class=""><hr></span>
+            <span class="extra-space"><br><br><hr></span>
         </div>
         <div class="row">
             <div class="small-6 medium-4 large-4 columns">
@@ -331,14 +332,13 @@
     <p class="lead" id="modalLead"></p>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
-<div id="myModal2" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <p class="lead" id="modalLead">Cancella la prenotazione?</p>
+<div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <p class="lead extra-space-modal" id="modalLead">Vuoi cancellare la prenotazione?</p>
     <p id="modalText"></p>
-
         <div class="row extra-space" style="margin-bottom:5%">
             <div class="small-12 medium-12 large-12 columns">
-                <a role="button" id="no" class="button right">No, non cancellare</a>
-                <a role="button" id="yes" class="button left">Sì, cancella</a>
+                <a role="button" id="no" class="button small right">No, non cancellare</a>
+                <a role="button" id="yes" class="button small left">Sì, cancella</a>
             </div>
         </div>
   <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
