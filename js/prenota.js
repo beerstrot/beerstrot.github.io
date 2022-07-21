@@ -159,8 +159,8 @@ function toggleDate (dp) {
   dp.setHours(dp.getHours() + 12);
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
-    `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
-    `Se aggiunge il giorno Tutte le prenotazione per questo giorno saranno CANCELLATE e riceveranno l'email di chiusura.<br>
+    `Sei sicuro di voler aggiungere/rimovere questo giorno di chiusura? (giorno: ${date_})`,
+    `Se aggiunge il giorno di chiusura tutte le prenotazione per questo giorno saranno CANCELLATE e i clienti riceveranno l'email di cancellazione e di chiusura.<br>
     Se vuoi, fai un controllo nel <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
     () => {
       const date = dp.toISOString();
@@ -251,13 +251,13 @@ function showNotes (datetime) {
       data.sort((a, b) => a.time < b.time ? -1 : 1).forEach(n => {
         const tr = $('<tr/>', { class: 'clearme' }).appendTo('#notesTableBody');
         $('<td/>').html(n.name).appendTo(tr);
-        $('<td/>').html(n.people).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(n.people).appendTo(tr);
         $('<td/>').html(n.table).appendTo(tr);
         $('<td/>').html(n.telephone).appendTo(tr);
         $('<td/>').html(n.email).appendTo(tr);
         $('<td/>').html(n.time).appendTo(tr);
         $('<td/>').html(n.cani).appendTo(tr);
-        $('<td/>').html(n.seg).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(n.seg).appendTo(tr);
         $('<td/>').html(n.note).appendTo(tr);
       });
       const sentences = [];
@@ -388,7 +388,7 @@ function makeInterface (pid, dates) {
   });
   fp.set('dateFormat', 'd/M/Y');
   $('#privacy2').on('click', () => {
-    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email o telefono (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
+    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) o telefono in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
   const validation = new JustValidate('#form')
     .addField('#name', [
@@ -406,13 +406,13 @@ function makeInterface (pid, dates) {
     .addField('#telephone', [
       {
         rule: 'required',
-        errorMessage: 'inserire un telefone'
+        errorMessage: 'inserire un numero di telefono'
       }
     ])
     .addField('#from', [
       {
         rule: 'required',
-        errorMessage: 'scegli una data'
+        errorMessage: 'scegliere una data'
       }
     ])
     .addField('#quantity', [
@@ -430,7 +430,7 @@ function makeInterface (pid, dates) {
     .addField('#shiftGridL', [
       {
         rule: 'required',
-        errorMessage: 'Seleziona il turno.',
+        errorMessage: 'selezionare il turno desiderato',
         validator: () => {
           const shiftId = $($('.aShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex');
           const res = shiftId !== undefined;
@@ -441,11 +441,11 @@ function makeInterface (pid, dates) {
     .addField('#email', [
       {
         rule: 'required',
-        errorMessage: 'L\'e-mail è necessaria',
+        errorMessage: 'l\'e-mail è obbligatoria',
       },
       {
         rule: 'email',
-        errorMessage: 'L\'e-mail non è valida!',
+        errorMessage: 'l\'e-mail non è valida',
       },
     ]);
 }
@@ -467,7 +467,7 @@ function updateShifts (dp, selected, people) {
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
       if (shifts_.length === 0)
-        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di scegliere un'altra data o contattarci: ${telString} ${messengerString}`);
+        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di scegliere un'altra data o contattarci: ${telString} o tramite ${messengerString}`);
       const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
     },
@@ -531,7 +531,7 @@ function showReservation (pid) {
   let modified = false;
   if (pid.endsWith('_modificata')) {
     $('#ttitle').text('Prenotazione modificata. Grazie');
-    $('#tlegend').text('Dettagli della nuova prenotazione');
+    $('#tlegend').text('Dettagli nuova prenotazione');
     pid = pid.split('_modifica')[0];
   }
   mkCall(
@@ -541,7 +541,7 @@ function showReservation (pid) {
       if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
-        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci su ${messengerString} o chiamarci allo ${telString}.`);
+        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci su ${messengerString} o chiamarci al numero ${telString}.`);
       }
       presentReservation(res.booking);
     },
