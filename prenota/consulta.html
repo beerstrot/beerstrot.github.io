@@ -95,10 +95,12 @@
             </div>
         </div>
         <div class="row extra-space">
-            <div class="small-12 medium-6 large-6 columns">
-                <a role="button" id="cancel" class="button right">Cancella</a>
-                <a role="button" id="modify" class="button left">Modifica</a>
-                <a role="button" id="new" class="button left" href="./">Fai una nuova prenotazione</a>
+            <div class="medium-6 large-6 columns">
+                <a style="margin-top: 15px;" role="button" id="cancel" class="button">Cancella</a>
+            </div>
+            <div class="medium-6 large-6 columns">
+                <a style="margin-top: 15px;" role="button" id="modify" class="button">Modifica</a>
+                <a style="margin-top: 15px;" role="button" id="new" class="button left" href="./">Fai una nuova prenotazione</a>
             </div>
         </div>
     </div>
@@ -184,15 +186,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
-    <script src="../js/prenota.min.js"></script>
+    <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
 <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <p class="lead" id="modalLead">Cancella la prenotazione?</p>
     <p id="modalText"></p>
 
         <div class="row extra-space" style="margin-bottom:5%">
-            <div class="small-12 medium-12 large-12 columns">
-                <a role="button" id="no" class="button right">No, non cancellare</a>
-                <a role="button" id="yes" class="button left">Sì, cancella</a>
+            <div class="large-6 columns">
+                <a style="margin-top: 15px;" role="button" id="no" class="button">No, non cancellare</a>
+            </div>
+            <div class="large-6 columns">
+                <a style="margin-top: 15px;" role="button" id="yes" class="button">Sì, cancella</a>
             </div>
         </div>
   <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
