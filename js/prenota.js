@@ -143,8 +143,7 @@ function showDays (datetime) {
         dateFormat:'d/M/Y',
         disableMobile: true,
         onChange: (dp, input) => {
-          console.log(dp);
-          window.ddd = dp;
+          dp[0].setHours(12);
           toggleDate(dp[0]);
         },
       });
@@ -156,7 +155,6 @@ function showDays (datetime) {
 }
 
 function toggleDate (dp) {
-  dp.setHours(dp.getHours() + 12);
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
     `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
@@ -203,6 +201,7 @@ function showNotes (datetime) {
         dateFormat:'d/M/Y',
         disableMobile: true,
         onChange: (dp, input) => {
+          dp[0].setHours(12);
           showNotes(dp[0].toISOString());
         },
       });
@@ -383,6 +382,7 @@ function makeInterface (pid, dates) {
       $('#from').chosen = true;
       input.chosenn = true;
       fp.close();
+      dp[0].setHours(12);
       updateShifts(dp[0]);
     },
   });
