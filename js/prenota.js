@@ -143,8 +143,6 @@ function showDays (datetime) {
         dateFormat:'d/M/Y',
         disableMobile: true,
         onChange: (dp, input) => {
-          console.log(dp);
-          window.ddd = dp;
           toggleDate(dp[0]);
         },
       });
@@ -203,6 +201,7 @@ function showNotes (datetime) {
         dateFormat:'d/M/Y',
         disableMobile: true,
         onChange: (dp, input) => {
+          dp[0].setHours(12);
           showNotes(dp[0].toISOString());
         },
       });
@@ -383,6 +382,7 @@ function makeInterface (pid, dates) {
       $('#from').chosen = true;
       input.chosenn = true;
       fp.close();
+      dp[0].setHours(12);
       updateShifts(dp[0]);
     },
   });
