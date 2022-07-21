@@ -52,7 +52,6 @@ function modifyReservation (pid) {
       // const value = moment(date).format('Y-MM-DD');
       const value = moment(date).format('DD/MM/Y');
       jQuery('#from').flatpickr().setDate(date);
-      // $('#from').datetimepicker('setOptions', { value });
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -130,24 +129,25 @@ function showDays (datetime) {
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
   $('#ttitle').text('BB Giorni di Chiusura AA');
-  $('#yes').text('Sì, aggiunge questo giorno di chiusura.');
-  $('#no').text('No, non aggiunge questo giorno di chiusura.');
+  $('#yes').text('Sì, aggiungere/rimuovere questo giorno di chiusura.');
+  $('#no').text('No, non aggiungere/rimuovere questo giorno di chiusura.');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
     res => {
       const r = res;
       $('#innerNotesDiv').html('<b>Giorni chiusi ACC:</b><br>' + r.dates.join('<br>'));
-      // $.datetimepicker.setLocale('it');
-      jQuery('#from2').datetimepicker({
-        minDate: 0,
-        timepicker: false,
-        // inline: true,
-        onSelectDate: (dp, input) => {
-          toggleDate(dp);
+      jQuery('#from2').flatpickr({
+        minDate: 'today',
+        locale: 'it',
+        dateFormat:'d/M/Y',
+        disableMobile: true,
+        onChange: (dp, input) => {
+          console.log(dp);
+          window.ddd = dp;
+          toggleDate(dp[0]);
         },
-      }).datetimepicker('show');
-      $('.xdsoft_today_button').hide();
+      });
     },
     res => {
       showMessage(messageError);
@@ -156,6 +156,7 @@ function showDays (datetime) {
 }
 
 function toggleDate (dp) {
+  dp.setHours(dp.getHours() + 12);
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
     `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
@@ -172,6 +173,7 @@ function toggleDate (dp) {
 }
 
 function showNotes (datetime) {
+  $('#loading').show();
   $('.form').hide();
   $('#notesDiv').show();
   $('#innerNotesDiv').show();
@@ -183,7 +185,6 @@ function showNotes (datetime) {
     res => {
       const r = JSON.parse(res);
       const date = (new Date(r.date)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      // $.datetimepicker.setLocale('it');
       const tables = {};
       r.rooms.forEach(r => {
         r.tables.forEach(t => {
@@ -197,14 +198,12 @@ function showNotes (datetime) {
         return a;
       }, {});
       shifts.anon = { name: 'anon', bookings: [] };
-      jQuery('#from2').datetimepicker({
-        // lang: 'it',
-        value: new Date(r.date),
-        startDate: new Date(r.date),
-        format:'d/M/Y',
-        timepicker: false,
-        onSelectDate: (dp, input) => {
-          showNotes(dp.toISOString());
+      jQuery('#from2').flatpickr({
+        locale: 'it',
+        dateFormat:'d/M/Y',
+        disableMobile: true,
+        onChange: (dp, input) => {
+          showNotes(dp[0].toISOString());
         },
       });
 
@@ -371,9 +370,8 @@ function makeInterface (pid, dates) {
     });
   });
 
-  // https://flatpickr.js.org/ (good alternative)
-  // https://xdsoft.net/jqplugins/datetimepicker/ (chosen)
-  // $.datetimepicker.setLocale('it');
+  // https://flatpickr.js.org/ (choosen)
+  // https://xdsoft.net/jqplugins/datetimepicker/ (previously chosen)
   const fp = jQuery('#from').flatpickr({
     locale: 'it',
     minDate: 'today',
