@@ -122,7 +122,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     {% if cancel %}
         cancellata.
     {% elif closed %}
-        cancellata. Ci scusiamo, ma a causa della pioggia (o di un altro problema interno) abbiamo cancellato tutte le prenotazioni per questo giorno.
+        CANCELLATA. Ci scusiamo, ma a causa della pioggia (o di un altro problema interno) abbiamo cancellato tutte le prenotazioni per questo giorno.
     {% elif modify %}
         aggiornata.
     {% else %}
@@ -134,7 +134,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     {% if modify %}
          <legend>Dettagli della nuova prenotazione</legend>
     {% else %}
-<legend>Ecco i dettagli{% if cancel or closed %} della prenotazione cancellata {% endif %}:</legend>
+<legend>Ecco I dettagli{% if cancel or closed %} della prenotazione cancellata {% endif %}:</legend>
     {% endif %}
   <p style="font-size: 14px; line-height: 140%;">Nome: <strong>{{_name}} {{_surname}}</strong></p>
   <p style="font-size: 14px; line-height: 140%;">Telefono: <strong>{{_telephone or '--'}}</strong></p>
@@ -163,7 +163,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px 10px 22px;font-family:arial,helvetica,sans-serif;" align="left">
 
 {% if not (cancel or closed) %}
-<div align="right">
+<div align="left">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-button-colors" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:263px;" arcsize="11%" stroke="f" fillcolor="#e00c10"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->
   <a href="https://www.beerstrot.it/prenota/consulta.html?id={{pid}}" target="_blank" class="v-button-colors" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #e00c10; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
       <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Cancella o Modifica la Prenotazione</span></span>
@@ -174,9 +174,9 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
 <p>
 Hai cancellato per errore? Crea una nuova prenotazione.
 </p>
-<div align="right">
+<div align="left">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-button-colors" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:263px;" arcsize="11%" stroke="f" fillcolor="#e00c10"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->
-  <a href="https://www.beerstrot.it/prenota/" target="_blank" class="v-button-colors" style="margin-top:20px;box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #e00c10; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
+  <a href="https://www.beerstrot.it/prenota/" target="_blank" class="v-button-colors" style="margin-top:10px;box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #e00c10; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
       <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Riserva un Tavolo</span></span>
     </a>
   <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
@@ -214,9 +214,7 @@ Hai cancellato per errore? Crea una nuova prenotazione.
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
   <div class="v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;">Non &egrave; consentito portare dolci o spumanti dall'esterno.</p>
-    <br>
-    <p style="font-size: 14px; line-height: 140%;">In estate siamo aperti solo all'esterno. In caso di pioggia o minaccia di pioggia il ristorante è chiuso e avviseremo tutti coloro che hanno prenotato della non apertura tramite email.</p>
+    <p style="font-size: 14px; line-height: 140%;">Ricordiamo che non &egrave; consentito portare dolci o spumanti dall'esterno.</p>
   </div>
 
       </td>
@@ -244,59 +242,18 @@ Hai cancellato per errore? Crea una nuova prenotazione.
   </tbody>
 </table>
 
-
 <table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
 
   <div>
-    <p style="font-size: 14px;">Come raggiungerci:
-  <a style="color:#e00c10; text-decoration:none; font-size: 14px;" href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-    <span itemprop="streetAddress">Via Centofinestre, 20</span>
-    <span itemprop="postalCode">60024</span>
-    <span itemprop="addressLocality">Filottrano</span>
-    <span itemprop="addressRegion">AN</span>
-  </a>
-</p>
-  </div>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
-  <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-    <tbody>
-      <tr style="vertical-align: top">
-        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-          <span>&#160;</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
-
-
-      <p style=" font-size: 14px;">Ca’ Vecchia Beerstrot<br>
-
+    <a style="text-decoration:none;" href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      <p style="color:#e00c10; font-size: 14px;">Ca’ Vecchia Beerstrot<br>
+        <span style="color:#999; font-size: 12px;" itemprop="streetAddress">Via Centofinestre, 20</span>
+        <span style="color:#999; font-size: 12px;" itemprop="postalCode">60024</span>
+        <span style="color:#999; font-size: 12px;" itemprop="addressLocality">Filottrano</span>
+        <span style="color:#999; font-size: 12px;" itemprop="addressRegion">AN</span>
       </p>
     </a>
 <div style="font-size:12pt;margin:0cm 0cm 0.0001pt"><span style="font-size:10pt;color:rgb(192,0,0)">T.</span><span style="font-size:10pt;color:rgb(102,102,102)">&nbsp;&nbsp;
