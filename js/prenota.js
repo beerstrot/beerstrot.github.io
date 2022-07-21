@@ -503,9 +503,7 @@ function mkShiftButtons (shifts, selected) {
           .appendTo('#shiftGrid')
       );
     b.bcolor = b.css('background-color');
-    b.bindex = s.id;
     b.attr('bindex', s.id);
-    b.attr('bindex2', i);
     sButtons.push(b);
   });
   removeShifts.reverse().forEach(i => shifts.splice(i, 1));
@@ -514,9 +512,9 @@ function mkShiftButtons (shifts, selected) {
   sButtons.forEach(b => {
     b.click(() => {
       sButtons.forEach(bb => {
-        bb.css('background', bb.bcolor);
-        bb.selected = false;
         bb.attr('bselected', false);
+        if (bb.css('pointer-events') !== 'none')
+          bb.css('background', bb.bcolor);
       });
       b.css('background', 'darkred');
       b.attr('bselected', true);
@@ -729,10 +727,21 @@ function mkQuantityOptions (shifts, people) {
     });
   $('#quantity').prop('disabled', false)
   // enable select
+  const cssOn = { 'pointer-events': '', cursor: 'pointer', background: '#ce2f24' };
+  const cssOff = { 'pointer-events': 'none', cursor: 'default', background: '#ce9f94' };
   $('#quantity').off('input').on('input', function() {
     const v = Number($(this).val());
-    shifts.forEach((s, i) => $('#aShift' + i).prop('disabled', s.table_sizes.filter(s => s >= v).length === 0));
-    const totalDisabled = shifts.reduce((c, i, ii) => c + $('#aShift' + ii).prop('disabled'), 0); 
+    shifts.forEach((s, i) => {
+      const tablesOk = s.table_sizes.filter(t => t >= v);
+      const css = tablesOk.length === 0 ? cssOff : cssOn;
+      $('#aShift' + i).css(css).attr('bselected', false);
+    });
+    // should not happen because if a quantity is available
+    // there is a shift with a table for it:
+    const totalDisabled = shifts.reduce((c, i, ii) => {
+      const isDisabled =  $('#aShift' + ii).css('pointer-events') === 'none';
+      return c + isDisabled;
+    }, 0); 
     if (totalDisabled === shifts.length) return showMessage(message10);
     $('#notification').hide();
   });
@@ -742,9 +751,7 @@ function mkQuantityOptions (shifts, people) {
 }
 
 function showError (id) {
-  // $(id).attr("style", "display: block !important")
   $(id.replace('1', '')).attr('style', 'border: 2px solid red !important');
-  // $(id.replace('1', '')).css('border', '2px solid red !important');
 }
 
 const time = d => d.toLocaleString('it-IT', { hour: '2-digit', minute:'2-digit' });
