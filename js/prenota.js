@@ -158,8 +158,9 @@ function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
     `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
-    `Se aggiunge il giorno Tutte le prenotazione per questo giorno saranno CANCELLATE e riceveranno l'email di chiusura.<br>
-    Se vuoi, fai un controllo nel <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
+    `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate <br>I clienti prenotati riceveranno l'email di chiusura e
+    cancellazione della prenotazione.<br>
+    Se vuoi, fai un controllo dei clienti prenotati qui <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
     () => {
       const date = dp.toISOString();
       showDays(date);
@@ -250,13 +251,13 @@ function showNotes (datetime) {
       data.sort((a, b) => a.time < b.time ? -1 : 1).forEach(n => {
         const tr = $('<tr/>', { class: 'clearme' }).appendTo('#notesTableBody');
         $('<td/>').html(n.name).appendTo(tr);
-        $('<td/>').html(n.people).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(n.people).appendTo(tr);
         $('<td/>').html(n.table).appendTo(tr);
         $('<td/>').html(n.telephone).appendTo(tr);
         $('<td/>').html(n.email).appendTo(tr);
-        $('<td/>').html(n.time).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'left' } }).html(n.time).appendTo(tr);
         $('<td/>').html(n.cani).appendTo(tr);
-        $('<td/>').html(n.seg).appendTo(tr);
+        $('<td/>', { css: { 'text-align': 'right' } }).html(n.seg).appendTo(tr);
         $('<td/>').html(n.note).appendTo(tr);
       });
       const sentences = [];
@@ -294,7 +295,7 @@ function showNotes (datetime) {
       if (notes.length > 0) {
         $('<button/>', { class: 'clearme', css: { marginBottom: '1.5rem', padding: '' } })
           .prependTo('#innerNotesDiv')
-          .text('Invia promemoria per cancellazione??')
+          .text('Invia email promemoria a clienti')
           .off('click')
           .on('click', () => {
             showConsultaMessage(
@@ -467,7 +468,7 @@ function updateShifts (dp, selected, people) {
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
       if (shifts_.length === 0)
-        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di scegliere un'altra data o contattarci: ${telString} ${messengerString}`);
+        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di contattarci: ${telString} ${messengerString}`);
       const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
     },
@@ -506,7 +507,7 @@ function mkShiftButtons (shifts, selected) {
   });
   removeShifts.reverse().forEach(i => shifts.splice(i, 1));
   if (shifts.length === 0)
-      showMessage('Siamo al completo in questo giorno. Grazie.');
+      showMessage('In questa data siamo al completo.');
   sButtons.forEach(b => {
     b.click(() => {
       sButtons.forEach(bb => {
@@ -531,7 +532,7 @@ function showReservation (pid) {
   let modified = false;
   if (pid.endsWith('_modificata')) {
     $('#ttitle').text('Prenotazione modificata. Grazie');
-    $('#tlegend').text('Dettagli della nuova prenotazione');
+    $('#tlegend').text('Dettagli della prenotazione modificata');
     pid = pid.split('_modifica')[0];
   }
   mkCall(
@@ -584,7 +585,7 @@ function presentReservation (r) {
   const pid = r.id;
   $('#cancel').click(() => {
     showConsultaMessage(
-      'Vuoi davvero cancellare la prenotazione?',
+      'Vuoi cancellare la prenotazione?',
       '',
       () => {
         mkCall(
