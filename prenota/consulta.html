@@ -94,14 +94,18 @@
                 </fieldset>
             </div>
         </div>
-        <div class="row extra-space">
-            <div class="medium-6 large-6 columns">
+        <div class="row extra-space-hero" style="margin-bottom:15%">
+            <div class="small-12 medium-6 large-6 columns">
+                <a role="button" id="cancel" class="button small right">Cancella</a>
+                <a role="button" id="modify" class="button small left">Modifica</a>
+                <a role="button" id="new" class="button small left" href="./">Fai una nuova prenotazione</a>
+            <!-- <div class="medium-6 large-6 columns">
                 <a style="margin-top: 15px;" role="button" id="cancel" class="button">Cancella</a>
             </div>
             <div class="medium-6 large-6 columns">
                 <a style="margin-top: 15px;" role="button" id="modify" class="button">Modifica</a>
                 <a style="margin-top: 15px;" role="button" id="new" class="button left" href="./">Fai una nuova prenotazione</a>
-            </div>
+            </div> -->
         </div>
     </div>
 
@@ -187,19 +191,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
     <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
-<div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <p class="lead" id="modalLead">Cancella la prenotazione?</p>
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <p id="modalText"></p>
-
-        <div class="row extra-space" style="margin-bottom:5%">
-            <div class="large-6 columns">
-                <a style="margin-top: 15px;" role="button" id="no" class="button">No, non cancellare</a>
-            </div>
-            <div class="large-6 columns">
-                <a style="margin-top: 15px;" role="button" id="yes" class="button">Sì, cancella</a>
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns extra-space">
+                <p class="lead" id="modalLead">Vuoi cancellare la prenotazione?</p>
+                <a role="button" id="no" class="button small right" style="margin-top: 5px;">No, non cancellare</a>
+                <a role="button" id="yes" class="button small left" style="margin-top: 5px;">Sì, cancella</a>
             </div>
         </div>
-  <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
+    <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
 </div>
 </body>
 </html>
