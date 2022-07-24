@@ -138,16 +138,17 @@
     <form id="form">
         <div class="row">
             <div class="small-12 medium-12 large-12 columns">
-                 <h6>includi in <strong>Quante persone*</strong> anche eventuali seggioloni. Esempio: 4 persone e 1 seggiolone seleziona 5.</h6>
-                <br>
+                 <h6>Includi in <strong>Quante persone*</strong> anche eventuali seggioloni. Esempio: per 4 persone e 2 seggioloni seleziona 6.</h6>
+                 <h6 class="extra-space-hero"><strong>* </strong> Campo obbligatorio.</h6>
             </div>
+            <span class="extra-space"><hr></span>
             <div class="small-6 medium-3 columns ">
-                <label>Quale giorno*
+                <label><strong>Quale giorno*</strong>
                     <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" readonly/>
                 </label>
             </div>
             <div class="small-6 medium-3 columns end">
-                <label>Quante persone*
+                <label><strong>Quante persone*</strong>
                     <select name="MMERGE4" class="error" id="quantity" disabled>
                         <option value="">Seleziona Numero</option>
                     </select>
@@ -156,7 +157,7 @@
         </div>
         <div class="row extra-space-hero">
             <div class="small-12 medium-6 columns end">
-                <label>Quale turno*
+                <label><strong>Quale turno*</strong>
             <div id="shiftGridL"></div>
                 </label>
                 <ul class="small-block-grid-2  extra-space-turno error" id="shiftGrid">
@@ -167,20 +168,20 @@
                     <li class="bShift"><a class="small button disabled">21.00-23.00</a></li>
                     <li class="bShift"><a class="small button disabled">21.30-23.00</a></li>
                 </ul>
-                <p>Turno: orario d'arrivo-orario in cui bisogna lasciare il tavolo</p>
+                <h6>Turno: orario d'arrivo-orario in cui bisogna lasciare il tavolo</h6>
             </div>
             <span class="extra-space"><hr></span>
         </div>
         <div class="row">
             <div class="small-12 medium-6 columns end">
-                <label>Note
+                <label><strong>Note</strong>
                     <textarea maxlength="200" id="obs" placeholder="Intolleranze, accesso con sedia a rotelle, ..."></textarea>
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="small-9 medium-4 columns end extra-space-hero">
-                <label>Ho bisogno di seggioloni
+                <label><strong>Ho bisogno di seggioloni</strong>
                     <select name="MMERGE4" class="" id="seggiolini">
                         <option value="0">No</option>
                         <option value="1">1</option>
@@ -198,24 +199,24 @@
         </div>
         <div class="row">
             <div class="small-6 medium-4 large-4 columns">
-                <label>Nome*
+                <label><strong>Nome*</strong>
                     <input type="text" class="required error" id="name" placeholder="Nome" maxlength="20"/>
                 </label>
             </div>
             <div class="small-6 medium-4 large-4 columns end">
-                <label>Cognome*
+                <label><strong>Cognome*</strong>
                     <input type="text" class="required error" id="surname" placeholder="Cognome" maxlength="20"/>
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="small-12  medium-5 columns extra-space-hero">
-                <label>Email*
+                <label><strong>Email*</strong>
                     <input type="email" class="required email error" id="email" placeholder="esempio@esempio.it" maxlength="200"/>
                   </label>
             </div>
             <div class="small-6  medium-3 columns end extra-space-hero">
-                <label>Telefono*
+                <label><strong>Telefono*</strong>
                     <input type="tel" class="required error" id="telephone" placeholder="3332221111" maxlength="35" />
                 </label>
             </div>
@@ -228,9 +229,6 @@
         <div class="row">
             <div class="small-12 medium-12 large-12 columns">
                 <a id="prenota" role="button" class="button right extra-space-from-tabs">Riserva il Tavolo</a>
-            </div>
-            <div class="medium-12 large-12 columns extra-space">
-                <p><small>* Campi obbligatori</small></p>
             </div>
         </div>
     </form>
