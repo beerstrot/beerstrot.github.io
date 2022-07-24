@@ -389,7 +389,7 @@ function makeInterface (pid, dates) {
   });
   fp.set('dateFormat', 'd/M/Y');
   $('#privacy2').on('click', () => {
-    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email o telefono (assicurati non finisca nella spam) in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
+    showMessage('I  dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) o telefono in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
   });
   const validation = new JustValidate('#form')
     .addField('#name', [
