@@ -305,7 +305,7 @@ function showNotes (datetime) {
                 'POST',
                 { action: 'promemoria', data: datetime },
                 res => {
-                  showMessage('Emails inviate');
+                  showMessage('Email inviate');
                 },
                 res => {
                   showMessage(messageError);
