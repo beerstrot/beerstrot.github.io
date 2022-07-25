@@ -290,12 +290,12 @@ function showNotes (datetime) {
         ).appendTo(tr)
         total_ += b.people;
       });
-      const summary = `<b>${date}</b> ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online):
-      <ul>
+      const summary = `<ul class="no-bullet"><b>${date}</b> ci sono:
+      <li><b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online)</li>
       <li><b>${total_}</b> persone prenotate</li>
       <li><b>${ncani}</b> prenotazioni con cani</li>
       <li><b>${nseggiolini}</b> seggioloni richiesti</li>
-      </ul><br>`;
+      </ul>`;
       $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
       if (notes.length > 0) {
         $('<button/>', { class: 'clearme', css: { marginBottom: '3rem', padding: '' } })
