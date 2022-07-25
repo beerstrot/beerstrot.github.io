@@ -88,8 +88,6 @@ a[x-apple-data-detectors='true'] {
 table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } @media (max-width: 480px) { #u_content_heading_1 .v-line-height { line-height: 300% !important; } #u_content_text_1 .v-line-height { line-height: 150% !important; } #u_content_button_1 .v-button-colors { color: #FFFFFF !important; background-color: #e00c10 !important; } #u_content_button_1 .v-button-colors:hover { color: #FFFFFF !important; background-color: #3AAEE0 !important; } #u_content_button_1 .v-line-height { line-height: 140% !important; } #u_content_button_1 .v-padding { padding: 10px 20px !important; } }
     </style>
 
-
-
 </head>
 
 <body class="clean-body u_body" style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;background-color: #ffffff;color: #000000">
@@ -122,7 +120,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     {% if cancel %}
         cancellata.
     {% elif closed %}
-        cancellata. Causa maltempo il ristorante rimane chiuso. Grazie
+        cancellata. <br>Causa maltempo il ristorante rimane chiuso. Grazie
     {% elif modify %}
         modificata.
     {% else %}
@@ -134,7 +132,7 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
     {% if modify %}
          <legend>Dettaglio della prenotazione modificata</legend>
     {% else %}
-<legend>Dettaglio{% if cancel or closed %} della prenotazione cancellata{% endif %}</legend>
+<legend>Dettaglio della prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
     {% endif %}
   <p style="font-size: 14px; line-height: 140%;">Nome: <strong>{{_name}} {{_surname}}</strong></p>
   <p style="font-size: 14px; line-height: 140%;">Telefono: <strong>{{_telephone or '--'}}</strong></p>
@@ -172,12 +170,12 @@ table, td { color: #000000; } a { color: #0000ee; text-decoration: underline; } 
 </div>
 {% elif cancel %}
 <p>
-Hai cancellato per errore? Crea una nuova prenotazione.
+Hai cancellato per errore?
 </p>
 <div align="right">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-button-colors" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:263px;" arcsize="11%" stroke="f" fillcolor="#e00c10"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->
   <a href="https://www.beerstrot.it/prenota/" target="_blank" class="v-button-colors" style="margin-top:20px;box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #e00c10; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
-      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Riserva un Tavolo</span></span>
+      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Fai una nuova prenotazione</span></span>
     </a>
   <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
 </div>
@@ -227,104 +225,51 @@ Hai cancellato per errore? Crea una nuova prenotazione.
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
         <div class="v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-          <p style="font-size: 14px; line-height: 140%;">Durante il periodo estivo il ristorante &egrave; aperto solo all'esterno.</p>
+          <p style="font-size: 14px; line-height: 140%;">Durante il periodo estivo il ristorante &egrave; aperto solo all'esterno. <br>In caso di maltempo: il ristorante è chiuso e verrai avvisato tramite email della non apertura.</p>
         </div>
       </td>
     </tr>
   </tbody>
 </table>
 
-<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+<table style="font-family:arial,helvetica,sans-serif; background-color: #e6e6e6; margin-bottom:10%;margin-top:4%;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
   <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
-  <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-    <tbody>
-      <tr style="vertical-align: top">
-        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-          <span>&#160;</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:6%;font-family:arial,helvetica,sans-serif;" align="left">
+        <div>
+            <p style="line-height: 140%;">Come raggiungerci:
+              <a style="text-decoration:none; color:#e00c10;" href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Via Centofinestre, 20 60024 Filottrano AN
+              </a>
+            </p>
+        </div>
       </td>
     </tr>
-  </tbody>
-</table>
-
-
-<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-  <tbody>
     <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
-  <div>
-      <p style="line-height: 140%;">Come raggiungerci:
-        <a style="text-decoration:none; color:#e00c10;" href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Via Centofinestre, 20 60024 Filottrano AN
-        </a>
-      </p>
-  </div>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
-  <table height="0px" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;table-layout: fixed;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;vertical-align: top;border-top: 1px solid #BBBBBB;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-    <tbody>
-      <tr style="vertical-align: top">
-        <td style="word-break: break-word;border-collapse: collapse !important;vertical-align: top;font-size: 0px;line-height: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%">
-          <span>&#160;</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<table style="font-family:arial,helvetica,sans-serif;" role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
-  <tbody>
-    <tr>
-      <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
-
-  <div>
-      <p >Ca’ Vecchia Beerstrot<br>
-      </p>
-    </a>
-<div style="font-size:12pt;margin:0cm 0cm 0.0001pt">
-  <span style="font-size:10pt;">T.</span>
-  <span style="font-size:10pt">&nbsp;
-  <a href="tel:+390718853384" style="text-decoration:none; color:#e00c10; font-size:10pt;"><span itemprop="telephone">+39 071 8853384</span></a>
-</span>
-</div>
-<div style="font-size:12pt;margin:0cm 0cm 0.0001pt">
-  <span style="font-size:10pt">E.</span>
-  <span style="font-size:10pt">&nbsp;
-    <u>
-      <font>
-        <a href="mailto:info@beerstrot.it" style="text-decoration:none; color:#e00c10; target="_blank">info@<span class="il">beerstrot</span>.it
-        </a>
-      </font>
-    </u>
-  </span>
-</div>
-<div style="font-size:12pt;margin:0cm 0cm 0.0001pt"><span style="font-size:10pt">S.</span><span style="font-size:10pt">&nbsp;&nbsp;
-  <u>
-    <a href="http://www.beerstrot.it/" style="text-decoration:none; color:#e00c10; target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://www.beerstrot.it/&amp;source=gmail&amp;ust=1657006332600000&amp;usg=AOvVaw2lyQH_gfowWrvArrHNEKIk">www.<span class="il">beerstrot</span>.it</a></u></span></div>
-
-  </div>
-
+      <td style="overflow-wrap:break-word;word-break:break-word;padding:6%; padding-top:0;font-family:arial,helvetica,sans-serif;" align="left">
+        <div>
+          <p style=" font-weight: bold;">Ca’ Vecchia Beerstrot<br>
+          </p>
+            <div style="font-size:12pt;margin:0cm 0cm 0.0001pt">
+              <span style="font-size:10pt;">T.</span>
+              <span style="font-size:10pt">&nbsp;</span>
+                  <a href="tel:+390718853384" style="text-decoration:none; color:#e00c10; font-size:10pt;"><span itemprop="telephone">+39 071 8853384</span></a>
+            </div>
+            <div style="font-size:12pt;margin:0cm 0cm 0.0001pt">
+              <span style="font-size:10pt">E.</span>
+              <span style="font-size:10pt">&nbsp;
+                <u>
+                  <font>
+                    <a href="mailto:info@beerstrot.it" style="text-decoration:none; color:#e00c10;" target="_blank">info@<span class="il">beerstrot</span>.it
+                    </a>
+                  </font>
+                </u>
+              </span>
+            </div>
+        </div>
+        <div style="font-size:12pt;margin:0cm 0cm 0.0001pt"><span style="font-size:10pt;">S.</span><span style="font-size:10pt">&nbsp;&nbsp;
+          <u>
+            <a href="http://www.beerstrot.it/" style="text-decoration:none; color:#e00c10;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://www.beerstrot.it/&amp;source=gmail&amp;ust=1657006332600000&amp;usg=AOvVaw2lyQH_gfowWrvArrHNEKIk">www.<span class="il">beerstrot</span>.it</a></u></span>
+        </div>
       </td>
     </tr>
   </tbody>
