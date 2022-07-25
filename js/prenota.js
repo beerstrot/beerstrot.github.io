@@ -292,8 +292,8 @@ function showNotes (datetime) {
       });
       const summary = `<b>${date}</b> ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online):
       <ul>
-      <li><b>${total_}</b> persone totali</li>
-      <li><b>${ncani}</b> con cani</li>
+      <li><b>${total_}</b> persone prenotate</li>
+      <li><b>${ncani}</b> prenotazioni con cani</li>
       <li><b>${nseggiolini}</b> seggioloni richiesti</li>
       </ul><br>`;
       $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
