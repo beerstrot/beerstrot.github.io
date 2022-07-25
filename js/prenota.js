@@ -395,19 +395,19 @@ function makeInterface (pid, dates) {
     .addField('#name', [
       {
         rule: 'required',
-        errorMessage: 'inserire un nome'
+        errorMessage: 'inserisci un nome'
       }
     ])
     .addField('#surname', [
       {
         rule: 'required',
-        errorMessage: 'inserire un cognome'
+        errorMessage: 'inserisci un cognome'
       }
     ])
     .addField('#telephone', [
       {
         rule: 'required',
-        errorMessage: 'inserire un telefone'
+        errorMessage: 'inserisci un telefono'
       }
     ])
     .addField('#from', [
@@ -419,13 +419,13 @@ function makeInterface (pid, dates) {
     .addField('#quantity', [
       {
         rule: 'required',
-        errorMessage: 'indicare il numero di persone'
+        errorMessage: 'indica il numero di persone'
       }
     ])
     .addField('#privacy', [
       {
         rule: 'required',
-        errorMessage: 'è necessario accettare i termini e le condizioni'
+        errorMessage: 'è necessario accettare la privacy'
       }
     ])
     .addField('#shiftGridL', [
@@ -442,7 +442,7 @@ function makeInterface (pid, dates) {
     .addField('#email', [
       {
         rule: 'required',
-        errorMessage: 'L\'e-mail è necessaria',
+        errorMessage: 'inserisci un\'e-mail',
       },
       {
         rule: 'email',
@@ -542,7 +542,7 @@ function showReservation (pid) {
       if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
-        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci su ${messengerString} o chiamarci allo ${telString}.`);
+        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci su ${messengerString} o chiamarci al numero ${telString}.`);
       }
       presentReservation(res.booking);
     },
