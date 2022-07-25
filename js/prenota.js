@@ -295,11 +295,11 @@ function showNotes (datetime) {
       if (notes.length > 0) {
         $('<button/>', { class: 'clearme', css: { marginBottom: '1.5rem', padding: '' } })
           .prependTo('#innerNotesDiv')
-          .text('Invia email promemoria a clienti')
+          .text('Invia email di promemoria a clienti')
           .off('click')
           .on('click', () => {
             showConsultaMessage(
-              'Invia il promemoria per questo giorno?',
+              'Vuoi inviare email di promemoria della prenotazione ai clienti?',
               'giorno: ' + date,
               () => mkCall(
                 'POST',
@@ -532,7 +532,7 @@ function showReservation (pid) {
   let modified = false;
   if (pid.endsWith('_modificata')) {
     $('#ttitle').text('Prenotazione modificata. Grazie');
-    $('#tlegend').text('Dettagli della prenotazione modificata');
+    $('#tlegend').text('Dettaglio della prenotazione modificata');
     pid = pid.split('_modifica')[0];
   }
   mkCall(
@@ -593,7 +593,7 @@ function presentReservation (r) {
           { action: 'cancelReservation', data: pid },
           res => {
             $('#ttitle').text('Prenotazione cancellata. Grazie');
-            $('tlegend').text('Dettagli prenotazione cancellata');
+            $('tlegend').text('Dettaglio prenotazione cancellata');
             // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();

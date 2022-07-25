@@ -67,7 +67,12 @@
             <br>
         </div>
     </header>
-    <div id="loading" hidden><br/><br/><div style="padding-top:25%">Ricerco disponibilità</div></div>
+<!-- inizio loader -->
+    <div id="loading" hidden><br/><br/>
+        <div style="padding-top:25%">Ricerco disponibilità</div>
+    </div>
+<!-- fine loader -->
+<!-- inizio dashboard -->
     <div class="row" id="notesDiv" hidden>
         <div class="small-6 medium-4 columns" id="innerNotesDiv_" >
             <div>
@@ -121,6 +126,7 @@
             <br><br>
         </div>
     </div>
+<!-- fine dashboard -->
     <div class="panel-home-2n" id="prenotaDiv" hidden>
       <div class="row">
         <div class="columns small-6" id="innerInfoDiv"></div>
@@ -143,7 +149,6 @@
                 </div>
                 <div class="small-12 medium-12 columns"><hr></div>
             </div>
-
             <div class="row">
                 <div class="small-6 medium-3 columns ">
                     <label><strong>Quale giorno*</strong>
@@ -322,31 +327,30 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/it.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
-<!-- <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <p class="lead" id="modalLead">Your couch.  It is mine.</p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div> -->
-<div id="myModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <div class="row">
-        <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:8%">
-            <p class="lead extra-space" id="modalLead">In questa data siamo al completo.</p>
-        </div>
-    </div>
-    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
-<div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+<!-- inizio modale messaggio locale completo -->
+    <div id="myModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <div class="row">
-            <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:10%">
-                <p class="lead" id="modalLead2">Vuoi cancellare la prenotazione?</p>
-                <a role="button" id="no" class="button small right" style="margin-top: 5px;">No, non cancellare</a>
-                <a role="button" id="yes" class="button small left" style="margin-top: 5px;">Sì, cancella</a>
+            <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:8%">
+                <p class="lead extra-space" id="modalLead">In questa data siamo al completo.</p>
             </div>
         </div>
-        <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
-</div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+<!-- fine modale messaggio locale completo -->
+<!-- inizio modale invio promemoria ai clienti -->
+    <div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:10%">
+                    <p class="lead extra-space" id="modalLead2">Vuoi inviare il promemoria della prenotazione ai clienti?</p>
+                    <a role="button" id="no" class="button small right" style="margin-top: 5px;">No, non inviare</a>
+                    <a role="button" id="yes" class="button small left" style="margin-top: 5px;">Sì, Invia</a>
+                </div>
+            </div>
+            <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
+    </div>
+<!-- fine modale invio promemoria ai clienti -->
 </body>
 </html>

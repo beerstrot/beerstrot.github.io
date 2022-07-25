@@ -69,11 +69,6 @@
     </header>
     <div class="panel-home-2n">
         <div class="row">
-            <div class="small-12 medium-12 large-12 columns">
-                <!-- <h2>Dettagli della prenotazione</h2> -->
-            </div>
-        </div>
-        <div class="row">
             <div class="small-12 medium-12 columns">
                 <fieldset>
                      <legend id="tlegend">Dettagli della prenotazione</legend>
@@ -191,17 +186,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
     <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
-
-<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <p id="modalText"></p>
-        <div class="row">
-            <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:10%">
-                <p class="lead" id="modalLead">Vuoi cancellare la prenotazione?</p>
-                <a role="button" id="no" class="button small right" style="margin-top: 5px;">No, non cancellare</a>
-                <a role="button" id="yes" class="button small left" style="margin-top: 5px;">Sì, cancella</a>
+<!-- inizio modale messaggio vuoi cancellare la prenotazione -->
+    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+        <p id="modalText"></p>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:10%">
+                    <p class="lead" id="modalLead">Vuoi cancellare la prenotazione?</p>
+                    <a role="button" id="no" class="button small right" style="margin-top: 5px;">No, non cancellare</a>
+                    <a role="button" id="yes" class="button small left" style="margin-top: 5px;">Sì, cancella</a>
+                </div>
             </div>
-        </div>
-    <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
-</div>
+        <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
+    </div>
+<!-- fine modale messaggio vuoi cancellare la prenotazione -->
 </body>
 </html>
