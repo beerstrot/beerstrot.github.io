@@ -290,10 +290,15 @@ function showNotes (datetime) {
         ).appendTo(tr)
         total_ += b.people;
       });
-      const summary = `Ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online) per il giorno <b>${date}</b>, di cui <b>${ncani}</b> con cani e <b>${nseggiolini}</b> con seggioloni. Totale di <b>${total_}</b> persone.`;
+      const summary = `<b>${date}</b> ci sono <b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online):
+      <ul>
+      <li><b>${total_}</b> persone totali</li>
+      <li><b>${ncani}</b> con cani</li>
+      <li><b>${nseggiolini}</b> seggioloni richiesti</li>
+      </ul><br>`;
       $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
       if (notes.length > 0) {
-        $('<button/>', { class: 'clearme', css: { marginBottom: '1.5rem', padding: '' } })
+        $('<button/>', { class: 'clearme', css: { marginBottom: '3rem', padding: '' } })
           .prependTo('#innerNotesDiv')
           .text('Invia email di promemoria a clienti')
           .off('click')
