@@ -542,7 +542,7 @@ function showReservation (pid) {
       if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
-        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString}.`);
+        return showConsultaMessage('Prenotazione non trovata.', `Puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString}.`);
       }
       presentReservation(res.booking);
     },
