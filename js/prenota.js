@@ -129,8 +129,8 @@ function showDays (datetime) {
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
   $('#ttitle').text('Giorni di Chiusura');
-  $('#yes').text('Sì, aggiungi/rimuovi giorno');
-  $('#no').text('No, non aggiungere/rimuovere giorno');
+  $('#yes').text('Aggiungi/rimuovi giorno');
+  $('#no').text('Non aggiungere/rimuovere giorno');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
@@ -157,8 +157,8 @@ function showDays (datetime) {
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
-    `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
-    `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate <br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati qui <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
+    `Sei sicuro di aggiungere/rimovere (giorno: ${date_}) come giorno di chiusura? `,
+    `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate.<br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati a quuesto link <a href="https://www.beerstrot.it/dashboard/" target="_blank">dashboard</a>.`,
     () => {
       const date = dp.toISOString();
       showDays(date);
@@ -356,7 +356,7 @@ function makeInterface (pid, dates) {
         { action: 'mkReservation', data },
         res => {
           if (res.reservationID2 === 'noPlacesLeft') {
-            return showMessage(`Non abbiamo più posti questo giorno.`);
+            return showMessage(`Questo giorno non abbiamo più posto.`);
           }
           let  u = window.location.href;
           u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
