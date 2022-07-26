@@ -419,7 +419,7 @@ function makeInterface (pid, dates) {
     .addField('#quantity', [
       {
         rule: 'required',
-        errorMessage: 'indica il numero di persone'
+        errorMessage: 'scegli il numero di persone'
       }
     ])
     .addField('#privacy', [
@@ -431,7 +431,7 @@ function makeInterface (pid, dates) {
     .addField('#shiftGridL', [
       {
         rule: 'required',
-        errorMessage: 'Seleziona il turno.',
+        errorMessage: 'seleziona il turno.',
         validator: () => {
           const shiftId = $($('.aShift').filter((i, ii) => $(ii).attr('bselected') == 'true')[0]).attr('bindex');
           const res = shiftId !== undefined;
