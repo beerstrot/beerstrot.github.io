@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
-    <title>Beerstrot | Prenotato</title>
-    <meta name="description" content="Tavolo riservato a Ca' Vecchia Beerstrot"/>
+    <title>Beerstrot | Prenota</title>
+    <meta name="description" content="Riserva un Tavolo a Ca' Vecchia Beerstrot"/>
     <meta name="author" content="Ca' Vecchia Beerstrot"/>
     <meta name="copyright" content="Ca' Vecchia Beerstrot Copyright (c) 2022"/>
     <meta property="fb:app_id" content="1549149915357715"/>
     <meta property="og:url" content="https://www.beerstrot.it/prenota/"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Tavolo riservato a Ca' Vecchia Beerstrot"/>
-    <meta property="og:description" content="Tavolo riservato a Ca' Vecchia Beerstrot"/>
+    <meta property="og:title" content="Riserva un Tavolo a Ca' Vecchia Beerstrot"/>
+    <meta property="og:description" content="Riserva un Tavolo a Ca' Vecchia Beerstrot"/>
     <link rel="icon" href="https://www.beerstrot.it/asset/img/thumbs/favicon.png">
     <link rel="canonical" href="https://www.beerstrot.it/prenota/"/>
     <link rel="stylesheet" href="https://www.beerstrot.it/css/app.css"/>
@@ -62,46 +62,174 @@
     </nav>
 <!-- fine navbar con hamburger -->
     <header class="row">
-        <div class="medium-12 large-12 columns">
-            <h1 id="ttitle">Tavolo riservato. Grazie</h1>
+        <div class="medium-12 large-12 columns" id="hdiv">
+            <h1 id="ttitle">Riserva un Tavolo</h1>
             <br>
         </div>
     </header>
-    <div class="panel-home-2n">
+    <div id="loading" hidden><br/><br/><div style="padding-top:25%">Ricerco disponibilità.</div></div>
+    <div class="row" id="notesDiv" hidden>
+        <div class="small-6 medium-4 columns" id="innerNotesDiv_" >
+            <div>
+                <label>Seleziona giorno
+                    <input tabindex="5" id="from2" type="text">
+                </label>
+            </div>
+        </div>
+        <div class="small-12 medium-12 large-12 columns extra-space" id="innerNotesDiv" style="overflow-x:auto;">
+            <table id="shiftsTable">
+                <caption class="text-left">Numero persone per turno</caption>
+                <thead>
+                    <tr>
+                        <th>Turno</th>
+                        <th>Nr. Persone Totali</th>
+                        <th>Nr. Persone Prenotate online</th>
+                        <th>Nr. Persone Prenotate da Scloby</th>
+                    </tr>
+                </thead>
+                <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
+            </table>
+            <table id="notesTable" class="extra-space-footer">
+                <caption class="text-left">Prenotazioni online</caption>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Nr. Persone</th>
+                        <th>Tavolo</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Orario</th>
+                        <th>Cani</th>
+                        <th>Seggioloni</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody id="notesTableBody" style="text-align:center;"></tbody>
+            </table>
+            <table id="anonTable" class="extra-space-footer">
+                <caption class="text-left">Prenotazioni da Scloby senza turno</caption>
+                <thead>
+                    <tr>
+                        <th>Inizio</th>
+                        <th>Fine</th>
+                        <th>Nr. Persone</th>
+                        <th>Tavolo</th>
+                    </tr>
+                </thead>
+                <tbody id="anonTableBody" style="text-align:left;"></tbody>
+            </table>
+            <br><br>
+        </div>
+    </div>
+    <div class="panel-home-2n" id="prenotaDiv" hidden>
+      <div class="row">
+        <div class="columns small-6" id="innerInfoDiv"></div>
+        <div class="columns small-6" id="buttonInfoDiv">
+          <div class="row" style="padding:10%">
+            <button class="success radius" id="modBtn">Modifica</button>
+          </div>
+          <div class="row" style="padding-left:10%">
+            <button class="radius" id="cancBtn">Cancella</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-home-2n form">
+    <form id="form">
         <div class="row">
-            <div class="small-12 medium-12 columns">
-                <fieldset>
-                     <legend id="tlegend">Dettaglio prenotazione </legend>
-                        <ul class="no-bullet" id="infoList">
-                          <li><strong>Nome: </strong><span id="name"></span></li>
-                          <li><strong>Telefono: </strong><span id="telephone"></span></li>
-                            <li><strong>Email: </strong><span id="email"></span></li>
-                            <br>
-                            <li><strong>Quale giorno: </strong><span id="day"></span></li>
-                            <li><strong>Orario arrivo: </strong><span id="time1"></span></li>
-                            <li><strong>Orario in cui lasciare il tavolo: </strong><span id="time2"></span></li>
-                            <li><strong>Numero persone: </strong><span id="people"></span></li>
-                            <br>
-                            <li><strong>Note: </strong><span id="note"></span></li>
-                            <li><strong>Seggioloni aggiunti: </strong><span id="segg"></span></li>
-                            <li><strong>Ho un cane o più: </strong><span id="dog"></span></li>
-                        </ul>
-                </fieldset>
+            <div class="small-6 medium-3 columns ">
+                <label>Quale giorno*
+                    <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" readonly/>
+                </label>
+            </div>
+            <div class="small-6 medium-3 columns end">
+                <label><span data-tooltip aria-haspopup="true" class="has-tip" title="includi in 'Quante persone' anche eventuali seggioloni. Esempio 8 persone e 1 seggiolone seleziona 9">Quante persone*</span>
+                    <select name="MMERGE4" class="error" id="quantity" disabled>
+                        <option value="">Seleziona Numero</option>
+                    </select>
+                </label>
             </div>
         </div>
-        <div class="row extra-space-hero" style="margin-bottom:4rem;">
-            <div class="small-12 medium-6 large-6 columns">
-                <a role="button" id="cancel" class="button left">Cancella</a>
-                <a role="button" id="modify" class="button right">Modifica</a>
-                <a role="button" id="new" class="button right" href="./">Fai una nuova prenotazione</a>
-            <!-- <div class="medium-6 large-6 columns">
-                <a style="margin-top: 15px;" role="button" id="cancel" class="button">Cancella</a>
+        <div class="row extra-space-hero">
+            <div class="small-12 medium-6 columns end">
+                <label>Quale turno*
+            <div id="shiftGridL"></div>
+                </label>
+                <ul class="small-block-grid-2  extra-space-turno error" id="shiftGrid">
+                    <li class="bShift"><a class="small button disabled">19.00-21.00</a></li>
+                    <li class="bShift"><a class="small button disabled">19.30-21.30</a></li>
+                    <li class="bShift"><a class="small button disabled">20.00-22.00</a></li>
+                    <li class="bShift"><a class="small button disabled">20.30-22.30</a></li>
+                    <li class="bShift"><a class="small button disabled">21.00-23.00</a></li>
+                    <li class="bShift"><a class="small button disabled">21.30-23.00</a></li>
+                </ul>
+                <p>Turno: orario d'arrivo-orario in cui bisogna lasciare il tavolo</p>
             </div>
-            <div class="medium-6 large-6 columns">
-                <a style="margin-top: 15px;" role="button" id="modify" class="button">Modifica</a>
-                <a style="margin-top: 15px;" role="button" id="new" class="button left" href="./">Fai una nuova prenotazione</a>
-            </div> -->
+            <span class="extra-space"><hr></span>
         </div>
+        <div class="row">
+            <div class="small-12 medium-6 columns end">
+                <label>Note
+                    <textarea maxlength="200" id="obs" placeholder="Intolleranze, accesso con sedia a rotelle, ..."></textarea>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-9 medium-4 columns end extra-space-hero">
+                <label>Ho bisogno di seggioloni
+                    <select name="MMERGE4" class="" id="seggiolini">
+                        <option value="0">No</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-9 medium-6 columns end extra-space-hero">
+                <input id="cani" type="checkbox"><label for="checkbox1">Ho uno o più cani</label>
+            </div>
+            <span class="extra-space"><br><br><hr></span>
+        </div>
+        <div class="row">
+            <div class="small-6 medium-4 large-4 columns">
+                <label>Nome*
+                    <input type="text" class="required error" id="name" placeholder="Nome" maxlength="20"/>
+                </label>
+            </div>
+            <div class="small-6 medium-4 large-4 columns end">
+                <label>Cognome*
+                    <input type="text" class="required error" id="surname" placeholder="Cognome" maxlength="20"/>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12  medium-5 columns extra-space-hero">
+                <label>Email*
+                    <input type="email" class="required email error" id="email" placeholder="esempio@esempio.it" maxlength="200"/>
+                  </label>
+            </div>
+            <div class="small-6  medium-3 columns end extra-space-hero">
+                <label>Telefono*
+                    <input type="tel" class="required error" id="telephone" placeholder="3332221111" maxlength="35" />
+                </label>
+            </div>
+        </div>
+        <div class="row extra-space">
+            <div class="small-12 medium-12 columns" id="privacy3">
+                <input id="privacy" type="checkbox" checked><label for="checkbox2"> Accetto la<a id="privacy2" class="error"> privacy</a></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 medium-12 large-12 columns">
+                <a id="prenota" role="button" class="button right extra-space-from-tabs">Riserva il Tavolo</a>
+            </div>
+            <div class="medium-12 large-12 columns extra-space">
+                <p><small>* Campi obbligatori</small></p>
+            </div>
+        </div>
+    </form>
     </div>
 
 <!-- inizio footer -->
@@ -185,19 +313,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/it.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
-<!-- inizio modale messaggio vuoi cancellare la prenotazione -->
-    <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-        <p id="modalText"></p>
-            <div class="row">
-                <div class="small-12 medium-12 large-12 columns extra-space" style="margin-bottom:4rem;">
-                    <p class="lead" id="modalLead">Vuoi cancellare la prenotazione?</p>
-                    <a role="button" id="no" class="button small right" style="margin-top: 5px;">No, non cancellare</a>
-                    <a role="button" id="yes" class="button small left" style="margin-top: 5px;">Sì, cancella</a>
-                </div>
+<!-- <div id="myModal" style="border:4px lightgrey solid" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <p class="lead" id="modalLead">Your couch.  It is mine.</p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div> -->
+<div id="myModal" class="reveal-modal medium" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h1></h1>
+    <h2 id="modalTitle" class="extra-space-modal"></h2>
+    <p class="lead" id="modalLead"></p>
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<div id="myModal2" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <p class="lead extra-space-modal" id="modalLead2">Vuoi cancellare la prenotazione?</p>
+    <p id="modalText"></p>
+        <div class="row extra-space" style="margin-bottom:5%">
+            <div class="large-6 columns">
+                <a role="button" id="no" class="button small right">No, non cancellare</a>
             </div>
-        <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
-    </div>
-<!-- fine modale messaggio vuoi cancellare la prenotazione -->
+            <div class="large-6 columns">
+                <a role="button" id="yes" class="button small left">Sì, cancellaaa</a>
+            </div>
+        </div>
+  <a class="close-reveal-modal" aria-label="Close" id="close-modal">&#215;</a>
+</div>
 </body>
 </html>

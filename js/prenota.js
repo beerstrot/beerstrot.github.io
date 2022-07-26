@@ -128,9 +128,9 @@ function showDays (datetime) {
   $('#notesTable').hide();
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
-  $('#ttitle').text('BB Giorni di Chiusura AA');
-  $('#yes').text('Sì, aggiungere/rimuovere questo giorno di chiusura.');
-  $('#no').text('No, non aggiungere/rimuovere questo giorno di chiusura.');
+  $('#ttitle').text('Giorni di Chiusura');
+  $('#yes').text('Sì, aggiungi/rimuovi giorno');
+  $('#no').text('No, non aggiungere/rimuovere giorno');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
@@ -158,9 +158,7 @@ function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
     `Sei sicuro di aggiungere/rimovere questo giorno di chiusura?? (giorno: ${date_})`,
-    `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate <br>I clienti prenotati riceveranno l'email di chiusura e
-    cancellazione della prenotazione.<br>
-    Se vuoi, fai un controllo dei clienti prenotati qui <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
+    `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate <br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati qui <a href="https://www.beerstrot.it/dashboard/" targer="_blank">dashboard</a>.`,
     () => {
       const date = dp.toISOString();
       showDays(date);
@@ -172,6 +170,8 @@ function toggleDate (dp) {
 }
 
 function showNotes (datetime) {
+  //renato per cambiare nome a dashboard va bene aggiungere come sotto?
+  //$('#ttitle').text('Dashboard');
   $('#loading').show();
   $('.form').hide();
   $('#notesDiv').show();
@@ -290,15 +290,10 @@ function showNotes (datetime) {
         ).appendTo(tr)
         total_ += b.people;
       });
-      const summary = `<ul class="no-bullet"><b>${date}</b> ci sono:
-      <li><b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online)</li>
-      <li><b>${total_}</b> persone prenotate</li>
-      <li><b>${ncani}</b> prenotazioni con cani</li>
-      <li><b>${nseggiolini}</b> seggioloni richiesti</li>
-      </ul>`;
+      const summary = `<ul class="no-bullet"><b>${date}</b> ci sono:<li><b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online)</li><li><b>${total_}</b> persone prenotate</li><li><b>${ncani}</b> prenotazioni con cani</li><li><b>${nseggiolini}</b> seggioloni richiesti</li></ul>`;
       $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
       if (notes.length > 0) {
-        $('<button/>', { class: 'clearme', css: { marginBottom: '3rem', padding: '' } })
+        $('<button/>', { class: 'clearme small', css: { marginBottom: '2rem', marginTop: '2rem' } })
           .prependTo('#innerNotesDiv')
           .text('Invia email di promemoria a clienti')
           .off('click')
@@ -394,7 +389,7 @@ function makeInterface (pid, dates) {
   });
   fp.set('dateFormat', 'd/M/Y');
   $('#privacy2').on('click', () => {
-    showMessage('I dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) o telefono in caso di problemi o chiusura inaspettata del locale (es. causa maltempo).');
+    showMessage('I dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) o telefono in caso di problemi o chiusura inaspettata del locale (ad esempio causa maltempo).');
   });
   const validation = new JustValidate('#form')
     .addField('#name', [
@@ -473,7 +468,7 @@ function updateShifts (dp, selected, people) {
       const wd = weekdays[dp.getDay()];
       const shifts_ = res.shifts.filter(s => (s.end_period >= d) && (s.start_period <= d) && (s.weekdays_period.includes(wd)));
       if (shifts_.length === 0)
-        return showMessage(`Non abbiamo ancora pianificato i turni per questa data. Vi preghiamo di contattarci: ${telString} ${messengerString}`);
+        return showMessage(`Nei mesi da Settembre a Maggio siamo aperti dal Giovedì alla Domenica.<br>Per richieste potete contattarci tramite ${messengerString}`);
       const shifts = mkShiftButtons(shifts_, selected);
       mkQuantityOptions(shifts, people);
     },
@@ -537,7 +532,7 @@ function showReservation (pid) {
   let modified = false;
   if (pid.endsWith('_modificata')) {
     $('#ttitle').text('Prenotazione modificata. Grazie');
-    $('#tlegend').text('Dettaglio della prenotazione modificata');
+    $('#tlegend').text('Dettaglio prenotazione modificata ');
     pid = pid.split('_modifica')[0];
   }
   mkCall(
@@ -547,7 +542,7 @@ function showReservation (pid) {
       if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
-        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci su ${messengerString} o chiamarci al numero ${telString}.`);
+        return showConsultaMessage('Non abbiamo trovato questa prenotazione.', `Puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString}.`);
       }
       presentReservation(res.booking);
     },
@@ -598,7 +593,7 @@ function presentReservation (r) {
           { action: 'cancelReservation', data: pid },
           res => {
             $('#ttitle').text('Prenotazione cancellata. Grazie');
-            $('tlegend').text('Dettaglio prenotazione cancellata');
+            $('tlegend').text('Dettaglio prenotazione cancellata ');
             // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();
@@ -677,24 +672,15 @@ function showMessage (message) {
 
 const telString = '<a href="tel:+390718853384"><span itemprop="telephone"> 071 8853384</span></a>';
 
-const messengerString = '<a target="_blank" href="https://m.me/cavecchiabeerstrot"> Facebook messenger</a>';
+const messengerString = '<a target="_blank" href="https://m.me/cavecchiabeerstrot"> Facebook Messenger</a>';
 
-const message10 = `per <b>così tante persone</b>, vi preghiamo di contattarci:
-${telString}
-${messengerString}`;
+const message10 = `Per <b>13 o più persone</b>, vi preghiamo di contattarci tramite ${messengerString} o telefonarci al numero ${telString}`;
 
 /*const messageError = `Si prega di riprovare perché abbiamo riscontrato un errore.<br>
 Se il problema persiste, ti consigliamo di 
 entrare nel ${messengerString} o di chiamare ${telString}.<br>`;*/
 
-const messageError = `<h2>il Server non è raggiungibile</h2>
-                      <p>Riprova fra qualche istante e assicurati di avere campo nel cellulare o internet funzionante da computer. Grazie.</p>
-                      <li class="no-bullet">Se il problema persiste:
-                        <ul class="disc">
-                          <li>Scrivici su ${messengerString}</li>
-                          <li>Chiamaci al numero ${telString}</li>
-                        </ul>
-                      </li>`;
+const messageError = `<h2>il Server non è raggiungibile</h2><p>Riprova fra qualche istante e assicurati di avere campo nel cellulare o internet funzionante da computer. Grazie.</p><li class="no-bullet">Se il problema persiste:<ul class="disc"><li>Scrivici su ${messengerString}</li><li>Chiamaci al numero ${telString}</li></ul></li>`;
 
 function bookingNotFound () {
   const div = $('#innerInfoDiv');
