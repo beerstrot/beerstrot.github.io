@@ -136,7 +136,7 @@ function showDays (datetime) {
     { action: 'days', data: datetime || '--' },
     res => {
       const r = res;
-      $('#innerNotesDiv').html('<b>Giorni chiusi ACC:</b><br>' + r.dates.join('<br>'));
+      $('#innerNotesDiv').html('<b>Giorni di chiusura:</b><br>' + r.dates.join('<br>'));
       jQuery('#from2').flatpickr({
         minDate: 'today',
         locale: 'it',
@@ -542,7 +542,7 @@ function showReservation (pid) {
       if (res.booking === null) {
         $('#yes').hide();
         $('#no').hide();
-        return showConsultaMessage('Prenotazione non trovata.', `Puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString}.`);
+        return showConsultaMessage('Prenotazione non trovata.', `Se non hai cancellato la prenotazione in precedenza, puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti.`);
       }
       presentReservation(res.booking);
     },
@@ -600,8 +600,6 @@ function presentReservation (r) {
             $('#cancel').hide();
             $('#new').show();
           },
-
-          //pid e ti serve tienilo, ma nascondilo a tutti gli altri. non è user friendly e se un cliente ci chiama e ci da il pid noi non sappiamo cosa rispondere...
           res => {
             showMessage(`${messageError}
               La ID della prenotazione è: ${pid}.`);
