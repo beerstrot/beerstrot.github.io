@@ -129,8 +129,8 @@ function showDays (datetime) {
   $('#notesDiv').show().css('margin-bottom', '50%');
   $('#innerNotesDiv').css('margin-top', '30%');
   $('#ttitle').text('Giorni di Chiusura');
-  $('#yes').text('Aggiungi/rimuovi giorno');
-  $('#no').text('Non aggiungere/rimuovere giorno');
+  $('#yes').text('Aggiungi/rimuovi');
+  $('#no').text('Non aggiungere/rimuovere');
   mkCall(
     'POST',
     { action: 'days', data: datetime || '--' },
@@ -157,8 +157,7 @@ function showDays (datetime) {
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
-    `Sei sicuro di voler aggiungere o rimovere <b>${date_}</b> come giorno di chiusura? `,
-    `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate.<br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati a quuesto link <a href="https://www.beerstrot.it/dashboard/" target="_blank">dashboard</a>.`,
+    `Sei sicuro di voler aggiungere o rimovere <b>${date_}</b> come giorno di chiusura? `,`Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate.<br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati a quuesto link <a href="https://www.beerstrot.it/dashboard/" target="_blank">dashboard</a>.`,
     () => {
       const date = dp.toISOString();
       showDays(date);
