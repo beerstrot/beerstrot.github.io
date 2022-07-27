@@ -355,7 +355,7 @@ function makeInterface (pid, dates) {
         { action: 'mkReservation', data },
         res => {
           if (res.reservationID2 === 'noPlacesLeft') {
-            return showMessage(`Questo giorno non abbiamo più posto.`);
+            return showMessage(`In questa data siamo al completo.`);
           }
           let  u = window.location.href;
           u = u[u.length - 1] == '/' ? u : (u.split('/').reverse().slice(1).reverse().join('/') + '/');
