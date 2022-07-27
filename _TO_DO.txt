@@ -7,4 +7,4 @@
 (ora mi manda a pagina consulta.html senza dati)
 
 
-a parte da verifcare con tilby: problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
+a parte. da verifcare con tilby: problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
