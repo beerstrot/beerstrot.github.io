@@ -1,0 +1,8 @@
+1 Modifica prenotazione: Quando modifico e cambio numero persone non mi aggiorna i tasti dei turni
+2 Modifica prenotazione: A volte modifica prenotazione non prende i dati (spesso nr. Persone) e a volte premendo modifica prenotazione non succede nulla. Refresh browser e funziona
+3 Email e nr tel cambiate in Tilby non si sincronizzano in Dashboard
+4 Cancella prenotazione: se premo "si" sul modale non parte loader possibile farlo partire?
+5 Nr max seggioloni per turno limitato a 6
+6 problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
+7 Quando link non è più valido-> cambiare titolo in "Link non più valido" (ora mi manda a pagina consulta.html senza dati)
+8 pagina consulta.html dovrebbe avere anche campo email. Vedendola scritta mi posso accorgere che è sbagliata e clicco su "modifica prenotazione" e la cambio subito.
