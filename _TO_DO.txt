@@ -3,6 +3,8 @@
 3 Email e nr tel cambiate in Tilby non si sincronizzano in Dashboard
 4 Cancella prenotazione: se premo "si" sul modale non parte loader possibile farlo partire?
 5 Nr max seggioloni per turno limitato a 6
-6 problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
-7 Quando link non è più valido-> dovrei atterrare in pagina con: "Link non più valido. Se non hai cancellato la prenotazione in precedenza: puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti. <br> Se hai cancellato la prenotazione: puoi farne una nuova da qui <a href="https://www.beerstrot.it/prenota/">Prenota</a>"
+6 Quando link non è più valido-> dovrei atterrare in pagina con: "Link non più valido. Se non hai cancellato la prenotazione in precedenza: puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti. <br> Se hai cancellato la prenotazione: puoi farne una nuova da qui <a href="https://www.beerstrot.it/prenota/">Prenota</a>"
 (ora mi manda a pagina consulta.html senza dati)
+
+
+a parte da verifcare con tilby: problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
