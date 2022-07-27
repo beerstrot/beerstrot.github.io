@@ -5,4 +5,3 @@
 5 Nr max seggioloni per turno limitato a 6
 6 problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
 7 Quando link non è più valido-> cambiare titolo in "Link non più valido" (ora mi manda a pagina consulta.html senza dati)
-8 pagina consulta.html dovrebbe avere anche campo email. Vedendola scritta mi posso accorgere che è sbagliata e clicco su "modifica prenotazione" e la cambio subito.
