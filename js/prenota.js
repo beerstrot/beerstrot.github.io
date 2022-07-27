@@ -157,7 +157,7 @@ function showDays (datetime) {
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
-    `Sei sicuro di aggiungere/rimovere (giorno: ${date_}) come giorno di chiusura? `,
+    `Sei sicuro di voler aggiungere o rimovere <b>${date_}</b> come giorno di chiusura? `,
     `Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate.<br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati a quuesto link <a href="https://www.beerstrot.it/dashboard/" target="_blank">dashboard</a>.`,
     () => {
       const date = dp.toISOString();
