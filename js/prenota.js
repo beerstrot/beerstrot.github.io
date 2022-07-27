@@ -593,7 +593,7 @@ function presentReservation (r) {
           { action: 'cancelReservation', data: pid },
           res => {
             $('#ttitle').text('Prenotazione cancellata. Grazie');
-            $('tlegend').text('Dettaglio prenotazione cancellata ');
+            $('#tlegend').text('Dettaglio prenotazione cancellata ');
             // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();
