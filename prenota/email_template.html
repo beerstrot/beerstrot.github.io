@@ -115,8 +115,8 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
   <div class="v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 16px; line-height: 140%;">Ciao {{_name}},</p>
-<p style="font-size: 16px; line-height: 140%;">la tua prenotazione a <strong>Ca' Vecchia Beerstrot</strong> &egrave; stata
+    <p style="font-size: 1rem; line-height: 140%;">Ciao {{_name}},</p>
+<p style="font-size: 1rem; line-height: 140%;">la tua prenotazione a <strong>Ca' Vecchia Beerstrot</strong> &egrave; stata
     {% if cancel %}
         cancellata.
     {% elif closed %}
@@ -127,24 +127,24 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
         confermata.
     {% endif %}
     </p>
-<p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
+<p style="font-size: 1rem; line-height: 140%;">&nbsp;</p>
 <fieldset>
     {% if modify %}
-         <legend>Dettaglio della prenotazione modificata</legend>
+         <legend style="font-size: 0.8rem; line-height: 140%;">Dettaglio della prenotazione modificata</legend>
     {% else %}
-<legend>Dettaglio della prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
+<legend style="font-size: 0.8rem; line-height: 140%;">Dettaglio della prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
     {% endif %}
-  <p style="font-size: 14px; line-height: 140%;">Nome: <strong>{{_name}} {{_surname}}</strong></p>
-  <p style="font-size: 14px; line-height: 140%;">Telefono: <strong>{{_telephone or '--'}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Nome: <strong>{{_name}} {{_surname}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Telefono: <strong>{{_telephone or '--'}}</strong></p>
   <br>
-  <p style="font-size: 14px; line-height: 140%;">Numero di persone: <strong>{{_quantity}}</strong></p>
-  <p style="font-size: 14px; line-height: 140%;">Data: <strong>{{date}}</strong></p>
-  <p style="font-size: 14px; line-height: 140%;">Orario arrivo: <strong>{{start_time}}</strong></p>
-  <p style="font-size: 14px; line-height: 140%;">Orario in cui lasciare il tavolo: <strong>{{end_time}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Numero di persone: <strong>{{_quantity}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Data: <strong>{{date}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Orario arrivo: <strong>{{start_time}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Orario in cui lasciare il tavolo: <strong>{{end_time}}</strong></p>
   <br>
-  <p style="font-size: 14px; line-height: 140%;">Note: <strong>{{note or '--'}}</strong></p>
-  <p style="font-size: 14px; line-height: 140%;">Seggioloni: <strong>{{seggiolini}}</strong></p>
-  <p style="font-size: 14px; line-height: 140%;">Ho un cane o più: <strong>{{cani}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Note: <strong>{{note or '--'}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Seggioloni: <strong>{{seggiolini}}</strong></p>
+  <p style="font-size: 0.9rem; line-height: 140%;">Ho un cane o più: <strong>{{cani}}</strong></p>
   <br>
 </fieldset>
 <p style="font-size: 14px; line-height: 140%;">&nbsp;</p>
@@ -164,16 +164,16 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
 <div align="right">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-button-colors" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:263px;" arcsize="11%" stroke="f" fillcolor="#e00c10"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->
   <a href="https://www.beerstrot.it/prenota/consulta.html?id={{pid}}" target="_blank" class="v-button-colors" style="box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #e00c10; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
-      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Cancella o Modifica la Prenotazione</span></span>
+      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 0.8rem; line-height: 120%;">Cancella o Modifica la Prenotazione</span></span>
     </a>
   <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
 </div>
 {% elif cancel %}
-<p style="font-size: 14px; line-height: 140%;">Hai cancellato per errore?</p>
+<p style="font-size: 1rem; line-height: 140%;">Hai cancellato per errore?</p>
 <div align="right">
   <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;font-family:arial,helvetica,sans-serif;"><tr><td class="v-button-colors" style="font-family:arial,helvetica,sans-serif;" align="center"><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="" style="height:36px; v-text-anchor:middle; width:263px;" arcsize="11%" stroke="f" fillcolor="#e00c10"><w:anchorlock/><center style="color:#FFFFFF;font-family:arial,helvetica,sans-serif;"><![endif]-->
   <a href="https://www.beerstrot.it/prenota/" target="_blank" class="v-button-colors" style="margin-top:20px;box-sizing: border-box;display: inline-block;font-family:arial,helvetica,sans-serif;text-decoration: none;-webkit-text-size-adjust: none;text-align: center;color: #FFFFFF; background-color: #e00c10; border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px; width:auto; max-width:100%; overflow-wrap: break-word; word-break: break-word; word-wrap:break-word; mso-border-alt: none;">
-      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 14px; line-height: 16.8px;">Fai una nuova prenotazione</span></span>
+      <span class="v-line-height v-padding" style="display:block;padding:10px 20px;line-height:120%;"><span style="font-size: 0.8rem; line-height: 120%;">Fai una nuova prenotazione</span></span>
     </a>
   <!--[if mso]></center></v:roundrect></td></tr></table><![endif]-->
 </div>
@@ -210,7 +210,7 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
   <div class="v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="font-size: 14px; line-height: 140%;">Non &egrave; consentito portare dolci o spumanti dall'esterno.</p>
+    <p style="font-size: 1rem; line-height: 140%;">Non &egrave; consentito portare dolci o spumanti dall'esterno.</p>
   </div>
 
       </td>
@@ -223,7 +223,7 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
         <div class="v-line-height" style="line-height: 140%; text-align: left; word-wrap: break-word;">
-          <p style="font-size: 14px; line-height: 140%;">Durante il periodo estivo il ristorante &egrave; aperto solo all'esterno. <br>In caso di maltempo: il ristorante è chiuso e verrai avvisato tramite email della non apertura.</p>
+          <p style="font-size: 1rem; line-height: 140%;">Durante il periodo estivo il ristorante &egrave; aperto solo all'esterno. <br>In caso di maltempo: il ristorante è chiuso e verrai avvisato tramite email della non apertura.</p>
         </div>
       </td>
     </tr>
@@ -235,7 +235,7 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:6%;font-family:arial,helvetica,sans-serif;" align="left">
         <div>
-            <p style="line-height: 100%;font-size: 14px;">Come raggiungerci:
+            <p style="line-height: 140%;font-size: 1rem;">Come raggiungerci:
               <a style="text-decoration:none; color:#e00c10;" href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">Via Centofinestre, 20 60024 Filottrano AN
               </a>
             </p>
@@ -245,7 +245,7 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
     <tr>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:6%; padding-top:0;font-family:arial,helvetica,sans-serif;" align="left">
         <div>
-          <p style="font-weight: bold;line-height: 100%;font-size: 14px;">Ca’ Vecchia Beerstrot<br>
+          <p style="font-weight: bold;line-height: 140%;font-size: 1rem;">Ca’ Vecchia Beerstrot<br>
           </p>
             <div style="font-size:12pt;margin:0cm 0cm 0.0001pt">
               <span style="font-size:10pt;">T.</span>
