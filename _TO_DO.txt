@@ -1,10 +1,26 @@
-1 Modifica prenotazione: Quando modifico e cambio numero persone non mi aggiorna i tasti dei turni
-2 Modifica prenotazione: A volte modifica prenotazione non prende i dati (spesso nr. Persone) e a volte premendo modifica prenotazione non succede nulla. Refresh browser e "modifica prenotazione" funziona
-3 Email e nr tel cambiate in Tilby non si sincronizzano in Dashboard
-4 Cancella prenotazione: se premo "si" sul modale non parte loader possibile farlo partire?
-5 Nr max seggioloni per turno limitato a 6
-6 Quando link non è più valido-> dovrei atterrare in pagina con: "Link non più valido. Se non hai cancellato la prenotazione in precedenza: puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti. <br> Se hai cancellato la prenotazione: puoi farne una nuova da qui <a href="https://www.beerstrot.it/prenota/">Prenota</a>"
+Importanti:
+
+- Modifica prenotazione: Quando modifico e cambio numero persone non mi aggiorna i tasti dei turni
+- Modifica prenotazione: A volte modifica prenotazione non prende i dati (spesso nr. Persone) e a volte premendo modifica prenotazione non succede nulla. Refresh browser e "modifica prenotazione" funziona
+- Email e nr tel cambiate in Tilby non si sincronizzano in Dashboard (problema nello scrivere nelle note è che quando invii email di chiusura le prenotazioni vengono cancellate da Tilby e da dashboard quindi non lo vediamo più)
+- Pulizia database clienti scloby: scaricare, ripulire doppioni, ricaricare !importante
+
+
+
+Media priorità:
+
+- Cancella prenotazione: se premo "si" sul modale non parte loader possibile farlo partire?
+- Nr max seggioloni per turno limitato a 6
+
+
+
+Bassa priorità:
+
+- Quando link non è più valido-> dovrei atterrare in pagina con: "Link non più valido. Se non hai cancellato la prenotazione in precedenza: puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti. <br> Se hai cancellato la prenotazione: puoi farne una nuova da qui <a href="https://www.beerstrot.it/prenota/">Prenota</a>"
 (ora mi manda a pagina consulta.html senza dati)
 
 
-a parte. da verifcare con tilby: problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
+
+A parte:
+
+da verifcare con tilby: problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
