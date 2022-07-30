@@ -714,8 +714,8 @@ function mkQuantityOptions (shifts, people) {
     });
   $('#quantity').prop('disabled', false)
   // enable select
-  const cssOn = { 'pointer-events': '', cursor: 'pointer', background: '#e00c10' };
-  const cssOff = { 'pointer-events': 'none', cursor: 'default', background: 'rgba(224, 12, 16, 0.2)' };
+  const cssOn = { 'pointer-events': '', cursor: 'pointer', background: '#ce2f24' };
+  const cssOff = { 'pointer-events': 'none', cursor: 'default', background: '#ce9f94' };
   $('#quantity').off('input').on('input', function() {
     const v = Number($(this).val());
     shifts.forEach((s, i) => {
