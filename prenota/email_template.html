@@ -130,9 +130,9 @@ table, td { color: #222222; } a { color: #0000ee; text-decoration: underline; } 
 <p style="font-size: 1rem; line-height: 140%;">&nbsp;</p>
 <fieldset>
     {% if modify %}
-         <legend style="font-size: 0.8rem; line-height: 140%;">Dettaglio della prenotazione modificata</legend>
+         <legend style="font-size: 0.8rem; line-height: 140%;">Dettaglio prenotazione modificata</legend>
     {% else %}
-<legend style="font-size: 0.8rem; line-height: 140%;">Dettaglio della prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
+<legend style="font-size: 0.8rem; line-height: 140%;">Dettaglio prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
     {% endif %}
   <p style="font-size: 0.9rem; line-height: 140%;">Nome: <strong>{{_name}} {{_surname}}</strong></p>
   <p style="font-size: 0.9rem; line-height: 140%;">Telefono: <strong>{{_telephone or '--'}}</strong></p>
