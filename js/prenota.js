@@ -50,8 +50,9 @@ function modifyReservation (pid) {
       const extra = loadExtra(b);
       const date = new Date(b.booked_for);
       // const value = moment(date).format('Y-MM-DD');
-      const value = moment(date).format('DD/MM/Y');
-      jQuery('#from').flatpickr().setDate(date);
+      const value = moment(date).format('DD/MMM/Y');
+      const fp = jQuery('#from').flatpickr();
+      fp.setDate(date);
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -326,8 +327,6 @@ function showNotes (datetime) {
 function makeInterface (pid, dates) {
   $('#infoDiv').hide();
   $('#prenota').off('click').on('click', () => {
-    // if (!$('#from').val()) return showMessage('selezionare una data');
-    // const d = $('#from').flatpickr('getValue');
     const d = fp.selectedDates[0]
     d.setHours(12);
     const data = {
@@ -369,8 +368,7 @@ function makeInterface (pid, dates) {
     });
   });
 
-  // https://flatpickr.js.org/ (choosen)
-  // https://xdsoft.net/jqplugins/datetimepicker/ (previously chosen)
+  // https://flatpickr.js.org/
   const fp = jQuery('#from').flatpickr({
     locale: 'it',
     minDate: 'today',
@@ -492,11 +490,11 @@ function mkShiftButtons (shifts, selected) {
     if (s.table_sizes.length === 0) {
       return removeShifts.push(i);
     }
-    // const b = $('<button/>', { id: 'bShift' + i, class: 'success bShift', css: { margin: 0, padding: '2%', width: '90%' } })
-    const b = $('<a/>', { id: 'aShift' + i, class: 'small button aShift' })
+    const id = 'aShift' + i;
+    s.bid = '#' + id;
+    const b = $('<a/>', { id, class: 'small button aShift' })
       .text(s.name)
       .appendTo(
-        // $('<li/>', { css: { margin: 0, padding: 0, 'text-align': 'center' } })
         $('<li/>', { class: 'bShift' })
           .appendTo('#shiftGrid')
       );
@@ -721,12 +719,12 @@ function mkQuantityOptions (shifts, people) {
     shifts.forEach((s, i) => {
       const tablesOk = s.table_sizes.filter(t => t >= v);
       const css = tablesOk.length === 0 ? cssOff : cssOn;
-      $('#aShift' + i).css(css).attr('bselected', false);
+      $(s.bid).css(css).attr('bselected', false);
     });
     // should not happen because if a quantity is available
     // there is a shift with a table for it:
-    const totalDisabled = shifts.reduce((c, i, ii) => {
-      const isDisabled =  $('#aShift' + ii).css('pointer-events') === 'none';
+    const totalDisabled = shifts.reduce((c, ss) => {
+      const isDisabled =  $(ss.bid).css('pointer-events') === 'none';
       return c + isDisabled;
     }, 0); 
     if (totalDisabled === shifts.length) return showMessage(message10);
