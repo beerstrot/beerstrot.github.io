@@ -124,9 +124,9 @@
                                         <p style="font-size: 16px; line-height: 140%;">&nbsp;</p>
                                         <fieldset>
                                           {% if modify %}
-                                          <legend style="font-size: 14px; line-height: 140%; margin-bottom:14px">Dettaglio prenotazione modificata</legend>
+                                          <legend style="font-size: 14px; line-height: 140%; margin-bottom:10px">Dettaglio prenotazione modificata</legend>
                                           {% else %}
-                                          <legend style="font-size: 14px; line-height: 140%; margin-bottom:14px">Dettaglio prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
+                                          <legend style="font-size: 14px; line-height: 140%; margin-bottom:10px">Dettaglio prenotazione{% if cancel or closed %} cancellata{% endif %}</legend>
                                           {% endif %}
                                           <p style="font-size: 14.4px; line-height: 140%;">Nome: <strong>{{_name}} {{_surname}}</strong></p>
                                           <p style="font-size: 14.4px; line-height: 140%;">Telefono: <strong>{{_telephone or '--'}}</strong></p>
