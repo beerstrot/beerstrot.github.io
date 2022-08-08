@@ -4,7 +4,7 @@ Importanti:
 - Modifica prenotazione: A volte modifica prenotazione non prende i dati (spesso nr. Persone) e a volte premendo modifica prenotazione non succede nulla. Refresh browser e "modifica prenotazione" funziona
 - Email e nr tel cambiate in Tilby non si sincronizzano in Dashboard (problema nello scrivere nelle note è che quando invii email di chiusura le prenotazioni vengono cancellate da Tilby e da dashboard quindi non lo vediamo più)
 - Pulizia database clienti scloby: scaricare, ripulire doppioni, ricaricare !importante
-- bug importante!: a volte mi da disponibile un tavolo, ma quando clicco "riserva il ravolo" appare popup: "non abbiamo più posto questo giorno". Quando scelgo il nr di persone non mi disabilita il turno non disponibile per quel numero di persone
+v Per ora fissato: non è più stato prodotto! bug importante!: a volte mi da disponibile un tavolo, ma quando clicco "riserva il ravolo" appare popup: "non abbiamo più posto questo giorno". Quando scelgo il nr di persone non mi disabilita il turno non disponibile per quel numero di persone
 - algoritmo assegnazione tavolo: nr. Persone x 1,5
 
 
