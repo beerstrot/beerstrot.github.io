@@ -9,9 +9,7 @@ $(document).ready(() => {
     } else if (pid === 'test') {
       return testeLambda();
     } else if (pid.endsWith('_modifica')) {
-      const pid_ = pid.split('_modifica')[0];
-      makeInterface_(pid_);
-      return modifyReservation(pid_);
+      return makeInterface_(pid);
     }
     return showReservation(pid);
   }
@@ -23,7 +21,13 @@ function makeInterface_ (pid) {
     'POST',
     { action: 'days', data: '--' },
     res => {
-      makeInterface(pid, res.dates);
+      if (pid) {
+        const pid_ = pid.split('_modifica')[0];
+        const fp = makeInterface(pid_, res.dates);
+        modifyReservation(pid_, fp);
+      } else {
+        makeInterface(undefined, res.dates);
+      }
     },
     res => {
       showMessage(messageError);
@@ -36,7 +40,7 @@ const loadExtra = booking => {
   return e;
 }
 
-function modifyReservation (pid) {
+function modifyReservation (pid, fp) {
   mkCall(
     'POST',
     { action: 'getReservation', data: pid },
@@ -49,9 +53,7 @@ function modifyReservation (pid) {
       const bc = b.booking_customer;
       const extra = loadExtra(b);
       const date = new Date(b.booked_for);
-      const fp = jQuery('#from').flatpickr();
       fp.setDate(date);
-      fp.set('dateFormat', 'd/M/Y');
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -153,6 +155,7 @@ function showDays (datetime) {
     }
   );
 }
+//
 //questa parte non viene mai chiamata "Se aggiungi il giorno di chiusura...........""
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
@@ -167,9 +170,6 @@ function toggleDate (dp) {
     true,
   );
 }
-
-
-
 
 //le parentesi graffe non portano
 function showNotes (datetime) {
@@ -329,7 +329,7 @@ function showNotes (datetime) {
 function makeInterface (pid, dates) {
   $('#infoDiv').hide();
   $('#prenota').off('click').on('click', () => {
-    const d = fp.selectedDates[0]
+    const d = fp.selectedDates[0];
     d.setHours(12);
     const data = {
       date: d.toISOString(),
@@ -371,7 +371,7 @@ function makeInterface (pid, dates) {
   });
 
   // https://flatpickr.js.org/
-  const fp = jQuery('#from').flatpickr({
+  const fp = $('#from').flatpickr({
     locale: 'it',
     minDate: 'today',
     dateFormat:'Y-m-d',
@@ -379,16 +379,12 @@ function makeInterface (pid, dates) {
     disableMobile: true,
     onChange: (dp, input) => {
       $('#loading').show();
-      $('#from').chosen = true;
-      input.chosenn = true;
       fp.close();
       dp[0].setHours(12);
       updateShifts(dp[0]);
     },
   });
-  if (!pid) {
-    fp.set('dateFormat', 'd/M/Y');
-  }
+  fp.set('dateFormat', 'd/M/Y');
   $('#privacy2').on('click', () => {
     showMessage('I dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) o telefono in caso di problemi o chiusura inaspettata del locale (ad esempio causa maltempo).');
   });
@@ -450,6 +446,7 @@ function makeInterface (pid, dates) {
         errorMessage: 'L\'e-mail non è valida!',
       },
     ]);
+  return fp;
 }
 
 const weekdays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
