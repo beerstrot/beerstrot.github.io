@@ -18,7 +18,7 @@ Media priorità:
 
 Bassa priorità:
 
-- Quando link non è più valido-> dovrei atterrare in pagina con: "Link non più valido. Se non hai cancellato la prenotazione in precedenza: puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti. <br> Se hai cancellato la prenotazione: puoi farne una nuova da qui <a href="https://www.beerstrot.it/prenota/">Prenota</a>"
+v Quando link non è più valido-> dovrei atterrare in pagina con: "Link non più valido. Se non hai cancellato la prenotazione in precedenza: puoi scriverci tramite ${messengerString} o chiamarci al numero ${telString} per chiarimenti. <br> Se hai cancellato la prenotazione: puoi farne una nuova da qui <a href="https://www.beerstrot.it/prenota/">Prenota</a>"
 (ora mi manda a pagina consulta.html senza dati)
 
 

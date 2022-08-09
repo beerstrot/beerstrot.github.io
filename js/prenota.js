@@ -154,7 +154,7 @@ function showDays (datetime) {
     }
   );
 }
-
+//questa parte non viene mai chiamata "Se aggiungi il giorno di chiusura...........""
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(
@@ -169,9 +169,12 @@ function toggleDate (dp) {
   );
 }
 
+
+
+
+//le parentesi graffe non portano
 function showNotes (datetime) {
-  //renato per cambiare nome a dashboard va bene aggiungere come sotto?
-  //$('#ttitle').text('Dashboard');
+  $('#ttitle').text('Dashboard');
   $('#loading').show();
   $('.form').hide();
   $('#notesDiv').show();
