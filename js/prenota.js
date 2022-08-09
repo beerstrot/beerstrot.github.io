@@ -74,7 +74,7 @@ function modifyReservation (pid) {
 const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
 // const url = 'http://localhost:5001/entry';
 let pCount = 0;
-function mkCall(type, data, success, error, beforeSend, complete) {
+function mkCall(type, data, success, error) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
   const set = {
     crossDomain: true,
@@ -594,7 +594,6 @@ function presentReservation (r) {
           res => {
             $('#ttitle').text('Prenotazione cancellata. Grazie');
             $('#tlegend').text('Dettaglio prenotazione cancellata ');
-            // $('<li/>').appendTo('#infoList').html(`<b>Status</b>: Cancellata`).css('background', 'pink');
             $('#no').click();
             $('#modify').hide();
             $('#cancel').hide();
