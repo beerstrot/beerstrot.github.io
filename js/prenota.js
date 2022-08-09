@@ -51,8 +51,7 @@ function modifyReservation (pid) {
       const date = new Date(b.booked_for);
       const fp = jQuery('#from').flatpickr();
       fp.setDate(date);
-      setTimeout(() => fp.setDate(date), 200);
-      setTimeout(() => fp.setDate(date), 400);
+      fp.set('dateFormat', 'd/M/Y');
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
@@ -387,7 +386,9 @@ function makeInterface (pid, dates) {
       updateShifts(dp[0]);
     },
   });
-  fp.set('dateFormat', 'd/M/Y');
+  if (!pid) {
+    fp.set('dateFormat', 'd/M/Y');
+  }
   $('#privacy2').on('click', () => {
     showMessage('I dati vengono utilizzati solo per gestire la prenotazione e contattarti tramite email (assicurati non finisca nella spam) o telefono in caso di problemi o chiusura inaspettata del locale (ad esempio causa maltempo).');
   });
