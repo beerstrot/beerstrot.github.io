@@ -49,10 +49,10 @@ function modifyReservation (pid) {
       const bc = b.booking_customer;
       const extra = loadExtra(b);
       const date = new Date(b.booked_for);
-      // const value = moment(date).format('Y-MM-DD');
-      const value = moment(date).format('DD/MMM/Y');
       const fp = jQuery('#from').flatpickr();
       fp.setDate(date);
+      setTimeout(() => fp.setDate(date), 200);
+      setTimeout(() => fp.setDate(date), 400);
       $('#quantity').prop('disabled', false).val(b.people);
       updateShifts(date, b.shift_id, b.people);
       $('#obs').val(extra.note === '--' ? '' : extra.note);
