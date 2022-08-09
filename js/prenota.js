@@ -589,13 +589,13 @@ function presentReservation (r) {
       'Vuoi cancellare la prenotazione?',
       '',
       () => {
+        $('#close-modal').click();
         mkCall(
           'POST',
           { action: 'cancelReservation', data: pid },
           res => {
             $('#ttitle').text('Prenotazione cancellata. Grazie');
             $('#tlegend').text('Dettaglio prenotazione cancellata ');
-            $('#no').click();
             $('#modify').hide();
             $('#cancel').hide();
             $('#new').show();
@@ -607,7 +607,7 @@ function presentReservation (r) {
         );
       },
       () => {
-        $('#close-modal').click()
+        $('#close-modal').click();
       }
     );
   });
