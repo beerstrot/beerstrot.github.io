@@ -171,7 +171,7 @@ function toggleDate (dp) {
   );
 }
 
-//le parentesi graffe non portano
+
 function showNotes (datetime) {
   $('#ttitle').text('Dashboard');
   $('#loading').show();
