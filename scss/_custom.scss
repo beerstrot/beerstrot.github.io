@@ -941,3 +941,46 @@ tabs menu
 // }
 
 
+/*===================================================================
+accordion space between container
+===================================================================*/
+
+  // .accordion .accordion-navigation, .accordion dd {
+  //   display: block;
+  //   margin-bottom: 2px !important; }
+
+
+
+.menu {
+
+  margin-bottom: 1.8rem;
+
+}
+
+.header {
+  display:flex;
+  cursor: pointer;
+}
+
+.title {
+  flex:1;
+  font-weight:bold;
+  font-size: 1.125rem;
+}
+
+.icon {
+    width:0.75rem;
+    font-size: 1.125rem;
+    font-weight:bold;
+    color: $primary-color;
+}
+
+.content {
+  display:none;
+}
+
+.content-transition {
+  max-height: 1500px;
+  transition: max-height 3s ease-in;
+}
+
