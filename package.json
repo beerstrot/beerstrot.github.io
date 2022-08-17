@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "^1.5.3",
-    "grunt-browser-sync": "~2.2.0",
+    "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-concat": "~1.0.1",
     "grunt-contrib-cssmin": "~3.0.0",
     "grunt-contrib-imagemin": "~4.0.0",
-    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-uglify": "^5.2.2",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-grunticon": "~2.3.2",
     "grunt-sass": "2.1.0",
