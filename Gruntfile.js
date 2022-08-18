@@ -42,6 +42,20 @@ module.exports = function(grunt) {
             }
         },
 
+        sass: {
+            options: {
+                includePaths: ['bower_components/foundation/scss']
+                },
+            dist: {
+                options: {
+                    outputStyle: 'expanded'
+                },
+                files: {
+                    'scss/app.css': 'scss/app.scss'
+                }
+            }
+        },
+
         uglify: {
             js: {
                 src: 'js/app.js',
