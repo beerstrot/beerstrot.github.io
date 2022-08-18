@@ -10,7 +10,7 @@ for (let i = 0; i < headers.length; i++) {
                     icons[j].innerHTML = contents[j].style.display == "block" ? "&minus;" : "&plus;";
                 } else {
                     contents[j].style.display = "none";
-                    icons[j].innerHTML = "+";
+                    icons[j].innerHTML = "&plus;";
                 }
             }
         });
