@@ -39,14 +39,8 @@ module.exports = function(grunt) {
                 files: {
                     'css/app.css': 'scss/app.scss'
                 }
-            }
-        },
-
-        sass: {
-            options: {
-                includePaths: ['bower_components/foundation/scss']
-                },
-            dist: {
+            },
+            testing: {
                 options: {
                     outputStyle: 'expanded'
                 },
