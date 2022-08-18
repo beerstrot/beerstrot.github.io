@@ -50,6 +50,10 @@ module.exports = function(grunt) {
             prenota: {
                 src: 'js/prenota.js',
                 dest: 'js/prenota.min.js'
+            },
+            accordion: {
+                src: 'js/accordion.js',
+                dest: 'js/accordion.min.js'
             }
         },
 
@@ -110,7 +114,7 @@ module.exports = function(grunt) {
             },
 
             app: {
-                files: ['js/app.js', 'js/prenota.js'],
+                files: ['js/app.js', 'js/prenota.js', 'js/accordion.js'],
                 tasks: ['uglify']
             },
         },

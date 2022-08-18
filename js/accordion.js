@@ -1,5 +1,4 @@
-
- const headers = document.getElementsByClassName("header"),
+const headers = document.getElementsByClassName("header"),
         contents = document.getElementsByClassName("content"),
         icons = document.getElementsByClassName("icon");
 
