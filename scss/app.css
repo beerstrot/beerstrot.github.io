@@ -7093,6 +7093,9 @@ tabs menu
 /*===================================================================
 accordion space between container
 ===================================================================*/
+/*===================================================================
+accordion domande frequenti
+===================================================================*/
 .menu {
   margin-bottom: 1.5rem;
 }
@@ -7112,7 +7115,7 @@ accordion space between container
   width: 1rem;
   line-height: 1.4rem;
   font-size: 2rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #e00c10;
 }
 
