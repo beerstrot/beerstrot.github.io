@@ -159,8 +159,9 @@ function showDays (datetime) {
 //questa parte non viene mai chiamata "Se aggiungi il giorno di chiusura...........""
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-  showConsultaMessage(
-    `Sei sicuro di voler aggiungere o rimovere <b>${date_}</b> come giorno di chiusura? `,`Se aggiungi il giorno di chiusura, tutte le prenotazione per questo giorno saranno cancellate.<br>I clienti prenotati riceveranno l'email di chiusura e cancellazione della prenotazione.<br>Se vuoi, fai un controllo dei clienti prenotati a quuesto link <a href="https://www.beerstrot.it/dashboard/" target="_blank">dashboard</a>.`,
+  showConsultaMessage(`<p>Sei sicuro di voler aggiungere o rimuovere <b>${date_}</b> come giorno di chiusura?</p>
+    <p style="margin-bottom:0px;">Se lo aggiungi</b> ai giorni di chiusura:</p><ul><li>Tutte le prenotazione per  <b>${date_}</b> saranno cancellate</li><li>I clienti prenotati <b>${date_}</b> riceveranno l'email di chiusura e cancellazione della prenotazione</li>
+    </ul><p style="margin-bottom:0px;">Se lo rimuovi dai giorni di chiusura:</p><ul><li>I clienti potranno prenotare per il giorno <b>${date_}</b></li></ul>`,'',
     () => {
       const date = dp.toISOString();
       showDays(date);
@@ -211,7 +212,7 @@ function showNotes (datetime) {
 
       const b = r.bookings;
       const nbookings = b.length;
-      if (!nbookings) return showNotesMessage(`nessuna prenotazione trovata il <b>${date}</b>.`);
+      if (!nbookings) return showNotesMessage(`<b>${date}</b> non ci sono prenotazioni`);
 
       let nseggiolini = 0;
       let ncani = 0;
@@ -301,7 +302,7 @@ function showNotes (datetime) {
           .off('click')
           .on('click', () => {
             showConsultaMessage(
-              'Vuoi inviare email di promemoria della prenotazione ai clienti?',
+              '<p>Vuoi inviare email di promemoria della prenotazione ai clienti?</p>',
               'giorno: ' + date,
               () => mkCall(
                 'POST',
@@ -688,7 +689,7 @@ function bookingNotFound () {
 }
 
 function showNotesMessage (msg) {
-  $('<p/>', { class: 'clearme', css: { background: 'orange', padding: '2%' } }).html(msg).appendTo('#notesDiv');
+  $('<p/>', { class: 'clearme', css: { background: '', padding: '2.5%' } }).html(msg).appendTo('#notesDiv');
   $('#innerNotesDiv').hide();
 }
 
