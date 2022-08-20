@@ -155,8 +155,7 @@ function showDays (datetime) {
     }
   );
 }
-//
-//questa parte non viene mai chiamata "Se aggiungi il giorno di chiusura...........""
+
 function toggleDate (dp) {
   const date_ = (new Date(dp)).toLocaleString('it-IT', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
   showConsultaMessage(`<p>Sei sicuro di voler aggiungere o rimuovere <b>${date_}</b> come giorno di chiusura?</p>
@@ -171,7 +170,6 @@ function toggleDate (dp) {
     true,
   );
 }
-
 
 function showNotes (datetime) {
   $('#ttitle').text('Dashboard');
@@ -294,10 +292,10 @@ function showNotes (datetime) {
         total_ += b.people;
       });
       const summary = `<ul class="no-bullet"><b>${date}</b> ci sono:<li><b>${nbookings}</b> prenotazioni (<b>${notes.length}</b> online)</li><li><b>${total_}</b> persone prenotate</li><li><b>${ncani}</b> prenotazioni con cani</li><li><b>${nseggiolini}</b> seggioloni richiesti</li></ul>`;
-      $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv');
+      $('<p/>', { class: 'clearme', css: { padding: '' } }).html(summary).prependTo('#innerNotesDiv1');
       if (notes.length > 0) {
-        $('<button/>', { class: 'clearme small', css: { marginBottom: '2rem', marginTop: '2rem' } })
-          .prependTo('#innerNotesDiv')
+        $('<button/>', { class: 'clearme tiny', css: { marginBottom: '2rem', marginTop: '0rem' } })
+          .prependTo('#innerNotesDiv2')
           .text('Invia email di promemoria a clienti')
           .off('click')
           .on('click', () => {
