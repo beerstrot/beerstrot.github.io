@@ -313,7 +313,7 @@ function showNotes (datetime) {
                 }
               ),
               () => $('#close-modal').click(),
-              true
+              true,
             );
           });
 
