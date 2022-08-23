@@ -7143,3 +7143,155 @@ accordion domande frequenti
 .content {
   display: none;
 }
+
+/* Basic styling */
+#testhamburgermenu {
+  /* Mobile menu */
+  /* Tablet menu */
+  /* Desktop menu */
+}
+
+#testhamburgermenu nav {
+  background: #222;
+  padding: 0 15px;
+}
+
+#testhamburgermenu a {
+  color: white;
+  text-decoration: none;
+}
+
+#testhamburgermenu .menu,
+#testhamburgermenu .submenu {
+  list-style-type: none;
+}
+
+#testhamburgermenu .logo {
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
+}
+
+#testhamburgermenu .item {
+  padding: 10px;
+}
+
+#testhamburgermenu .item.button {
+  padding: 9px 5px;
+}
+
+#testhamburgermenu .menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#testhamburgermenu .menu li a {
+  display: block;
+  padding: 15px 5px;
+}
+
+#testhamburgermenu .menu li.subitem a {
+  padding: 15px;
+}
+
+#testhamburgermenu .toggle {
+  order: 1;
+  font-size: 20px;
+}
+
+#testhamburgermenu .item.button {
+  order: 2;
+}
+
+#testhamburgermenu .item {
+  order: 3;
+  width: 100%;
+  text-align: left;
+  display: none;
+}
+
+#testhamburgermenu .active .item {
+  display: block;
+}
+
+#testhamburgermenu .button.secondary {
+  /* divider between buttons and menu links */
+  border-bottom: 1px #444 solid;
+}
+
+@media all and (min-width: 700px) {
+  #testhamburgermenu {
+    /* Button up from tablet screen */
+  }
+  #testhamburgermenu .menu {
+    justify-content: center;
+  }
+  #testhamburgermenu .logo {
+    flex: 1;
+  }
+  #testhamburgermenu .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+  #testhamburgermenu .toggle {
+    flex: 1;
+    text-align: right;
+    order: 2;
+  }
+  #testhamburgermenu .menu li.button a {
+    padding: 10px 15px;
+    margin: 5px 0;
+  }
+  #testhamburgermenu .button a {
+    background: #fff;
+  }
+  #testhamburgermenu .button.secondary {
+    border: 0;
+  }
+  #testhamburgermenu .button.secondary a {
+    background: transparent;
+    border: 1px #0080ff solid;
+  }
+  #testhamburgermenu .button a:hover {
+    text-decoration: none;
+  }
+  #testhamburgermenu .button:not(.secondary) a:hover {
+    background: royalblue;
+    border-color: darkblue;
+  }
+}
+
+@media all and (min-width: 960px) {
+  #testhamburgermenu .menu {
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background: none;
+  }
+  #testhamburgermenu .logo {
+    order: 0;
+  }
+  #testhamburgermenu .item {
+    order: 1;
+    position: relative;
+    display: block;
+    width: auto;
+  }
+  #testhamburgermenu .button {
+    order: 2;
+  }
+  #testhamburgermenu .submenu-active .submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 68px;
+    background: #111;
+  }
+  #testhamburgermenu .toggle {
+    display: none;
+  }
+  #testhamburgermenu .submenu-active {
+    border-radius: 0;
+  }
+}
