@@ -59,6 +59,10 @@ module.exports = function(grunt) {
                 src: 'js/prenota.js',
                 dest: 'js/prenota.min.js'
             },
+            navbar: {
+                src: 'js/navbar.js',
+                dest: 'js/navbar.min.js'
+            },
             accordion: {
                 src: 'js/accordion.js',
                 dest: 'js/accordion.min.js'
@@ -122,7 +126,7 @@ module.exports = function(grunt) {
             },
 
             app: {
-                files: ['js/app.js', 'js/prenota.js', 'js/accordion.js'],
+                files: ['js/app.js', 'js/prenota.js', 'js/accordion.js', 'js/navbar.js'],
                 tasks: ['uglify']
             },
         },
