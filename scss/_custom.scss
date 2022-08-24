@@ -955,7 +955,7 @@ accordion domande frequenti
 
 .menu {
 
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 
 }
 
@@ -982,148 +982,148 @@ accordion domande frequenti
   display:none;
 }
 
-//hamburger
+/*===================================================================
+hamburger menu
+===================================================================*/
 
 /* Basic styling */
 
-#testhamburgermenu {
-nav {
-  background: #222;
-  padding: 0 15px;
+ nav {
+  background: #ffffff;
+  border-bottom: 2.5px #666666 solid;
+  padding: 0 5px 0 0px;
+  // margin-bottom: 1rem;
 }
-a {
-  color: white;
+#hamburger a {
+  color: $jet;
   text-decoration: none;
 }
-.menu,
-.submenu {
+.menu1 {
   list-style-type: none;
+
+  margin:0 15px;
+  padding:0.5rem 0rem 0.5rem 0rem;
 }
 .logo {
-  font-size: 20px;
-  padding: 7.5px 10px 7.5px 0;
+  font-size: 1,125rem;
+  padding: 7.5px 20px 7.5px 0;
 }
 .item {
-  padding: 10px;
+  padding: 5px 10px 15px 20px;
 }
-.item.button {
-  padding: 9px 5px;
-}
-.item:not(.button) a:hover,
+
+#hamburger .item:not(.button) a:hover,
 .item a:hover::after {
-  // color: #ccc;
+    color: $primary-color;
 }
+.toggle {
+    flex: 1;
+    text-align: right;
+
+  }
 /* Mobile menu */
-.menu {
+.menu1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-.menu li a {
+
+.menu1 li a {
   display: block;
-  padding: 15px 5px;
+  padding: 5px 5px;
 }
-.menu li.subitem a {
-  padding: 15px;
-}
+
 .toggle {
   order: 1;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 .item.button {
   order: 2;
+  margin-top: 16px;
+  margin-bottom:12px;
 }
 .item {
   order: 3;
   width: 100%;
+  padding: 10px 0px;
   text-align: left;
   display: none;
+  padding-left: 10px;
 }
 .active .item {
   display: block;
 }
-.button.secondary {
-  /* divider between buttons and menu links */
-  border-bottom: 1px #444 solid;
-}
-
-
+#hamburger .button a{
+    order:2;
+    display:block;
+    color: $white;
+    font-size: 1.25rem;
+  }
 
 /* Tablet menu */
-@media all and (min-width: 700px) {
-  .menu {
-    justify-content: center;
-  }
-  .logo {
-    flex: 1;
-  }
-  .item.button {
-    width: auto;
-    order: 1;
-    display: block;
-  }
-  .toggle {
-    flex: 1;
-    text-align: right;
-    order: 2;
-  }
-  /* Button up from tablet screen */
-  .menu li.button a {
-    padding: 10px 15px;
-    margin: 5px 0;
-  }
-  .button a {
-    background: #fff;
-    // border: 1px royalblue solid;
-  }
-  .button.secondary {
-    border: 0;
-  }
-  .button.secondary a {
-    background: transparent;
-    border: 1px #0080ff solid;
-  }
-  .button a:hover {
-    text-decoration: none;
-  }
-  .button:not(.secondary) a:hover {
-    background: royalblue;
-    border-color: darkblue;
-  }
-}
+// @media all and (min-width: 45.063em) {
+//   .menu1 {
+//     justify-content: center;
+//   }
+//   .logo {
+//     flex: 1;
+//   }
+
+//   .toggle {
+//     flex: 1;
+//     text-align: right;
+
+//   }
+//   #hamburger .button a{
+//     order:2;
+//     display:block;
+//     color: $white;
+//     font-size: 1.25rem;
+//   }
+// }
 /* Desktop menu */
-@media all and (min-width: 960px) {
-  .menu {
+@media all and (min-width: 60em) {
+  .menu1 {
     align-items: flex-start;
+    justify-content: center;
     flex-wrap: nowrap;
     background: none;
   }
   .logo {
     order: 0;
+    flex: 1;
   }
   .item {
     order: 1;
     position: relative;
     display: block;
     width: auto;
+    padding: 20px 20px;
   }
-  .button {
-    order: 2;
-  }
-  .submenu-active .submenu {
+
+  #hamburger .item.button {
+    width: auto;
+    order: 1;
     display: block;
-    position: absolute;
-    left: 0;
-    top: 68px;
-    background: #111;
+  margin-top: 0px;
+  margin-bottom:0px
+
+  }
+  #hamburger .button a{
+    order:2;
+    display:block;
+    color: $white;
+    margin-top:1px;
+
+    font-size: 1.25rem;
+  }
+#hamburger .button {
+    order: 2;
   }
   .toggle {
     display: none;
   }
-  .submenu-active {
-    border-radius: 0;
-  }
 }
-}
+
 
