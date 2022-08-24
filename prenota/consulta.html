@@ -37,31 +37,21 @@
 <!-- End Facebook Pixel Code -->
 </head>
 <body>
-   <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area" itemscope itemtype="http://schema.org/Restaurant">
-            <li class="name">
-                 <h1><a href="https://www.beerstrot.it"><img class="img-logo" src="https://www.beerstrot.it/asset/img/svgs/logo.svg" alt="Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></h1>
+<!-- inizio navbar con hamburger -->
+    <nav>
+        <ul class="menu1" id="hamburger">
+            <li class="logo"><a href="https://www.beerstrot.it"><img class="img-logo" src="https://www.beerstrot.it/asset/img/svgs/logo.svg" alt="Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a>
             </li>
-            <li class="toggle-topbar menu-icon">
-				<a href="#"><span></span></a>
-			</li>
+            <li class="item button"><a href="https://www.beerstrot.it/prenota/">Prenota</a></li>
+            <li class="item"><a href="https://www.beerstrot.it/menu/">Menù</a></li>
+            <li class="item"><a href="https://www.beerstrot.it/asporto/">Asporto</a></li>
+            <li class="item"><a href="https://www.beerstrot.it/contatti/">Contatti</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
         </ul>
-        <section class="top-bar-section">
-			<ul class="right">
-				<li class="divider"></li>
-				<li><a href="https://www.beerstrot.it/prenota/">Prenota</a></li>
-				<li class="divider"></li>
-				<li><a href="https://www.beerstrot.it/menu/">Menù</a></li>
-				<li class="divider"></li>
-				<li><a href="https://www.beerstrot.it/asporto/">Asporto</a></li>
-				<li class="divider"></li>
-				<li><a href="https://www.beerstrot.it/contatti/">Contatti</a></li>
-			</ul>
-		</section>
     </nav>
 <!-- fine navbar con hamburger -->
     <header class="row">
-        <div class="medium-12 large-12 columns">
+        <div class="medium-12 large-12 columns extra-space">
             <h1 id="ttitle">Tavolo riservato. Grazie</h1>
             <br>
         </div>
@@ -178,6 +168,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
     <script src="https://www.beerstrot.it/js/app.min.js"></script>
     <script src="https://www.beerstrot.it/js/prenota.min.js"></script>
+    <script src="https://www.beerstrot.it/js/navbar.js"></script>
 <!-- inizio modale messaggio vuoi cancellare la prenotazione -->
     <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <p id="modalText"></p>
