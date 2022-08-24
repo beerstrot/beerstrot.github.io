@@ -1059,7 +1059,7 @@ hamburger menu
     display:block;
     color: $white;
     font-size: 1.25rem;
-  }
+}
 
 /* Tablet menu */
 // @media all and (min-width: 45.063em) {
@@ -1084,47 +1084,47 @@ hamburger menu
 // }
 /* Desktop menu */
 @media all and (min-width: 60em) {
-  .menu1 {
-    align-items: flex-start;
-    justify-content: center;
-    flex-wrap: nowrap;
-    background: none;
-    margin:0 15px;
-  }
-  .logo {
-    order: 0;
-    flex: 1;
-  }
-  .item {
-    order: 1;
-    position: relative;
-    display: block;
-    width: auto;
-    padding: 20px 20px;
-  }
-
-  #hamburger .item.button {
-    width: auto;
-    order: 1;
-    display: block;
-  margin-top: 0px;
-  margin-bottom:0px
-
-  }
-  #hamburger .button a{
-    order:2;
-    display:block;
-    color: $white;
-    margin-top:1px;
-
-    font-size: 1.25rem;
-  }
-#hamburger .button {
-    order: 2;
-  }
-  .toggle {
-    display: none;
-  }
+    .menu1 {
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: nowrap;
+        background: none;
+        margin:0 15px;
+    }
+    .logo {
+        order: 0;
+        flex: 1;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+        padding: 20px 20px;
+    }
+    #hamburger .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+        margin-top: 0px;
+        margin-bottom:0px;
+    }
+    #hamburger .button a {
+        order:2;
+        display:block;
+        color: $white;
+        margin-top:1px;
+        font-size: 1.25rem;
+    }
+    #hamburger .button {
+        order: 2;
+    }
+    .toggle {
+        display: none;
+    }
+    #hamburger .active a {
+        color: $primary-color;
+    }
 }
 
 

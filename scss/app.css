@@ -7270,4 +7270,7 @@ nav {
   .toggle {
     display: none;
   }
+  #hamburger .active a {
+    color: #e00c10;
+  }
 }
