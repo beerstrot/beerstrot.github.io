@@ -7162,6 +7162,7 @@ nav {
 .menu1 {
   list-style-type: none;
   margin: 0 15px;
+  margin-right: 0px;
   padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
@@ -7236,6 +7237,7 @@ nav {
     justify-content: center;
     flex-wrap: nowrap;
     background: none;
+    margin: 0 15px;
   }
   .logo {
     order: 0;
