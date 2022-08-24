@@ -6522,7 +6522,7 @@ nav {
   .toggle {
     display: none;
   }
-  #hamburger .active a {
+  #hamburger .attuale a {
     color: #e00c10;
   }
 }
