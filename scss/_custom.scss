@@ -988,7 +988,7 @@ hamburger menu
 
 /* Basic styling */
 
- nav {
+nav {
   background: #ffffff;
   border-bottom: 2.5px #666666 solid;
   padding: 0 5px 0 0px;
@@ -1025,7 +1025,6 @@ hamburger menu
   //outline: 2px solid yellow;
   z-index: 40;
 }
-
 #hamburger .item:not(.button) a:hover,
 .item a:hover::after {
     color: $primary-color;
@@ -1034,7 +1033,7 @@ hamburger menu
     flex: 1;
     text-align: right;
 
-  }
+}
 /* Mobile menu */
 .menu1 {
   display: flex;
@@ -1075,16 +1074,16 @@ hamburger menu
     color: $white;
     font-size: 1.25rem;
 }
- #hamburger .attuale a {
+#hamburger .attuale a {
         color: $primary-color;
-    }
+}
 
-    #hamburger li.attuale.button {
-        background-color: rgb(134, 7, 10);
-    }
-    #hamburger li.attuale.button a {
-        color: white;
-    }
+#hamburger li.attuale.button {
+    background-color: rgb(134, 7, 10);
+}
+#hamburger li.attuale.button a {
+    color: white;
+}
 /* Tablet menu */
 // @media all and (min-width: 45.063em) {
 //   .menu1 {
@@ -1106,6 +1105,7 @@ hamburger menu
 //     font-size: 1.25rem;
 //   }
 // }
+
 /* Desktop menu */
 @media all and (min-width: 60em) {
     .menu1 {
@@ -1146,6 +1146,5 @@ hamburger menu
     .toggle {
         display: none;
     }
-
 }
 
