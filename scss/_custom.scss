@@ -1082,7 +1082,7 @@ hamburger menu
 //   }
 // }
 /* Desktop menu */
-@media all and (min-width: 60em) {
+@media #{$medium-up} {
     .menu1 {
         align-items: flex-start;
         justify-content: center;

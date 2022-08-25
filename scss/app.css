@@ -6483,7 +6483,7 @@ nav {
 
 /* Tablet menu */
 /* Desktop menu */
-@media all and (min-width: 60em) {
+@media only screen and (min-width: 45.063em) {
   .menu1 {
     align-items: flex-start;
     justify-content: center;
