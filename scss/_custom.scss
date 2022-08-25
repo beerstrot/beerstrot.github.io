@@ -1015,7 +1015,6 @@ hamburger menu
   position: relative;
   z-index: 50;
 }
-
 #hamburger .button a:before {
   position: absolute;
   content: '';
@@ -1026,6 +1025,7 @@ hamburger menu
   //outline: 2px solid yellow;
   z-index: 40;
 }
+
 #hamburger .item:not(.button) a:hover,
 .item a:hover::after {
     color: $primary-color;
