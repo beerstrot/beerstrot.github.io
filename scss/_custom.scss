@@ -1059,7 +1059,16 @@ hamburger menu
     color: $white;
     font-size: 1.25rem;
 }
+ #hamburger .attuale a {
+        color: $primary-color;
+    }
 
+    #hamburger li.attuale.button {
+        background-color: rgb(134, 7, 10);
+    }
+    #hamburger li.attuale.button a {
+        color: white;
+    }
 /* Tablet menu */
 // @media all and (min-width: 45.063em) {
 //   .menu1 {
@@ -1121,15 +1130,6 @@ hamburger menu
     .toggle {
         display: none;
     }
-    #hamburger .attuale a {
-        color: $primary-color;
-    }
 
-    #hamburger li.attuale.button {
-        background-color: rgb(134, 7, 10);
-    }
-    #hamburger li.attuale.button a {
-        color: white;
-    }
 }
 

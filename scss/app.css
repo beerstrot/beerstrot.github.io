@@ -6481,6 +6481,18 @@ nav {
   font-size: 1.25rem;
 }
 
+#hamburger .attuale a {
+  color: #e00c10;
+}
+
+#hamburger li.attuale.button {
+  background-color: #86070a;
+}
+
+#hamburger li.attuale.button a {
+  color: white;
+}
+
 /* Tablet menu */
 /* Desktop menu */
 @media all and (min-width: 60em) {
@@ -6521,14 +6533,5 @@ nav {
   }
   .toggle {
     display: none;
-  }
-  #hamburger .attuale a {
-    color: #e00c10;
-  }
-  #hamburger li.attuale.button {
-    background-color: #86070a;
-  }
-  #hamburger li.attuale.button a {
-    color: white;
   }
 }
