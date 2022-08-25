@@ -6426,6 +6426,21 @@ nav {
   padding: 5px 10px 15px 20px;
 }
 
+#hamburger .button a {
+  position: relative;
+  z-index: 50;
+}
+
+#hamburger .button a:before {
+  position: absolute;
+  content: '';
+  top: -18px;
+  right: -18px;
+  left: -18px;
+  bottom: -18px;
+  z-index: 40;
+}
+
 #hamburger .item:not(.button) a:hover,
 .item a:hover::after {
   color: #e00c10;
