@@ -6413,8 +6413,7 @@ nav {
 
 .menu1 {
   list-style-type: none;
-  margin: 0 15px;
-  margin-right: 0px;
+  margin: 0px 0px 0px 15px;
   padding: 0.5rem 0rem 0.5rem 0rem;
 }
 
@@ -6459,6 +6458,7 @@ nav {
   order: 2;
   margin-top: 16px;
   margin-bottom: 12px;
+  margin-right: 10px;
 }
 
 .item {
