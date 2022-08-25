@@ -6483,7 +6483,7 @@ nav {
 
 /* Tablet menu */
 /* Desktop menu */
-@media only screen and (min-width: 64.0625em) {
+@media all and (min-width: 60em) {
   .menu1 {
     align-items: flex-start;
     justify-content: center;
@@ -6524,5 +6524,11 @@ nav {
   }
   #hamburger .attuale a {
     color: #e00c10;
+  }
+  #hamburger li.attuale.button {
+    background-color: #86070a;
+  }
+  #hamburger li.attuale.button a {
+    color: white;
   }
 }
