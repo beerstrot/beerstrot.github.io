@@ -210,7 +210,7 @@ function showNotes (datetime) {
 
       const b = r.bookings;
       const nbookings = b.length;
-      if (!nbookings) return showNotesMessage(`<b>${date}</b> non ci sono prenotazioni`);
+      if (!nbookings) return showNotesMessage(`<br><br><b>${date}</b> non ci sono prenotazioni`);
 
       let nseggiolini = 0;
       let ncani = 0;
@@ -528,7 +528,7 @@ function showReservation (pid) {
   $('#prenotaDiv').show();
   let modified = false;
   if (pid.endsWith('_modificata')) {
-    $('#ttitle').text('Prenotazione modificata. Grazie');
+    $('#ttitle').text('Prenotazione Modificata. Grazie');
     $('#tlegend').text('Dettaglio prenotazione modificata ');
     pid = pid.split('_modifica')[0];
   }
@@ -590,7 +590,7 @@ function presentReservation (r) {
           'POST',
           { action: 'cancelReservation', data: pid },
           res => {
-            $('#ttitle').text('Prenotazione cancellata. Grazie');
+            $('#ttitle').text('Prenotazione Cancellata. Grazie');
             $('#tlegend').text('Dettaglio prenotazione cancellata ');
             $('#modify').hide();
             $('#cancel').hide();
@@ -680,7 +680,7 @@ function bookingNotFound () {
   const div = $('#innerInfoDiv');
   const fs = $('<fieldset/>').appendTo(div);
   $('<legend/>').text('Prenotazione non trovata').appendTo(fs);
-  $('<div/>').html(`<p>Vi chiediamo gentilmente di contattarci.</p>`).appendTo(fs);
+  $('<div/>').html(`<p>Ti chiediamo gentilmente di contattarci.</p>`).appendTo(fs);
   $('<div/>').html(telString).appendTo(fs);
   $('<div/>').html(messengerString).appendTo(fs);
   $('#buttonInfoDiv').hide();
