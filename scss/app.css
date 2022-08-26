@@ -5776,10 +5776,6 @@ Chi Siamo
 /*===================================================================
 menupage text
 ===================================================================*/
-#menupage-text {
-  /*padding:0 2rem;*/
-}
-
 #menupage-text h1 {
   text-transform: uppercase;
   margin-bottom: 2rem;
