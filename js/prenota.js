@@ -210,7 +210,7 @@ function showNotes (datetime) {
 
       const b = r.bookings;
       const nbookings = b.length;
-      if (!nbookings) return showNotesMessage(`<br><br><b>${date}</b> non ci sono prenotazioni`);
+      if (!nbookings) return showNotesMessage(`<b>${date}</b> non ci sono prenotazioni.`);
 
       let nseggiolini = 0;
       let ncani = 0;
@@ -687,7 +687,7 @@ function bookingNotFound () {
 }
 
 function showNotesMessage (msg) {
-  $('<p/>', { class: 'clearme', css: { background: '', padding: '2.5%' } }).html(msg).appendTo('#notesDiv');
+  $('<p/>', { class: 'clearme', css: { background: '', padding: '' } }).html(msg).appendTo('#notesDiv3');
   $('#innerNotesDiv').hide();
 }
 
