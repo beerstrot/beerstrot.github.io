@@ -284,7 +284,7 @@ menupage text
         }
         @media #{$small-only} {
             font-size: 1.35em;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             margin-top: 1.5rem;
             text-align: left;
         }
@@ -317,6 +317,11 @@ menupage text
         font-size: 0.95rem;
         margin-left: 1.5rem;
         font-weight: normal;
+   }
+   small {
+        font-size: 0.85rem;
+        font-style: italic;
+        line-height: 1.2rem;
    }
 }
 
