@@ -5855,10 +5855,12 @@ menupage text
   font-weight: normal;
 }
 
-#menupage-text small {
+#menupage-text p small {
   font-size: 0.85rem;
   font-style: italic;
-  line-height: 1.2rem;
+  line-height: 1.25rem;
+  display: inline-block;
+  margin-top: 0.3rem;
 }
 
 .panel-menu-n {
