@@ -6369,15 +6369,16 @@ input:not([type])[disabled], input:not([type])[readonly], fieldset[disabled] inp
 /*===================================================================
 tabs menu
 ===================================================================*/
-ul.tabs {
-  text-align: center;
-}
-
 ul.tabs li {
   float: none !important;
   display: inline-block;
   margin-top: 1rem;
-  padding: 0px;
+}
+
+@media only screen and (max-width: 45em) {
+  ul.tabs {
+    text-align: center;
+  }
 }
 
 /*===================================================================
