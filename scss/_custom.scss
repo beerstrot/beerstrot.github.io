@@ -278,7 +278,7 @@ menupage text
         line-height: 1.6rem;
         font-weight: bold;
         &:first-child {
-            margin-top: 2.5rem;
+            margin-top: 2.8rem;
         }
         @media #{$small-only} {
             font-size: 1.35em;
@@ -289,12 +289,12 @@ menupage text
         }
     }
     h3 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         font-weight: 600;
         margin-bottom: 0;
         margin-top: 0;
         @media #{$small-only} {
-            font-size: 1rem;
+            font-size: 1.125rem;
         }
     }
     h4 {
@@ -309,11 +309,16 @@ menupage text
         font-size: 1rem;
     }
     p {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.125rem;
+        margin-bottom: 0rem;
+        @media #{$small-only} {
+            font-size: 1.1rem;
+            //line-height: 1.5rem;
+
+        }
     }
     .price {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         margin-left: 1.5rem;
         font-weight: normal;
         @media #{$small-only} {
@@ -327,12 +332,18 @@ menupage text
         display: block;
         margin-top: 0.3rem;
    }
+   ul li {
+    padding-bottom: 2.7rem;
+   }
+
    //tabs menu
     ul.tabs {
         li {
             float: none !important;
             display: inline-block;
             margin-top: 1rem;
+            margin-bottom: 0rem;
+            padding:0;
         }
         @media #{$small-only} {
         text-align: center;

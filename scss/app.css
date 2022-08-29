@@ -5805,7 +5805,7 @@ menupage text
 }
 
 #menupage-text h2:first-child {
-  margin-top: 2.5rem;
+  margin-top: 2.8rem;
 }
 
 @media only screen and (max-width: 45em) {
@@ -5819,7 +5819,7 @@ menupage text
 }
 
 #menupage-text h3 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0;
   margin-top: 0;
@@ -5827,7 +5827,7 @@ menupage text
 
 @media only screen and (max-width: 45em) {
   #menupage-text h3 {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 
@@ -5846,12 +5846,18 @@ menupage text
 }
 
 #menupage-text p {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  margin-bottom: 0rem;
+}
+
+@media only screen and (max-width: 45em) {
+  #menupage-text p {
+    font-size: 1.1rem;
+  }
 }
 
 #menupage-text .price {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   margin-left: 1.5rem;
   font-weight: normal;
 }
@@ -5870,10 +5876,16 @@ menupage text
   margin-top: 0.3rem;
 }
 
+#menupage-text ul li {
+  padding-bottom: 2.7rem;
+}
+
 #menupage-text ul.tabs li {
   float: none !important;
   display: inline-block;
   margin-top: 1rem;
+  margin-bottom: 0rem;
+  padding: 0;
 }
 
 @media only screen and (max-width: 45em) {
