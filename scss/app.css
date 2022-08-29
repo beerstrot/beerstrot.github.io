@@ -5802,6 +5802,7 @@ menupage text
   margin-top: 0.5rem;
   text-align: center;
   line-height: 1.6rem;
+  font-weight: bold;
 }
 
 #menupage-text h2:first-child {
@@ -5811,9 +5812,10 @@ menupage text
 @media only screen and (max-width: 45em) {
   #menupage-text h2 {
     font-size: 1.35em;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     margin-top: 1.5rem;
-    text-align: left;
+    text-align: center;
+    font-weight: bold;
   }
 }
 
@@ -5859,8 +5861,8 @@ menupage text
   font-size: 0.85rem;
   font-style: italic;
   line-height: 1.25rem;
-  display: inline-block;
-  margin-top: 0.35rem;
+  display: block;
+  margin-top: 0.3rem;
 }
 
 .panel-menu-n {
@@ -6367,6 +6369,17 @@ input:not([type])[disabled], input:not([type])[readonly], fieldset[disabled] inp
 /*===================================================================
 tabs menu
 ===================================================================*/
+ul.tabs {
+  text-align: center;
+}
+
+ul.tabs li {
+  float: none !important;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0px;
+}
+
 /*===================================================================
 accordion space between container
 ===================================================================*/

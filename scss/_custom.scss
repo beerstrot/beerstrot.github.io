@@ -257,7 +257,6 @@ menupage text
 ===================================================================*/
 
 #menupage-text {
-    //padding:0 2rem;
     h1 {
         text-transform: uppercase;
         margin-bottom: 2rem;
@@ -279,14 +278,17 @@ menupage text
         margin-top: 0.5rem;
         text-align: center;
         line-height: 1.6rem;
+        font-weight: bold;
         &:first-child {
             margin-top: 1.5rem;
         }
         @media #{$small-only} {
             font-size: 1.35em;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             margin-top: 1.5rem;
-            text-align: left;
+            text-align: center;
+
+            font-weight: bold;
         }
     }
     h3 {
@@ -322,8 +324,8 @@ menupage text
         font-size: 0.85rem;
         font-style: italic;
         line-height: 1.25rem;
-        display: inline-block;
-        margin-top: 0.35rem;
+        display: block;
+        margin-top: 0.3rem;
    }
 }
 
@@ -936,15 +938,15 @@ input:not([type])[disabled], input:not([type])[readonly], fieldset[disabled] inp
 tabs menu
 ===================================================================*/
 
-// ul.tabs {
-//     text-align: center;
-//     li {
-//         float: none !important;
-//         display: inline-block;
-//         margin-top: 1rem;
-//         padding: 0px;
-//     }
-// }
+ul.tabs {
+    text-align: center;
+    li {
+        float: none !important;
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0px;
+    }
+}
 
 
 /*===================================================================
