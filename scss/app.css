@@ -5799,20 +5799,19 @@ menupage text
   font-size: 1.6rem;
   text-transform: uppercase;
   margin-bottom: 2rem;
-  margin-top: 0.5rem;
   text-align: center;
   line-height: 1.6rem;
   font-weight: bold;
 }
 
 #menupage-text h2:first-child {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 @media only screen and (max-width: 45em) {
   #menupage-text h2 {
     font-size: 1.35em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     margin-top: 1.5rem;
     text-align: center;
     font-weight: bold;
@@ -5863,6 +5862,18 @@ menupage text
   line-height: 1.25rem;
   display: block;
   margin-top: 0.3rem;
+}
+
+#menupage-text ul.tabs li {
+  float: none !important;
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 45em) {
+  #menupage-text ul.tabs {
+    text-align: center;
+  }
 }
 
 .panel-menu-n {
@@ -6364,21 +6375,6 @@ input:not([type])[disabled], input:not([type])[readonly], fieldset[disabled] inp
   background-position: center;
   text-align: center;
   font-size: 24px;
-}
-
-/*===================================================================
-tabs menu
-===================================================================*/
-ul.tabs li {
-  float: none !important;
-  display: inline-block;
-  margin-top: 1rem;
-}
-
-@media only screen and (max-width: 45em) {
-  ul.tabs {
-    text-align: center;
-  }
 }
 
 /*===================================================================

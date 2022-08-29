@@ -127,7 +127,6 @@ margini per allineare le aside e i button
 homepage
 ===================================================================*/
 
-
 .panel-home-n {
     margin-bottom: 0;
     padding-top: 3rem;
@@ -275,19 +274,17 @@ menupage text
         font-size: 1.6rem;
         text-transform: uppercase;
         margin-bottom: 2rem;
-        margin-top: 0.5rem;
         text-align: center;
         line-height: 1.6rem;
         font-weight: bold;
         &:first-child {
-            margin-top: 1.5rem;
+            margin-top: 2.5rem;
         }
         @media #{$small-only} {
             font-size: 1.35em;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.8rem;
             margin-top: 1.5rem;
             text-align: center;
-
             font-weight: bold;
         }
     }
@@ -320,13 +317,24 @@ menupage text
         margin-left: 1.5rem;
         font-weight: normal;
    }
-   p small {
+    p small {
         font-size: 0.85rem;
         font-style: italic;
         line-height: 1.25rem;
         display: block;
         margin-top: 0.3rem;
    }
+   //tabs menu
+    ul.tabs {
+        li {
+            float: none !important;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        @media #{$small-only} {
+        text-align: center;
+        }
+    }
 }
 
 .panel-menu-n {
@@ -362,6 +370,7 @@ menupage text
         padding-bottom: 0.5rem;
     }
 }
+
 
 /*===================================================================
 team detail page
@@ -932,21 +941,6 @@ input:not([type])[disabled], input:not([type])[readonly], fieldset[disabled] inp
   background-position: center;
   text-align: center;
   font-size: 24px;
-}
-
-/*===================================================================
-tabs menu
-===================================================================*/
-
-ul.tabs {
-    li {
-        float: none !important;
-        display: inline-block;
-        margin-top: 1rem;
-    }
-    @media #{$small-only} {
-        text-align: center;
-    }
 }
 
 
