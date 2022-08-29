@@ -316,6 +316,9 @@ menupage text
         font-size: 0.95rem;
         margin-left: 1.5rem;
         font-weight: normal;
+        @media #{$small-only} {
+            margin-left: 0.8rem;
+        }
    }
     p small {
         font-size: 0.85rem;

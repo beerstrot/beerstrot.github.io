@@ -5856,6 +5856,12 @@ menupage text
   font-weight: normal;
 }
 
+@media only screen and (max-width: 45em) {
+  #menupage-text .price {
+    margin-left: 0.8rem;
+  }
+}
+
 #menupage-text p small {
   font-size: 0.85rem;
   font-style: italic;
