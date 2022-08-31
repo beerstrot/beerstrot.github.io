@@ -6009,6 +6009,34 @@ footer header style
   }
 }
 
+.testo-orari {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 45em) {
+  .testo-orari {
+    font-size: 0.83rem;
+  }
+}
+
+.orari {
+  display: inline-block;
+  float: right;
+  margin-right: 0rem;
+}
+
+@media only screen and (min-width: 45.063em) {
+  .orari {
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 64.0625em) {
+  .orari {
+    margin-right: 4rem;
+  }
+}
+
 .panel-hr {
   margin-bottom: 0;
   margin-top: 0;
