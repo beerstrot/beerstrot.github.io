@@ -254,7 +254,6 @@ Chi Siamo
 /*===================================================================
 menupage text
 ===================================================================*/
-
 #menupage-text {
     h1 {
         text-transform: uppercase;
@@ -344,10 +343,22 @@ menupage text
             margin-top: 1rem;
             margin-bottom: 0rem;
             padding:0;
+            //tab design
+
+            // background-color: red;
+            // border: 1px $primary-color solid;
+            // color: red;
         }
         @media #{$small-only} {
         text-align: center;
         }
+
+        li.active a {
+            color: $primary-color;
+        }
+    //     li.active {
+    //         color: $primary-color;
+    //     }
     }
 }
 

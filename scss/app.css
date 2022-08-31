@@ -5894,6 +5894,10 @@ menupage text
   }
 }
 
+#menupage-text ul.tabs li.active a {
+  color: #e00c10;
+}
+
 .panel-menu-n {
   margin-bottom: 0;
   padding-top: 1rem;
