@@ -5845,13 +5845,13 @@ menupage text
   font-size: 1rem;
 }
 
-#menupage-text p {
+#menupage-text li > p {
   font-size: 1.125rem;
   margin-bottom: 0rem;
 }
 
 @media only screen and (max-width: 45em) {
-  #menupage-text p {
+  #menupage-text li > p {
     font-size: 1.1rem;
   }
 }
@@ -6461,7 +6461,7 @@ accordion domande frequenti
 }
 
 /*===================================================================
-hamburger menu
+navbar menu
 ===================================================================*/
 /* Basic styling */
 nav {
