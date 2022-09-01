@@ -1032,6 +1032,38 @@ accordion domande frequenti
   display:none;
 }
 
+
+
+//button
+
+// button, .button {
+//     -webkit-appearance: none;
+//     -moz-appearance: none;
+//     border-radius: 0;
+//     border-style: none;
+//     border-width: 0;
+//     cursor: pointer;
+//     font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+//     font-weight: normal;
+//     line-height: normal;
+//     margin: 0 0 -.625rem;
+//     position: relative;
+//     text-align: center;
+//     text-decoration: none;
+//     display: inline-block;
+//     padding: 1rem 2rem 1.0625rem 2rem;
+//     font-size: 1rem;
+//     background-color: #fff;
+//     border: 2px $primary-color solid;
+//     color: $primary-color;
+//     transition:background-color 300ms ease-out
+// }
+
+// button:hover, button:focus, .button:hover, .button:focus {
+//     background-color:$primary-color;
+// }
+
+
 /*===================================================================
 navbar menu
 ===================================================================*/
@@ -1197,4 +1229,3 @@ nav {
         display: none;
     }
 }
-
