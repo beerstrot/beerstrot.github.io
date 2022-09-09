@@ -467,6 +467,14 @@ footer header style
         margin-right: 4rem;
     }
 }
+.orari-flex>li {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.orari-flex>li>* {
+  flex: 1;
+}
 
 .panel-hr {
     margin-bottom: 0;
@@ -1067,164 +1075,140 @@ accordion domande frequenti
 navbar menu
 ===================================================================*/
 
-/* Basic styling */
-
 nav {
-  background: #ffffff;
-  border-bottom: 2.5px #666666 solid;
-  padding: 0 5px 0 0px;
-}
-#hamburger a {
-  color: $jet;
-  text-decoration: none;
-}
-.menu1 {
-  list-style-type: none;
-  margin:0px 0px 0px 15px;
-  padding:0.5rem 0rem 0.5rem 0rem;
-}
-.logo {
-  font-size: 1,125rem;
-  padding: 7.5px 20px 7.5px 0;
-}
-.item {
-  padding: 5px 10px 15px 20px;
+    background: #ffffff;
+    border-bottom: 2.5px #666666 solid;
+    padding: 0 5px 0 0px;
 }
 
-//aumenta area cliccabile del button
-#hamburger .button a {
-  position: relative;
-  z-index: 50;
-}
-#hamburger .button a:before {
-  position: absolute;
-  content: '';
-  top: -18px;
-  right: -18px;
-  left: -18px;
-  bottom: -18px;
-  //outline: 2px solid yellow;
-  z-index: 40;
-}
-#hamburger .item:not(.button) a:hover,
-.item a:hover::after {
-    color: $primary-color;
-}
-.toggle {
-    flex: 1;
-    text-align: right;
+#hamburger {
+    a {
+        color: $jet;
+        text-decoration: none;
+    }
 
-}
-/* Mobile menu */
-.menu1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu1 li a {
-  display: block;
-  padding: 5px 5px;
-}
-
-.toggle {
-  order: 1;
-  font-size: 1.25rem;
-}
-.item.button {
-  order: 2;
-  margin-top: 16px;
-  margin-bottom: 12px;
-  margin-right: 10px;
-}
-.item {
-  order: 3;
-  width: 100%;
-  padding: 10px 0px;
-  text-align: left;
-  display: none;
-  padding-left: 10px;
-}
-.active .item {
-  display: block;
-}
-#hamburger .button a{
-    order:2;
-    display:block;
-    color: $white;
-    font-size: 1.25rem;
-}
-#hamburger .attuale a {
-        color: $primary-color;
-}
-
-#hamburger li.attuale.button {
-    background-color: rgb(134, 7, 10);
-}
-#hamburger li.attuale.button a {
-    color: white;
-}
-/* Tablet menu */
-// @media all and (min-width: 45.063em) {
-//   .menu1 {
-//     justify-content: center;
-//   }
-//   .logo {
-//     flex: 1;
-//   }
-
-//   .toggle {
-//     flex: 1;
-//     text-align: right;
-
-//   }
-//   #hamburger .button a{
-//     order:2;
-//     display:block;
-//     color: $white;
-//     font-size: 1.25rem;
-//   }
-// }
-
-/* Desktop menu */
-@media all and (min-width: 60em) {
     .menu1 {
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: nowrap;
-        background: none;
-        margin:0 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
+        margin:0px 0px 0px 15px;
+        padding:0.5rem 0rem 0.5rem 0rem;
     }
+
     .logo {
-        order: 0;
-        flex: 1;
+        flex: 2;
+        order: 1;
+        font-size: 1,125rem;
+        padding: 7.5px 20px 7.5px 0;
     }
+
     .item {
-        order: 1;
-        position: relative;
-        display: block;
-        width: auto;
-        padding: 20px 20px;
+        padding: 15px 20px 15px 10px;
+        order: 3;
+        width: 100%;
+        //padding: 10px 0px;
+        text-align: left;
+        display: none;
+        //padding-left: 10px;
     }
-    #hamburger .item.button {
-        width: auto;
-        order: 1;
-        display: block;
-        margin-top: 0px;
-        margin-bottom:0px;
-    }
-    #hamburger .button a {
-        order:2;
-        display:block;
-        color: $white;
-        margin-top:1px;
-        font-size: 1.25rem;
-    }
-    #hamburger .button {
+
+    .button {
         order: 2;
     }
+
+    .item.button {
+        margin-top: 16px;
+        margin-bottom: 12px;
+        margin-right: 10px;
+    }
+
+    .active .item {
+        display: block;
+    }
+
+//aumenta area cliccabile del button
+    .button a {
+        position: relative;
+        z-index: 50;
+    }
+
+    .button a:before {
+        position: absolute;
+        content: '';
+        top: -18px;
+        right: -18px;
+        left: -18px;
+        bottom: -18px;
+        //outline: 2px solid yellow;
+        z-index: 40;
+    }
+
+    .item:not(.button) a:hover,
+        .item a:hover::after {
+        color: $primary-color;
+    }
     .toggle {
-        display: none;
+        flex: 1;
+        text-align: right;
+        order: 1;
+        font-size: 1.25rem;
+    }
+
+    .menu1 li a {
+        display: block;
+        padding: 5px 5px;
+    }
+
+    .button a {
+        display:block;
+        color: $white;
+        font-size: 1.25rem;
+    }
+
+    .attuale a {
+        color: $primary-color;
+    }
+
+    li.attuale.button {
+        background-color: rgb(134, 7, 10);
+    }
+    li.attuale.button a {
+        color: white;
+    }
+
+/* Desktop menu */
+    @media all and (min-width: 60em) {
+        .menu1 {
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin:0 15px;
+        }
+
+        .item {
+            position: relative;
+            display: block;
+            width: auto;
+            padding: 20px 20px;
+        }
+
+        .item.button {
+            width: auto;
+            display: block;
+            margin-top: 0px;
+            margin-bottom:0px;
+        }
+        .button a {
+            display:block;
+            color: $white;
+            margin-top:1px;
+            font-size: 1.25rem;
+        }
+
+        .toggle {
+            display: none;
+        }
     }
 }
