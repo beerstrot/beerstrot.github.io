@@ -6049,8 +6049,31 @@ footer header style
 
 .orari-schedule li span {
   display: inline-block;
-  width: 90px;
+  width: 70px;
   margin-right: 20px;
+}
+
+.orari-footer-schedule {
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 45em) {
+  .orari-footer-schedule {
+    font-size: 0.83rem;
+  }
+}
+
+.orari-footer-schedule li span {
+  display: inline-block;
+  width: 80px;
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 45em) {
+  .orari-footer-schedule li span {
+    width: 70px;
+    margin-right: 20px;
+  }
 }
 
 .panel-hr {
