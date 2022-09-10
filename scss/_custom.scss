@@ -479,8 +479,13 @@ footer header style
 }
 .orari-schedule li span {
     display: inline-block;
-    width: 70px;
+    width: 90px;
     margin-right: 20px;
+}
+
+
+.orari-footer-schedule {
+    white-space: nowrap;
 }
 .orari-footer-schedule{
     font-size: 1rem;
@@ -493,7 +498,7 @@ footer header style
     width: 80px;
     margin-right: 20px;
     @media #{$small-only} {
-        width: 70px;
+        width: 60px;
         margin-right: 20px;
     }
 

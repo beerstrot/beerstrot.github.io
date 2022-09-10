@@ -6049,8 +6049,12 @@ footer header style
 
 .orari-schedule li span {
   display: inline-block;
-  width: 70px;
+  width: 90px;
   margin-right: 20px;
+}
+
+.orari-footer-schedule {
+  white-space: nowrap;
 }
 
 .orari-footer-schedule {
@@ -6071,7 +6075,7 @@ footer header style
 
 @media only screen and (max-width: 45em) {
   .orari-footer-schedule li span {
-    width: 70px;
+    width: 60px;
     margin-right: 20px;
   }
 }
