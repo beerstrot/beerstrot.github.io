@@ -664,7 +664,7 @@ function showMessage (message) {
   $('#myModal').foundation('reveal', 'open');
 }
 
-const telString = '<a href="tel:+390718853384"><span itemprop="telephone"> 071 8853384</span></a>';
+const telString = '<a href="tel:+390718853384"><span itemprop="telephone"> 071&nbsp;8853384</span></a>';
 
 const messengerString = '<a target="_blank" href="https://m.me/cavecchiabeerstrot"> Facebook Messenger</a>';
 

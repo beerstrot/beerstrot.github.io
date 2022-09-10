@@ -472,13 +472,15 @@ footer header style
         margin-right: 4rem;
     }
 }
-.orari-flex>li {
-  display: flex;
-  flex-flow: row nowrap;
-}
 
-.orari-flex>li>* {
-  flex: 1;
+
+.orari-schedule {
+    white-space: nowrap;
+}
+.orari-schedule li span {
+    display: inline-block;
+    width: 90px;
+    margin-right: 20px;
 }
 
 .panel-hr {
