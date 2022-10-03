@@ -6528,7 +6528,7 @@ nav {
   align-items: center;
   list-style-type: none;
   margin: 0px 0px 0px 15px;
-  padding: 0.5rem 0rem 0.5rem 0rem;
+  padding: 0.2rem 0rem 0.2rem 0rem;
 }
 
 #hamburger .logo {
@@ -6539,7 +6539,7 @@ nav {
 }
 
 #hamburger .item {
-  padding: 15px 20px 15px 10px;
+  padding: 10px 20px 10px 10px;
   order: 3;
   width: 100%;
   text-align: left;
@@ -6622,11 +6622,12 @@ nav {
     display: block;
     width: auto;
     padding: 20px 20px;
+    margin-top: 24px;
   }
   #hamburger .item.button {
     width: auto;
     display: block;
-    margin-top: 0px;
+    margin-top: 24px;
     margin-bottom: 0px;
   }
   #hamburger .button a {
