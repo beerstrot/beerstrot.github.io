@@ -23,10 +23,12 @@
 	<link rel="icon" href="https://www.beerstrot.it/asset/img/thumbs/favicon.png">
 	<link rel="canonical" href="https://www.beerstrot.it/asporto/"/>
 	<link rel="stylesheet" href="../css/app.css"/>
+	<link rel="stylesheet" href="../scss/stepper.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"/>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="../js/stepper.js"></script>
 	<!-- Facebook Pixel Code -->
 	<script>
 		!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -113,50 +115,54 @@
 			<div class="row">
 				<div class="large-12 medium-12 small-12 columns">
 					<h2 class="subheader">Per Stuzzicare</h2>
-					<ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-3 title-divider">
-						<li>
-							<ul class="pricing-table">
-
-							  <li class="title">Bocconcini di Pollo</li>
-							  <li class="price"><img src="../asset/img/medium/birramisu.jpg" alt=""></li>
-							  <li class="price">€5,9</li>
-							  <li class="description">Serviti con salsa piccante</li>
-							  <li class="bullet-item">Contiene: Glutine, Uova, Latte</li>
-
-							  <li class="cta-button"><a class="button" href="#">Aggiungi al carrello</a></li>
-							</ul>
-						</li>
-						<li>
-							<ul class="pricing-table">
-							  <li class="title">Standard</li>
-							  <li class="price">$99.99</li>
-							  <li class="description">An awesome description</li>
-							  <li class="bullet-item">1 Database</li>
-							  <li class="bullet-item">5GB Storage</li>
-							  <li class="bullet-item">20 Users</li>
-							  <li class="cta-button"><a class="button" href="#">Buy Now</a></li>
-							</ul>
-						</li>
-
+					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4 title-divider">
 						<li>
 							<h3>Bocconcini di Pollo<span class="price">5,9</span></h3>
 							<p>Serviti con salsa piccante
 							<small>Contiene: Glutine, Uova, Latte</small></p>
+							<div class="extra-space-hero">
+ 								<div class="counter">
+    								<input class="counter__input" type="text" value="0" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
+    								<a class="counter__increment" href="javascript:void(0)">+</a>
+    								<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
+							  	</div>
+							</div>
 						</li>
 						<li>
 							<h3>Olive all'Ascolana<span class="price">5,5</span></h3>
 							<p>Il più tipico street food marchigiano
 							<small>Contiene: Glutine, Uova, Latte, Sedano</small></p>
+							<div class="extra-space-hero">
+ 								<div class="counter">
+    								<input class="counter__input" type="text" value="0" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
+    								<a class="counter__increment" href="javascript:void(0)">+</a>
+    								<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
+							  	</div>
+							</div>
 						</li>
 						<li>
 							<h3>Mozzarelle Fritte<span class="price">5,9</span></h3>
 							<p>Mozzarelle fior di latte artigianali. Servite con salsa aioli fatta in casa
 							<small>Contiene: Glutine, Uova, Latte</small></p>
+							<div class="extra-space-hero">
+ 								<div class="counter">
+    								<input class="counter__input" type="text" value="0" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
+    								<a class="counter__increment" href="javascript:void(0)">+</a>
+    								<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
+							  	</div>
+							</div>
 						</li>
 						<li>
 							<h3>Cipolle Rosse<span class="price">4,9</span></h3>
 							<p>Cipolla rossa in tempura
 							<small>Contiene: Glutine, Latte, Crostacei</small></p>
+							<div class="extra-space-hero">
+ 								<div class="counter">
+    								<input class="counter__input" type="text" value="0" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
+    								<a class="counter__increment" href="javascript:void(0)">+</a>
+    								<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
+							  	</div>
+							</div>
 						</li>
 						<li>
 							<h3>Peperoncini Piccanti<span class="price">5,5</span></h3>
@@ -627,5 +633,6 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
 	<script src="https://www.beerstrot.it/js/app.min.js"></script>
 	<script src="https://www.beerstrot.it/js/navbar.min.js"></script>
+
 </body>
 </html>
