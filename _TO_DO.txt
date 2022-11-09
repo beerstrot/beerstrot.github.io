@@ -7,6 +7,7 @@ Importanti:
 v Per ora fissato: non è più stato prodotto! bug importante!: a volte mi da disponibile un tavolo, ma quando clicco "riserva il ravolo" appare popup: "non abbiamo più posto questo giorno". Quando scelgo il nr di persone non mi disabilita il turno non disponibile per quel numero di persone
 - algoritmo assegnazione tavolo: nr. Persone x 1,5
 - verificare parentesi in file prenota.js
+- timer: i turni non sono disponibili dopo l'orario. es. sono le 21: i turni precedenti alle 21 non sono selezionabili
 
 
 Media priorità:
