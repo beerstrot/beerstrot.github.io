@@ -23,7 +23,7 @@
 	<link rel="icon" href="https://www.beerstrot.it/asset/img/thumbs/favicon.png">
 	<link rel="canonical" href="https://www.beerstrot.it/asporto/"/>
 	<link rel="stylesheet" href="../css/app.css"/>
-	<link rel="stylesheet" href="../scss/stepper.css"/>
+	<link rel="stylesheet" href="https://www.beerstrot.it/scss/stepper.css"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet"/>
@@ -115,31 +115,41 @@
 					<h2 class="subheader">Per Stuzzicare</h2>
 					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
 						<li>
-							<h3>Bocconcini di Pollo<span class="price">5,9</span></h3>
-							<p>Serviti con salsa piccante
-								<small>Contiene: Glutine, Uova, Latte</small>
-							</p>
+							<div class="row">
+								<div class="small-3 columns">
+									<img src="https://www.beerstrot.it/asset/img/large/estivo.jpg" class="extra-space-blog">
+								</div>
+								<div class="small-9 columns">
+									<h3>Bocconcini di Pollo <span class="price">€ 5,9</span></h3>
+									<p>Serviti con salsa piccante<small>Contiene: Glutine, Uova, Latte</small>
+									</p>
+									<a href="#" class="button tiny" data-reveal-id="bocconcini">Aggiungi al Carrello</a>
+								</div>
+
+							</div>
+
 <!-- modale -->
 							<div class="extra-space-hero">
-								<a href="#" class="" data-reveal-id="myModal"><i class="fas fa-cart-plus"></i></a>
-								<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+
+								<div id="bocconcini" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 									<br><br>
-									<img src="https://www.beerstrot.it/asset/img/_src/large/estivo.jpg" alt="">
+									<img src="https://www.beerstrot.it/asset/img/large/estivo.jpg" alt="">
 									<h2 class="extra-space" id="modalTitle">Bocconcini di Pollo</h2>
-									<p>Bocconcini di petto di pollo. Serviti con salsa piccante fatta in casa.<br>
-										<small>Contiene: Glutine, Uova, Latte</small>
+									<p>Bocconcini di petto di pollo. Serviti con salsa piccante fatta in casa.<br><small>Contiene: Glutine, Uova, Latte</small>
 									</p>
 									<div class="extra-space-hero">
 										<label><strong>Note</strong>
 											<textarea id="" placeholder="........"></textarea>
 										</label>
 									</div>
-								    <div class="counter extra-space left">
-										<input class="counter__input" type="text" value="0" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
+								    <div class="counter extra-space">
+										<input class="counter__input" type="text" value="1" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
 										<a class="counter__increment" href="javascript:void(0)">+</a>
 										<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
 									</div>
-								  	<a href="#" class="button tiny extra-space right" data-reveal-id="myModal">Aggiungi al carrello</a>
+                                    <div>
+								  	<a href="#" class="button expand extra-space " data-reveal-id="bocconcini">Aggiungi al carrello €4,9</a>
+                                       </div>
 								  	<br><br><br>
 								  	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
 								</div>
@@ -153,12 +163,12 @@
 							<small>Contiene: Glutine, Uova, Latte, Sedano</small></p>
 <!-- modale -->
 							<div class="extra-space-hero">
-								<a href="#" class="button tiny" data-reveal-id="myModal">Scopri di più</a>
-								<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+								<a href="#" class="button tiny expand" data-reveal-id="olive">Scopri di più</a>
+								<div id="olive" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 									<br><br>
-									<img src="https://www.beerstrot.it/asset/img/_src/large/estivo.jpg" alt="">
-									<h2 class="extra-space" id="modalTitle">Bocconcini di Pollo</h2>
-									<p>Ingredienti: Bocconcini, sale, pepe <br>
+									<img src="https://www.beerstrot.it/asset/img/large/estivo.jpg" alt="">
+									<h2 class="extra-space" id="modalTitle">Olive all'Ascolana</h2>
+									<p>Il più tipico street food marchigiano<br>
 										<small>Contiene: Glutine, Uova, Latte</small>
 									</p>
 									<div class="extra-space-hero">

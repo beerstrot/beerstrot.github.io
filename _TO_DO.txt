@@ -27,3 +27,7 @@ v Quando link non è più valido-> dovrei atterrare in pagina con: "Link non pi�
 A parte:
 
 da verifcare con tilby: problema cambio su tilby numero persone totali per turno -> cancella tutti i turni dei già prenotati
+
+
+vendite
+- esempio di modal e carrello: https://deliveroo.it/en/menu/Milano/duomo/bun-burgers-via-dellorso/?day=today&fulfillment_method=COLLECTION&geohash=u0nd9hebnj1u&time=ASAP
