@@ -5579,6 +5579,16 @@ margini per allineare le aside e i button
   }
 }
 
+.extra-space-img-asporto {
+  margin-top: .5rem;
+}
+
+@media only screen and (max-width: 45em) {
+  .extra-space-img-asporto {
+    margin-top: .5rem;
+  }
+}
+
 .extra-space-aside {
   margin-top: 2.8rem;
 }
