@@ -4197,7 +4197,7 @@ label.error {
 
 @media only screen and (min-width: 45.063em) {
   .reveal-modal {
-    top: 6.25rem;
+    top: 3.125rem;
   }
 }
 
@@ -6649,4 +6649,21 @@ nav {
   #hamburger .toggle {
     display: none;
   }
+}
+
+.center {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+.modal-body {
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+.page-end {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

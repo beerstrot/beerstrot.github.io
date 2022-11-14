@@ -1244,3 +1244,24 @@ nav {
         }
     }
 }
+
+
+
+.center {
+  width: 60%;
+  margin: auto;
+  display: block;
+}
+
+.modal-body {
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+}
+
+
+
+.page-end {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
