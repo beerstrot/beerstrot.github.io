@@ -6661,9 +6661,3 @@ nav {
   max-height: calc(100vh - 110px);
   overflow-y: auto;
 }
-
-.page-end {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
