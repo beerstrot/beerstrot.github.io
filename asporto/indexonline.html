@@ -55,6 +55,7 @@
 			<li class="item"><a href="https://www.beerstrot.it/menu/">Menù</a></li>
 			<li class="item attuale"><a href="https://www.beerstrot.it/asporto/">Asporto</a></li>
 			<li class="item"><a href="https://www.beerstrot.it/contatti/">Contatti</a></li>
+			<li class="item"><a href="useraccount.html"><i class="fas fa-user"></i></a></li>
 			<li class="toggle"><a href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
 		</ul>
 	</nav>
@@ -87,10 +88,20 @@
 		</div>
 	</div>
 <!-- menu -->
-	<div class="tabs-content" id="menupage-text">
+	<div  id="menupage-text">
 <!-- tabbar switch-->
 		<div class="row"">
 			<div class="medium-12 large-12 small-12 columns">
+				<div data-magellan-expedition="fixed">
+				  	<dl class="sub-nav">
+				    	<dd data-magellan-arrival="stuzzicare"><a href="#stuzzicare">Per Stuzzicare</a></dd>
+				    	<dd data-magellan-arrival="hamburger"><a href="#hamburger">Hamburger</a></dd>
+				    	<dd data-magellan-arrival="carne"><a href="#carne">Carni</a><dd
+				    	<dd data-magellan-arrival="dolce"><a href="#dolce">Dolci</a></dd>
+				  	</dl>
+				</div>
+			</div>
+			<!-- <div class="medium-12 large-12 small-12 columns">
 				<ul class="tabs" data-tab data-options="deep_linking:true; scroll_to_content:true" role="tablist">
 					<li class="tab-title active" role="presentational">
 						<a href="#cena" role="tab" tabindex="0" aria-selected="true" controls="cena">Cibo</a>
@@ -105,12 +116,12 @@
 						<a href="#bevanda" role="tab" tabindex="3" aria-selected="false" controls="bevanda">Bevande</a>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 		</div>
 <!-- tabbar switch fine-->
 <!-- cena -->
-		<section class="content active" role="tabpanel" aria-hidden="false" id="cena">
-			<div class="row">
+		<section>
+			<div class="row"data-magellan-destination="stuzzicare"><a name="stuzzicare"></a>
 				<div class="large-12 medium-12 small-12 columns">
 					<h2 class="subheader">Per Stuzzicare</h2>
 					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-2 title-divider">
@@ -128,8 +139,8 @@
 
 							</div>
 <!-- modale -->
-							<div class="extra-space-hero ">
-								<div id="bocconcini" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+							<div class="extra-space-hero">
+								<div id="bocconcini" class="reveal-modal small " data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 									<br><br>
 									<img src="https://www.beerstrot.it/asset/img/large/battuto-vitello.jpg" alt="">
 									<h2 class="extra-space" id="modalTitle">Bocconcini di Pollo</h2>
@@ -142,6 +153,41 @@
 									</div>
                                     <div>
 								  	<a href="#" class="button expand extra-space " data-reveal-id="bocconcini">Aggiungi al carrello<span class="price"> € 5,9</span></a>
+                                       </div>
+								  	<br><br><br>
+								  	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+								</div>
+							</div>
+<!-- fine modale -->
+						</li>
+						<li>
+							<div class="row">
+								<div class="small-4 columns">
+									<img src="https://picsum.photos/150" class="extra-space-img-asporto">
+								</div>
+								<div class="small-8 columns">
+									<h3>Olive all'Ascolana<span class="price">5,5</span></h3>
+									<p>Il più tipico street food marchigiano<small>Allergeni: Glutine, Uova, Latte, Sedano</small>
+									</p>
+									<a href="#" class="button tiny" data-reveal-id="oliveascolana">Aggiungi al Carrello</a>
+								</div>
+
+							</div>
+<!-- modale -->
+							<div class="extra-space-hero">
+								<div id="oliveascolana" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+									<br><br>
+									<img src="https://www.beerstrot.it/asset/img/large/battuto-vitello.jpg" alt="">
+									<h2 class="extra-space" id="modalTitle">Olive all'Ascolana</h2>
+									Il più tipico street food marchigiano <br><small>Allergeni: Glutine, Uova, Latte, Sedano</small>
+									</p>
+								    <div class="counter extra-space">
+										<input class="counter__input" type="text" value="1" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
+										<a class="counter__increment" href="javascript:void(0)">+</a>
+										<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
+									</div>
+                                    <div>
+								  	<a href="#" class="button expand extra-space " data-reveal-id="bocconcini">Aggiungi al carrello<span class="price"> € 5,5</span></a>
                                        </div>
 								  	<br><br><br>
 								  	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -254,60 +300,26 @@
 							</div>
 <!-- fine modale -->
 						</li>
-						<li>
-							<div class="row">
-								<div class="small-4 columns">
-									<img src="https://picsum.photos/150" class="extra-space-img-asporto">
-								</div>
-								<div class="small-8 columns">
-									<h3>Bocconcini di Pollo 1<span class="price">5,9</span></h3>
-									<p>Bocconcini di petto di pollo. Serviti con salsa piccante fatta in casa<small>Contiene: Glutine, Uova, Latte</small>
-									</p>
-									<a href="#" class="button tiny" data-reveal-id="bocconcini1">Aggiungi al Carrello</a>
-								</div>
 
-							</div>
-<!-- modale -->
-							<div class="extra-space-hero">
-								<div id="bocconcini1" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-									<br><br>
-									<img src="https://www.beerstrot.it/asset/img/large/battuto-vitello.jpg" alt="">
-									<h2 class="extra-space" id="modalTitle">Bocconcini di Pollo 1</h2>
-									<p>Bocconcini di petto di pollo. Serviti con salsa piccante fatta in casa<br><small>Allergeni: Glutine, Uova, Latte</small>
-									</p>
-								    <div class="counter extra-space">
-										<input class="counter__input" type="text" value="1" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
-										<a class="counter__increment" href="javascript:void(0)">+</a>
-										<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
-									</div>
-                                    <div>
-								  	<a href="#" class="button expand extra-space " data-reveal-id="bocconcini">Aggiungi al carrello<span class="price"> € 5,9</span></a>
-                                       </div>
-								  	<br><br><br>
-								  	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
-								</div>
-							</div>
-<!-- fine modale -->
-						</li>
 						<li>
 							<div class="row">
 								<div class="small-4 columns">
 									<img src="https://picsum.photos/150" class="extra-space-img-asporto">
 								</div>
 								<div class="small-8 columns">
-									<h3>Mozzarelle Fitte<span class="price">5,9</span></h3>
-									<p>Mozzarelle fior di latte artigianali. Servite con salsa aioli fatta in casa<small>Allergeni: Glutine, Uova, Latte</small>
+									<h3>Alette di Pollo<span class="price">5,5</span></h3>
+									<p>A scelta fra leggermente piccanti o piccanti<small>Allergeni: Glutine, Uova, Latte</small>
 									</p>
-									<a href="#" class="button tiny" data-reveal-id="mozzarelle">Aggiungi al Carrello</a>
+									<a href="#" class="button tiny" data-reveal-id="alettepollo">Aggiungi al Carrello</a>
 								</div>
 							</div>
 <!-- modale -->
 							<div class="extra-space-hero">
-								<div id="mozzarelle" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+								<div id="alettepollo" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 									<br><br>
 									<img src="https://www.beerstrot.it/asset/img/large/estivo.jpg" alt="">
-									<h2 class="extra-space" id="mozzarelle">Mozzarelle Fritte</h2>
-									<p>Mozzarelle fior di latte artigianali. Servite con salsa aioli fatta in casa<br>
+									<h2 class="extra-space" id="alettepollo">Alette di Pollo</h2>
+									<p>A scelta fra leggermente piccanti o piccanti<br>
 									<small>Allergeni: Glutine, Uova, Latte</small></p>
 								    <div class="counter extra-space">
 										<input class="counter__input" type="text" value="2" name="counter" size="1" readonly="readonly" style="border:none; box-shadow:none;"/>
@@ -315,7 +327,7 @@
 										<a class="counter__decrement" href="javascript:void(0)">&ndash;</a>
 									</div>
                                     <div>
-								  	<a href="#" class="button expand extra-space " data-reveal-id="bocconcini">Aggiungi al carrello<span class="price"> €11,8</span></a>
+								  	<a href="#" class="button expand extra-space " data-reveal-id="alettepollo">Aggiungi al carrello<span class="price"> €11,8</span></a>
                                        </div>
 								  	<br><br><br>
 								  	<a class="close-reveal-modal" aria-label="Close">&#215;</a>
@@ -329,26 +341,26 @@
 									<img src="https://picsum.photos/150" class="extra-space-img-asporto">
 								</div>
 								<div class="small-8 columns">
-									<h3>Cipolle Rosse<span class="price">5,5</span></h3>
-									<p>Cipolla rossa in tempura.<br>
+									<h3>Falafel<span class="price">5,5</span></h3>
+									<p>Falafel di ceci, mais, cipolle e zucchine. Serviti con salsa tzatziki fatta in casa<br>
 									<small>Allergeni: Glutine, Latte, Crostacei</small></p>
-									<a href="#" class="button tiny" data-reveal-id="cipolle">Aggiungi al Carrello</a>
+									<a href="#" class="button tiny" data-reveal-id="falafel">Aggiungi al Carrello</a>
 								</div>
 							</div>
 <!-- modale -->
 						</li>
 						<li>
-							<h3>Olive all'Ascolana<span class="price">5,5</span></h3>
+							<h3>Falafel<span class="price">5,5</span></h3>
 							<p>Il più tipico street food marchigiano
 							<small>Contiene: Glutine, Uova, Latte, Sedano</small></p>
 <!-- modale -->
 							<div class="extra-space-hero">
 								<a href="#" class="button tiny" data-reveal-id="olive">Aggiungi al carrello</a>
-								<div id="olive" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+								<div id="falafel" class="reveal-modal small" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
 									<br><br>
 									<img src="https://www.beerstrot.it/asset/img/large/estivo.jpg" alt="">
-									<h2 class="extra-space" id="modalTitle">Olive all'Ascolana</h2>
-									<p>Il più tipico street food marchigiano<br>
+									<h2 class="extra-space" id="modalTitle">Falafel</h2>
+									<p>Falafel di ceci, mais, cipolle e zucchine. Serviti con salsa tzatziki fatta in casa<br>
 										<small>Contiene: Glutine, Uova, Latte</small>
 									</p>
 									<div class="extra-space-hero">
@@ -621,7 +633,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" data-magellan-destination="hamburger"><a name="hamburger"></a>
 				<div class="large-12 medium-12 small-12 columns">
 					<h2 class="subheader">Per i Più Piccoli</h2>
 					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
@@ -1118,7 +1130,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row"data-magellan-destination="carne" ><a name="carne"></a>
 				<div class="large-12 medium-12 small-12 columns">
 					<h2 class="subheader">Carni</h2>
 					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
@@ -1134,7 +1146,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="row">
+			<div class="row" data-magellan-destination="dolce" ><a name="dolce"></a>
 				<div class="large-12 medium-12 small-12 columns">
 					<h2 class="subheader">Dolci<br><small>Fatti in casa</small></h2>
 					<div class="">
@@ -1181,10 +1193,10 @@
 		</section>
 <!-- cena fine -->
 <!-- birra -->
-		<section class="content" role="tabpanel" aria-hidden="false" id="birra">
+		<section data-magellan-destination="birra"><a name="birra">
 			<div class="row">
 				<div class="large-12 medium-12 small-12 columns">
-					<h2 class="subheader">Birre artigianali in bottiglia</h2>
+					<h2 class="subheader" ></a>Birre artigianali in bottiglia</h2>
 					<div class="title-divider">
 						<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
 							<!-- <li>
@@ -1262,10 +1274,10 @@
 		</section>
 <!-- birra fine-->
 <!-- vino -->
-		<section class="content" role="tabpanel" aria-hidden="false" id="vino">
-			<div class="row">
+		<section>
+			<div class="row" data-magellan-destination="vino"><a name="vino"></a>
 				<div class="large-12 medium-12 small-12 columns">
-					<h2 class="subheader">Vino Bottiglia</h2>
+					<h2 class="subheader" >Vino Bottiglia</h2>
 					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
 						<li>
 							<h3>Cervidoni DOC<span class="price">13,5</span></h3>
@@ -1313,10 +1325,10 @@
 		</section>
 <!-- vino fine -->
 <!-- Bevande -->
-		<section class="content" role="tabpanel" aria-hidden="false" id="bevanda">
+		<section>
 			<div class="row">
 				<div class="large-12 medium-12 small-12 columns">
-					<h2 class="subheader">Bevande</h2>
+					<h2 class="subheader" data-magellan-destination="bevanda"><a name="bevanda"></a>Bevande</h2>
 					<ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 title-divider">
 						<li>
 							<h3>Coca Cola<span class="price">3</span></h3>
@@ -1340,7 +1352,7 @@
 		</section>
 <!-- Bevande fine -->
 <!-- tabbar switch-->
-		<div class="row">
+		<!-- <div class="row">
 			<div class="medium-12 large-12 small-12 columns">
 				<ul class="tabs" data-tab data-options="deep_linking:true; scroll_to_content:true" role="tablist">
 					<li class="tab-title active" role="presentational">
@@ -1357,7 +1369,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 		<div class="extra-space-hero">
 		</div>
 <!-- tabbar switch fine-->
