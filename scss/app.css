@@ -4348,7 +4348,7 @@ label.error {
 .sub-nav dd a,
 .sub-nav li a {
   color: #444;
-  padding: 0.1875rem 0.25rem;
+  padding: 0.1875rem 0.5rem;
   text-decoration: none;
 }
 
