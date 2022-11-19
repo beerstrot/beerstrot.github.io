@@ -4348,7 +4348,7 @@ label.error {
 .sub-nav dd a,
 .sub-nav li a {
   color: #444;
-  padding: 0.5rem 1rem;
+  padding: 0.1875rem 0.375rem;
   text-decoration: none;
 }
 
@@ -4366,7 +4366,7 @@ label.error {
   color: #FFFFFF;
   cursor: default;
   font-weight: normal;
-  padding: 0.5rem 1rem;
+  padding: 0.1875rem 0.375rem;
 }
 
 .sub-nav dt.active a:hover,
