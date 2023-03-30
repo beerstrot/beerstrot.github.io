@@ -910,7 +910,7 @@ prenota
 ===================================================================*/
 
 .privacy {
-    font-size: 0,8rem;
+    font-size: 0.8rem;
 }
 
 
@@ -1257,3 +1257,45 @@ nav {
     max-height: calc(100vh - 110px);
     overflow-y: auto;
 }
+
+/*===================================================================
+modal centrato e fisso
+===================================================================*/
+
+
+
+// .modal2 {
+//     display: none;
+//     height: 100%;
+//     left: 0;
+//     position: fixed;
+//     top: 0;
+//     width: 100%;
+// }
+// .modal2.open {
+//    display: flex;
+//    flex-direction: column;
+// }
+// .modal2__header,
+// .modal2__footer {
+//     height: 100px;
+// }
+// .modal2__content {
+//     height: 100%;
+//     overflow-y: auto;
+// }
+
+
+.reveal-modal.open {
+  position:fixed;
+  top:50%!important; /* override inline style injected from JS */
+  left:50%;
+  transform:translate(-50%, -50%);
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+
+
+
+

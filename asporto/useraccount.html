@@ -5,16 +5,16 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes">
     <title>Beerstrot | Prenota</title>
-    <meta name="description" content="Riserva un Tavolo a Ca' Vecchia Beerstrot"/>
+    <meta name="description" content="Account utente"/>
     <meta name="author" content="Ca' Vecchia Beerstrot"/>
     <meta name="copyright" content="Ca' Vecchia Beerstrot Copyright (c) 2022"/>
     <meta property="fb:app_id" content="1549149915357715"/>
     <meta property="og:url" content="https://www.beerstrot.it/prenota/"/>
     <meta property="og:type" content="website"/>
-    <meta property="og:title" content="Riserva un Tavolo a Ca' Vecchia Beerstrot"/>
-    <meta property="og:description" content="Riserva un Tavolo a Ca' Vecchia Beerstrot"/>
+    <meta property="og:title" content="Account Utente"/>
+    <meta property="og:description" content="Account utente"/>
     <link rel="icon" href="https://www.beerstrot.it/asset/img/thumbs/favicon.png">
-    <link rel="canonical" href="https://www.beerstrot.it/prenota/"/>
+    <link rel="canonical" href="https://www.beerstrot.it/account/"/>
     <link rel="stylesheet" href="https://www.beerstrot.it/css/app.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"/>
@@ -42,166 +42,43 @@
         <ul class="menu1">
             <li class="logo"><a href="https://www.beerstrot.it"><img class="img-logo" src="https://www.beerstrot.it/asset/img/svgs/logo-completo.svg" alt="Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a>
             </li>
-            <li class="item button attuale"><a href="https://www.beerstrot.it/prenota/">Riserva un Tavolo</a></li>
+            <li class="item button"><a href="https://www.beerstrot.it/prenota/">Riserva un Tavolo</a></li>
             <li class="item"><a href="https://www.beerstrot.it/menu/">Menù</a></li>
             <li class="item"><a href="https://www.beerstrot.it/asporto/">Asporto</a></li>
             <li class="item"><a href="https://www.beerstrot.it/contatti/">Contatti</a></li>
+            <li class="item attuale"><a href="https://www.beerstrot.it/account/"><i class="fas fa-user"></i></a></li>
             <li class="toggle"><a href="javascript:void(0)"><i class="fas fa-bars"></i></a></li>
         </ul>
     </nav>
 <!-- fine navbar con hamburger -->
     <header class="row">
         <div class="medium-12 large-12 columns extra-space">
-            <h1 id="ttitle">Riserva un Tavolo</h1>
-            <br>
+            <h1 id="">Account</h1>
+            <hr>
         </div>
     </header>
-<!-- inizio loader -->
-    <div id="loading" hidden>
-    </div>
-<!-- fine loader -->
-<!-- inizio dashboard -->
-    <div class="row" id="notesDiv" hidden>
-        <div class="small-6 medium-4 columns" id="innerNotesDiv_" >
-            <label>Seleziona giorno
-                <input tabindex="5" id="from2" type="text">
-            </label>
-        </div>
-        <div class="small-12 columns end extra-space-hero" id="notesDiv3" >
-        </div>
-        <div class="small-12 columns" id="innerNotesDiv1" >
-        </div>
-        <div class="small-12 columns" id="innerNotesDiv2" >
-        </div>
-        <div class="small-12 medium-12 large-12 columns" id="innerNotesDiv" style="overflow-x:auto;">
-            <table id="shiftsTable">
-                <caption class="text-left extra-space">Numero persone per turno</caption>
-                <thead>
-                    <tr>
-                        <th>Turno</th>
-                        <th>Nr. Persone Totali</th>
-                        <th>Nr. Persone Prenotate online</th>
-                        <th>Nr. Persone Prenotate da Scloby</th>
-                    </tr>
-                </thead>
-                <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
-            </table>
-            <table id="notesTable" class="extra-space-footer">
-                <caption class="text-left">Prenotazioni online</caption>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Nr. Persone</th>
-                        <th>Tavolo</th>
-                        <th>Telefono</th>
-                        <th>Email</th>
-                        <th>Orario</th>
-                        <th>Cani</th>
-                        <th>Seggioloni</th>
-                        <th>Note</th>
-                    </tr>
-                </thead>
-                <tbody id="notesTableBody" style="text-align:center;"></tbody>
-            </table>
-            <table id="anonTable" class="extra-space-footer">
-                <caption class="text-left">Prenotazioni da Scloby senza turno</caption>
-                <thead>
-                    <tr>
-                        <th>Inizio</th>
-                        <th>Fine</th>
-                        <th>Nr. Persone</th>
-                        <th>Tavolo</th>
-                    </tr>
-                </thead>
-                <tbody id="anonTableBody" style="text-align:left;"></tbody>
-            </table>
-            <br><br>
-        </div>
-    </div>
-<!-- fine dashboard -->
 <!-- inizio form -->
-    <div class="panel-home-2n form">
-        <form id="form">
+    <div class="panel-home-n form">
+        <form id="">
             <div class="row">
-                <div class="small-12 medium-12 large-12 columns">
-                     <h6>Includi in <strong>Quante persone*</strong> anche eventuali seggioloni. Esempio: 4 persone e 2 seggioloni seleziona 6.</h6>
-                     <h6 class="extra-space-hero"><strong>* </strong> Indica un campo obbligatorio.</h6>
+                <div class="small-12 columns">
+                    <h2>I miei dati</h2>
                 </div>
-                <div class="small-12 medium-12 columns"><hr></div>
-            </div>
-            <div class="row">
-                <div class="small-6 medium-3 columns ">
-                    <label><strong>Quale giorno*</strong>
-                        <input tabindex="5" id="from" type="text" name="LNAME" class="required error" placeholder="Seleziona Giorno" readonly/>
-                    </label>
-                </div>
-                <div class="small-6 medium-3 columns end">
-                    <label><strong>Quante persone*</strong>
-                        <select name="MMERGE4" class="error" id="quantity" disabled>
-                            <option value="">Seleziona Numero</option>
-                        </select>
-                    </label>
-                </div>
-            </div>
-            <div class="row extra-space-hero">
-                <div class="small-12 medium-6 columns end">
-                    <label><strong>Quale turno*</strong>
-                        <div id="shiftGridL"></div>
-
-                    <ul class="small-block-grid-2  extra-space-turno error" id="shiftGrid">
-                        <li class="bShift"><a class="small button disabled">19.00-21.00</a></li>
-                        <li class="bShift"><a class="small button disabled">19.30-21.30</a></li>
-                        <li class="bShift"><a class="small button disabled">20.00-22.00</a></li>
-                        <li class="bShift"><a class="small button disabled">20.30-22.30</a></li>
-                        <li class="bShift"><a class="small button disabled">21.00-23.00</a></li>
-                        <li class="bShift"><a class="small button disabled">21.30-23.00</a></li>
-                    </ul>
-                    </label>
-                    <h6>Turno: orario d'arrivo-orario in cui bisogna lasciare il tavolo</h6>
-                </div>
-                <div class="small-12 medium-12 columns"><hr></div>
-            </div>
-            <div class="row">
-                <div class="small-12 medium-6 columns end">
-                    <label><strong>Note</strong>
-                        <textarea maxlength="200" id="obs" placeholder="Intolleranze, accesso con sedia a rotelle, ..."></textarea>
-                    </label>
-                </div>
-            </div>
-            <div class="row extra-space-hero">
-                <div class="small-9 medium-4 columns end ">
-                    <label><strong>Ho bisogno di seggioloni</strong>
-                        <select name="MMERGE4" class="" id="seggiolini">
-                            <option value="0">No</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                        </select>
-                    </label>
-                </div>
-            </div>
-            <div class="row extra-space-hero">
-                <div class="small-9 medium-6 columns end" >
-                    <input id="cani" type="checkbox"><label for="checkbox1">Ho uno o più cani</label>
-                </div>
-                <div class="small-12 medium-12 columns"><hr></div>
-            </div>
-            <div class="row">
                 <div class="small-6 medium-4 large-4 columns">
                     <label><strong>Nome*</strong>
-                        <input type="text" class="required error" id="name" placeholder="Nome" maxlength="20"/>
+                        <input type="text" class="required error" id="name" placeholder="Andrea" maxlength="20"/>
                     </label>
                 </div>
                 <div class="small-6 medium-4 large-4 columns end">
                     <label><strong>Cognome*</strong>
-                        <input type="text" class="required error" id="surname" placeholder="Cognome" maxlength="20"/>
+                        <input type="text" class="required error" id="surname" placeholder="Tagliazucchi" maxlength="20"/>
                     </label>
                 </div>
             </div>
             <div class="row">
                 <div class="small-12  medium-5 large-5 columns extra-space-hero">
-                    <label><strong>Email*</strong>
-                        <input type="email" class="required error email" id="email" placeholder="esempio@esempio.it" maxlength="200"/>
+                    <label><strong>Email (la tua username) non modificabile*</strong>
+                        <input type="email" class="required error email" id="disabled" placeholder="esempio@esempio.it" maxlength="200"/>
                       </label>
                 </div>
                 <div class="small-6  medium-3 large-3 columns end extra-space-hero">
@@ -209,18 +86,31 @@
                         <input type="tel" class="required error" id="telephone" placeholder="3332221111" maxlength="35" />
                     </label>
                 </div>
-                <div class="small-12 medium-12 columns"><hr></div>
             </div>
-            <div class="row">
-                <div class="small-12 medium-12 large-12 columns extra-space-hero" id="privacy3">
-                    <input id="privacy" type="checkbox" checked><label for="checkbox2"> Accetto la<a id="privacy2" class="required error"> privacy</a>*</label>
-                </div>
-            </div>
-            <div class="row extra-space-from-tabs">
+            <div class="row extra-space">
                 <div class="small-12 medium-12 large-12 columns ">
-                    <a id="prenota" role="button" class="button right" style="margin-bottom:0.5rem; margin-top:0.3rem;">Riserva il Tavolo</a>
+                    <a id="" role="button" class="button right" style="margin-bottom:0.5rem; margin-top:0.3rem;">Modifica dati</a>
                 </div>
                 <br>
+            </div>
+            <div class="small-12 medium-12 columns"><hr></div>
+            <div class="row extra-space">
+                <div class="small-12 columns">
+                    <h2>Cambia password</h2>
+                </div>
+                <div class="small-6  medium-5 large-5 columns">
+                    <label><strong>Vecchia password</strong>
+                        <input type="email" class="required error password" id="" placeholder=""/>
+                    </label>
+                </div>
+                <div class="small-6  medium-5 large-5 columns">
+                    <label><strong>Nuova password</strong>
+                        <input type="email" class="required error password" id="" placeholder=""/>
+                    </label>
+                </div>
+                <div class="small-12 medium-12 large-12 columns extra-space">
+                    <a id="" role="button" class="button right" style="margin-bottom:0.5rem; margin-top:0.3rem;">Modifica password</a>
+                </div>
             </div>
         </form>
     </div>
