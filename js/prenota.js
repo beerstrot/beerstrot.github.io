@@ -73,7 +73,7 @@ function modifyReservation (pid, fp) {
 
 // beerstrot-prod:
 const url = 'https://6nw3zi6sbkph6dledhd4op3mvq0aaduw.lambda-url.eu-central-1.on.aws/';
-// const url = 'http://localhost:5001/entry';
+// const url = 'http://localhost:5002/entry';
 let pCount = 0;
 function mkCall(type, data, success, error) {
   if (!['POST', 'GET'].includes(type)) return console.log(`this ajax method is not good: ${type}`);
@@ -138,7 +138,7 @@ function showDays (datetime) {
     { action: 'days', data: datetime || '--' },
     res => {
       const r = res;
-      $('#innerNotesDiv').html('<b>Giorni di chiusura:</b><br>' + r.dates.join('<br>'));
+      $('#innerNotesDiv').html(`<b> ${r.dates.length} Giorni di chiusura:</b><br>` + r.dates.join('<br>'));
       jQuery('#from2').flatpickr({
         minDate: 'today',
         locale: 'it',
