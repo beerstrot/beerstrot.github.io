@@ -1,0 +1,494 @@
+<!doctype html>
+<html class="no-js" lang="it">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-YVPH2DD4R7"></script>
+    <script type="text/plain" data-cookiecategory="analytics">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YVPH2DD4R7');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riserva un Tavolo | Ca' Vecchia Beerstrot </title>
+    <meta name="description" content="Riserva un Tavolo a Ca&#x27; Vecchia Beerstrot direttamente dal nostro sito web">
+    <meta name="author" content="Ca' Vecchia Beerstrot">
+    <meta name="copyright" content="Beerstrot Copyright (c) 2023">
+    <link rel="canonical" href="https://www.beerstrot.it/riserva-un-tavolo.html">
+    <link rel="icon" href="assets/img/thumbs/favicon.png">
+    <meta name="p:domain_verify" content="ca68ebe696c4699798a5a243ca187b2d">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css">
+    <!-- Facebook Pixel Code -->
+    <script type="text/plain" data-cookiecategory="targeting" >
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '770709373057085');
+        fbq('track', "PageView");
+        fbq('track', 'ViewContent');
+    </script>
+    <noscript type="text/plain"><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=770709373057085&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+    <div id="loading" hidden></div>
+    <nav id="hamburgerNav">
+    	<ul class="menu-hamburger">
+    		<li class="logo"><a href="index.html"><img class="img-logo" src="assets/img/svgs/logo.svg" alt="Logo Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></li>
+    		<li class="item  attuale"><a href="riserva-un-tavolo.html">Riserva un Tavolo</a></li>
+    		<li class="item "><a href="asporto.html">Ordina da Asporto</a></li>
+    		<li class="item "><a href="menu.html">Menù</a></li>
+    		<li class="item "><a href="chi-siamo.html">Chi Siamo</a></li>
+    		<li class="item "><a id="user-pg-btn"><i class="las la-user-circle la-3x"></i></a></li>
+    		<li class="toggle"><a href="javascript:void(0)"><i class="las la-bars la-2x"></i></a></li>
+    	</ul>
+    </nav>
+    <header class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="small-12 cell">
+                <h1 class="first-paragraph-no-hero" id="ttitle">Riserva un Tavolo</h1>
+            </div>
+        </div>
+    </header>
+    <!-- inizio loader -->
+    <!-- fine loader -->
+    <!-- inizio dashboard -->
+    <div class="grid-container" id="notesDiv" hidden>
+        <div class="grid-x grid-margin-x">
+            <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
+                <label>Seleziona giorno
+                    <input tabindex="5" id="from2" type="text">
+                </label>
+            </div>
+            <div class="small-12 cell" id="notesDiv3">
+            </div>
+            <div class="small-12 cell" id="innerNotesDiv1">
+            </div>
+            <div class="small-12 cell" id="innerNotesDiv2">
+            </div>
+            <div class="small-12 cell table-scroll" id="innerNotesDiv">
+                <table id="shiftsTable" style="table-layout: auto; width:auto; font-size: 0.875rem;">
+                    <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Numero persone per turno</caption>
+                    <thead>
+                        <tr>
+                            <th>Turno</th>
+                            <th>Nr. Persone Totali</th>
+                            <th>Nr. Persone Prenotate online</th>
+                            <th>Nr. Persone Prenotate da Scloby</th>
+                        </tr>
+                    </thead>
+                    <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
+                </table>
+                <table id="notesTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem;">
+                    <caption class="text-left" style="font-size: 1rem; padding-left:0rem;">Prenotazioni online</caption>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Nr. Persone</th>
+                            <th>Tavolo</th>
+                            <th>Orario</th>
+                            <th>Cani</th>
+                            <th>Seggioloni</th>
+                            <th>Note</th>
+                            <th>Telefono</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody id="notesTableBody" style="text-align:center;"></tbody>
+                </table>
+                <table id="anonTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem;">
+                    <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Prenotazioni da Scloby senza turno</caption>
+                    <thead>
+                        <tr>
+                            <th>Inizio</th>
+                            <th>Fine</th>
+                            <th>Nr. Persone</th>
+                            <th>Tavolo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="anonTableBody" style="text-align:left;"></tbody>
+                </table>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <!-- fine dashboard -->
+    <!-- inizio form -->
+    <div class="panel-home-n">
+        <div class="grid-container">
+            <form id="form" novalidate="novalidate" autocomplete="on">
+                <div class="grid-x grid-margin-x">
+                    <div class="small-12 cell">
+                         <p>Includi in <strong>Quante persone*</strong> anche eventuali seggioloni. Esempio: 4 persone e 2 seggioloni seleziona 6.</p>
+                         <p><strong>* </strong> Indica un campo obbligatorio.</p>
+                    </div>
+                    <div class="small-12 cell"><hr></div>
+                </div>
+                <div class="grid-x grid-margin-x grid-margin-y">
+                    <div class="small-6 medium-4 cell">
+                        <label><strong>Quale giorno*</strong>
+                            <input id="from" type="text" class="required error" placeholder="Seleziona Giorno" readonly/>
+                        </label>
+                    </div>
+                    <div class="small-6 medium-4 cell">
+                        <label><strong>Quante persone*</strong>
+                            <select class="required error" id="quantity" disabled>
+                                <option>Seleziona Numero</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="small-12 medium-6 large-4 xlarge-4 xxlarge-3 cell">
+                        <label style="margin-bottom:0" ><strong>Quale turno*</strong>
+                            <div id="shiftGridL"></div>
+                            <div class="grid-x small-up-2 required error" id="shiftGrid">
+                                <div class="cell bShift"><button type="button" class="button" disabled>19.00-21.00</button></div>
+                                <div class="cell bShift"><button type="button" class="button" disabled>19.30-21.30</button></div>
+                                <div class="cell bShift"><button type="button" class="button" disabled>20.00-22.00</button></div>
+                                <div class="cell bShift"><button type="button" class="button" disabled>20.30-22.30</button></div>
+                                <div class="cell bShift"><button type="button" class="button" disabled>21.00-23.00</button></div>
+                                <div class="cell bShift"><button type="button" class="button" disabled>21.30-23.00</button></div>
+                            </div>
+                        </label>
+                        <h6>Turno: orario d'arrivo-orario in cui bisogna lasciare il tavolo</h6>
+                    </div>
+                    <div class="small-12 cell"><hr></div>
+                </div>
+                <div class="grid-x grid-margin-x grid-margin-y">
+                    <div class="small-12 medium-6 cell">
+                        <label><strong>Note</strong>
+                            <textarea maxlength="200" id="obs" placeholder="Accesso con sedia a rotelle, ..."></textarea>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="small-7 medium-4 cell">
+                        <label><strong>Ho bisogno di seggioloni</strong>
+                            <select id="seggiolini">
+                                <option value="0">No</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="small-9 medium-6 cell" >
+                        <div class="">
+                            <label class="container-checkbox">
+                                <input id="cani" type="checkbox"><span class="checkmark"></span><strong>Ho uno o più cani</strong>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-top:0;">
+                <!-- <div class="grid-x grid-margin-x">
+                    <div class="small-12 cell"><a data-open="signup-login" class="highlight">Accedi o Registrati</a></div>
+                    <div class="small-12 cell extra-space"><p>Oppure riserva un tavolo senza registrazione:</p></div>
+                </div> -->
+                <div class="grid-x grid-margin-x grid-margin-y">
+                    <div class="small-6 medium-4 cell">
+                        <label for="name"><strong>Nome*</strong>
+                            <input type="text" class="required error" id="name" name="name" autocomplete="given-name" placeholder="" maxlength="20"/>
+                        </label>
+                    </div>
+                    <div class="small-6 medium-4 cell">
+                        <label for="surname"><strong>Cognome*</strong>
+                            <input type="text" autocomplete="family-name" class="required error" id="surname" name="surname" maxlength="35"/>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-margin-x">
+                    <div class="small-6 medium-3 cell">
+                        <label for="telephone"><strong>Telefono*</strong>
+                             <input type="tel" autocomplete="tel" class="required error" id="telephone" name="telephone" maxlength="35"/>
+                        </label>
+                    </div>
+                    <div class="small-10 medium-5 cell">
+                        <label for="email"><strong>Email*</strong>
+                            <input type="email" autocomplete="email" class="required error email" id="email" name="email" maxlength="200"/>
+                          </label>
+                    </div>
+                    <div class="small-12 cell"><hr></div>
+                </div>
+                <div class="grid-x grid-margin-x grid-margin-y">
+                    <div class="small-12 cell">
+                        <div class="container-checkbox" id="privacy3">
+                            <label>
+                                <input id="privacy" type="checkbox" checked><span class="checkmark"></span>Accetto la <a href="informazioni-legali.html#privacy" target="_blank" rel="noopener">Informativa sulla privacy <i class="las la-external-link-alt la-sm"></i></a><strong>*</strong>
+                            </label>
+                        </div>
+                        <button id="prenota" class="button submit">Riserva il Tavolo</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- fine form -->
+    <!-- inizio modale messaggio locale completo & chiusura giorni mesi invernali-->
+    <div id="myModal" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+        <p class="lead extra-space-modal-first-paragraph" id="modalLead">In questa data siamo al completo.</p>
+        <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
+            <span aria-hidden="true">&#215;</span>
+        </button>
+    </div>
+    <!-- fine modale messaggio locale completo -->
+    <!-- inizio modale invio promemoria ai clienti e aggiungere/rimuovere giorni chiusura-->
+    <div id="myModal2" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+        <p class="extra-space-modal-first-paragraph" id="modalLead2">Vuoi inviare il promemoria della prenotazione ai clienti?</p>
+        <button type="button" id="no" class="button small float-right" style="margin-top: 5px;">No, non inviare</button>
+        <button type="button" id="yes" class="button small float-left" style="margin-top: 5px;">Sì, Invia</button>
+        <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
+            <span aria-hidden="true">&#215;</span>
+        </button>
+    </div>
+    <!-- fine modale invio promemoria ai clienti e aggiungere/rimuovere giorni chiusura-->
+    <!-- inizio modale accedi registrati-->
+    <div id="signup-login" class="reveal reveal-ecommerce grid-x grid-margin-x grid-margin-y main-container" data-reveal-id='signup-login' data-reveal>
+        <header class="main-header">
+            <h2 class="h2-titolo-carrello"></h2>
+            <button type="button" class="close-button close-button-carrello" data-close aria-label="Close reveal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </header>
+        <form autocomplete="on">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <h2 class="h2-carrello">Accedi</h2>
+                </div>
+                <div class="small-10 cell">
+                    <label for="email-login"><strong>Email</strong>
+                        <input id="email-login" type="email" autocomplete="username" name="email-login" class="required error email" placeholder=""/>
+                    </label>
+                </div>
+                <div class="small-8 cell">
+                    <label for="password-login"><strong>Password</strong>
+                        <input id="password-login" type="password" name="password-login" class="required error password" autocomplete="current-password"/>
+                    </label>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <button class="button submit" id="login-btn" type="button">Accedi</button>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <p>Se non ricordi la password registrati nuovamente</p>
+                </div>
+            </div>
+        </form>
+       <!--  <div class="grid-x grid-padding-x grid-margin-y">
+            <div class="small-12 cell">
+                <h5 class="text-center subheader">oppure</h5>
+            </div>
+        </div> -->
+        <!-- <div class="grid-x grid-padding-x grid-padding-y">
+            <div class="small-12 cell">
+                <button type="button" class="button">Accedi con Facebook</button>
+                <button type="button" class="button alert">Accedi con Google</button>
+            </div>
+        </div> -->
+        <form autocomplete="on">
+            <div class="grid-x grid-padding-x extra-space">
+                <div class="small-12 cell">
+                    <h2 class="h2-carrello">Registrati</h2>
+                </div>
+                <div class="small-6 medium-6 cell">
+                    <label for="name"><strong>Nome*</strong>
+                        <input type="text" autocomplete="given-name" class="required error" id="name" name="name" maxlength="20"/>
+                    </label>
+                </div>
+                <div class="small-6 medium-6 cell">
+                    <label for="surname"><strong>Cognome*</strong>
+                        <input type="text" autocomplete="family-name" class="required error" id="surname" name="surname" maxlength="35"/>
+                    </label>
+                </div>
+                <div class="small-6 medium-4 cell">
+                    <label for="telephone"><strong>Telefono*</strong>
+                        <input type="tel" autocomplete="tel" class="required error" id="telephone" name="telephone" maxlength="35"/>
+                    </label>
+                </div>
+                <div class="small-10  medium-8 cell">
+                    <label for="email"><strong>Email (la tua username)*</strong>
+                        <input type="email" autocomplete="email" class="required error" id="email" name="email" maxlength="200"/>
+                      </label>
+                </div>
+                <div class="small-8 cell">
+                    <label for="password"><strong>Password*</strong>
+                         <input id="password" autocomplete="new-password" type="password" name="password" class="required error password"/>
+                    </label>
+                </div>
+                <div class="small-12 cell">
+                    <label class="container-checkbox">
+                        <input id="newsletter" type="checkbox">
+                            <span class="checkmark"></span>Vorrei ricevere aggiornamenti e novità
+                    </label>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <button class="button submit" style="margin-bottom:3rem" id="register-btn" type="button">Registrati</button>
+                </div>
+            </div>
+        </form>
+        <footer class="main-footer border-top">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <p class="text-center">Procedendo acconsenti integralmente a<br><a href="informazioni-legali.html#terminiCondizioni" target="_blank" rel="noopener">Termini e Condizioni <i class="las la-external-link-alt"></i></a> e <a href="informazioni-legali.html#privacy" target="_blank" rel="noopener">Privacy <i class="las la-external-link-alt"></i></a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- fine modale accedi registrati -->
+    <div id="signup-login" class="reveal reveal-ecommerce grid-x grid-margin-x grid-margin-y main-container" data-reveal-id='signup-login' data-reveal>
+        <header class="main-header">
+            <h2 class="h2-titolo-carrello"></h2>
+            <button type="button" class="close-button close-button-carrello" data-close aria-label="Close reveal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </header>
+        <form autocomplete="on">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <h2 class="h2-carrello">Accedi</h2>
+                </div>
+                <div class="small-10 cell">
+                    <label for="email-login"><strong>Email</strong>
+                        <input id="email-login" type="email" autocomplete="username" name="email-login" class="required error email" placeholder=""/>
+                    </label>
+                </div>
+                <div class="small-8 cell">
+                    <label for="password-login"><strong>Password</strong>
+                        <input id="password-login" type="password" name="password-login" class="required error password" autocomplete="current-password"/>
+                    </label>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <button class="button submit" id="login-btn" type="button">Accedi</button>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <p>Se non ricordi la password registrati nuovamente</p>
+                </div>
+            </div>
+        </form>
+       <!--  <div class="grid-x grid-padding-x grid-margin-y">
+            <div class="small-12 cell">
+                <h5 class="text-center subheader">oppure</h5>
+            </div>
+        </div> -->
+        <!-- <div class="grid-x grid-padding-x grid-padding-y">
+            <div class="small-12 cell">
+                <button type="button" class="button">Accedi con Facebook</button>
+                <button type="button" class="button alert">Accedi con Google</button>
+            </div>
+        </div> -->
+        <form autocomplete="on">
+            <div class="grid-x grid-padding-x extra-space">
+                <div class="small-12 cell">
+                    <h2 class="h2-carrello">Registrati</h2>
+                </div>
+                <div class="small-6 medium-6 cell">
+                    <label for="name"><strong>Nome*</strong>
+                        <input type="text" autocomplete="given-name" class="required error" id="name" name="name" maxlength="20"/>
+                    </label>
+                </div>
+                <div class="small-6 medium-6 cell">
+                    <label for="surname"><strong>Cognome*</strong>
+                        <input type="text" autocomplete="family-name" class="required error" id="surname" name="surname" maxlength="35"/>
+                    </label>
+                </div>
+                <div class="small-6 medium-4 cell">
+                    <label for="telephone"><strong>Telefono*</strong>
+                        <input type="tel" autocomplete="tel" class="required error" id="telephone" name="telephone" maxlength="35"/>
+                    </label>
+                </div>
+                <div class="small-10  medium-8 cell">
+                    <label for="email"><strong>Email (la tua username)*</strong>
+                        <input type="email" autocomplete="email" class="required error" id="email" name="email" maxlength="200"/>
+                      </label>
+                </div>
+                <div class="small-8 cell">
+                    <label for="password"><strong>Password*</strong>
+                         <input id="password" autocomplete="new-password" type="password" name="password" class="required error password"/>
+                    </label>
+                </div>
+                <div class="small-12 cell">
+                    <label class="container-checkbox">
+                        <input id="newsletter" type="checkbox">
+                            <span class="checkmark"></span>Vorrei ricevere aggiornamenti e novità
+                    </label>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <button class="button submit" style="margin-bottom:3rem" id="register-btn" type="button">Registrati</button>
+                </div>
+            </div>
+        </form>
+        <footer class="main-footer border-top">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <p class="text-center">Procedendo acconsenti integralmente a<br><a href="informazioni-legali.html#terminiCondizioni" target="_blank" rel="noopener">Termini e Condizioni <i class="las la-external-link-alt"></i></a> e <a href="informazioni-legali.html#privacy" target="_blank" rel="noopener">Privacy <i class="las la-external-link-alt"></i></a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <footer class="panel-footer">
+    	<div class="grid-container">
+    		<div class="grid-x grid-margin-x grid-margin-y small-up-2 large-up-4">
+    			<div class="cell">
+    				<h1 class="subheader">Orari</h1>
+    				<ul class="orari-footer-schedule no-bullet">
+    					<li><span>Lunedì:</span>chiuso</li>
+    					<li><span>Martedì:</span>chiuso</li>
+    					<li><span>Mercoledì:</span>19 - 22</li>
+    					<li><span>Giovedì:</span>19 - 22</li>
+    					<li><span>Venerdì:</span>19 - 22</li>
+    					<li><span>Sabato:</span>19 - 23</li>
+    					<li><span>Domenica:</span>19 - 22</li>
+    				</ul>
+    			</div>
+    			<div class="cell">
+    				<h1 class="subheader">Mappa del Sito</h1>
+    				<ul class="orari-footer-schedule no-bullet">
+    					<li class="item "><a href="index.html">Home</a></li>
+    					<li class="attuale"><a href="riserva-un-tavolo.html">Riserva un Tavolo</a></li>
+    					<li class=""><a href="asporto.html">Ordina da Asporto</a></li>
+    					<li class=""><a href="menu.html">Menù</a></li>
+    					<li class=""><a href="chi-siamo.html">Chi Siamo</a></li>
+    					<li class=""><a id="user-pg-btn">Il Mio Account</a></li>
+    					<li class=""><a href="informazioni-legali.html">Informazioni Legali</a></li>
+    				 </ul>
+    			</div>
+    			<div class="cell">
+    				<h1 class="subheader">Contatti</h1>
+    				<ul class="orari-footer-schedule no-bullet">
+    					<li><a href="mailto:info@beerstrot.it"><i class="las la-envelope">&nbsp; </i>info@beerstrot.it</a></li>
+    					<li><a href="tel:+390718853384"><i class="las la-phone">&nbsp; </i>071&nbsp;8853&nbsp;384</a></li>
+    				</ul>
+    			</div>
+    			<div class="cell">
+    				<h1 class="subheader">Dove Siamo</h1>
+    				<p>
+    					<a href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    						<span itemprop="streetAddress">Via Centofinestre, 20</span>
+    						<br>
+    						<span itemprop="postalCode">60024</span>
+    						<span itemprop="addressLocality">Filottrano</span>
+    						<span itemprop="addressRegion">AN</span>
+    					</a>
+    				</p>
+    			</div>
+    		</div>
+    	</div>
+    </footer>
+    <script src="assets/js/app.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/it.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js"></script>
+</body>
+</html>

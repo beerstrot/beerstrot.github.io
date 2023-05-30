@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js" lang="it">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script type="text/plain" data-cookiecategory="analytics" async src="https://www.googletagmanager.com/gtag/js?id=G-YVPH2DD4R7"></script>
+    <script type="text/plain" data-cookiecategory="analytics">
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YVPH2DD4R7');
+    </script>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Ca' Vecchia Beerstrot </title>
+    <meta name="description" content="Finalizza il tuo ordine d&#x27;asporto e invialo.">
+    <meta name="author" content="Ca' Vecchia Beerstrot">
+    <meta name="copyright" content="Beerstrot Copyright (c) 2023">
+    <link rel="canonical" href="https://www.beerstrot.it/checkout.html">
+    <link rel="icon" href="assets/img/thumbs/favicon.png">
+    <meta name="p:domain_verify" content="ca68ebe696c4699798a5a243ca187b2d">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.css">
+    <!-- Facebook Pixel Code -->
+    <script type="text/plain" data-cookiecategory="targeting" >
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '770709373057085');
+        fbq('track', "PageView");
+        fbq('track', 'ViewContent');
+    </script>
+    <noscript type="text/plain"><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=770709373057085&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+    <div id="loading" hidden></div>
+    <nav id="hamburgerNav">
+    	<ul class="menu-hamburger">
+    		<li class="logo"><a href="index.html"><img class="img-logo" src="assets/img/svgs/logo.svg" alt="Logo Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></li>
+    		<li class="item "><a href="riserva-un-tavolo.html">Riserva un Tavolo</a></li>
+    		<li class="item "><a href="asporto.html">Ordina da Asporto</a></li>
+    		<li class="item "><a href="menu.html">Menù</a></li>
+    		<li class="item "><a href="chi-siamo.html">Chi Siamo</a></li>
+    		<li class="item "><a id="user-pg-btn"><i class="las la-user-circle la-3x"></i></a></li>
+    		<li class="toggle"><a href="javascript:void(0)"><i class="las la-bars la-2x"></i></a></li>
+    	</ul>
+    </nav>
+    <div class="grid-container panel-home-n">
+        <div class="grid-x grid-margin-x">
+            <div class="small-12 cell">
+                <h1 class="first-paragraph-no-hero">Checkout</h1>
+    
+            </div>
+        </div>
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="small-12 medium-6 cell">
+                <div class="grid-x grid-margin-x grid-margin-y">
+                    <div class="small-12 xlarge-8 cell ">
+                        <h2>Orario ritiro asporto</h2>
+                        <p>Orario scelto: <strong id="chosen-time">19.15</strong></p>
+                        <p>Scegli o modifica l'orario:</p>
+                        <div class="grid-x small-up-4 align-center extra-space">
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">19:00</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">19:15</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">19:30</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">19:45</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">20:00</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">20:15</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">20:30</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">20:45</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">21:00</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">21:15</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">21:30</button>
+                            </div>
+                            <div class="cell">
+                                <button type="button" class="button orario-btn">21:45</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small-12 cell">
+                        <h2>Dove ritirare l'asporto</h2>
+                        <p>Ca' Vecchia Beerstrot
+                            <a href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" class="highlight" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="streetAddress">Via Centofinestre, 20</span>
+                            <span itemprop="postalCode">60024</span>
+                            <span itemprop="addressLocality">Filottrano</span>
+                            <span itemprop="addressRegion">AN</span>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="small-12 cell">
+                        <h2>Pagamento</h2>
+                        <p>Puoi pagare al momento del ritiro con carta, bancomat o contanti</p>
+                    </div>
+                </div>
+            </div>
+            <div class="small-12 medium-6 cell">
+                <h2>Riepilogo ordine</h2>
+                <div class="clearfix">
+                  <div id="itens-carrello-checkout">
+                  </div>
+                  	<div class="checkout-summary-details">
+                	    <div>
+                	      	<h1 class="titolo-item">TOTALE:</h1>
+                	    </div>
+                	    <div class="item-price">
+                	      	<h1 class="titolo-item" id="checkout-total"> €&ensp;0</h1>
+                	    </div>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-x grid-margin-x grid-margin-y">
+            <div class="small-12 cell">
+                <button type="button" id="" class="button hollow secondary" onclick="location.href='asporto.html';">Ritorna alla spesa</button>
+                <button id="send-order" class="button submit" style="margin-inline: 15px;">Invia ordine asporto</button>
+                <p><small>Inviando l'ordine da asporto acconsenti integralmente a<br>
+                    <a href="informazioni-legali.html#terminiCondizioni" target="_blank" rel="noopener">Termini e Condizioni <i class="las la-external-link-alt"></i></a> e <a href="informazioni-legali.html#privacy" target="_blank" rel="noopener">Informativa sulla Privacy<i class="las la-external-link-alt"></i></a>.
+                </small></p>
+            </div>
+        </div>
+    </div>
+    <div id="signup-login" class="reveal reveal-ecommerce grid-x grid-margin-x grid-margin-y main-container" data-reveal-id='signup-login' data-reveal>
+        <header class="main-header border-bottom">
+            <h2 class="h2-titolo-carrello">Accedi o Registrati</h2>
+            <button type="button" class="close-button close-button-carrello" data-close aria-label="Close reveal">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </header>
+        <form autocomplete="on">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <h2 class="h2-carrello">Accedi</h2>
+                </div>
+                <div class="small-10 cell">
+                    <label for="email-login"><strong>Email</strong>
+                        <input id="email-login" type="email" autocomplete="username" name="email-login" class="required error email" placeholder=""/>
+                    </label>
+                </div>
+                <div class="small-8 cell">
+                    <label for="password-login"><strong>Password</strong>
+                        <input id="password-login" type="password" name="password-login" class="required error password" autocomplete="current-password"/>
+                    </label>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <button class="button submit" id="login-btn" type="button">Accedi</button>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <p>Se non ricordi la password registrati nuovamente</p>
+                </div>
+            </div>
+        </form>
+       <!--  <div class="grid-x grid-padding-x grid-margin-y">
+            <div class="small-12 cell">
+                <h5 class="text-center subheader">oppure</h5>
+            </div>
+        </div> -->
+        <!-- <div class="grid-x grid-padding-x grid-padding-y">
+            <div class="small-12 cell">
+                <button type="button" class="button">Accedi con Facebook</button>
+                <button type="button" class="button alert">Accedi con Google</button>
+            </div>
+        </div> -->
+        <form autocomplete="on">
+            <div class="grid-x grid-padding-x extra-space">
+                <div class="small-12 cell">
+                    <h2 class="h2-carrello">Registrati</h2>
+                </div>
+                <div class="small-6 medium-6 cell">
+                    <label for="name"><strong>Nome*</strong>
+                        <input type="text" autocomplete="given-name" class="required error" id="name" name="name" maxlength="20"/>
+                    </label>
+                </div>
+                <div class="small-6 medium-6 cell">
+                    <label for="surname"><strong>Cognome*</strong>
+                        <input type="text" autocomplete="family-name" class="required error" id="surname" name="surname" maxlength="35"/>
+                    </label>
+                </div>
+                <div class="small-6 medium-4 cell">
+                    <label for="telephone"><strong>Telefono*</strong>
+                        <input type="tel" autocomplete="tel" class="required error" id="telephone" name="telephone" maxlength="35"/>
+                    </label>
+                </div>
+                <div class="small-10  medium-8 cell">
+                    <label for="email"><strong>Email (la tua username)*</strong>
+                        <input type="email" autocomplete="email" class="required error" id="email" name="email" maxlength="200"/>
+                      </label>
+                </div>
+                <div class="small-8 cell">
+                    <label for="password"><strong>Password*</strong>
+                         <input id="password" autocomplete="new-password" type="password" name="password" class="required error password"/>
+                    </label>
+                </div>
+                <div class="small-12 cell">
+                    <label class="container-checkbox">
+                        <input id="newsletter" type="checkbox">
+                            <span class="checkmark"></span>Vorrei ricevere aggiornamenti e novità
+                    </label>
+                </div>
+                <div class="small-12 cell extra-space-button">
+                    <button class="button submit" style="margin-bottom:3rem" id="register-btn" type="button">Registrati</button>
+                </div>
+            </div>
+        </form>
+        <footer class="main-footer border-top">
+            <div class="grid-x grid-padding-x">
+                <div class="small-12 cell">
+                    <p class="text-center">Procedendo acconsenti integralmente a<br><a href="informazioni-legali.html#terminiCondizioni" target="_blank" rel="noopener">Termini e Condizioni <i class="las la-external-link-alt"></i></a> e <a href="informazioni-legali.html#privacy" target="_blank" rel="noopener">Privacy <i class="las la-external-link-alt"></i></a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <footer class="panel-footer">
+    	<div class="grid-container">
+    		<div class="grid-x grid-margin-x grid-margin-y small-up-2 large-up-4">
+    			<div class="cell">
+    				<h1 class="subheader">Orari</h1>
+    				<ul class="orari-footer-schedule no-bullet">
+    					<li><span>Lunedì:</span>chiuso</li>
+    					<li><span>Martedì:</span>chiuso</li>
+    					<li><span>Mercoledì:</span>19 - 22</li>
+    					<li><span>Giovedì:</span>19 - 22</li>
+    					<li><span>Venerdì:</span>19 - 22</li>
+    					<li><span>Sabato:</span>19 - 23</li>
+    					<li><span>Domenica:</span>19 - 22</li>
+    				</ul>
+    			</div>
+    			<div class="cell">
+    				<h1 class="subheader">Mappa del Sito</h1>
+    				<ul class="orari-footer-schedule no-bullet">
+    					<li class="item "><a href="index.html">Home</a></li>
+    					<li class=""><a href="riserva-un-tavolo.html">Riserva un Tavolo</a></li>
+    					<li class=""><a href="asporto.html">Ordina da Asporto</a></li>
+    					<li class=""><a href="menu.html">Menù</a></li>
+    					<li class=""><a href="chi-siamo.html">Chi Siamo</a></li>
+    					<li class=""><a id="user-pg-btn">Il Mio Account</a></li>
+    					<li class=""><a href="informazioni-legali.html">Informazioni Legali</a></li>
+    				 </ul>
+    			</div>
+    			<div class="cell">
+    				<h1 class="subheader">Contatti</h1>
+    				<ul class="orari-footer-schedule no-bullet">
+    					<li><a href="mailto:info@beerstrot.it"><i class="las la-envelope">&nbsp; </i>info@beerstrot.it</a></li>
+    					<li><a href="tel:+390718853384"><i class="las la-phone">&nbsp; </i>071&nbsp;8853&nbsp;384</a></li>
+    				</ul>
+    			</div>
+    			<div class="cell">
+    				<h1 class="subheader">Dove Siamo</h1>
+    				<p>
+    					<a href="http://maps.apple.com/?lsp=9902&auid=2172393922260918433&sll=43.435636,13.377735&q=Ca%27%20Vecchia%20Beerstrot&hnear=Via%20Centofinestre%2020%2C%2060024%20Filottrano%2C%20Ancona%2C%20Italia" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    						<span itemprop="streetAddress">Via Centofinestre, 20</span>
+    						<br>
+    						<span itemprop="postalCode">60024</span>
+    						<span itemprop="addressLocality">Filottrano</span>
+    						<span itemprop="addressRegion">AN</span>
+    					</a>
+    				</p>
+    			</div>
+    		</div>
+    	</div>
+    </footer>
+    <script src="assets/js/app.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.9/dist/cookieconsent.js"></script>
+</body>
+</html>
