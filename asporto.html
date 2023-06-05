@@ -42,7 +42,7 @@
     <div id="loading" hidden></div>
     <nav id="hamburgerNav">
     	<ul class="menu-hamburger">
-    		<li class="logo"><a href="index.html"><img class="img-logo" src="assets/img/svgs/logo.svg" alt="Logo Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></li>
+    		<li class="logo"><a href=""><img class="img-logo" src="assets/img/svgs/logo.svg" alt="Logo Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></li>
     		<li class="item "><a href="riserva-un-tavolo.html">Riserva un Tavolo</a></li>
     		<li class="item attuale"><a href="asporto.html">Ordina da Asporto</a></li>
     		<li class="item "><a href="menu.html">Menù</a></li>
@@ -56,11 +56,10 @@
     	<div class="grid-x grid-margin-x">
     		<div class="small-12 cell">
     			<h1 class="first-paragraph">Ordina da Asporto</h1>
-                <p>Oggi, lunedì 5 giugno, siamo chiusi. Riapriamo domani.</p>
     		</div>
     	</div>
     	<div class="grid-x grid-margin-x">
-    		<div class="small-12 medium-7 large-5 xxlarge-4 cell" hidden>
+    		<div class="small-12 medium-7 large-5 xxlarge-4 cell">
     			<p>A che ora vuoi ritirare l'asporto? Ecco gli orari disponibili.<br><small>Puoi selezionare l'orario in ogni momento: anche durante la fase di checkout</small>.</p>
     			<div class="grid-x small-up-4 align-center extra-space">
     			    <div class="cell">
@@ -103,7 +102,7 @@
     		</div>
     	</div>
     </div>
-    <div id="magellanStickyTop" class="grid-container full" style="overflow-x: hidden;" hidden>
+    <div id="magellanStickyTop" class="grid-container full" style="overflow-x: hidden;">
     	<div class="grid-x grid-margin-x extra-space">
     		<div class="small-12 cell" data-sticky-container data-magellan data-deep-linking="true" data-offset="30">
     			<ul class="menu hs no-scrollbar" data-sticky data-top-anchor="magellanStickyTop" data-options="marginTop:0;" data-sticky-on="small" style="padding:0 0rem; margin-top:0;">
@@ -119,7 +118,7 @@
     		</div>
     	</div>
     </div>
-    <div id="menupage-text" hidden>
+    <div id="menupage-text">
     	<div class="grid-container">
     		<div class="grid-x grid-margin-x">
     			<div class="small-12 large-8 cell">
@@ -678,8 +677,53 @@
     					</div>
     					<div class="small-12 cell">
     						<h2>Sushi Kit</h2>
-    						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y">
-    
+    						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
+    							<div class="cell">
+    								<div class="card">
+    									<div class="card-section">
+    										<h3><span class="price"></span></h3>
+    										<p class=""><span class=" show-for-medium"><br><small>Allergeni: </small></span></p>
+    										<button type="button" class="button small" data-open="">Aggiungi al Carrello</button>
+    									</div>
+    								</div>
+    							</div>
+    							<!-- modal -->
+    							<div class="reveal reveal-ecommerce" id="" data-reveal>
+    								<button type="button" class="close-button close-button-sticky" data-close aria-label="Close reveal">
+    										<span aria-hidden="true">&times;</span>
+    								</button>
+    								<header class="main-header">
+    									<h1 class="h1-modal" id="modalTitle"></h1>
+    								</header>
+    								<div class="main-content">
+    									<p id="modalDescription"><br><small class="allergeni">Allergeni: </small></p>
+    									<label class=""><strong>Cottura</strong>
+    										<select>
+    											<option value="medio">Media</option>
+    											<option value="moltoalsangue">Molto al sangue</option>
+    											<option value="alsangue">Al sangue</option>
+    											<option value="bencotta">Ben cotta</option>
+    										</select>
+    									</label>
+    									<label class=""><strong>Note</strong>
+    										<textarea maxlength="" id="" placeholder="..." style="min-height: 0.5rem;"></textarea>
+    									</label>
+    								</div>
+    								<footer class="main-footer-carrello-small">
+    							        <div class="input-group input-number-group">
+    							            <div class="input-group-button group-margin">
+    							                <span class="input-number-decrement"><i class="las la-minus-square la-2x"></i></span>
+    							            </div>
+    							            <input class="input-number group-margin" style="width:3rem;" type="button" value="1" min="0" max="20">
+    							            <div class="input-group-button group-margin">
+    							                <span class="input-number-increment"><i class="las la-plus-square la-2x"></i></span>
+    							            </div>
+    							        </div>
+    									<button type="button" class="button expanded-with-padding extra-space-button-modal">
+    										Aggiungi al carrello<span class="price"> €&ensp;</span>
+    									</button>
+    								</footer>
+    							</div>
     						</div>
     					</div>
     				</section>
