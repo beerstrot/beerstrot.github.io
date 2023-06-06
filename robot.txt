@@ -3,3 +3,4 @@ Disallow: https://www.beerstrot.it/dashboard.html
 Disallow: https://www.beerstrot.it/orari.html
 Disallow: https://www.beerstrot.it/404.html
 Disallow: https://www.beerstrot.it/sala-comandi.html
+Disallow: https://www.beerstrot.it/cavecchia.github.io/
