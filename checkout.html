@@ -173,11 +173,36 @@
                     <button class="button submit" id="login-btn" type="button">Accedi</button>
                 </div>
                 <div class="small-12 cell extra-space-button">
-                    <p>Se non ricordi la password registrati nuovamente</p>
+                    <a class="highlight" data-open="resetPassword">Non ricordo la password</a>
                 </div>
             </div>
         </form>
-       <!--  <div class="grid-x grid-padding-x grid-margin-y">
+        <!-- modal reset password -->
+        <div id="resetPassword" class="reveal reveal-ecommerce" data-reveal>
+            <form autocomplete="on">
+                <header class="main-header border-bottom">
+                    <h2 class="h2-titolo-carrello">Modifica la Password</h2>
+                    <button type="button" class="close-button close-button-carrello" data-close aria-label="Close reveal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </header>
+                <div class="grid-x grid-padding-x">
+                    <div class="small-12 cell extra-space">
+                        <p>Inserisci l'email con cui ti sei registrato per ricevere un link per modificare la password.</p>
+                    </div>
+                    <div class="small-10 cell">
+                        <label for="password-reset-email"><strong>Email</strong>
+                            <input id="password-reset-email" type="email" autocomplete="username" name="password-reset-email" class="required error email" placeholder=""/>
+                        </label>
+                        <button class="button submit extra-space-button" id="password-reset-btn" type="button">Modifica la Password</button>
+                        <br><br>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- fine modal reset password -->
+    
+        <!--  <div class="grid-x grid-padding-x grid-margin-y">
             <div class="small-12 cell">
                 <h5 class="text-center subheader">oppure</h5>
             </div>
@@ -188,6 +213,7 @@
                 <button type="button" class="button alert">Accedi con Google</button>
             </div>
         </div> -->
+    
         <form autocomplete="on">
             <div class="grid-x grid-padding-x extra-space">
                 <div class="small-12 cell">
@@ -237,6 +263,7 @@
             </div>
         </footer>
     </div>
+
     <footer class="panel-footer">
     	<div class="grid-container">
     		<div class="grid-x grid-margin-x grid-margin-y small-up-2 large-up-4">
