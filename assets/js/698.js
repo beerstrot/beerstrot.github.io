@@ -1,0 +1,1 @@
+(self.webpackChunkfoundation_zurb_template=self.webpackChunkfoundation_zurb_template||[]).push([[698],{698:function(){$(document).ready((function(){var e=window.sessionStorage.getItem("targetEmail");e?$("#target-email").text(e):window.location.href="/"}))}}]);
