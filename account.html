@@ -63,10 +63,24 @@
         <div class="grid-x grid-margin-x grid-margin-y">
             <div class="small-12 medium-6 cell">
                 <h2>I Miei Ordini</h2>
-                <p hidden>Apri un ordine, clicca il pulsante "Metti nel carrello e modifica" (o se vuoi puoi eliminarlo dagli ordini salvati).</p>
+                <p>Apri un ordine, clicca il pulsante "Metti nel carrello e modifica" (o se vuoi puoi eliminarlo dagli ordini salvati).</p>
                 <ul class="accordion" id="carrelli-accordion" data-accordion data-allow-all-closed="true" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-slide-speed="700">
                 </ul>
             </div>
+    <!-- inizio modale item non disponibili -->
+            <div id="noProdotti" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+                <p class="extra-space-modal-first-paragraph"></p>
+                <p class="lead extra-space-modal-first-paragraph" id="modalLead">I seguenti prodotti non sono attualmente disponibili:
+                    <ul id="unavailable-items">
+                    </ul>
+                </p>
+                <p>Inserisci nel carrello i prodotti disponibili e vai al checkout. <br>Puoi sempre modificare il carrello prima di finalizzare l'ordine.</p>
+                <button type="button" id="confirm-order-load" class="button float-left" style="margin-top: 5px;">Inserisci i prodotti</button>
+                <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
+                    <span aria-hidden="true">&#215;</span>
+                </button>
+            </div>
+    <!-- fine modale messaggio vuoi cancellare la prenotazione -->
             <div class="small-12 medium-6 cell">
                 <h2>I Miei Dati</h2>
                 <div class="grid-x grid-margin-x">
@@ -101,7 +115,7 @@
                 <p>Aggiungi una  <a href="#" class="highlight">carta di credito o bancomat</a>.</p>
                 <p>Puoi modifcare i dati di pagamento direttamente sul sitoweb di Stripe a questo <a href="#" class="highlight">link</a>.</p> -->
                 <h2 class="extra-space-h2">Modifica la Password</h2>
-                <p><a href="reset-password-landing.html" type="button" class="highlight">Invia link</a> alla mia email per modificare la password.</p>
+                <p><a id="password-reset-btn" type="button" class="highlight">Invia link</a> alla mia email per modificare la password.</p>
             </div>
         </div>
     </div>
