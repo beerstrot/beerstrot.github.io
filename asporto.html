@@ -38,7 +38,7 @@
     <!-- End Facebook Pixel Code -->
 </head>
 <body>
-    <div id="loading"></div>
+    <div id="loading" hidden></div>
     <nav id="hamburgerNav">
     	<ul class="menu-hamburger">
     		<li class="logo"><a href="https://www.beerstrot.it"><img class="img-logo" src="assets/img/svgs/logo.svg" alt="Logo Ca' Vecchia Beerstrot"><meta itemprop="name" content="Ca' Vecchia Beerstrot"></a></li>
@@ -55,14 +55,9 @@
     	<div class="grid-x grid-margin-x">
     		<div class="small-12 cell">
     			<h1 class="first-paragraph">Ordina da Asporto</h1>
+    			<!-- <p>Il lunedì non serviamo sushi.</p> -->
     		</div>
     	</div>
-        <!-- <div class="grid-x grid-margin-x">
-            <div class="small-12 medium-7 large-5 xxlarge-4 cell">
-                <h3>Il martedì siamo chiusi.</h3>
-                <br><br><br>
-            </div>
-        </div> -->
     	<div class="grid-x grid-margin-x">
     		<div class="small-12 medium-7 large-5 xxlarge-4 cell">
     			<p>A che ora vuoi ritirare l'asporto? Ecco gli orari disponibili.<br><small>Puoi selezionare l'orario in ogni momento: anche durante la fase di checkout</small>.</p>
@@ -335,75 +330,75 @@
     							</div>
     						</div>
     					</div>
-                        <div class="small-12 cell">
-                            <h2>Sushi Uramaki Classici</h2>
-                            <div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y">
-                                <div class="cell">
-                                    <div class="hide-for-medium">
-                                        <div class="product-page">
-                                            <div class="item-image">
-                                                <img src="" alt="">
-                                            </div>
-                                            <div class="item-text">
-                                                <h3><span class="price"></span></h3>
-                                                <p class=""></p>
-                                            </div>
-                                            <div class="item-button">
-                                               <button type="button" class="button small" style="margin-bottom: 0;" data-open="">Seleziona</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="show-for-medium">
-                                        <div class="card">
-                                            <div class="card-section">
-                                                <img class="show-for-medium" src="" alt="">
-                                                <h3><span class="price"></span></h3>
-                                                <p class=""><br><small>Allergeni: </small></p>
-                                                <button type="button" class="button small" data-open="">Seleziona</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- modal -->
-                                <div class="reveal reveal-ecommerce" id="" data-reveal>
-                                    <button type="button" class="close-button close-button-sticky" data-close aria-label="Close reveal">
-                                            <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    <img src="" style="margin-top:-3rem;" alt="">
-                                    <header class="main-header">
-                                        <h1 class="h1-modal"></h1>
-                                    </header>
-                                    <div class="main-content">
-                                        <p><br><small class="allergeni">Allergeni: </small></p>
-                                        <label class=""><strong>Note</strong>
-                                            <textarea maxlength="200" id="" placeholder="..." style="min-height: 0.5rem;"></textarea>
-                                        </label>
-                                        <label class=""><strong>Cottura</strong>
-                                            <select>
-                                                <option value="medio">Media</option>
-                                                <option value="moltoalsangue">Molto al sangue</option>
-                                                <option value="alsangue">Al sangue</option>
-                                                <option value="bencotta">Ben cotta</option>
-                                            </select>
-                                        </label>
-                                    </div>
-                                    <footer class="main-footer-carrello-small">
-                                        <div class="input-group input-number-group">
-                                            <div class="input-group-button group-margin">
-                                                <span class="input-number-decrement"><i class="las la-minus-square la-2x"></i></span>
-                                            </div>
-                                            <input class="input-number group-margin" style="width:3rem;" type="button" value="1" min="0" max="20">
-                                            <div class="input-group-button group-margin">
-                                                <span class="input-number-increment"><i class="las la-plus-square la-2x"></i></span>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="button expanded-with-padding extra-space-button-modal">
-                                            Seleziona<span class="price"> €&ensp;</span>
-                                        </button>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
+    					<div class="small-12 cell">
+    						<h2>Sushi Uramaki Classici</h2>
+    						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y">
+    							<div class="cell">
+    								<div class="hide-for-medium">
+    							        <div class="product-page">
+    							            <div class="item-image">
+    							                <img src="" alt="">
+    							            </div>
+    							            <div class="item-text">
+    							                <h3><span class="price"></span></h3>
+    							                <p class=""></p>
+    							            </div>
+    							            <div class="item-button">
+    							               <button type="button" class="button small" style="margin-bottom: 0;" data-open="">Seleziona</button>
+    							            </div>
+    							        </div>
+    								</div>
+    								<div class="show-for-medium">
+    									<div class="card">
+    										<div class="card-section">
+    											<img class="show-for-medium" src="" alt="">
+    											<h3><span class="price"></span></h3>
+    											<p class=""><br><small>Allergeni: </small></p>
+    											<button type="button" class="button small" data-open="">Seleziona</button>
+    										</div>
+    									</div>
+    								</div>
+    							</div>
+    							<!-- modal -->
+    							<div class="reveal reveal-ecommerce" id="" data-reveal>
+    								<button type="button" class="close-button close-button-sticky" data-close aria-label="Close reveal">
+    										<span aria-hidden="true">&times;</span>
+    								</button>
+    								<img src="" style="margin-top:-3rem;" alt="">
+    								<header class="main-header">
+    									<h1 class="h1-modal"></h1>
+    								</header>
+    								<div class="main-content">
+    									<p><br><small class="allergeni">Allergeni: </small></p>
+    									<label class=""><strong>Note</strong>
+    										<textarea maxlength="200" id="" placeholder="..." style="min-height: 0.5rem;"></textarea>
+    									</label>
+    									<label class=""><strong>Cottura</strong>
+    										<select>
+    											<option value="medio">Media</option>
+    											<option value="moltoalsangue">Molto al sangue</option>
+    											<option value="alsangue">Al sangue</option>
+    											<option value="bencotta">Ben cotta</option>
+    										</select>
+    									</label>
+    								</div>
+    								<footer class="main-footer-carrello-small">
+    							        <div class="input-group input-number-group">
+    							            <div class="input-group-button group-margin">
+    							                <span class="input-number-decrement"><i class="las la-minus-square la-2x"></i></span>
+    							            </div>
+    							            <input class="input-number group-margin" style="width:3rem;" type="button" value="1" min="0" max="20">
+    							            <div class="input-group-button group-margin">
+    							                <span class="input-number-increment"><i class="las la-plus-square la-2x"></i></span>
+    							            </div>
+    							        </div>
+    									<button type="button" class="button expanded-with-padding extra-space-button-modal">
+    										Seleziona<span class="price"> €&ensp;</span>
+    									</button>
+    								</footer>
+    							</div>
+    						</div>
+    					</div>
     					<div class="small-12 cell">
     						<h2>Sushi Hosomaki</h2>
     						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y">
@@ -1020,7 +1015,7 @@
     				<section class="grid-x grid-margin-x grid-margin-y" id="bevanda" data-magellan-target="bevanda">
     					<div class="small-12 cell">
     						<h2>Bevande</h2>
-    						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
+    						<div class="grid-x small-up-2 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
     							<div class="cell">
     								<div class="card">
     									<div class="card-section">
@@ -1073,7 +1068,7 @@
     				<section class="grid-x grid-margin-x grid-margin-y" id="birra" data-magellan-target="birra">
     					<div class="small-12 cell">
     						<h2>Birra Artigianale in Bottiglia</h2>
-    						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
+    						<div class="grid-x small-up-2 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
     							<div class="cell">
     								<div class="card">
     									<div class="card-section">
@@ -1126,7 +1121,7 @@
     				<section class="grid-x grid-margin-x grid-margin-y" id="vino" data-magellan-target="vino">
     					<div class="small-12 cell">
     						<h2>Vino</h2>
-    						<div class="grid-x small-up-1 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
+    						<div class="grid-x small-up-2 medium-up-2 xxlarge-up-3 grid-margin-x grid-margin-y noimage">
     							<div class="cell">
     								<div class="card">
     									<div class="card-section">
@@ -1388,6 +1383,9 @@
     			<div class="cell">
     				<h1 class="subheader">Orari</h1>
     				<ul class="orari-footer-schedule no-bullet">
+    					<li>Lunedì 30 ottobre chiusi.</li>
+    					<li>Martedì 31 ottobre aperti.</li>
+    					<br>
     					<li><span>Lunedì:</span><time>19 - 22</time></li>
     					<li><span>Martedì:</span><time>Chiusi</time></li>
     					<li><span>Mercoledì:</span><time>19 - 22</time></li>
