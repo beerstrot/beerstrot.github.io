@@ -12,12 +12,12 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email inviata | Ca' Vecchia Beerstrot </title>
-    <meta name="description" content="Email per modificare la password inviata con successo">
+    <title>Sala Comandi | Ca' Vecchia Beerstrot </title>
+    <meta name="description" content="Sala comandi gestione e analisi">
     <meta name="keywords" content="">
     <meta name="author" content="Ca' Vecchia Beerstrot">
     <meta name="copyright" content="Beerstrot Copyright (c) 2024">
-    <link rel="canonical" href="https://www.beerstrot.it/reset-password-landing.html">
+    <link rel="canonical" href="https://www.beerstrot.it/sala-comandi.html">
     <link rel="icon" href="assets/img/thumbs/favicon.png">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -51,21 +51,100 @@
     		<li class="toggle"><a href="javascript:void(0)"><i class="las la-bars la-2x"></i></a></li>
     	</ul>
     </nav>
-    <header class="grid-container">
-        <div class="grid-x grid-margin-x">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-margin-y" >
             <div class="small-12 cell">
-                <h1 class="first-paragraph-no-hero" id="ttitle">Email inviata</h1>
+                <h1 class="first-paragraph">Sala Comandi</h1>
             </div>
         </div>
-    </header>
+    </div>
     <div class="panel-home-n">
         <div class="grid-container">
-            <div class="grid-x grid-margin-x">
-                <div class="small-12 medium-8 large-7 cell">
-                    <p>Ti abbiamo inviato una email all'indirizzo <strong id="target-email"></strong> per modificare la password.</p>
-                    <p>Se non vedi l'email dentro l'inbox controlla la spam.</p>
-                    <p>Grazie</p>
+            <div class="grid-x grid-margin-x grid-margin-y">
+                <div class="small-12 cell">
+                    <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="salaComandi">
+                        <li class="tabs-title is-active"><a href="#tavoliRiservati">Tavoli Riservati</a></li>
+                        <li class="tabs-title"><a href="#asporti">Asporti</a></li>
+                        <li class="tabs-title"><a href="#giorniChiusura">Chiusure</a></li>
+                        <li class="tabs-title"><a href="#analytics">Analisi</a></li>
+                    </ul>
                 </div>
+            </div>
+            <div class="tabs-content" data-tabs-content="salaComandi">
+                <section class="tabs-panel is-active" id="tavoliRiservati">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="small-12 medium-9 large-7 xxlarge-7 cell">
+                            <h2>Tavoli Riservati</h2>
+                            <p>Qui mettiamo i dati riserva-un-tavolo.html?id=notes</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="tabs-panel" id="asporti">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="small-12 medium-9 large-7 xxlarge-7 cell">
+                            <h2>Asporti</h2>
+                            <p>Qui mettiamo i dati degli asporti</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="tabs-panel" id="giorniChiusura">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="small-12 medium-9 large-7 xxlarge-7 cell">
+                            <h2>Giorni di Chiusura</h2>
+                            <h3 class="first-paragraph">Chiusura Locale</h3>
+                            <p>Qui la possibilità di chiudere il locale anche per più giorni consecutivi.</p>
+                            <p>Qui mettiamo i dati riserva-un-tavolo.html?id=days, rivisto</p>
+                            <h3 class="first-paragraph">Chiusura Asporti</h3>
+                            <p>La chiusura degli asporti è legata alla chiusura locale: se locale è chiuso orari asporto sono tutti chiusi</p>
+                            <p>Oppure si possono chiudere determinati orari il giorno stesso</p>
+                            <div class="grid-x small-up-4 align-center extra-space">
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:00</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:15</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:30</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:45</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:00</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:15</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:30</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:45</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:00</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:15</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:30</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:45</button>
+                                </div>
+                            </div>                    </div>
+                    </div>
+                </section>
+                <section class="tabs-panel" id="analytics">
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="small-12 medium-9 large-7 xxlarge-7 cell">
+                            <h2>Analisi</h2>
+                            <p>Qui mettiamo analytics</p>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
