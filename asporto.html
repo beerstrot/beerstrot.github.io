@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.css">
     <!-- Facebook Pixel Code -->
-    <script type="text/plain" data-cookiecategory="targeting" >
+    <script type="text/plain" data-cookiecategory="targeting" hidden>
         !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
         n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -56,11 +56,11 @@
     	<div class="grid-x grid-margin-x">
     		<div class="small-12 cell">
     			<h1 class="first-paragraph">Ordina da Asporto</h1>
-                <!-- <p>Chiusi il lunedì e martedì.</p> -->
+                <p>Chiusi il lunedì e martedì.</p>
     		</div>
     	</div>
     	<div class="grid-x grid-margin-x">
-    		<div class="small-12 medium-7 large-5 xxlarge-4 cell" >
+    		<div class="small-12 medium-7 large-5 xxlarge-4 cell" hidden>
     			<p>A che ora vuoi ritirare l'asporto? Ecco gli orari disponibili.<br><small>Puoi selezionare l'orario in ogni momento: anche durante la fase di checkout</small>.</p>
     			<div class="grid-x small-up-4 align-center extra-space">
     			    <div class="cell">
@@ -103,7 +103,7 @@
     		</div>
     	</div>
     </div>
-    <div id="magellanStickyTop" class="grid-container full" style="overflow-x: hidden;" >
+    <div id="magellanStickyTop" class="grid-container full" style="overflow-x: hidden;" hidden>
     	<div class="grid-x grid-margin-x extra-space">
     		<div class="small-12 cell" data-sticky-container data-magellan data-deep-linking="true" data-offset="30">
     			<ul class="menu hs no-scrollbar" data-sticky data-top-anchor="magellanStickyTop" data-options="marginTop:0;" data-sticky-on="small" style="padding:0 0rem; margin-top:0;">
