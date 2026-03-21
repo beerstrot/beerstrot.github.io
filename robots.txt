@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /dashboard.html
+Disallow: /consulta.html
+Disallow: /orari.html
+Disallow: /riserva-un-tavolo?id=notes
+Disallow: /riserva-un-tavolo?id=days
+Disallow: /404.html
+Disallow: /sala-comandi.html
+Disallow: /reset-password.html
+Disallow: /reset-password-landing.html
+
+Sitemap: https://www.beerstrot.it/sitemap.xml

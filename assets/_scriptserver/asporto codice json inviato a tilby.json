@@ -1,0 +1,92 @@
+{
+   "sale_items":[
+      {
+         "item_id":1,
+         "name":"Bocconcini di Pollo",
+         "uuid":"a7dfd888-4311-4157-8e8e-c5b8136c0ff2",
+         "net_price":5.91,
+         "vat_perc":10,
+         "final_price":6.5,
+         "final_net_price":5.91,
+         "notes":"",
+         "price":6.5,
+         "department_id":3,
+         "quantity":1,
+         "category_id":20,
+         "category_name":"Stuzzicare",
+         "seller_id":0,
+         "seller_name":"Web - asporto",
+         "type":"sale",
+         "exit":"1"
+      },
+      {
+         "item_id":362,
+         "name":"Beerstrot",
+         "uuid":"72b13f94-e5d0-4635-9279-be59064de474",
+         "net_price":12.18,
+         "vat_perc":10,
+         "final_price":13.4,
+         "final_net_price":12.18,
+         "notes":"",
+         "price":13.4,
+         "department_id":3,
+         "quantity":1,
+         "variations":[
+            {
+               "name":"Cottura",
+               "value":"Media",
+               "variation_id":125,
+               "variation_value_id":"338"
+            }
+         ],
+         "category_id":19,
+         "category_name":"Hamburger",
+         "seller_id":0,
+         "seller_name":"Web - asporto",
+         "type":"sale",
+         "exit":"1"
+      },
+      {
+         "item_id":362,
+         "name":"Beerstrot",
+         "uuid":"72b13f94-e5d0-4635-9279-be59064de474",
+         "net_price":12.18,
+         "vat_perc":10,
+         "final_price":13.4,
+         "final_net_price":12.18,
+         "notes":"",
+         "price":13.4,
+         "department_id":3,
+         "quantity":1,
+         "variations":[
+            {
+               "name":"Cottura",
+               "value":"Ben Cotta",
+               "variation_id":125,
+               "variation_value_id":"341"
+            }
+         ],
+         "category_id":19,
+         "category_name":"Hamburger",
+         "seller_id":0,
+         "seller_name":"Web - asporto",
+         "type":"sale",
+         "exit":"1"
+      }
+   ],
+   "deliver_at":"2025-01-21T20:45:00.000000Z",
+   "sale_customer":{
+      "email":"andreatagliazucchi@icloud.com",
+      "first_name":"Andrea",
+      "last_name":"Tagliazucchi",
+      "mobile":"3385071940"
+   },
+   "order_type":"take_away",
+   "status":"open",
+   "name":"Andrea Tagliazucchi ",
+   "seller_id":0,
+   "seller_name":"Web - asporto",
+   "open_at":"2025-01-21T09:12:58.193881",
+   "currency":"EUR",
+   "auto_print_order":true
+}
