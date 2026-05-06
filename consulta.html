@@ -270,6 +270,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/it.js"></script>
+    <style>
+        /* Nasconde le date dei mesi adiacenti (prev/next) nel datepicker.
+           Default flatpickr le mostra in grigio chiaro: i clienti le confondono
+           con date disabilitate e chiamano per sapere se siamo aperti. */
+        .flatpickr-day.prevMonthDay,
+        .flatpickr-day.nextMonthDay { visibility: hidden; pointer-events: none; }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
     <script src="assets/js/anti-bot.js"></script>

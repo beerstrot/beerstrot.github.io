@@ -66,72 +66,6 @@
             </div>
         </div>
     </header>
-    <!-- inizio dashboard -->
-    <div class="grid-container" id="notesDiv" hidden>
-        <div class="grid-x grid-margin-x">
-            <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
-                <label>Seleziona giorno
-                    <input tabindex="5" id="from2" type="text">
-                </label>
-            </div>
-            <div class="small-12 cell" id="notesDiv3">
-            </div>
-            <div class="small-12 cell" id="innerNotesDiv1">
-            </div>
-            <div class="small-12 cell" id="innerNotesDiv2">
-            </div>
-            <div class="small-12 cell table-scroll" id="innerNotesDiv">
-                <table id="shiftsTable" style="table-layout: auto; width:auto; font-size: 0.875rem;">
-                    <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Numero persone per turno</caption>
-                    <thead>
-                        <tr>
-                            <th>Turno</th>
-                            <th>Nr. Persone<br>Totali</th>
-                            <th>Nr. Persone<br>Prenotate online</th>
-                            <th>Nr. Persone<br>Prenotate da Scloby</th>
-                        </tr>
-                    </thead>
-                    <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
-                </table>
-                <table id="notesTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
-                    <caption class="text-left" style="font-size: 1rem; padding-left:0rem;">Prenotazioni online</caption>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Nr. Persone</th>
-                            <th>Tavolo</th>
-                            <th>Orario</th>
-                            <th>Cani</th>
-                            <th>Seggioloni</th>
-                            <th>Note</th>
-                            <th>Telefono</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody id="notesTableBody" style="text-align:center;"></tbody>
-                </table>
-                <table id="anonTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
-                    <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Prenotazioni da Scloby senza turno</caption>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Nr. Persone</th>
-                            <th>Tavolo</th>
-                            <th>Orario</th>
-                            <th>Cani</th>
-                            <th>Seggioloni</th>
-                            <th>Note</th>
-                            <th>Telefono</th>
-                            <th>Email</th>
-                        </tr>
-                    </thead>
-                    <tbody id="anonTableBody" style="text-align:center;"></tbody>
-                </table>
-                <br><br>
-            </div>
-        </div>
-    </div>
-    <!-- fine dashboard -->
     <!-- inizio form -->
     <div class="panel-home-n">
         <div class="grid-container">
@@ -156,7 +90,7 @@
                     <div class="small-6 medium-4 cell">
                         <label><strong>Quante persone*</strong>
                             <select class="required error" id="quantity" disabled style="margin-bottom:0;">
-                                <option>Seleziona Numero</option>
+                                <option value="">Seleziona Numero</option>
                             </select>
                         </label>
                     </div>
@@ -257,16 +191,17 @@
         </button>
     </div>
     <!-- fine modale messaggio locale completo -->
-    <!-- inizio modale invio promemoria ai clienti e aggiungere/rimuovere giorni chiusura-->
+    <!-- modale conferma sì/no — usato per "prenotazione non trovata" e "vuoi cancellare la prenotazione?".
+         Il testo (#modalLead2) e l'etichetta dei bottoni vengono riscritti a runtime via showConsultaMessage. -->
     <div id="myModal2" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
-        <p class="extra-space-modal-first-paragraph" id="modalLead2">Vuoi inviare il promemoria della prenotazione ai clienti?</p>
-        <button type="button" id="no" class="button small float-right" style="margin-top: 5px;">No, non inviare</button>
-        <button type="button" id="yes" class="button small float-left" style="margin-top: 5px;">Sì, Invia</button>
+        <p class="extra-space-modal-first-paragraph" id="modalLead2"></p>
+        <button type="button" id="no" class="button small float-right" style="margin-top: 5px;">No</button>
+        <button type="button" id="yes" class="button small float-left" style="margin-top: 5px;">Sì</button>
         <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
             <span aria-hidden="true">&#215;</span>
         </button>
     </div>
-    <!-- fine modale invio promemoria ai clienti e aggiungere/rimuovere giorni chiusura-->
+    
     <div id="signup-login" class="reveal reveal-ecommerce grid-x grid-margin-x grid-margin-y main-container" data-reveal-id='signup-login' data-reveal data-deep-link="true">
         <header class="main-header border-bottom">
             <h2 class="h2-titolo-carrello">Accedi o Crea nuovo account</h2>
@@ -425,6 +360,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://npmcdn.com/flatpickr/dist/l10n/it.js"></script>
+    <style>
+        /* Nasconde le date dei mesi adiacenti (prev/next) nel datepicker.
+           Default flatpickr le mostra in grigio chiaro: i clienti le confondono
+           con date disabilitate e chiamano per sapere se siamo aperti. */
+        .flatpickr-day.prevMonthDay,
+        .flatpickr-day.nextMonthDay { visibility: hidden; pointer-events: none; }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.9.1/dist/cookieconsent.js"></script>
     <script src="assets/js/anti-bot.js"></script>
