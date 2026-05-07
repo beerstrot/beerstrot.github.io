@@ -68,158 +68,158 @@
         </div>
     </header>
     <div class="panel-home-n">
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x grid-margin-y">
-            <div class="small-12 cell">
-                <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="dashboardTabs">
-                    <li class="tabs-title is-active"><a href="#prenotazioniDashboard">Prenotazioni</a></li>
-                    <li class="tabs-title"><a href="#analisiDashboard">Analisi</a></li>
-                </ul>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x grid-margin-y">
+                <div class="small-12 cell">
+                    <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="dashboardTabs">
+                        <li class="tabs-title is-active"><a href="#prenotazioniDashboard">Prenotazioni</a></li>
+                        <li class="tabs-title"><a href="#analisiDashboard">Analisi</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- inizio dashboard -->
-    <div class="grid-container" id="notesDiv" hidden>
-        <div class="tabs-content" data-tabs-content="dashboardTabs">
-            <section class="tabs-panel is-active" id="prenotazioniDashboard">
-                <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
-                    <h2>Prenotazioni</h2>
-                </div>
-                <div class="grid-x grid-margin-x">
+        <!-- inizio dashboard -->
+        <div class="grid-container" id="notesDiv" hidden>
+            <div class="tabs-content" data-tabs-content="dashboardTabs">
+                <section class="tabs-panel is-active" id="prenotazioniDashboard">
                     <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
-                        <label>Seleziona giorno
-                            <input tabindex="5" id="from2" type="text">
-                        </label>
+                        <h2>Prenotazioni</h2>
                     </div>
-                    <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
+                    <div class="grid-x grid-margin-x">
+                        <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
+                            <label>Seleziona giorno
+                                <input tabindex="5" id="from2" type="text">
+                            </label>
+                        </div>
+                        <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
+                        </div>
+                        <div class="small-12 cell" id="notesDiv3">
+                        </div>
+                        <div class="small-12 cell" id="innerNotesDiv1">
+                        </div>
+                        <div class="small-12 cell" id="innerNotesDiv2">
+                        </div>
+                        <div class="small-12 cell table-scroll" id="innerNotesDiv">
+                            <table id="shiftsTable" style="table-layout: auto; width:auto; font-size: 0.875rem;">
+                                <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Numero persone per turno</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Turno</th>
+                                        <th>Nr. Persone<br>Totali</th>
+                                        <th>Nr. Persone<br>Prenotate online</th>
+                                        <th>Nr. Persone<br>Prenotate da Scloby</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
+                            </table>
+                            <table id="notesTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
+                                <caption class="text-left" style="font-size: 1rem; padding-left:0rem;">Prenotazioni online</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Nr. Persone</th>
+                                        <th>Tavolo</th>
+                                        <th>Orario</th>
+                                        <th>Cani</th>
+                                        <th>Seggioloni</th>
+                                        <th>Note</th>
+                                        <th>Telefono</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="notesTableBody" style="text-align:center;"></tbody>
+                            </table>
+                            <table id="anonTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
+                                <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Prenotazioni da Scloby senza turno</caption>
+                                <thead>
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Nr. Persone</th>
+                                        <th>Tavolo</th>
+                                        <th>Orario</th>
+                                        <th>Cani</th>
+                                        <th>Seggioloni</th>
+                                        <th>Note</th>
+                                        <th>Telefono</th>
+                                        <th>Email</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="anonTableBody" style="text-align:center;"></tbody>
+                            </table>
+                            <br><br>
+                        </div>
                     </div>
-                    <div class="small-12 cell" id="notesDiv3">
+                </section>
+                <section class="tabs-panel" id="analisiDashboard">
+                    <div class="grid-x grid-margin-x">
+                        <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
+                            <h2>Analisi</h2>
+                        </div>
                     </div>
-                    <div class="small-12 cell" id="innerNotesDiv1">
+                    <!-- inizio sezione clienti attesi -->
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="small-6 medium-3 cell">
+                            <label>Mese
+                                <select id="forecastMonth"></select>
+                            </label>
+                        </div>
+                        <div class="small-6 medium-3 cell">
+                            <label>Anno
+                                <select id="forecastYear"></select>
+                            </label>
+                        </div>
                     </div>
-                    <div class="small-12 cell" id="innerNotesDiv2">
+                    <div class="grid-x grid-margin-x">
+                        <div class="small-12 cell table-scroll" id="forecastWrap">
+                            <table id="forecastSummaryTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
+                                <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Stime aggregate per giorno della settimana del mese selezionato</caption>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:left">Giorno</th>
+                                        <th style="text-align:left">Stima totale<br>del mese</th>
+                                        <th style="text-align:left">Stima media<br>del mese</th>
+                                        <th style="text-align:left">Nr. occorrenze<br>del giorno nel mese</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="forecastSummaryBody"></tbody>
+                            </table>
+                            <table id="forecastTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
+                                <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Dettaglio giorno per giorno (stessa media giorno-settimana 1 e 2 anni prima)</caption>
+                                <thead>
+                                    <tr>
+                                        <th style="text-align:left">Data</th>
+                                        <th style="text-align:left">Giorno</th>
+                                        <th style="text-align:right" id="forecastY2Header">&minus;2</th>
+                                        <th style="text-align:right" id="forecastY1Header">&minus;1</th>
+                                        <th style="text-align:right">Stima</th>
+                                        <th style="text-align:right">Anno in corso</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="forecastTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="small-12 cell table-scroll" id="innerNotesDiv">
-                        <table id="shiftsTable" style="table-layout: auto; width:auto; font-size: 0.875rem;">
-                            <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Numero persone per turno</caption>
-                            <thead>
-                                <tr>
-                                    <th>Turno</th>
-                                    <th>Nr. Persone<br>Totali</th>
-                                    <th>Nr. Persone<br>Prenotate online</th>
-                                    <th>Nr. Persone<br>Prenotate da Scloby</th>
-                                </tr>
-                            </thead>
-                            <tbody id="shiftsTableBody" style="text-align:center;"></tbody>
-                        </table>
-                        <table id="notesTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
-                            <caption class="text-left" style="font-size: 1rem; padding-left:0rem;">Prenotazioni online</caption>
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Nr. Persone</th>
-                                    <th>Tavolo</th>
-                                    <th>Orario</th>
-                                    <th>Cani</th>
-                                    <th>Seggioloni</th>
-                                    <th>Note</th>
-                                    <th>Telefono</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody id="notesTableBody" style="text-align:center;"></tbody>
-                        </table>
-                        <table id="anonTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
-                            <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Prenotazioni da Scloby senza turno</caption>
-                            <thead>
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Nr. Persone</th>
-                                    <th>Tavolo</th>
-                                    <th>Orario</th>
-                                    <th>Cani</th>
-                                    <th>Seggioloni</th>
-                                    <th>Note</th>
-                                    <th>Telefono</th>
-                                    <th>Email</th>
-                                </tr>
-                            </thead>
-                            <tbody id="anonTableBody" style="text-align:center;"></tbody>
-                        </table>
-                        <br><br>
-                    </div>
-                </div>
-            </section>
-            <section class="tabs-panel" id="analisiDashboard">
-                <div class="grid-x grid-margin-x">
-                    <div class="small-6 medium-4 cell" id="innerNotesDiv_" >
-                        <h2>Analisi</h2>
-                    </div>
-                </div>
-                <!-- inizio sezione clienti attesi -->
-                <div class="grid-x grid-margin-x grid-margin-y">
-                    <div class="small-6 medium-3 cell">
-                        <label>Mese
-                            <select id="forecastMonth"></select>
-                        </label>
-                    </div>
-                    <div class="small-6 medium-3 cell">
-                        <label>Anno
-                            <select id="forecastYear"></select>
-                        </label>
-                    </div>
-                </div>
-                <div class="grid-x grid-margin-x">
-                    <div class="small-12 cell table-scroll" id="forecastWrap">
-                        <table id="forecastSummaryTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
-                            <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Stime aggregate per giorno della settimana del mese selezionato</caption>
-                            <thead>
-                                <tr>
-                                    <th style="text-align:left">Giorno</th>
-                                    <th style="text-align:left">Stima totale<br>del mese</th>
-                                    <th style="text-align:left">Stima media<br>del mese</th>
-                                    <th style="text-align:left">Nr. occorrenze<br>del giorno nel mese</th>
-                                </tr>
-                            </thead>
-                            <tbody id="forecastSummaryBody"></tbody>
-                        </table>
-                        <table id="forecastTable" class="extra-space" style="table-layout: auto; width:auto; font-size: 0.875rem; white-space: nowrap;">
-                            <caption class="text-left" style="font-size: 1rem;padding-left:0rem;">Dettaglio giorno per giorno (stessa media giorno-settimana 1 e 2 anni prima)</caption>
-                            <thead>
-                                <tr>
-                                    <th style="text-align:left">Data</th>
-                                    <th style="text-align:left">Giorno</th>
-                                    <th style="text-align:right" id="forecastY2Header">&minus;2</th>
-                                    <th style="text-align:right" id="forecastY1Header">&minus;1</th>
-                                    <th style="text-align:right">Stima</th>
-                                    <th style="text-align:right">Anno in corso</th>
-                                </tr>
-                            </thead>
-                            <tbody id="forecastTableBody"></tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- fine sezione clienti attesi -->
-            </section>
+                    <!-- fine sezione clienti attesi -->
+                </section>
+            </div>
         </div>
-    </div>
-    <!-- fine dashboard -->
-    <!-- modale messaggio generico -->
-    <div id="myModal" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
-        <p class="lead extra-space-modal-first-paragraph" id="modalLead"></p>
-        <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
-            <span aria-hidden="true">&#215;</span>
-        </button>
-    </div>
-    <!-- modale conferma azioni staff (giorni di chiusura, promemoria email) -->
-    <div id="myModal2" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
-        <p class="extra-space-modal-first-paragraph" id="modalLead2"></p>
-        <button type="button" id="no" class="button small float-right" style="margin-top: 5px;">No, non inviare</button>
-        <button type="button" id="yes" class="button small float-left" style="margin-top: 5px;">Sì, Invia</button>
-        <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
-            <span aria-hidden="true">&#215;</span>
-        </button>
-    </div>
+        <!-- fine dashboard -->
+        <!-- modale messaggio generico -->
+        <div id="myModal" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+            <p class="lead extra-space-modal-first-paragraph" id="modalLead"></p>
+            <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
+                <span aria-hidden="true">&#215;</span>
+            </button>
+        </div>
+        <!-- modale conferma azioni staff (giorni di chiusura, promemoria email) -->
+        <div id="myModal2" class="reveal reveal-ios-bug" data-reveal aria-labelledby="modalTitle" aria-hidden="true">
+            <p class="extra-space-modal-first-paragraph" id="modalLead2"></p>
+            <button type="button" id="no" class="button small float-right" style="margin-top: 5px;">No, non inviare</button>
+            <button type="button" id="yes" class="button small float-left" style="margin-top: 5px;">Sì, Invia</button>
+            <button type="button" id="close-modal" class="close-button" data-close aria-label="Close reveal">
+                <span aria-hidden="true">&#215;</span>
+            </button>
+        </div>
     </div>
     <div id="signup-login" class="reveal reveal-ecommerce grid-x grid-margin-x grid-margin-y main-container" data-reveal-id='signup-login' data-reveal data-deep-link="true">
         <header class="main-header border-bottom">
