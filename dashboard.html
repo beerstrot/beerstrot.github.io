@@ -74,6 +74,7 @@
                     <ul class="tabs" data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-deep-link-smudge-delay="500" data-tabs id="dashboardTabs">
                         <li class="tabs-title is-active"><a href="#prenotazioniDashboard">Prenotazioni</a></li>
                         <li class="tabs-title"><a href="#analisiDashboard">Analisi</a></li>
+                        <li class="tabs-title"><a href="#chiusureDashboard">Chiusure</a></li>
                     </ul>
                 </div>
             </div>
@@ -200,6 +201,28 @@
                         </div>
                     </div>
                     <!-- fine sezione clienti attesi -->
+                </section>
+                <section class="tabs-panel" id="chiusureDashboard">
+                    <div class="grid-x grid-margin-x">
+                        <div class="small-12 cell">
+                            <h2>Chiusure</h2>
+                            <p style="margin-bottom:1rem">Giorni di chiusura straordinaria (festività, emergenze). Nei giorni inseriti qui i clienti non possono prenotare tavoli né ordinare da asporto.</p>
+                        </div>
+                    </div>
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="small-12 medium-6 cell">
+                            <label>Aggiungi giorno di chiusura
+                                <input id="closurePicker" type="text" placeholder="Seleziona una data">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="grid-x grid-margin-x">
+                        <div class="small-12 cell" id="closuresListWrap">
+                            <h3 style="margin-top:1rem">Giorni attualmente chiusi</h3>
+                            <ul id="closuresList" class="no-bullet" style="margin-left:0"></ul>
+                            <p id="closuresEmpty" style="color:#888;display:none">Nessuna chiusura straordinaria registrata.</p>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
