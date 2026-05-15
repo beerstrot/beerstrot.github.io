@@ -204,13 +204,14 @@
                 </section>
                 <section class="tabs-panel" id="chiusureDashboard">
                     <div class="grid-x grid-margin-x">
-                        <div class="small-12 cell">
+                        <div class="small-12 medium-6 cell">
                             <h2>Chiusure</h2>
-                            <p style="margin-bottom:1rem">Giorni di chiusura straordinaria (festività, emergenze). Nei giorni inseriti qui i clienti non possono prenotare tavoli né ordinare da asporto.</p>
+                            <p >Giorni di chiusura straordinaria (festività, emergenze). Nei giorni inseriti qui i clienti non possono prenotare tavoli né ordinare da asporto.</p>
+                            <p>Queste sono chiusure straordinaria, le ordinarie sono settate in Tilby dentro Turni.</p>
                         </div>
                     </div>
                     <div class="grid-x grid-margin-x grid-margin-y">
-                        <div class="small-12 medium-6 cell">
+                        <div class="small-6 medium-4 cell">
                             <label>Aggiungi giorno di chiusura
                                 <input id="closurePicker" type="text" placeholder="Seleziona una data">
                             </label>
@@ -218,7 +219,7 @@
                     </div>
                     <div class="grid-x grid-margin-x">
                         <div class="small-12 cell" id="closuresListWrap">
-                            <h3 style="margin-top:1rem">Giorni attualmente chiusi</h3>
+                            <h6 style="margin-top:1rem"><strong>Giorni straordinari di chiusura:</strong></h6>
                             <ul id="closuresList" class="no-bullet" style="margin-left:0"></ul>
                             <p id="closuresEmpty" style="color:#888;display:none">Nessuna chiusura straordinaria registrata.</p>
                         </div>
