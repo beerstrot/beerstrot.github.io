@@ -75,6 +75,7 @@
                         <li class="tabs-title is-active"><a href="#prenotazioniDashboard">Prenotazioni</a></li>
                         <li class="tabs-title"><a href="#analisiDashboard">Analisi</a></li>
                         <li class="tabs-title"><a href="#chiusureDashboard">Chiusure</a></li>
+                        <li class="tabs-title"><a href="#orariDashboard">Orari Asporti</a></li>
                     </ul>
                 </div>
             </div>
@@ -222,6 +223,53 @@
                             <h6 style="margin-top:1rem"><strong>Giorni straordinari di chiusura:</strong></h6>
                             <ul id="closuresList" class="no-bullet" style="margin-left:0"></ul>
                             <p id="closuresEmpty" style="color:#888;display:none">Nessuna chiusura straordinaria registrata.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="tabs-panel" id="orariDashboard">
+                    <div class="grid-x grid-margin-x">
+                        <div class="small-12 medium-6 cell">
+                            <h2>Orari Giornalieri Per Asporto</h2>
+                            <p>Clicca l'orario in cui chiudere gli asporti, poi clicca il bottone "Chiudi Asporti".</p>
+                            <p id="orariInfo"></p>
+                            <div class="grid-x small-up-4 align-center extra-space">
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:00</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:15</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:30</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">19:45</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:00</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:15</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:30</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">20:45</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:00</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:15</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:30</button>
+                                </div>
+                                <div class="cell">
+                                    <button type="button" class="button orario-btn">21:45</button>
+                                </div>
+                            </div>                        <div id="orariConsolidate"></div>
                         </div>
                     </div>
                 </section>
