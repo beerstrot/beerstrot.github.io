@@ -13,12 +13,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.beerstrot.it/chi-siamo.html</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://www.beerstrot.it</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
@@ -26,12 +20,6 @@
   </url>
   <url>
     <loc>https://www.beerstrot.it/asporto.html</loc>
-    <lastmod>2023-06-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.beerstrot.it/informazioni-legali.html</loc>
     <lastmod>2023-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
