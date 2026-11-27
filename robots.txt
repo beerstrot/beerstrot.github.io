@@ -9,4 +9,4 @@ Disallow: /sala-comandi.html
 Disallow: /reset-password.html
 Disallow: /reset-password-landing.html
 
-Sitemap: https://www.beerstrot.it/sitemap.xml
+Sitemap: https://www.cavecchiafilottrano.it/sitemap.xml
